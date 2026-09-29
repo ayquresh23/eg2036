@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stiffness and thermal expansion</title>
+<link rel="stylesheet" href="shared.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+<script src="shared.js"></script>
+</head>
+<body>
+<div class="sim sim-root wide-plot">
+  <div class="stage" id="stage">
+    <div class="hud">
+      <div class="hud-label">Stiffness at r&#8320;, d&sup2;E/dr&sup2;</div>
+      <div class="hud-value" id="stiff">36.0</div>
+      <div class="hud-sub" id="mm">300 K: r<sub>min</sub> = 1.000, r<sub>max</sub> = 1.000</div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">Well depth (bond strength)</div>
+      <div class="panel-state" id="state">Soft material</div>
+      <input type="range" id="slider" min="0.5" max="3.0" step="0.05" value="0.5" aria-label="Well depth">
+    </div>
+  </div>
+  <div class="plot">
+    <h2>Potential energy, its slope, and its curvature</h2>
+    <p>Same thermal energy (300 K) in every case. A shallow well is soft and its r<sub>avg</sub> drifts further right (more thermal expansion). A deep well is stiff, with less drift. The faint blue curves are the softest reference well.</p>
+    <div class="chart-box small"><canvas id="cE"></canvas></div>
+    <div class="chart-box small"><canvas id="cF"></canvas></div>
+    <div class="chart-box small"><canvas id="cS"></canvas></div>
+  </div>
+</div>
+<script>
+(function () {
+  'use strict';
+  const ORDERED = SimKit.ORDERED, N = ORDERED.length;
+  const stage = SimKit.createStage(document.getElementById('stage'), { camPos: [0, 5, 14] });
+  const material = new THREE.MeshPhongMaterial({ color: 0x4a90e2, shininess: 90 });
+  const mesh = new THREE.InstancedMesh(new THREE.SphereGeometry(0.4, 32, 32), material, N);
+  stage.scene.add(mesh);
+
+  const phases = new Float32Array(N), dirs = [];
+  for (let i = 0; i < N; i++) {
+    phases[i] = Math.random() * Math.PI * 2;
+    const th = Math.random() * 2 * Math.PI, ph = Math.acos(2 * Math.random() - 1);
+    dirs.push([Math.sin(ph) * Math.cos(th), Math.sin(ph) * Math.sin(th), Math.cos(ph)]);
+  }
+  const dummy = new THREE.Object3D();
+  let ampNow = 0, rAvgNow = 1;
+  SimKit.loop(function () {
+    stage.controls.update();
+    const time = performance.now() * 0.01;
+    for (let i = 0; i < N; i++) {
+      const off = Math.sin(time + phases[i]) * ampNow;
+      dummy.position.set(
+        ORDERED[i][0] * rAvgNow + dirs[i][0] * off,
+        ORDERED[i][1] * rAvgNow + dirs[i][1] * off,
+        ORDERED[i][2] * rAvgNow + dirs[i][2] * off);
+      dummy.updateMatrix(); mesh.setMatrixAt(i, dummy.matrix);
+    }
+    mesh.instanceMatrix.needsUpdate = true;
+    stage.renderer.render(stage.scene, stage.camera);
+  });
+
+  // E(r) = eps (r^-12 - 2 r^-6); dE/dr = 12 eps (r^-7 - r^-13); d2E/dr2 = 12 eps (13 r^-14 - 7 r^-8)
+  const fE = (r, k) => k * (Math.pow(1 / r, 12) - 2 * Math.pow(1 / r, 6));
+  const fF = (r, k) => k * 12 * (Math.pow(1 / r, 7) - Math.pow(1 / r, 13));
+  const fS = (r, k) => k * 12 * (13 * Math.pow(1 / r, 14) - 7 * Math.pow(1 / r, 8));
+
+  SimKit.chartDefaults();
+  function mk(id, ytitle, ymin, ymax, step, bottom, datasets) {
+    return new Chart(document.getElementById(id).getContext('2d'), {
+      type: 'scatter', data: { datasets: datasets },
+      options: {
+        responsive: true, maintainAspectRatio: false, animation: { duration: 0 },
+        layout: { padding: { left: 6, right: 14, top: 6, bottom: 0 } },
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { type: 'linear', min: 0.85, max: 1.5, grid: { color: SimKit.gridColor(false) },
+               ticks: { display: bottom }, title: { display: bottom, text: 'Interatomic spacing, r', font: { weight: 'bold' } } },
+          y: { min: ymin, max: ymax, ticks: { stepSize: step }, title: { display: true, text: ytitle, font: { weight: 'bold', size: 11 } }, grid: { color: SimKit.gridColor(true) } }
+        }
+      }
+    });
+  }
+  const line = (color, w, dash) => ({ data: [], borderColor: color, borderWidth: w, borderDash: dash || [], showLine: true, pointRadius: 0 });
+  const ref = k => { const a = [], b = [], c = []; for (let r = 0.85; r <= 1.5; r += 0.01) { const e = fE(r, k), f = fF(r, k), s = fS(r, k); if (e < 1.5) a.push({ x: r, y: e }); if (f < 16 && f > -11) b.push({ x: r, y: f }); if (s < 260 && s > -60) c.push({ x: r, y: s }); } return [a, b, c]; };
+  const R0 = ref(0.5);
+
+  const cE = mk('cE', 'Energy E(r)', -4, 1.0, 1, false, [line('#4a90e2', 2), line('#f0f0f5', 4), line('#e63946', 3, [6, 4]),
+    { data: [], backgroundColor: '#e63946', borderColor: '#000', borderWidth: 2, pointRadius: 6 }]);
+  const cF = mk('cF', 'Slope dE/dr', -10, 15, 5, false, [line('#4a90e2', 2, [5, 5]), line('#f0f0f5', 4)]);
+  const cS = mk('cS', 'Curvature d²E/dr²', -100, 300, 100, true, [line('#4a90e2', 2, [2, 4]), line('#f0f0f5', 4)]);
+  cE.data.datasets[0].data = R0[0]; cF.data.datasets[0].data = R0[1]; cS.data.datasets[0].data = R0[2];
+
+  const slider = document.getElementById('slider');
+  slider.addEventListener('input', function () {
+    const eps = parseFloat(slider.value), eTh = 0.15, eState = -eps + eTh;
+    const q = Math.sqrt(eTh / eps), rMin = Math.pow(1 + q, -1 / 6), rMax = Math.pow(1 - q, -1 / 6), rAvg = (rMin + rMax) / 2;
+    rAvgNow = rAvg; ampNow = (rMax - rMin) * 0.35;
+
+    const tc = (eps - 0.5) / 2.5, c = [Math.round(74 + 181 * tc), Math.round(144 + 111 * tc), Math.round(226 + 29 * tc)];
+    const css = 'rgb(' + c[0] + ',' + c[1] + ',' + c[2] + ')';
+    material.color.setRGB(c[0] / 255, c[1] / 255, c[2] / 255);
+    document.getElementById('stiff').textContent = (72 * eps).toFixed(1);
+    document.getElementById('stiff').style.color = css;
+    document.querySelector('.hud').style.setProperty('--hud', css);
+    document.getElementById('mm').innerHTML = '300 K: r<sub>min</sub> = ' + rMin.toFixed(3) + ', r<sub>max</sub> = ' + rMax.toFixed(3) + ' (r<sub>avg</sub> = ' + rAvg.toFixed(3) + ')';
+    const st = document.getElementById('state');
+    st.textContent = eps < 0.8 ? 'Soft (polymer-like), small modulus' : eps < 2.0 ? 'Stiff (metal-like), medium modulus' : 'Rigid (ceramic-like), large modulus';
+    st.style.color = css;
+
+    const a = [], b = [], s = [];
+    for (let r = 0.85; r <= 1.5; r += 0.01) { const e = fE(r, eps), f = fF(r, eps), d = fS(r, eps); if (e < 1.5) a.push({ x: r, y: e }); if (f < 16 && f > -11) b.push({ x: r, y: f }); if (d < 260 && d > -60) s.push({ x: r, y: d }); }
+    cE.data.datasets[1].data = a; cE.data.datasets[1].borderColor = css;
+    cE.data.datasets[2].data = [{ x: rMin, y: eState }, { x: rMax, y: eState }]; cE.data.datasets[2].borderColor = css;
+    cE.data.datasets[3].data = [{ x: rAvg, y: eState }]; cE.data.datasets[3].backgroundColor = css;
+    cF.data.datasets[1].data = b; cF.data.datasets[1].borderColor = css;
+    cS.data.datasets[1].data = s; cS.data.datasets[1].borderColor = css;
+    cE.update(); cF.update(); cS.update();
+  });
+  slider.dispatchEvent(new Event('input'));
+})();
+</script>
+</body>
+</html>

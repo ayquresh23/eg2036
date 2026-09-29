@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bond energy and packing</title>
+<link rel="stylesheet" href="shared.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+<script src="shared.js"></script>
+</head>
+<body>
+<div class="sim sim-root">
+  <div class="stage" id="stage">
+    <div class="hud">
+      <div class="hud-label">Average bond length, r</div>
+      <div class="hud-value" id="hv">2.20</div>
+      <div class="hud-sub">r&#8320; = 1.00 &nbsp;|&nbsp; E = <span id="he">-0.02</span> &epsilon;</div>
+    </div>
+    <div class="panel">
+      <div class="panel-title" id="lbl">Amorphous / random (non-dense)</div>
+      <input type="range" id="slider" min="0" max="1.5" step="0.01" value="0" aria-label="Packing: random, crystalline, compressed">
+      <div class="checks">
+        <label><input type="checkbox" id="toggleRep" checked> Repulsive (B/r<sup>n</sup>)</label>
+        <label><input type="checkbox" id="toggleAtt" checked> Attractive (&minus;A/r<sup>m</sup>)</label>
+      </div>
+    </div>
+  </div>
+  <div class="plot">
+    <h2>Energy vs. interatomic spacing</h2>
+    <p>Total energy is the sum of an attractive and a repulsive part. Equilibrium spacing r&#8320; sits at the bottom of the total-energy well.</p>
+    <div class="chart-box"><canvas id="chart"></canvas></div>
+  </div>
+</div>
+<script>
+(function () {
+  'use strict';
+  const RANDOM = [[-2.681314338795507, -2.9353057204684743, -2.6209245847597233], [-2.27078805743679, -2.9736613498893347, -0.09365478277967222], [-2.2483148737970438, -2.573026108338837, 2.6922102456260193], [-2.6629759825656145, -1.625367077124985, -1.626291901428103], [-2.7832150913735867, -2.2053120978631195, 0.750032866994787], [-3.1049150116963893, -0.40513244813376953, -2.7543010669618906], [-3.2432096302084847, -0.5649214805341166, 0.5862595075686217], [-2.9703105201946145, 0.027011281875169536, 2.3101007255146175], [-3.0977530898100736, 1.4843690358839465, -1.9003974309689213], [-2.7297207926617317, 1.1997445240324782, 1.3233225000826894], [-3.120682644891759, 3.6209112738035754, -2.885398889895174], [-3.3030843715823606, 3.209017964841276, -0.48833745998840894], [-2.796454561998098, 2.09613195044809, 2.348725580440628], [-1.3612555056523508, -2.584613368001836, -1.371452687524012], [-1.4862593129552963, -3.000441478235716, 0.8485912038530292], [-1.7279376833578837, -1.6242555083839152, -2.457151109512434], [-1.3025526841726156, -2.145216062145094, 0.129633587757918], [-1.5940329121665269, -1.7107688001223837, 3.1246705155363474], [-1.0276001910016197, 0.37251204764647944, -1.7756870092890555], [-1.563684950340486, 0.13250537256142558, 1.8302180508489438], [-1.6316696951381162, 1.3657364093344733, -3.3225339896024115], [-1.9184826496322684, 1.7650103289576795, 0.5424960114283292], [-1.4688040486321337, 1.84141315915681, 3.024654410019054], [-1.6980479018420498, 3.024558242203366, -0.8247853734136125], [-1.4543304156439807, 3.505857462325603, 0.39210195836410233], [0.32876100175008954, -2.845181172704732, -2.9996029401863473], [0.03670431061420092, -3.6750275658403577, -0.08786875513500478], [0.14284502860469858, -2.288842382103394, 2.6726919126905413], [-0.3233974411572751, -1.6407028174338147, -1.0738391529191704], [0.1315004438638738, -1.6519040815068158, 1.6453069732453427], [0.038831019739216155, 0.3874579962131557, -3.1608212375509415], [-0.1310648586391073, -0.15684326125286308, -0.5854059792528474], [0.11844811082583043, 0.10442210887195574, 2.8820453826569845], [-0.09383485335005877, 0.8738517031798344, -1.6082581291061437], [-0.1370858066107078, 1.1190890923113526, 1.3754857153335964], [0.16162034272581538, 3.6344743604842122, -2.810168874867265], [0.10302015628910575, 2.8502216336935335, -0.7675084861196166], [-0.010605550179686752, 2.904092083976411, 3.865296844994115], [1.3630556140875512, -2.7593810630665554, -1.4538847078820976], [0.9725287849521873, -2.422870874193992, 1.7407732130747098], [1.756412778817219, -1.8037549819178957, -2.3188822756255605], [0.8792595748830878, -1.205257162479892, 0.8761822503239914], [1.043785469947725, -1.666519091841109, 2.9198605460350566], [1.2386097383535204, -0.6202653724264531, -1.4125748100775892], [1.0150785145095582, 0.18943697225407263, 1.0722303063064789], [2.059973762007016, 1.1266986830655052, -3.0088246064822703], [1.765406886947868, 0.9476542734264181, 0.09098397384165177], [1.9628571017129715, 0.7970067061755091, 2.953853543412922], [1.5439531176993695, 3.1927291487109244, -1.934780284351233], [0.9118173547662897, 3.0887766262467595, 1.5587938692932746], [2.980197140138351, -2.74142071620121, -3.1520098886313965], [2.9729014788644017, -2.762771010680528, -0.28574056721054714], [3.626309804457903, -2.6904668316352853, 2.403478601118941], [3.1426214434535322, -1.8298726680909287, -1.1251661585030193], [3.343438231602962, -1.7682729273406843, 1.8253504516977288], [3.0451123707745995, 0.328824063997796, -2.1212828069384213], [2.781844753598852, -0.3014944657429959, -0.35580577185020934], [2.553675886013825, -0.030840683765641683, 3.016460789926658], [2.990676319732008, 1.7708732996144096, -1.4347992432488375], [3.461413630862927, 1.3341372667048177, 2.528067666635848], [3.130266939106003, 2.5371369774334873, -3.3083569992244453], [3.0729889660972747, 2.79061488586966, 0.2856001976368368], [3.0692950498294183, 2.8508684349372513, 2.5412825127726384]];
+  const ORDERED = SimKit.ORDERED;
+  const N = ORDERED.length;
+
+  const stage = SimKit.createStage(document.getElementById('stage'), { camPos: [0, 5, 13] });
+  const material = new THREE.MeshPhongMaterial({ color: 0x4444ff, shininess: 90 });
+  const mesh = new THREE.InstancedMesh(new THREE.SphereGeometry(0.565, 32, 32), material, N);
+  stage.scene.add(mesh);
+  const dummy = new THREE.Object3D();
+
+  // t: 0 = random (amorphous), 1 = crystal at r0, 1..1.5 = squeezed below r0
+  function updateAtoms(t) {
+    let r, R, G, B;
+    if (t <= 1.0) {
+      r = 2.2 - 1.2 * t;
+      R = Math.round(68 + (255 - 68) * t); G = 68; B = Math.round(255 - (255 - 68) * t);
+      for (let i = 0; i < N; i++) {
+        dummy.position.set(
+          RANDOM[i][0] * (1 - t) + ORDERED[i][0] * t,
+          RANDOM[i][1] * (1 - t) + ORDERED[i][1] * t,
+          RANDOM[i][2] * (1 - t) + ORDERED[i][2] * t);
+        dummy.updateMatrix(); mesh.setMatrixAt(i, dummy.matrix);
+      }
+    } else {
+      const over = t - 1.0;
+      r = 1.0 - 0.5 * over;
+      R = 255; G = Math.round(68 + 200 * over * 2); B = 68;
+      for (let i = 0; i < N; i++) {
+        dummy.position.set(ORDERED[i][0] * r, ORDERED[i][1] * r, ORDERED[i][2] * r);
+        dummy.updateMatrix(); mesh.setMatrixAt(i, dummy.matrix);
+      }
+    }
+    material.color.setRGB(R / 255, G / 255, B / 255);
+    mesh.instanceMatrix.needsUpdate = true;
+    return { r: r, css: 'rgb(' + R + ',' + G + ',' + B + ')' };
+  }
+  SimKit.loop(function () { stage.controls.update(); stage.renderer.render(stage.scene, stage.camera); });
+
+  // Energy in units of the well depth (epsilon): E = (r0/r)^12 - 2 (r0/r)^6, r0 = 1
+  const rep = r => Math.pow(1 / r, 12), att = r => -2 * Math.pow(1 / r, 6);
+  const tot = r => rep(r) + att(r);
+
+  SimKit.chartDefaults();
+  const cTotal = [], cRep = [], cAtt = [];
+  for (let r = 0.7; r <= 2.5; r += 0.02) {
+    if (tot(r) < 3.5) cTotal.push({ x: r, y: tot(r) });
+    if (rep(r) < 3.5) cRep.push({ x: r, y: rep(r) });
+    if (att(r) > -3.5) cAtt.push({ x: r, y: att(r) });
+  }
+  const chart = new Chart(document.getElementById('chart').getContext('2d'), {
+    type: 'scatter',
+    data: { datasets: [
+      { label: 'Total energy', data: cTotal, borderColor: '#f0f0f5', borderWidth: 4, showLine: true, tension: 0.4, pointRadius: 0 },
+      { label: 'Repulsive (B/r^n)', data: cRep, borderColor: '#e63946', borderWidth: 2.5, borderDash: [8, 6], showLine: true, tension: 0.4, pointRadius: 0 },
+      { label: 'Attractive (-A/r^m)', data: cAtt, borderColor: '#4a90e2', borderWidth: 2.5, borderDash: [8, 6], showLine: true, tension: 0.4, pointRadius: 0 },
+      { label: 'r0', data: [{ x: 1, y: 0 }, { x: 1, y: -1 }], borderColor: '#6a6a78', borderWidth: 1.5, showLine: true, pointRadius: 0 },
+      { label: 'Current state', data: [{ x: 2.2, y: 0 }], backgroundColor: 'rgb(68,68,255)', borderColor: '#000', borderWidth: 2, pointRadius: 9, pointHoverRadius: 11 }
+    ] },
+    options: {
+      responsive: true, maintainAspectRatio: false, animation: { duration: 0 },
+      scales: {
+        x: { type: 'linear', min: 0.7, max: 2.4, title: { display: true, text: 'Interatomic spacing, r', font: { weight: 'bold' } }, grid: { color: SimKit.gridColor(true) } },
+        y: { min: -1.5, max: 2.5, title: { display: true, text: 'Energy (units of ε)', font: { weight: 'bold' } }, grid: { color: SimKit.gridColor(true) } }
+      },
+      plugins: { legend: { labels: { filter: i => i.text !== 'r0' && i.text !== 'Current state', boxWidth: 26 } } }
+    }
+  });
+
+  const slider = document.getElementById('slider'), lbl = document.getElementById('lbl');
+  const hv = document.getElementById('hv'), he = document.getElementById('he');
+  document.getElementById('toggleRep').addEventListener('change', e => { chart.data.datasets[1].hidden = !e.target.checked; chart.update(); });
+  document.getElementById('toggleAtt').addEventListener('change', e => { chart.data.datasets[2].hidden = !e.target.checked; chart.update(); });
+
+  function onSlide() {
+    const t = parseFloat(slider.value);
+    lbl.textContent = t < 0.8 ? 'Amorphous / random (non-dense)' : t <= 1.0 ? 'Crystalline (ordered, at r₀)' : 'Compressed (repulsion takes over)';
+    const s = updateAtoms(t);
+    const E = tot(s.r);
+    hv.textContent = s.r.toFixed(2); hv.style.color = s.css;
+    document.querySelector('.hud').style.setProperty('--hud', s.css);
+    he.textContent = E.toFixed(2);
+    // Off-scale energies are pinned to the top edge of the plot; the readout shows the true value.
+    chart.data.datasets[4].data = [{ x: s.r, y: Math.min(E, 2.4) }];
+    chart.data.datasets[4].backgroundColor = s.css;
+    chart.update();
+  }
+  slider.addEventListener('input', onSlide);
+  onSlide();
+})();
+</script>
+</body>
+</html>

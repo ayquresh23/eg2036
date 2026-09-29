@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Melting and boiling</title>
+<link rel="stylesheet" href="shared.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+<script src="shared.js"></script>
+</head>
+<body>
+<div class="sim sim-root">
+  <div class="stage" id="stage">
+    <div class="hud">
+      <div class="hud-label">Average bond length, r<sub>avg</sub></div>
+      <div class="hud-value" id="avg">1.000</div>
+      <div class="hud-sub" id="mm">vibrating between r<sub>min</sub> = 1.00, r<sub>max</sub> = 1.00</div>
+    </div>
+    <div class="panel">
+      <div class="panel-title" id="lbl">Temperature = 0 K</div>
+      <div class="panel-state" id="phase">Solid lattice (zero-point energy)</div>
+      <input type="range" id="slider" min="0" max="1800" step="1" value="0" aria-label="Temperature">
+    </div>
+  </div>
+  <div class="plot">
+    <h2>Phase changes with NaCl's transition temperatures</h2>
+    <p>At the melting point (1074 K) added heat breaks the rigid lattice instead of stretching the bond: the energy goes into the enthalpy of fusion (orange bar) and the average spacing barely changes. Above the boiling point (1738 K) the bonds are overcome altogether. One generic well is scaled to NaCl's melting and boiling points, so treat this as an illustration, not a NaCl simulation.</p>
+    <div class="chart-box"><canvas id="chart"></canvas></div>
+  </div>
+</div>
+<script>
+(function () {
+  'use strict';
+  const ORDERED = SimKit.ORDERED, N = ORDERED.length;
+  const stage = SimKit.createStage(document.getElementById('stage'), { camPos: [0, 5, 18] });
+  const material = new THREE.MeshPhongMaterial({ color: 0x4a90e2, shininess: 90 });
+  const mesh = new THREE.InstancedMesh(new THREE.SphereGeometry(0.565, 32, 32), material, N);
+  stage.scene.add(mesh);
+
+  const phases = new Float32Array(N), dirs = [], pos = [], vel = [];
+  for (let i = 0; i < N; i++) {
+    phases[i] = Math.random() * Math.PI * 2;
+    const th = Math.random() * 2 * Math.PI, ph = Math.acos(2 * Math.random() - 1);
+    dirs.push([Math.sin(ph) * Math.cos(th), Math.sin(ph) * Math.sin(th), Math.cos(ph)]);
+    pos.push([ORDERED[i][0], ORDERED[i][1], ORDERED[i][2]]);
+    vel.push([(Math.random() - 0.5) * 0.1, (Math.random() - 0.5) * 0.1, (Math.random() - 0.5) * 0.1]);
+  }
+  const dummy = new THREE.Object3D();
+  let rAvgNow = 1.0, ampNow = 0.0, isLiquid = false, isGas = false;
+
+  SimKit.loop(function () {
+    stage.controls.update();
+    const time = performance.now() * 0.005;
+    for (let i = 0; i < N; i++) {
+      const p = pos[i], v = vel[i];
+      if (!isLiquid && !isGas) {
+        // Solid: ease atoms back onto the (expanded) lattice and vibrate about it.
+        for (let k = 0; k < 3; k++) p[k] += (ORDERED[i][k] * rAvgNow - p[k]) * 0.1;
+        const off = Math.sin(time + phases[i]) * ampNow;
+        dummy.position.set(p[0] + dirs[i][0] * off, p[1] + dirs[i][1] * off, p[2] + dirs[i][2] * off);
+      } else if (isLiquid) {
+        // Liquid: random walk at constant speed, held together by a soft surface tension.
+        const dropRad = rAvgNow * 2.7;
+        for (let k = 0; k < 3; k++) v[k] += (Math.random() - 0.5) * 0.05;
+        const sp = Math.sqrt(v[0] * v[0] + v[1] * v[1] + v[2] * v[2]) || 1e-6, tgt = 0.04 * rAvgNow;
+        for (let k = 0; k < 3; k++) { v[k] = v[k] / sp * tgt; p[k] += v[k]; }
+        const d = Math.sqrt(p[0] * p[0] + p[1] * p[1] + p[2] * p[2]);
+        if (d > dropRad) { const pull = (d - dropRad) * 0.02; for (let k = 0; k < 3; k++) v[k] -= p[k] / d * pull; }
+        dummy.position.set(p[0], p[1], p[2]);
+      } else {
+        // Gas: no cohesion, atoms fly apart.
+        for (let k = 0; k < 3; k++) p[k] += v[k] * 3.0;
+        dummy.position.set(p[0], p[1], p[2]);
+      }
+      dummy.updateMatrix(); mesh.setMatrixAt(i, dummy.matrix);
+    }
+    mesh.instanceMatrix.needsUpdate = true;
+    stage.renderer.render(stage.scene, stage.camera);
+  });
+
+  // Reduced units as in the thermal-expansion simulation. Solid and liquid each get an energy window;
+  // the gap between them is the enthalpy of fusion.
+  const Tmelt = 1074, Tboil = 1738;
+  const eS0 = -0.99, eS1 = -0.50, eL0 = -0.35, eL1 = -0.01;
+  const rts = eT => { const q = Math.sqrt(1 + eT); return { min: Math.pow(1 + q, -1 / 6), max: Math.pow(1 - q, -1 / 6) }; };
+  const mid = eT => { const b = rts(eT); return (b.min + b.max) / 2; };
+  const rAvgS = mid(eS1), shift = rAvgS - mid(eL0);
+
+  SimKit.chartDefaults();
+  const well = [], pathS = [], pathL = [];
+  for (let r = 0.85; r <= 4.0; r += 0.02) { const e = Math.pow(1 / r, 12) - 2 * Math.pow(1 / r, 6); if (e < 1) well.push({ x: r, y: e }); }
+  for (let e = eS0; e <= eS1; e += 0.02) pathS.push({ x: mid(e), y: e });
+  for (let e = eL0; e <= eL1; e += 0.02) pathL.push({ x: mid(e) + shift, y: e });
+  pathL.push({ x: 4.5, y: -0.0001 });
+
+  const chart = new Chart(document.getElementById('chart').getContext('2d'), {
+    type: 'scatter',
+    data: { datasets: [
+      { label: 'Potential energy', data: well, borderColor: '#f0f0f5', borderWidth: 4, showLine: true, tension: 0.4, pointRadius: 0 },
+      { label: 'Solid path', data: pathS, borderColor: '#6a6a78', borderWidth: 2, borderDash: [5, 5], showLine: true, tension: 0, pointRadius: 0 },
+      { label: 'Liquid path', data: pathL, borderColor: '#6a6a78', borderWidth: 2, borderDash: [5, 5], showLine: true, tension: 0, pointRadius: 0 },
+      { label: 'Enthalpy of fusion (ΔH_fus)', data: [{ x: rAvgS, y: eS1 }, { x: rAvgS, y: eL0 }], borderColor: '#f4a261', borderWidth: 4, showLine: true, pointRadius: 5, pointBackgroundColor: '#f4a261' },
+      { label: 'Vibration range', data: [{ x: 1, y: -0.99 }, { x: 1, y: -0.99 }], borderColor: '#e63946', borderWidth: 2, borderDash: [8, 4], showLine: true, pointRadius: 0 },
+      { label: 'Current r_avg', data: [{ x: 1, y: -0.99 }], backgroundColor: '#e63946', borderColor: '#000', borderWidth: 2, pointRadius: 6 }
+    ] },
+    options: {
+      responsive: true, maintainAspectRatio: false, animation: { duration: 0 },
+      scales: {
+        x: { type: 'linear', min: 0.8, max: 4.0, title: { display: true, text: 'Interatomic spacing, r', font: { weight: 'bold' } }, grid: { color: SimKit.gridColor(false) } },
+        y: { min: -1.2, max: 0.5, title: { display: true, text: 'Energy', font: { weight: 'bold' } }, grid: { color: SimKit.gridColor(true) } }
+      },
+      plugins: { legend: { labels: { filter: i => i.text.indexOf('fusion') > -1, boxWidth: 26 } } }
+    }
+  });
+
+  const slider = document.getElementById('slider'), lbl = document.getElementById('lbl'), phaseEl = document.getElementById('phase');
+  const avg = document.getElementById('avg'), mm = document.getElementById('mm');
+
+  slider.addEventListener('input', function () {
+    const T = parseFloat(slider.value);
+    let eT, rMin, rMax, rAvg, text;
+    isLiquid = false; isGas = false;
+    if (T < Tmelt) {
+      eT = eS0 + (T / Tmelt) * (eS1 - eS0);
+      const b = rts(eT); rMin = b.min; rMax = b.max; rAvg = (rMin + rMax) / 2;
+      text = T === 0 ? 'Solid lattice (zero-point energy)' : 'Solid lattice (thermal expansion)';
+    } else if (T === Tmelt) {
+      isLiquid = true; eT = eS1;
+      const b = rts(eT); rMin = b.min; rMax = b.max; rAvg = (rMin + rMax) / 2;
+      text = 'Melting point (absorbing ΔH_fus)';
+    } else if (T < Tboil) {
+      isLiquid = true;
+      eT = eL0 + ((T - Tmelt) / (Tboil - Tmelt)) * (eL1 - eL0);
+      const b = rts(eT); rMin = b.min + shift; rMax = b.max + shift; rAvg = (rMin + rMax) / 2;
+      text = 'Liquid (mobile fluid)';
+    } else {
+      isGas = true; eT = -0.0001; rMin = 1.0; rMax = 5.0; rAvg = 5.0;
+      text = 'Gas (bonds dissociated)';
+    }
+    rAvgNow = rAvg; ampNow = (rMax - rMin) * 0.4;
+    lbl.textContent = 'Temperature = ' + T + ' K';
+    phaseEl.textContent = text;
+    if (isGas) { avg.textContent = '∞'; mm.innerHTML = 'vibrating between r<sub>min</sub> = ' + rMin.toFixed(2) + ', r<sub>max</sub> = ∞'; }
+    else { avg.textContent = rAvg.toFixed(3); mm.innerHTML = 'vibrating between r<sub>min</sub> = ' + rMin.toFixed(2) + ', r<sub>max</sub> = ' + rMax.toFixed(2); }
+
+    const R = Math.round(74 + (T / 1800) * 156), B = Math.round(226 - (T / 1800) * 156);
+    const css = 'rgb(' + R + ',90,' + B + ')';
+    phaseEl.style.color = T === Tmelt ? '#f4a261' : css;
+    material.color.setRGB(R / 255, 90 / 255, B / 255);
+    avg.style.color = css; document.querySelector('.hud').style.setProperty('--hud', css);
+    chart.data.datasets[4].data = [{ x: rMin, y: eT }, { x: isGas ? 10 : rMax, y: eT }];
+    chart.data.datasets[5].data = [{ x: isGas ? 10 : rAvg, y: eT }];
+    chart.data.datasets[5].backgroundColor = css;
+    chart.update();
+  });
+  slider.dispatchEvent(new Event('input'));
+})();
+</script>
+</body>
+</html>

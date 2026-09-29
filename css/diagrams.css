@@ -1,0 +1,60 @@
+/* Diagram + simulation styling for the EG2036 site. Colours mirror the widgets. */
+.dg{--c-amb:#f4a261;--c-acc:#0ea5c6;--c-red:#e63946;--c-blue:#4a90e2;--c-grn:#2fa15c;--c-pur:#8855f5;--c-txt:#e6e6ee;--c-mut:#8c8c9c;--c-line:#3a3a46}
+.dg{max-width:100%;height:auto}
+.dg text{paint-order:stroke;stroke:#131318;stroke-width:4px;stroke-linejoin:round}
+.dg-t{fill:var(--c-mut);font-size:12.5px;font-family:Inter,system-ui,sans-serif}
+.dg-tb{fill:var(--c-txt);font-size:13.5px;font-weight:600;font-family:Inter,system-ui,sans-serif}
+.dg-tb-amb{fill:var(--c-amb);font-size:13px;font-weight:600;font-family:Inter,system-ui,sans-serif}
+.dg-tb-acc{fill:var(--c-acc);font-size:13px;font-weight:600;font-family:Inter,system-ui,sans-serif}
+.dg-tb-red{fill:var(--c-red);font-size:13px;font-weight:600;font-family:Inter,system-ui,sans-serif}
+.dg-tb-blue{fill:var(--c-blue);font-size:13px;font-weight:600;font-family:Inter,system-ui,sans-serif}
+.dg-op{fill:var(--c-mut);font-size:34px;font-weight:300;font-family:Inter,system-ui,sans-serif}
+.dg-vl-amb{fill:var(--c-amb);font-size:17px;font-weight:700;font-style:italic;font-family:'IBM Plex Mono',monospace}
+.dg-vl-acc{fill:var(--c-acc);font-size:15px;font-weight:700;font-family:'IBM Plex Mono',monospace}
+.dg-vl-mut{fill:var(--c-mut);font-size:15px;font-style:italic;font-family:'IBM Plex Mono',monospace}
+.dg-frame{fill:#101016;stroke:#2c2c36;stroke-width:1}
+.dg-atomA{fill:var(--c-blue);stroke:#0c0c10;stroke-width:1}
+.dg-atomG{fill:var(--c-grn);stroke:#0c0c10;stroke-width:1}
+.dg-atomP{fill:var(--c-pur);stroke:#0c0c10;stroke-width:1}
+.dg-atomB{fill:var(--c-amb);stroke:#0c0c10;stroke-width:1}
+.dg-atomR{fill:var(--c-red);stroke:#0c0c10;stroke-width:1}
+.dg-dim{opacity:.5}
+.dg-grain{fill:none;stroke:#e6e6ee;stroke-width:1.6;stroke-dasharray:5 3}
+.dg-bond{stroke:#6a6a78;stroke-width:1.4}
+.dg-bondthick{stroke:#6a6a78;stroke-width:3.5;stroke-linecap:round}
+.dg-lp{fill:#c9c9d6}
+.dg-lpmark{stroke:#fff;stroke-width:1.8}
+.dg-lp-o{fill:var(--c-amb)}
+.dg-lp-acc{fill:var(--c-acc)}
+.dg-lp-amb{fill:var(--c-amb)}
+.dg-route{stroke:#8c8c9c;stroke-width:1.6;stroke-dasharray:6 5}
+.dg-route-acc{stroke:var(--c-acc);stroke-width:2.5}
+.dg-vec-amb{stroke:var(--c-amb);stroke-width:2.6;fill:none}
+.dg-vec-acc{stroke:var(--c-acc);stroke-width:2.6;fill:none}
+.dg-ah-amb{fill:var(--c-amb)} .dg-ah-acc{fill:var(--c-acc)} .dg-ah-mut{fill:var(--c-mut)}
+.dg-cell-amb{fill:rgba(244,162,97,.14);stroke:var(--c-amb);stroke-width:2.2}
+.dg-cell-acc{fill:rgba(14,165,198,.16);stroke:var(--c-acc);stroke-width:2.2}
+.dg-edge{stroke:#c9c9d6;stroke-width:1.8;fill:none}
+.dg-edge-h{stroke:#6a6a78;stroke-width:1.4;stroke-dasharray:4 4;fill:none}
+.dg-axis{stroke:#6a6a78;stroke-width:1.5}
+.dg-curve{stroke:var(--c-acc);stroke-width:3;fill:none;stroke-linejoin:round}
+.dg-dot-v{stroke:#6a6a78;stroke-width:1.2;stroke-dasharray:3 4}
+
+/* Interactive simulations */
+.sim-embed{margin:22px 0 8px}
+.sim-embed iframe{display:block;width:100%;height:640px;border:0;border-radius:10px;background:#131318}
+.sim-credit{font-size:11.5px;color:var(--muted);margin:6px 2px 0;text-align:right}
+.sim-tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.6px;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);border-radius:20px;padding:2px 10px;margin-bottom:6px}
+.sim-guide{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:14px 0 26px}
+.sim-guide>div{background:var(--surface);border:1px solid var(--border);border-top:3px solid var(--accent);border-radius:var(--radius);padding:12px 16px}
+.sim-guide h5{font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:var(--accent);margin:0 0 6px;font-family:'IBM Plex Mono',monospace}
+.sim-guide p,.sim-guide ul{font-size:13.5px;line-height:1.6;color:var(--text-2);margin:0}
+.sim-guide ul{padding-left:18px}
+.sim-guide li{margin:2px 0}
+body.revise-mode .sim-embed,body.revise-mode .sim-credit,body.revise-mode .sim-tag,body.revise-mode .sim-guide .sg-try{display:none}
+.mini-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px}
+.mini-table th,.mini-table td{border:1px solid var(--border);padding:8px 12px;text-align:left;vertical-align:top;color:var(--text-2)}
+.mini-table th{background:var(--surface-2);color:var(--text);font-weight:600}
+.mini-table td:first-child{color:var(--text);font-weight:600;white-space:nowrap}
+.mini-wrap{overflow-x:auto}
+@media (max-width:620px){.sim-embed iframe{height:820px}.dg-t{font-size:13px}}
