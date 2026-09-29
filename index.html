@@ -53,6 +53,20 @@ window.addEventListener('message', function (e) {
     if (f.contentWindow === e.source) f.style.height = Math.max(d.h, 300) + 'px';
   });
 });
+/* Load each simulation only when it is first shown (pages are hidden until opened). */
+document.addEventListener('DOMContentLoaded', function () {
+  var frames = document.querySelectorAll('iframe[data-src]');
+  if (!('IntersectionObserver' in window)) { frames.forEach(function (f) { f.src = f.dataset.src; }); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.src = e.target.dataset.src;
+      e.target.removeAttribute('data-src');
+      io.unobserve(e.target);
+    });
+  }, { rootMargin: '400px' });
+  frames.forEach(function (f) { io.observe(f); });
+});
 </script>
 </body>
 </html>

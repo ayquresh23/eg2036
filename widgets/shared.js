@@ -13,7 +13,7 @@ window.SimKit = (function () {
   let visible = true;
   document.addEventListener('DOMContentLoaded', function () {
     try {
-      new IntersectionObserver(function (es) { visible = es[es.length - 1].isIntersecting; }, { threshold: 0 }).observe(document.body);
+      new IntersectionObserver(function (es) { visible = es[es.length - 1].isIntersecting; if (visible) reportHeight(); }, { threshold: 0 }).observe(document.body);
     } catch (e) { /* older browsers: keep rendering */ }
   });
 
