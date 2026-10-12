@@ -1,6 +1,7 @@
 // EG2036 Study Site: content data
 // Schema documented in study-site-core/js/render.js
 window.SITE_CONFIG = {
+  "wikiHint": "crystallography",
   "slug": "eg2036",
   "topicIds": [
     "w1",
