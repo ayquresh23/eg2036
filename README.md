@@ -15,9 +15,14 @@ Study site for EG2036 (Order in Materials) at Swansea University.
   - lattice directions [uvw] and Miller indices (hkl), directions and planes of a form
   - close packing in 2D and 3D (HCP, CCP/FCC, BCC), octahedral and tetrahedral voids
   - atomic packing factor derivations for simple cubic, BCC, FCC and HCP, worked examples and practice questions
-- 12 inline SVG diagrams (generated in the site's dark theme)
-- 5 interactive 3D / plotted simulations in `widgets/`
-- 67 glossary terms with flashcard mode, formula sheet (17 blocks), 23 MCQ trap cards
+- Week 3: Crystallographic Texture
+  - why texture matters, the Zr fuel cladding case study, slip systems and twinning
+  - sample axes (RD, TD, ND), plane strain in rolling vs uniaxial strain
+  - pole figures, Bunge Euler angles, orientation distribution functions, bcc fibres
+  - texture development in rolled Zr and Ti and in loaded Ti alloys, hard and soft orientations
+- 18 inline SVG diagrams (generated in the site's dark theme)
+- 6 interactive simulations in `widgets/` (5 3D / plotted, 1 pole-figure tool)
+- 116 glossary terms with flashcard mode, formula sheet (23 blocks), 35 MCQ trap cards
 - Later Order topics (ionic structures, solid solutions) and the disorder topics will be added as they are taught
 
 ## Structure
@@ -27,14 +32,14 @@ index.html            page shell (loads study-site-core from jsDelivr)
 css/diagrams.css      styling for SVG diagrams and embedded simulations
 js/content-data.js    all site content
 js/glossary-data.js   glossary terms
-widgets/              five self-contained simulations (embedded as iframes)
+widgets/              six self-contained simulations (embedded as iframes)
 ```
 
 The simulations resize themselves via `postMessage` (see the listener at the bottom of `index.html`) and pause rendering when off screen. Three.js, OrbitControls and Chart.js load from a CDN.
 
 ## Credits
 
-The five simulations are based on animations by **Dr Ashley Willow** (Swansea University, EG-2036 lecturer). They have been restyled to match this site, one broken colour string was fixed, and the physics is unchanged. The lecture content (Weeks 1 and 2, 2026) belongs to the lecturer, so check with them before making this repository public.
+Five of the simulations are based on animations by **Dr Ashley Willow** (Swansea University, EG-2036 lecturer). They have been restyled to match this site, one broken colour string was fixed, and the physics is unchanged. The Week 3 pole-figure tool (`widgets/pole-figure.html`) is original to this site. The lecture content (Weeks 1 and 2, 2026, and the Week 3 Crystallographic Texture slides by Dr Leo Prakash) belongs to the lecturers, so check with them before making this repository public.
 
 ## Part of the MatSciEng hub
 

@@ -278,5 +278,206 @@ const glossaryData = {
         "The height-to-width ratio of the hexagonal cell; ideal sphere stacking gives √(8/3) ≈ 1.633"
       ]
     ]
+  },
+  "w3": {
+    "name": "Week 3: Crystallographic Texture",
+    "terms": [
+      [
+        "Crystallographic texture",
+        "A non-random distribution of crystal orientations in a polycrystal"
+      ],
+      [
+        "Random texture",
+        "Every crystal orientation present in equal amounts; the polycrystal is isotropic"
+      ],
+      [
+        "Preferred orientation",
+        "A tendency for many grains to share nearly the same crystal orientation"
+      ],
+      [
+        "Anisotropy",
+        "Properties that depend on direction; single crystals are anisotropic"
+      ],
+      [
+        "Earing",
+        "Wavy rim on a deep-drawn cup caused by plastic anisotropy of a textured sheet"
+      ],
+      [
+        "Rolling direction (RD)",
+        "The direction the sheet is fed through the rolls; the long direction of the sheet"
+      ],
+      [
+        "Transverse direction (TD)",
+        "The in-plane direction across the width of a rolled sheet"
+      ],
+      [
+        "Normal direction (ND)",
+        "The direction perpendicular to the sheet surface, through its thickness"
+      ],
+      [
+        "Plane strain",
+        "Deformation with extension or compression in two directions and zero strain in the third; the strain state of rolling"
+      ],
+      [
+        "Uniaxial loading",
+        "Loading along one axis; the other two directions strain equally and oppositely, giving a fibre texture"
+      ],
+      [
+        "Fibre texture",
+        "A texture in which one crystal direction lines up with a sample direction while grains are free to rotate about it"
+      ],
+      [
+        "Thermomechanical processing",
+        "Shaping a material by combined deformation and heat treatment, for example hot rolling then annealing"
+      ],
+      [
+        "Cold work",
+        "Plastic deformation below the recrystallisation temperature; dislocations tangle and the metal hardens"
+      ],
+      [
+        "Dislocation",
+        "A line defect whose motion carries slip"
+      ],
+      [
+        "Slip",
+        "Shear of one part of a crystal over another on a slip plane along a slip direction; rotates the lattice gradually"
+      ],
+      [
+        "Slip system",
+        "A slip plane together with a slip direction lying in it"
+      ],
+      [
+        "Twinning",
+        "A shear that reorients a region of crystal into a mirror image of the parent, giving a sudden large rotation"
+      ],
+      [
+        "Tensile twin (85° <11-20>)",
+        "The main twin in Ti and Zr: an 85° rotation about <11-20> on {10-12} planes"
+      ],
+      [
+        "Basal plane",
+        "The {0001} plane of an hcp crystal, perpendicular to the c-axis"
+      ],
+      [
+        "Prismatic plane",
+        "A {10-10} plane of an hcp crystal, parallel to the c-axis"
+      ],
+      [
+        "Pyramidal plane",
+        "A {10-11} plane of an hcp crystal, inclined to the c-axis"
+      ],
+      [
+        "Pole",
+        "The normal to a crystal plane, drawn out to the surface of the reference sphere"
+      ],
+      [
+        "Pole figure",
+        "A stereographic projection showing where the normals of one plane family point relative to the sample axes"
+      ],
+      [
+        "Stereographic projection",
+        "A map of the upper hemisphere onto a disc by projecting from the opposite pole; a pole at angle θ lands at R tan(θ/2)"
+      ],
+      [
+        "Euler angles",
+        "Three successive rotations (φ1, Φ, φ2) that fix a crystal orientation relative to the sample axes"
+      ],
+      [
+        "Bunge convention",
+        "Euler rotations about ND, then the rotated RD, then the rotated ND"
+      ],
+      [
+        "Orientation space",
+        "The 3D space with axes φ1, Φ, φ2; each point is one crystal orientation"
+      ],
+      [
+        "Orientation distribution function (ODF)",
+        "f(g): the density of grains at each orientation g in orientation space"
+      ],
+      [
+        "Multiples of random",
+        "Units for ODF and pole figure intensity; 1 means the same density as a random texture"
+      ],
+      [
+        "Cube component",
+        "{001}<100> rolling texture component, Euler angles (0, 0, 0)"
+      ],
+      [
+        "Goss component",
+        "{110}<001> component, Euler angles (0, 45, 0); used in transformer steel"
+      ],
+      [
+        "Brass component",
+        "{110}<-112> component, Euler angles (35, 45, 0)"
+      ],
+      [
+        "Copper component",
+        "{112}<111> component, Euler angles about (90, 35, 45)"
+      ],
+      [
+        "α-fibre",
+        "bcc fibre with <110> parallel to RD"
+      ],
+      [
+        "γ-fibre",
+        "bcc fibre with <111> parallel to ND"
+      ],
+      [
+        "η-fibre",
+        "bcc fibre with <001> parallel to RD, running from Cube to Goss"
+      ],
+      [
+        "ε-fibre",
+        "bcc fibre with <110> parallel to TD"
+      ],
+      [
+        "Lamellar microstructure",
+        "A microstructure of thin parallel plates, as in β-quenched Zr or Ti"
+      ],
+      [
+        "Recrystallisation",
+        "Nucleation and growth of new strain-free grains in a deformed material"
+      ],
+      [
+        "Discontinuous recrystallisation",
+        "Recrystallisation by nucleation of new grains that then grow into the deformed matrix"
+      ],
+      [
+        "Bimodal grain structure",
+        "A grain size distribution with two populations, for example large and small grains together"
+      ],
+      [
+        "Hard orientation",
+        "A crystal orientation with a small Schmid factor, needing a high stress to yield; for hcp, load along c"
+      ],
+      [
+        "Soft orientation",
+        "A crystal orientation with a large Schmid factor that yields at low stress; for hcp, load perpendicular to c"
+      ],
+      [
+        "Schmid factor",
+        "cosφ cosλ, which converts applied stress to resolved shear stress on a slip system; at most 0.5"
+      ],
+      [
+        "Critical resolved shear stress (CRSS)",
+        "The resolved shear stress at which a slip system starts to operate"
+      ],
+      [
+        "EBSD",
+        "Electron backscatter diffraction: a scanning-electron-microscope technique that maps crystal orientation point by point"
+      ],
+      [
+        "IPF map",
+        "Inverse pole figure map: a colour map in which each pixel is coloured by its crystal orientation"
+      ],
+      [
+        "CPFEM",
+        "Crystal plasticity finite element modelling: simulates deformation grain by grain using slip and twinning laws"
+      ],
+      [
+        "Hydride",
+        "A brittle zirconium hydride phase that precipitates in Zr alloys with (0001) of Zr parallel to (111) of the hydride"
+      ]
+    ]
   }
 };

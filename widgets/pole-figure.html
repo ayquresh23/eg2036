@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Euler angles and pole figures</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+  .sim { grid-template-columns:1fr; }
+  .wrap { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:0; }
+  .pane { padding:14px 16px; background:var(--bg-elev); min-width:0; }
+  .pane + .pane { border-left:1px solid var(--border); }
+  .pane h2 { font-size:13px; font-weight:700; color:var(--text); margin-bottom:2px; }
+  .pane p.sub { font-size:11.5px; color:var(--text-2); margin-bottom:6px; line-height:1.5; }
+  svg { display:block; width:100%; height:auto; max-height:380px; background:#0e0e13; border-radius:8px; }
+  .ctl { padding:14px 16px; border-top:1px solid var(--border); background:var(--bg-elev); display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px 22px; align-items:start; }
+  .row { display:flex; flex-direction:column; gap:3px; }
+  .row label { font-size:11px; font-weight:700; letter-spacing:.8px; text-transform:uppercase; color:var(--muted); display:flex; justify-content:space-between; font-family:'IBM Plex Mono',ui-monospace,monospace; }
+  .row label b { color:var(--accent); font-weight:700; }
+  .row input[type=range] { width:100%; accent-color:var(--accent); cursor:pointer; }
+  .presets { display:flex; flex-wrap:wrap; gap:6px; }
+  .read { padding:12px 16px; border-top:1px solid var(--border); background:var(--surface); font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:12px; line-height:1.7; color:var(--text-2); }
+  .read strong { color:var(--text); }
+  .read .hl { color:var(--gold); }
+  .note { font-family:'Inter',system-ui,sans-serif; font-size:11.5px; color:var(--muted); margin-top:4px; }
+  .ax { fill:#9a9aa8; font-size:12px; font-family:'IBM Plex Mono',ui-monospace,monospace; font-weight:600; }
+  .axm { fill:#6a6a78; font-size:11px; font-family:'Inter',system-ui,sans-serif; }
+  @media (max-width:700px) { .wrap { grid-template-columns:1fr; } .pane + .pane { border-left:0; border-top:1px solid var(--border); } }
+</style>
+<script src="shared.js"></script>
+</head>
+<body>
+<div class="sim sim-root">
+  <div class="wrap">
+    <div class="pane">
+      <h2>Pole figure (stereographic projection)</h2>
+      <p class="sub">Upper hemisphere only. Sample axes: RD down, TD right, ND out of the page at the centre.</p>
+      <svg id="pf" viewBox="0 0 360 360" role="img" aria-label="Pole figure for the chosen crystal orientation"></svg>
+    </div>
+    <div class="pane">
+      <h2>The crystal in the sample frame</h2>
+      <p class="sub">A cubic crystal drawn in the sheet's axes. Red, green and blue are the crystal [100], [010] and [001] axes.</p>
+      <svg id="cube" viewBox="0 0 360 360" role="img" aria-label="Cubic crystal drawn in the sample axes"></svg>
+    </div>
+  </div>
+
+  <div class="ctl">
+    <div class="row"><label><span>&phi;<sub>1</sub> (about ND)</span><b id="v1">0&deg;</b></label><input type="range" id="p1" min="0" max="360" step="1" value="0" aria-label="Euler angle phi 1"></div>
+    <div class="row"><label><span>&Phi; (about rotated RD)</span><b id="vP">0&deg;</b></label><input type="range" id="pP" min="0" max="180" step="1" value="0" aria-label="Euler angle capital Phi"></div>
+    <div class="row"><label><span>&phi;<sub>2</sub> (about rotated ND)</span><b id="v2">0&deg;</b></label><input type="range" id="p2" min="0" max="360" step="1" value="0" aria-label="Euler angle phi 2"></div>
+    <div class="row">
+      <label>Plane family</label>
+      <div class="seg" role="group" aria-label="Plane family">
+        <button class="btn active" data-f="100">{100}</button>
+        <button class="btn" data-f="110">{110}</button>
+        <button class="btn" data-f="111">{111}</button>
+      </div>
+    </div>
+    <div class="row" style="grid-column:1/-1">
+      <label>Named rolling components</label>
+      <div class="presets" id="presets">
+        <button class="btn" data-a="0,0,0">Cube</button>
+        <button class="btn" data-a="0,45,0">Goss</button>
+        <button class="btn" data-a="35,45,0">Brass</button>
+        <button class="btn" data-a="90,35.26,45">Copper</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="read" id="read"></div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var NS = 'http://www.w3.org/2000/svg';
+  var D2R = Math.PI / 180;
+  var state = { p1: 0, P: 0, p2: 0, fam: '100' };
+
+  // Bunge convention: g takes sample-frame vectors to crystal-frame vectors.
+  // The columns of g are RD, TD and ND written in crystal coordinates.
+  function gMatrix(p1, P, p2) {
+    var c1 = Math.cos(p1 * D2R), s1 = Math.sin(p1 * D2R);
+    var c = Math.cos(P * D2R), s = Math.sin(P * D2R);
+    var c2 = Math.cos(p2 * D2R), s2 = Math.sin(p2 * D2R);
+    return [
+      [c1 * c2 - s1 * s2 * c,  s1 * c2 + c1 * s2 * c, s2 * s],
+      [-c1 * s2 - s1 * c2 * c, -s1 * s2 + c1 * c2 * c, c2 * s],
+      [s1 * s,                 -c1 * s,                c]
+    ];
+  }
+  // crystal vector h -> sample coordinates (RD, TD, ND)
+  function toSample(g, h) {
+    return [
+      h[0] * g[0][0] + h[1] * g[1][0] + h[2] * g[2][0],
+      h[0] * g[0][1] + h[1] * g[1][1] + h[2] * g[2][1],
+      h[0] * g[0][2] + h[1] * g[1][2] + h[2] * g[2][2]
+    ];
+  }
+
+  function family(f) {
+    var out = [], base = f === '100' ? [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
+      : f === '110' ? [[1, 1, 0], [1, -1, 0], [1, 0, 1], [1, 0, -1], [0, 1, 1], [0, 1, -1]]
+      : [[1, 1, 1], [1, 1, -1], [1, -1, 1], [-1, 1, 1]];
+    base.forEach(function (b) {
+      var n = Math.sqrt(b[0] * b[0] + b[1] * b[1] + b[2] * b[2]);
+      var u = [b[0] / n, b[1] / n, b[2] / n];
+      out.push(u); out.push([-u[0], -u[1], -u[2]]);
+    });
+    return out;
+  }
+
+  function el(name, attrs, parent) {
+    var e = document.createElementNS(NS, name);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  function txt(parent, x, y, s, cls, anchor) {
+    var t = el('text', { x: x, y: y, 'text-anchor': anchor || 'middle', 'class': cls || 'ax' }, parent);
+    t.textContent = s; return t;
+  }
+
+  // ---------- pole figure ----------
+  var pf = document.getElementById('pf');
+  var CX = 180, CY = 180, R = 150;
+  var COL = { '100': '#e63946', '110': '#2fa15c', '111': '#4a90e2' };
+  function drawPF(g) {
+    pf.innerHTML = '';
+    el('circle', { cx: CX, cy: CY, r: R, fill: '#101016', stroke: '#6a6a78', 'stroke-width': 1.5 }, pf);
+    el('line', { x1: CX - R, y1: CY, x2: CX + R, y2: CY, stroke: '#2c2c36', 'stroke-width': 1 }, pf);
+    el('line', { x1: CX, y1: CY - R, x2: CX, y2: CY + R, stroke: '#2c2c36', 'stroke-width': 1 }, pf);
+    txt(pf, CX + R + 13, CY + 4, 'TD', 'ax', 'start');
+    txt(pf, CX, CY + R + 17, 'RD', 'ax');
+    txt(pf, CX + 10, CY - 7, 'ND', 'axm', 'start');
+    var pts = family(state.fam), n = 0;
+    pts.forEach(function (h) {
+      var y = toSample(g, h);
+      if (y[2] < -1e-9) return;
+      var d = 1 + y[2];
+      var X = CX + R * y[1] / d, Y = CY - R * y[0] / d * -1;   // RD points down the page
+      el('circle', { cx: X.toFixed(2), cy: Y.toFixed(2), r: 7, fill: COL[state.fam], stroke: '#0c0c10', 'stroke-width': 1.2 }, pf);
+      n++;
+    });
+    state.count = n;
+  }
+
+  // ---------- cube view ----------
+  var cv = document.getElementById('cube');
+  // cabinet projection: ND up, TD right, RD toward the viewer (down-left)
+  function proj(y) { return [180 + 78 * (y[1] - 0.45 * y[0]), 190 - 78 * (y[2] - 0.35 * y[0])]; }
+  function drawCube(g) {
+    cv.innerHTML = '';
+    var defs = el('defs', {}, cv);
+    ['r', 'g', 'b', 'w'].forEach(function (k) {
+      var m = el('marker', { id: 'ah' + k, viewBox: '0 0 10 10', refX: 8.5, refY: 5, markerWidth: 6, markerHeight: 6, orient: 'auto-start-reverse' }, defs);
+      el('path', { d: 'M0,0 L10,5 L0,10 z', fill: { r: '#e63946', g: '#2fa15c', b: '#4a90e2', w: '#9a9aa8' }[k] }, m);
+    });
+    // sample axes
+    var o = proj([0, 0, 0]);
+    [['RD', [1.9, 0, 0]], ['TD', [0, 1.9, 0]], ['ND', [0, 0, 1.9]]].forEach(function (a) {
+      var p = proj(a[1]);
+      el('line', { x1: o[0], y1: o[1], x2: p[0], y2: p[1], stroke: '#9a9aa8', 'stroke-width': 1.4, 'stroke-dasharray': '5 4', 'marker-end': 'url(#ahw)' }, cv);
+      txt(cv, p[0] + (a[0] === 'RD' ? -14 : a[0] === 'TD' ? 14 : 0), p[1] + (a[0] === 'ND' ? -8 : a[0] === 'RD' ? 14 : 4), a[0], 'ax');
+    });
+    // cube edges
+    var V = [];
+    for (var i = 0; i < 8; i++) V.push([(i & 1) ? 1 : -1, (i & 2) ? 1 : -1, (i & 4) ? 1 : -1].map(function (v) { return v * 0.6; }));
+    var P = V.map(function (v) { return proj(toSample(g, v)); });
+    for (var a = 0; a < 8; a++) for (var b = a + 1; b < 8; b++) {
+      var diff = (a ^ b);
+      if (diff === 1 || diff === 2 || diff === 4) el('line', { x1: P[a][0], y1: P[a][1], x2: P[b][0], y2: P[b][1], stroke: '#c9c9d6', 'stroke-width': 1.6, opacity: 0.8 }, cv);
+    }
+    // crystal axes from cube centre
+    [['[100]', [1, 0, 0], 'r'], ['[010]', [0, 1, 0], 'g'], ['[001]', [0, 0, 1], 'b']].forEach(function (c) {
+      var p = proj(toSample(g, c[1].map(function (v) { return v * 1.05; })));
+      el('line', { x1: o[0], y1: o[1], x2: p[0], y2: p[1], stroke: { r: '#e63946', g: '#2fa15c', b: '#4a90e2' }[c[2]], 'stroke-width': 3, 'marker-end': 'url(#ah' + c[2] + ')' }, cv);
+      txt(cv, p[0] + (p[0] >= o[0] ? 8 : -8), p[1] + 4, c[0], 'axm', p[0] >= o[0] ? 'start' : 'end');
+    });
+  }
+
+  // ---------- readout ----------
+  function idx(v) {
+    var mx = Math.max(Math.abs(v[0]), Math.abs(v[1]), Math.abs(v[2]));
+    if (mx < 1e-9) return '?';
+    for (var m = 1; m <= 6; m++) {
+      var w = v.map(function (x) { return x / mx * m; });
+      if (w.every(function (x) { return Math.abs(x - Math.round(x)) < 0.03; })) {
+        return '[' + w.map(function (x) { var r = Math.round(x); return r === 0 ? '0' : String(r); }).join(' ') + ']';
+      }
+    }
+    return '[' + v.map(function (x) { return x.toFixed(2); }).join(' ') + ']';
+  }
+  function readout(g) {
+    var RD = [g[0][0], g[1][0], g[2][0]], ND = [g[0][2], g[1][2], g[2][2]];
+    document.getElementById('read').innerHTML =
+      '<strong>Orientation</strong> (&phi;<sub>1</sub>, &Phi;, &phi;<sub>2</sub>) = (' + state.p1 + '&deg;, ' + state.P + '&deg;, ' + state.p2 + '&deg;)<br>' +
+      'ND is parallel to <span class="hl">' + idx(ND) + '</span> and RD is parallel to <span class="hl">' + idx(RD) + '</span> (crystal axes, up to a sign)<br>' +
+      'Poles plotted for {' + state.fam + '}: <span class="hl">' + state.count + '</span> (the rim counts twice, once at each end of a diameter)' +
+      '<div class="note">Cubic symmetry means many Euler triples describe the same crystal, so the same pole pattern can appear for different angles. Goss is {110}&lt;001&gt;, and this tool shows it as ND&nbsp;||&nbsp;[011], RD&nbsp;||&nbsp;[100], which is the same orientation with the axes relabelled.</div>';
+  }
+
+  function update() {
+    var g = gMatrix(state.p1, state.P, state.p2);
+    drawPF(g); drawCube(g); readout(g);
+    document.getElementById('v1').textContent = state.p1 + '°';
+    document.getElementById('vP').textContent = state.P + '°';
+    document.getElementById('v2').textContent = state.p2 + '°';
+  }
+
+  function bindRange(id, key) {
+    var r = document.getElementById(id);
+    r.addEventListener('input', function () { state[key] = parseFloat(r.value); update(); });
+  }
+  bindRange('p1', 'p1'); bindRange('pP', 'P'); bindRange('p2', 'p2');
+
+  Array.prototype.forEach.call(document.querySelectorAll('[data-f]'), function (b) {
+    b.addEventListener('click', function () {
+      state.fam = b.dataset.f;
+      Array.prototype.forEach.call(document.querySelectorAll('[data-f]'), function (x) { x.classList.toggle('active', x === b); });
+      update();
+    });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-a]'), function (b) {
+    b.addEventListener('click', function () {
+      var a = b.dataset.a.split(',').map(parseFloat);
+      state.p1 = a[0]; state.P = Math.round(a[1] * 100) / 100; state.p2 = a[2];
+      document.getElementById('p1').value = state.p1;
+      document.getElementById('pP').value = state.P;
+      document.getElementById('p2').value = state.p2;
+      Array.prototype.forEach.call(document.querySelectorAll('[data-a]'), function (x) { x.classList.toggle('active', x === b); });
+      update();
+    });
+  });
+  ['p1', 'pP', 'p2'].forEach(function (id) {
+    document.getElementById(id).addEventListener('input', function () {
+      Array.prototype.forEach.call(document.querySelectorAll('[data-a]'), function (x) { x.classList.remove('active'); });
+    });
+  });
+  update();
+})();
+</script>
+</body>
+</html>

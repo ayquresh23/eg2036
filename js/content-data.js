@@ -4,23 +4,27 @@ window.SITE_CONFIG = {
   "slug": "eg2036",
   "topicIds": [
     "w1",
-    "w2"
+    "w2",
+    "w3"
   ],
   "navOrder": [
     "home",
     "w1",
     "w2",
+    "w3",
     "formulas",
     "glossary",
     "traps"
   ],
   "topicColors": {
     "w1": "#0ea5c6",
-    "w2": "#f4a261"
+    "w2": "#f4a261",
+    "w3": "#8855f5"
   },
   "topicLabels": {
     "w1": "Crystal Structures",
-    "w2": "Directions, Planes, Packing"
+    "w2": "Directions, Planes, Packing",
+    "w3": "Crystallographic Texture"
   }
 };
 
@@ -28,26 +32,26 @@ window.SITE_CONTENT = {
   "home": {
     "tag": "Order in Materials · Swansea University",
     "title": "EG2036 Study Site",
-    "subtitle": "How atoms arrange themselves in solids and why it matters: bonding, lattices, unit cells, crystal systems, directions and planes, close packing and packing factors, and later ionic structures and solid solutions. Built out week by week as lectures run, with interactive simulations for the ideas that are easier to see than to read.",
+    "subtitle": "How atoms arrange themselves in solids and why it matters: bonding, lattices, unit cells, crystal systems, directions and planes, close packing and packing factors, how crystal orientation (texture) builds up when metals are deformed, and later ionic structures and solid solutions. Built out week by week as lectures run, with interactive simulations for the ideas that are easier to see than to read.",
     "stats": [
       {
-        "value": "2",
+        "value": "3",
         "label": "Weeks built"
       },
       {
-        "value": "5",
+        "value": "6",
         "label": "Simulations"
       },
       {
-        "value": "67",
+        "value": "116",
         "label": "Terms"
       },
       {
-        "value": "17",
+        "value": "23",
         "label": "Formulas"
       },
       {
-        "value": "23",
+        "value": "35",
         "label": "Exam Traps"
       }
     ],
@@ -66,7 +70,7 @@ window.SITE_CONTENT = {
       },
       {
         "type": "raw",
-        "html": "<div class=\"card-grid\"><div class=\"topic-card\" onclick=\"showSection('formulas')\" style=\"--bar-color:#0ea5c6\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">📐 Formula Sheet</div><div class=\"topic-desc\">Every equation so far, with variables defined.</div></div><div class=\"topic-card\" onclick=\"showSection('glossary')\" style=\"--bar-color:#2fa15c\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">📚 Glossary</div><div class=\"topic-desc\">67 terms from Weeks 1 and 2. Search, filter, and flashcard mode.</div></div><div class=\"topic-card\" onclick=\"showSection('traps')\" style=\"--bar-color:#e04545\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">⚠️ MCQ Traps</div><div class=\"topic-desc\">Plausible-but-wrong claims the exam uses.</div></div></div>"
+        "html": "<div class=\"card-grid\"><div class=\"topic-card\" onclick=\"showSection('formulas')\" style=\"--bar-color:#0ea5c6\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">📐 Formula Sheet</div><div class=\"topic-desc\">Every equation so far, with variables defined.</div></div><div class=\"topic-card\" onclick=\"showSection('glossary')\" style=\"--bar-color:#2fa15c\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">📚 Glossary</div><div class=\"topic-desc\">116 terms from Weeks 1 to 3. Search, filter, and flashcard mode.</div></div><div class=\"topic-card\" onclick=\"showSection('traps')\" style=\"--bar-color:#e04545\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">⚠️ MCQ Traps</div><div class=\"topic-desc\">Plausible-but-wrong claims the exam uses.</div></div></div>"
       }
     ]
   },
@@ -1154,6 +1158,613 @@ window.SITE_CONTENT = {
       "color": "#f4a261"
     },
     {
+      "id": "w3",
+      "numLabel": "Week 3",
+      "title": "Crystallographic Texture",
+      "subtitle": "Why a polycrystal is rarely isotropic, how slip and twinning turn grains as metal is deformed, and how texture is drawn and described: pole figures, Euler angles, ODFs and fibres. Worked through with zirconium and titanium examples and an interactive pole-figure tool.",
+      "sections": [
+        {
+          "type": "toc",
+          "title": "This week",
+          "items": [
+            {
+              "href": "#w3-why",
+              "label": "Why texture matters"
+            },
+            {
+              "href": "#w3-zr",
+              "label": "Case study: zirconium in nuclear reactors"
+            },
+            {
+              "href": "#w3-mech",
+              "label": "Where texture comes from: slip, twinning and rotation"
+            },
+            {
+              "href": "#w3-axes",
+              "label": "Sample axes and strain: rolling vs uniaxial loading"
+            },
+            {
+              "href": "#w3-pf",
+              "label": "Pole figures"
+            },
+            {
+              "href": "#w3-euler",
+              "label": "Euler angles and orientation space"
+            },
+            {
+              "href": "#w3-odf",
+              "label": "ODFs and fibre textures in bcc metals"
+            },
+            {
+              "href": "#w3-sim",
+              "label": "Interactive: Euler angles to pole figure"
+            },
+            {
+              "href": "#w3-roll",
+              "label": "Texture development during rolling (Zr and Ti)"
+            },
+            {
+              "href": "#w3-load",
+              "label": "Texture development during loading (Ti alloys)"
+            },
+            {
+              "href": "#w3-hardsoft",
+              "label": "Hard and soft orientations"
+            }
+          ]
+        },
+        {
+          "type": "h2",
+          "id": "w3-why",
+          "text": "Why Study Texture?"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"analogy\"><span class=\"analogy-icon\">💡</span><div class=\"analogy-text\"><strong>A bag of rice versus a bundle of spaghetti.</strong> Pour out a bag of rice and the grains point every which way, so the pile behaves the same whichever direction you push it. Lay dry spaghetti in a bundle and every strand points the same way: it is far stiffer to stretch along the strands than across them. Same material, different arrangement. In a metal the strands are crystal grains and the thing that points is the crystal lattice. That arrangement is the <strong>texture</strong>.</div></div>"
+        },
+        {
+          "type": "p",
+          "text": "<strong>Crystals are anisotropic</strong>: stiffness, strength, magnetic and electrical response all change with direction. A polycrystal is a collection of crystals, so it is only isotropic if <em>all possible orientations are present in equal amounts</em>. Almost any processing biases the orientations, so almost any processed material has some texture.",
+          "class": ""
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 332\" role=\"img\" aria-label=\"Two polycrystals with the same grain structure, one with random orientations and one with a preferred orientation\" xmlns=\"http://www.w3.org/2000/svg\"><defs></defs><rect x=\"10\" y=\"38\" width=\"370\" height=\"264\" rx=\"8\" class=\"dg-frame\"/><text x=\"195\" y=\"24\" class=\"dg-tb\" text-anchor=\"middle\">Random texture</text><text x=\"195\" y=\"322\" class=\"dg-t\" text-anchor=\"middle\">every orientation equally likely</text><polygon points=\"73.2,61.5 73.2,90.6 48,105.1 22.8,90.6 22.8,61.5 48,46.9\" fill=\"hsla(251.6,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(48 76) rotate(21.5)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"125.2,61.5 125.2,90.6 100,105.1 74.8,90.6 74.8,61.5 100,46.9\" fill=\"hsla(397.3,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(100 76) rotate(82.2)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"177.1,61.5 177.1,90.6 151.9,105.1 126.7,90.6 126.7,61.5 151.9,46.9\" fill=\"hsla(332.3,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(151.9 76) rotate(55.1)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"229.1,61.5 229.1,90.6 203.9,105.1 178.7,90.6 178.7,61.5 203.9,46.9\" fill=\"hsla(400.2,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(203.9 76) rotate(83.4)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"281,61.5 281,90.6 255.8,105.1 230.6,90.6 230.6,61.5 255.8,46.9\" fill=\"hsla(210.7,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(255.8 76) rotate(4.4)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"333,61.5 333,90.6 307.8,105.1 282.6,90.6 282.6,61.5 307.8,46.9\" fill=\"hsla(384.8,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(307.8 76) rotate(77)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"99.2,106.5 99.2,135.6 74,150.1 48.8,135.6 48.8,106.5 74,91.9\" fill=\"hsla(278,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(74 121) rotate(32.5)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"151.1,106.5 151.1,135.6 125.9,150.1 100.7,135.6 100.7,106.5 125.9,91.9\" fill=\"hsla(211.5,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(125.9 121) rotate(4.8)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"203.1,106.5 203.1,135.6 177.9,150.1 152.7,135.6 152.7,106.5 177.9,91.9\" fill=\"hsla(214.9,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(177.9 121) rotate(6.2)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"255.1,106.5 255.1,135.6 229.9,150.1 204.7,135.6 204.7,106.5 229.9,91.9\" fill=\"hsla(412.5,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(229.9 121) rotate(88.6)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"307,106.5 307,135.6 281.8,150.1 256.6,135.6 256.6,106.5 281.8,91.9\" fill=\"hsla(410.1,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(281.8 121) rotate(87.6)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"359,106.5 359,135.6 333.8,150.1 308.6,135.6 308.6,106.5 333.8,91.9\" fill=\"hsla(314.8,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(333.8 121) rotate(47.8)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"73.2,151.5 73.2,180.6 48,195.1 22.8,180.6 22.8,151.5 48,136.9\" fill=\"hsla(297.6,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(48 166) rotate(40.7)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"125.2,151.5 125.2,180.6 100,195.1 74.8,180.6 74.8,151.5 100,136.9\" fill=\"hsla(318.3,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(100 166) rotate(49.3)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"177.1,151.5 177.1,180.6 151.9,195.1 126.7,180.6 126.7,151.5 151.9,136.9\" fill=\"hsla(330.7,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(151.9 166) rotate(54.5)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"229.1,151.5 229.1,180.6 203.9,195.1 178.7,180.6 178.7,151.5 203.9,136.9\" fill=\"hsla(367.9,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(203.9 166) rotate(70)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"281,151.5 281,180.6 255.8,195.1 230.6,180.6 230.6,151.5 255.8,136.9\" fill=\"hsla(368.4,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(255.8 166) rotate(70.2)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"333,151.5 333,180.6 307.8,195.1 282.6,180.6 282.6,151.5 307.8,136.9\" fill=\"hsla(290.3,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(307.8 166) rotate(37.6)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"99.2,196.5 99.2,225.6 74,240.1 48.8,225.6 48.8,196.5 74,181.9\" fill=\"hsla(302.4,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(74 211) rotate(42.7)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"151.1,196.5 151.1,225.6 125.9,240.1 100.7,225.6 100.7,196.5 125.9,181.9\" fill=\"hsla(384.1,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(125.9 211) rotate(76.7)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"203.1,196.5 203.1,225.6 177.9,240.1 152.7,225.6 152.7,196.5 177.9,181.9\" fill=\"hsla(278.3,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(177.9 211) rotate(32.6)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"255.1,196.5 255.1,225.6 229.9,240.1 204.7,225.6 204.7,196.5 229.9,181.9\" fill=\"hsla(304,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(229.9 211) rotate(43.3)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"307,196.5 307,225.6 281.8,240.1 256.6,225.6 256.6,196.5 281.8,181.9\" fill=\"hsla(219.9,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(281.8 211) rotate(8.3)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"359,196.5 359,225.6 333.8,240.1 308.6,225.6 308.6,196.5 333.8,181.9\" fill=\"hsla(361.8,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(333.8 211) rotate(67.4)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"73.2,241.5 73.2,270.6 48,285.1 22.8,270.6 22.8,241.5 48,226.9\" fill=\"hsla(380.2,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(48 256) rotate(75.1)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"125.2,241.5 125.2,270.6 100,285.1 74.8,270.6 74.8,241.5 100,226.9\" fill=\"hsla(277.4,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(100 256) rotate(32.2)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"177.1,241.5 177.1,270.6 151.9,285.1 126.7,270.6 126.7,241.5 151.9,226.9\" fill=\"hsla(238.6,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(151.9 256) rotate(16.1)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"229.1,241.5 229.1,270.6 203.9,285.1 178.7,270.6 178.7,241.5 203.9,226.9\" fill=\"hsla(412.1,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(203.9 256) rotate(88.4)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"281,241.5 281,270.6 255.8,285.1 230.6,270.6 230.6,241.5 255.8,226.9\" fill=\"hsla(226.4,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(255.8 256) rotate(11)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"333,241.5 333,270.6 307.8,285.1 282.6,270.6 282.6,241.5 307.8,226.9\" fill=\"hsla(298.2,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(307.8 256) rotate(40.9)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><rect x=\"400\" y=\"38\" width=\"370\" height=\"264\" rx=\"8\" class=\"dg-frame\"/><text x=\"585\" y=\"24\" class=\"dg-tb\" text-anchor=\"middle\">Textured</text><text x=\"585\" y=\"322\" class=\"dg-t\" text-anchor=\"middle\">most grains share nearly one orientation</text><polygon points=\"463.2,61.5 463.2,90.6 438,105.1 412.8,90.6 412.8,61.5 438,46.9\" fill=\"hsla(210.5,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(438 76) rotate(4.4)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"515.2,61.5 515.2,90.6 490,105.1 464.8,90.6 464.8,61.5 490,46.9\" fill=\"hsla(211.7,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(490 76) rotate(4.9)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"567.1,61.5 567.1,90.6 541.9,105.1 516.7,90.6 516.7,61.5 541.9,46.9\" fill=\"hsla(214.2,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(541.9 76) rotate(5.9)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"619.1,61.5 619.1,90.6 593.9,105.1 568.7,90.6 568.7,61.5 593.9,46.9\" fill=\"hsla(204.9,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(593.9 76) rotate(2.1)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"671,61.5 671,90.6 645.8,105.1 620.6,90.6 620.6,61.5 645.8,46.9\" fill=\"hsla(226.4,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(645.8 76) rotate(11)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"723,61.5 723,90.6 697.8,105.1 672.6,90.6 672.6,61.5 697.8,46.9\" fill=\"hsla(230.8,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(697.8 76) rotate(12.9)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"489.2,106.5 489.2,135.6 464,150.1 438.8,135.6 438.8,106.5 464,91.9\" fill=\"hsla(205.3,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(464 121) rotate(2.2)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"541.1,106.5 541.1,135.6 515.9,150.1 490.7,135.6 490.7,106.5 515.9,91.9\" fill=\"hsla(226.5,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(515.9 121) rotate(11)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"593.1,106.5 593.1,135.6 567.9,150.1 542.7,135.6 542.7,106.5 567.9,91.9\" fill=\"hsla(205.9,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(567.9 121) rotate(2.5)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"645.1,106.5 645.1,135.6 619.9,150.1 594.7,135.6 594.7,106.5 619.9,91.9\" fill=\"hsla(209.6,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(619.9 121) rotate(4)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"697,106.5 697,135.6 671.8,150.1 646.6,135.6 646.6,106.5 671.8,91.9\" fill=\"hsla(228.9,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(671.8 121) rotate(12)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"749,106.5 749,135.6 723.8,150.1 698.6,135.6 698.6,106.5 723.8,91.9\" fill=\"hsla(211.5,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(723.8 121) rotate(4.8)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"463.2,151.5 463.2,180.6 438,195.1 412.8,180.6 412.8,151.5 438,136.9\" fill=\"hsla(214.5,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(438 166) rotate(6)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"515.2,151.5 515.2,180.6 490,195.1 464.8,180.6 464.8,151.5 490,136.9\" fill=\"hsla(214.3,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(490 166) rotate(6)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"567.1,151.5 567.1,180.6 541.9,195.1 516.7,180.6 516.7,151.5 541.9,136.9\" fill=\"hsla(219.8,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(541.9 166) rotate(8.3)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"619.1,151.5 619.1,180.6 593.9,195.1 568.7,180.6 568.7,151.5 593.9,136.9\" fill=\"hsla(224,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(593.9 166) rotate(10)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"671,151.5 671,180.6 645.8,195.1 620.6,180.6 620.6,151.5 645.8,136.9\" fill=\"hsla(215.6,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(645.8 166) rotate(6.5)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"723,151.5 723,180.6 697.8,195.1 672.6,180.6 672.6,151.5 697.8,136.9\" fill=\"hsla(218.5,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(697.8 166) rotate(7.7)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"489.2,196.5 489.2,225.6 464,240.1 438.8,225.6 438.8,196.5 464,181.9\" fill=\"hsla(224.9,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(464 211) rotate(10.4)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"541.1,196.5 541.1,225.6 515.9,240.1 490.7,225.6 490.7,196.5 515.9,181.9\" fill=\"hsla(215.8,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(515.9 211) rotate(6.6)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"593.1,196.5 593.1,225.6 567.9,240.1 542.7,225.6 542.7,196.5 567.9,181.9\" fill=\"hsla(206.7,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(567.9 211) rotate(2.8)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"645.1,196.5 645.1,225.6 619.9,240.1 594.7,225.6 594.7,196.5 619.9,181.9\" fill=\"hsla(227,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(619.9 211) rotate(11.3)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"697,196.5 697,225.6 671.8,240.1 646.6,225.6 646.6,196.5 671.8,181.9\" fill=\"hsla(228.4,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(671.8 211) rotate(11.8)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"749,196.5 749,225.6 723.8,240.1 698.6,225.6 698.6,196.5 723.8,181.9\" fill=\"hsla(203.6,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(723.8 211) rotate(1.5)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"463.2,241.5 463.2,270.6 438,285.1 412.8,270.6 412.8,241.5 438,226.9\" fill=\"hsla(212.6,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(438 256) rotate(5.3)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"515.2,241.5 515.2,270.6 490,285.1 464.8,270.6 464.8,241.5 490,226.9\" fill=\"hsla(206.6,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(490 256) rotate(2.8)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"567.1,241.5 567.1,270.6 541.9,285.1 516.7,270.6 516.7,241.5 541.9,226.9\" fill=\"hsla(221.8,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(541.9 256) rotate(9.1)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"619.1,241.5 619.1,270.6 593.9,285.1 568.7,270.6 568.7,241.5 593.9,226.9\" fill=\"hsla(204.1,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(593.9 256) rotate(1.7)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"671,241.5 671,270.6 645.8,285.1 620.6,270.6 620.6,241.5 645.8,226.9\" fill=\"hsla(214.5,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(645.8 256) rotate(6.1)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g><polygon points=\"723,241.5 723,270.6 697.8,285.1 672.6,270.6 672.6,241.5 697.8,226.9\" fill=\"hsla(233.4,60%,48%,0.55)\" stroke=\"#e6e6ee\" stroke-width=\"1.2\"/><g transform=\"translate(697.8 256) rotate(13.9)\"><rect x=\"-11\" y=\"-11\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#f0f0f5\" stroke-width=\"1.6\"/><line x1=\"0\" y1=\"0\" x2=\"11\" y2=\"0\" stroke=\"#f4a261\" stroke-width=\"2.4\"/></g></svg><div class=\"diagram-caption\">Each hexagon is a grain. The square and orange tick show how its crystal axes are turned. Colour tracks that angle.</div></div>"
+        },
+        {
+          "type": "conceptbox",
+          "variant": "",
+          "title": "Definition",
+          "html": "<p><strong>Crystallographic texture</strong> is a non-random distribution of crystal orientations in a polycrystal. It says nothing about grain size or shape: a sample can have round, equal-sized grains and still be strongly textured.</p>"
+        },
+        {
+          "type": "h3",
+          "text": "Where it bites in practice"
+        },
+        {
+          "type": "cardgrid",
+          "cards": [
+            {
+              "title": "Drawn aluminium cup with ears",
+              "color": "#e63946",
+              "text": "A cup deep-drawn from rolled aluminium sheet comes out with a wavy rim, called <strong>earing</strong>, because the sheet's plastic anisotropy makes it flow more in some directions than others. The same problem shows up in drink-can manufacture."
+            },
+            {
+              "title": "Textures chosen on purpose",
+              "color": "#2fa15c",
+              "text": "Some materials are engineered to have one: <strong>single-crystal turbine blades</strong> (the extreme case), <strong>transformer steel</strong> and <strong>magnetic thin films</strong>. Control comes through control of processing, though many challenges remain."
+            },
+            {
+              "title": "Titanium stiffness",
+              "color": "#4a90e2",
+              "text": "Young's modulus of titanium changes by about <strong>40%</strong> depending on whether the load is parallel or perpendicular to the crystal's c-axis (the lecture plot runs from roughly 145 to 100 GPa). In a random polycrystal this averages out. In a textured one it does not."
+            }
+          ]
+        },
+        {
+          "type": "conceptbox",
+          "variant": "note",
+          "title": "Why the averaging argument matters",
+          "html": "<p>Random texture means every grain's stiffness or strength is cancelled by a grain pointing another way, so the sample looks isotropic. Texture breaks that cancellation. This is why a textured Ti plate can be stiffer along one direction of the plate than another even though it is a single material.</p>"
+        },
+        {
+          "type": "h3",
+          "text": "Open problems the lecture flags"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Annealing textures:</strong> where does the cube texture come from in annealed fcc metals, or the Goss texture in bcc metals?",
+            "<strong>Processing:</strong> how can large crystals of ceramics be produced by abnormal grain growth?",
+            "<strong>Plastic deformation:</strong> how do we explain the break-up of grains during deformation?",
+            "<strong>Simulation:</strong> how do we generate faithful 3D representations of a microstructure?",
+            "<strong>Constitutive relations:</strong> what are the properties of defects such as grain boundaries?"
+          ]
+        },
+        {
+          "type": "h2",
+          "id": "w3-zr",
+          "text": "Case Study: Zirconium in Nuclear Reactors"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"analogy\"><span class=\"analogy-icon\">💡</span><div class=\"analogy-text\"><strong>Why a reactor cares about grain orientation.</strong> Fuel is sealed in thin metal tubes for years, under stress, in water and radiation. If the tube wall has a preferred crystal orientation, anything that grows inside it (such as brittle hydride plates) grows in a preferred direction too. Texture decides where the weak plates lie relative to the load.</div></div>"
+        },
+        {
+          "type": "p",
+          "text": "<strong>Zr alloys</strong> are used for fuel cladding and other structural components in nuclear reactors because they give good corrosion resistance, sufficient mechanical properties and <em>low neutron absorption</em>. The lecture's research question is how their microstructure and texture evolve, so that three things can be controlled:",
+          "class": ""
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Texture</strong>, to control hydride precipitation. Hydrides form with a fixed orientation relationship, \\((0001)_{Zr}\\parallel(111)_{hydride}\\), so the matrix texture steers where they sit. The slide pairs a micrograph of a cracked hydride with a sketch of a hydride between two grains under stress.",
+            "<strong>Microstructure</strong>, in particular the nature of the grain boundaries.",
+            "<strong>Process optimisation and modelling</strong>, so that the processing route can be designed rather than guessed."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The slide also shows a <strong>bimodal grain structure</strong> (a mix of large and small grains) and asks why it forms. That question is picked up under rolling below.",
+          "class": ""
+        },
+        {
+          "type": "h2",
+          "id": "w3-mech",
+          "text": "Where Texture Comes From: Slip, Twinning and Rotation"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"analogy\"><span class=\"analogy-icon\">💡</span><div class=\"analogy-text\"><strong>Shearing a deck of cards.</strong> Push the top of a deck sideways and the cards slide over one another. Each card is unchanged, but the deck as a whole tilts and changes shape. Slip in a crystal is the same: planes of atoms glide over each other along a slip direction. The consequence is that the <strong>lattice rotates relative to the loading axes</strong> as strain builds up. Different grains start in different orientations, so they rotate by different amounts. Even inside one grain the rotation can vary.</div></div>"
+        },
+        {
+          "type": "p",
+          "text": "<strong>Cold work and dislocations.</strong> During cold working, dislocations tangle with one another, and dislocation motion becomes harder (this is work hardening). That is why each further slip step needs more stress, and why other mechanisms such as twinning can take over.",
+          "class": ""
+        },
+        {
+          "type": "cardgrid",
+          "cards": [
+            {
+              "title": "Slip",
+              "color": "#0ea5c6",
+              "text": "Shear on a <strong>slip plane</strong> along a <strong>slip direction</strong>. The lattice behind and ahead of the shear is unchanged, and the crystal rotates gradually as strain accumulates. The photograph on the slide is a zinc crystal stretched at 300 °C, with its steps showing slip."
+            },
+            {
+              "title": "Twinning",
+              "color": "#f4a261",
+              "text": "A shear that turns a region of the crystal into a <strong>mirror-image orientation</strong> of the parent. The change is sudden and large. In Ti and Zr the key twin is the <strong>85° \\(\\langle 11\\bar20\\rangle\\)</strong> tensile twin on \\(\\{10\\bar12\\}\\) planes."
+            }
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Slip systems"
+        },
+        {
+          "type": "p",
+          "text": "A <strong>slip system</strong> is a slip plane plus a slip direction in it. More systems means easier, more uniform deformation.",
+          "class": ""
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Structure</th><th>Slip plane</th><th>Slip direction</th><th>Example metals</th><th>Number of systems</th></tr></thead><tbody><tr><td>FCC</td><td>\\(\\{111\\}\\)</td><td>\\(\\langle 1\\bar10\\rangle\\)</td><td>Cu, Al, Ni, Ag, Au</td><td>12</td></tr><tr><td>BCC</td><td>\\(\\{110\\}\\)</td><td>\\(\\langle 111\\rangle\\)</td><td>α-Fe, W, Mo</td><td>12</td></tr><tr><td>BCC</td><td>\\(\\{211\\}\\)</td><td>\\(\\langle 111\\rangle\\)</td><td>α-Fe, W</td><td>12</td></tr><tr><td>BCC</td><td>\\(\\{321\\}\\)</td><td>\\(\\langle 111\\rangle\\)</td><td>α-Fe, K</td><td>24</td></tr><tr><td>HCP (basal)</td><td>\\(\\{0001\\}\\)</td><td>\\(\\langle 11\\bar20\\rangle\\)</td><td>Cd, Zn, Mg, Ti, Be</td><td>3</td></tr><tr><td>HCP (prismatic)</td><td>\\(\\{10\\bar10\\}\\)</td><td>\\(\\langle 11\\bar20\\rangle\\)</td><td>Ti, Mg, Zr</td><td>3</td></tr><tr><td>HCP (pyramidal)</td><td>\\(\\{10\\bar11\\}\\)</td><td>\\(\\langle 11\\bar20\\rangle\\)</td><td>Ti, Mg</td><td>6</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "conceptbox",
+          "variant": "note",
+          "title": "Why twinning matters so much in Ti and Zr (extra reasoning, not on the slides)",
+          "html": "<p>To change shape arbitrarily a crystal needs <strong>five independent slip systems</strong>. FCC has plenty. In hcp metals the \\(\\langle a\\rangle\\)-type slip in the table gives only <strong>four</strong> independent systems, and none of them can stretch or shrink the crystal along its <strong>c-axis</strong>. Something else has to accommodate that: harder \\(\\langle c+a\\rangle\\) slip, or twinning. That is why twinning shows up as a major texture mechanism in Ti and Zr below.</p>"
+        },
+        {
+          "type": "h2",
+          "id": "w3-axes",
+          "text": "Sample Axes and Strain: Rolling vs Uniaxial Loading"
+        },
+        {
+          "type": "p",
+          "text": "Texture is always measured <em>relative to the sample</em>, so you need sample axes. For a rolled sheet they are <strong>RD</strong> (rolling direction), <strong>TD</strong> (transverse direction) and <strong>ND</strong> (normal direction, through the thickness).",
+          "class": ""
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 270\" role=\"img\" aria-label=\"Rolling a sheet: rolling, transverse and normal directions with plane strain\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"rl-acc\" viewBox=\"0 0 10 10\" refX=\"8.5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" class=\"dg-ah-acc\"/></marker><marker id=\"rl-amb\" viewBox=\"0 0 10 10\" refX=\"8.5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" class=\"dg-ah-amb\"/></marker><marker id=\"rl-mut\" viewBox=\"0 0 10 10\" refX=\"8.5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" class=\"dg-ah-mut\"/></marker></defs><rect x=\"10\" y=\"10\" width=\"760\" height=\"250\" rx=\"8\" class=\"dg-frame\"/><polygon points=\"40,106 330,106 400,118 400,142 330,154 40,154\" fill=\"rgba(74,144,226,.35)\" stroke=\"#c9c9d6\" stroke-width=\"1.6\"/><polygon points=\"400,118 610,118 610,142 400,142\" fill=\"rgba(74,144,226,.35)\" stroke=\"#c9c9d6\" stroke-width=\"1.6\"/><circle cx=\"365\" cy=\"70\" r=\"46\" fill=\"#2a2a34\" stroke=\"#6a6a78\" stroke-width=\"2\"/><circle cx=\"365\" cy=\"190\" r=\"46\" fill=\"#2a2a34\" stroke=\"#6a6a78\" stroke-width=\"2\"/><path d=\"M345 70 a22 22 0 1 1 22 22\" fill=\"none\" stroke=\"#f4a261\" stroke-width=\"2.2\" marker-end=\"url(#rl-amb)\"/><path d=\"M385 190 a22 22 0 1 1 -22 -22\" fill=\"none\" stroke=\"#f4a261\" stroke-width=\"2.2\" marker-end=\"url(#rl-amb)\"/><text x=\"365\" y=\"24\" class=\"dg-t\" text-anchor=\"middle\">rollers</text><line x1=\"62\" y1=\"90\" x2=\"150\" y2=\"90\" class=\"dg-vec-acc\" marker-end=\"url(#rl-acc)\"/><text x=\"106\" y=\"82\" class=\"dg-t\" text-anchor=\"middle\">feed</text><line x1=\"640\" y1=\"130\" x2=\"730\" y2=\"130\" class=\"dg-vec-acc\" marker-end=\"url(#rl-acc)\"/><text x=\"735\" y=\"118\" class=\"dg-vl-acc\" text-anchor=\"end\">RD</text><line x1=\"676\" y1=\"200\" x2=\"676\" y2=\"150\" class=\"dg-vec-amb\" marker-end=\"url(#rl-amb)\"/><text x=\"690\" y=\"160\" class=\"dg-vl-amb\" text-anchor=\"start\">ND</text><circle cx=\"640\" cy=\"200\" r=\"9\" fill=\"none\" stroke=\"#e6e6ee\" stroke-width=\"1.8\"/><circle cx=\"640\" cy=\"200\" r=\"2.6\" fill=\"#e6e6ee\"/><text x=\"614\" y=\"204\" class=\"dg-vl-mut\" text-anchor=\"end\">TD</text><text x=\"640\" y=\"226\" class=\"dg-t\" text-anchor=\"middle\">out of the page</text><text x=\"28\" y=\"196\" class=\"dg-tb-acc\" text-anchor=\"start\">Longer: extension along RD (+&#916;)</text><text x=\"28\" y=\"218\" class=\"dg-tb-amb\" text-anchor=\"start\">Thinner: compression along ND (&#8722;&#916;)</text><text x=\"28\" y=\"240\" class=\"dg-tb\" text-anchor=\"start\">Same width: zero strain along TD</text></svg><div class=\"diagram-caption\">Plane strain: a sheet gets longer and thinner, but not wider.</div></div>"
+        },
+        {
+          "type": "formulablock",
+          "name": "Rolling: plane strain",
+          "eqs": [
+            "\\varepsilon_{\\text{rolling}}=\\begin{pmatrix}+\\Delta&0&0\\\\0&0&0\\\\0&0&-\\Delta\\end{pmatrix}"
+          ],
+          "vars": [
+            {
+              "symbol": "rows and columns",
+              "desc": "in the order RD, TD, ND"
+            },
+            {
+              "symbol": "+Δ",
+              "desc": "extension along RD"
+            },
+            {
+              "symbol": "−Δ",
+              "desc": "compression along ND"
+            },
+            {
+              "symbol": "0",
+              "desc": "no strain along TD"
+            }
+          ],
+          "note": "Rolling is <strong>plane-strain</strong> deformation: extension or compression in a pair of directions with zero strain in the third. The lecture calls this a <em>multiaxial</em> strain. The diagonal sums to zero, so volume is conserved."
+        },
+        {
+          "type": "formulablock",
+          "name": "Uniaxial loading",
+          "eqs": [
+            "d\\varepsilon_{\\text{tension}}=\\begin{pmatrix}+N&0&0\\\\0&-N/2&0\\\\0&0&-N/2\\end{pmatrix}\\qquad d\\varepsilon_{\\text{compression}}=\\begin{pmatrix}-N&0&0\\\\0&+N/2&0\\\\0&0&+N/2\\end{pmatrix}"
+          ],
+          "vars": [
+            {
+              "symbol": "N",
+              "desc": "strain along the loading axis"
+            },
+            {
+              "symbol": "∓N/2",
+              "desc": "the other two directions share the opposite strain equally"
+            }
+          ],
+          "note": "Again the diagonal sums to zero. The loading axis is an axis of infinite rotational symmetry (the lecture labels it C<sub>∞</sub>), so uniaxial loading produces a <strong>fibre texture</strong>: one crystal direction lines up with the loading axis, and the grains are free to rotate about it."
+        },
+        {
+          "type": "example",
+          "label": "Worked example: strain in compression",
+          "q": "A cylinder is compressed so that the strain along its axis is \\(-0.10\\). Assuming constant volume and an equal spread, what is the strain in each transverse direction?",
+          "steps": [
+            "Use the compression tensor with \\(N=0.10\\): axial \\(=-N=-0.10\\)",
+            "Transverse \\(=+N/2=+0.05\\) in each of the two directions",
+            "Check: \\(-0.10+0.05+0.05=0\\), so volume is conserved"
+          ],
+          "answer": "<strong>+0.05</strong> in each transverse direction (small-strain approximation)."
+        },
+        {
+          "type": "h2",
+          "id": "w3-pf",
+          "text": "Pole Figures"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"analogy\"><span class=\"analogy-icon\">💡</span><div class=\"analogy-text\"><strong>A flat map of a globe, or a shadow.</strong> A texture has to be drawn on paper, so the 3D world of directions is flattened the way a globe becomes a map. Imagine a lamp at the south pole of a glass globe: every point on the northern half casts a shadow onto the equatorial plane. That shadow map is the pole figure.</div></div>"
+        },
+        {
+          "type": "p",
+          "text": "<strong>How to read it.</strong> Put the crystal at the centre of a reference sphere. For each plane in a family \\(\\{hkl\\}\\), draw the plane's <strong>normal</strong>, called a <strong>pole</strong>, out to the sphere surface. Project it from the south pole onto the equatorial plane. The sample axes (RD, TD, ND) stay fixed while the crystal's poles move. So a <strong>pole figure shows the orientation of a given plane normal with respect to the sample axes</strong>.",
+          "class": ""
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 330\" role=\"img\" aria-label=\"Building a pole figure by stereographic projection of a plane normal\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"pc-acc\" viewBox=\"0 0 10 10\" refX=\"8.5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" class=\"dg-ah-acc\"/></marker><marker id=\"pc-amb\" viewBox=\"0 0 10 10\" refX=\"8.5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" class=\"dg-ah-amb\"/></marker><marker id=\"pc-mut\" viewBox=\"0 0 10 10\" refX=\"8.5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" class=\"dg-ah-mut\"/></marker></defs><rect x=\"10\" y=\"38\" width=\"380\" height=\"282\" rx=\"8\" class=\"dg-frame\"/><rect x=\"400\" y=\"38\" width=\"370\" height=\"282\" rx=\"8\" class=\"dg-frame\"/><text x=\"200\" y=\"24\" class=\"dg-tb\" text-anchor=\"middle\">Side view of the reference sphere</text><text x=\"585\" y=\"24\" class=\"dg-tb\" text-anchor=\"middle\">The pole figure (view from above)</text><circle cx=\"190\" cy=\"175\" r=\"125\" fill=\"none\" stroke=\"#6a6a78\" stroke-width=\"1.8\"/><line x1=\"51\" y1=\"175\" x2=\"329\" y2=\"175\" stroke=\"#8c8c9c\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\"/><text x=\"18\" y=\"193\" class=\"dg-t\" text-anchor=\"start\">equatorial plane</text><g transform=\"translate(190 175) rotate(-18)\"><rect x=\"-14\" y=\"-14\" width=\"28\" height=\"28\" fill=\"rgba(14,165,198,.25)\" stroke=\"#0ea5c6\" stroke-width=\"2\"/></g><line x1=\"190\" y1=\"167\" x2=\"190\" y2=\"36\" class=\"dg-route\" /><text x=\"182\" y=\"42\" class=\"dg-vl-mut\" text-anchor=\"end\">ND</text><line x1=\"190\" y1=\"175\" x2=\"285.8\" y2=\"94.7\" class=\"dg-vec-amb\" marker-end=\"url(#pc-amb)\"/><text x=\"293.8\" y=\"88.7\" class=\"dg-tb-amb\" text-anchor=\"start\">pole (plane normal)</text><circle cx=\"190\" cy=\"300\" r=\"5\" fill=\"#e6e6ee\"/><text x=\"200\" y=\"314\" class=\"dg-t\" text-anchor=\"start\">projection point (south pole)</text><line x1=\"190\" y1=\"300\" x2=\"248.3\" y2=\"175\" stroke=\"#e6e6ee\" stroke-width=\"1.4\" stroke-dasharray=\"6 4\"/><circle cx=\"248.3\" cy=\"175\" r=\"6\" class=\"dg-lp-acc\"/><text x=\"258.3\" y=\"163\" class=\"dg-tb-acc\" text-anchor=\"start\">projected pole</text><circle cx=\"285.8\" cy=\"94.7\" r=\"5.5\" fill=\"#f4a261\"/><text x=\"200\" y=\"123\" class=\"dg-vl-amb\" text-anchor=\"start\">&#952;</text><circle cx=\"585\" cy=\"175\" r=\"105\" fill=\"#101016\" stroke=\"#6a6a78\" stroke-width=\"1.8\"/><line x1=\"480\" y1=\"175\" x2=\"690\" y2=\"175\" stroke=\"#2c2c36\" stroke-width=\"1\"/><line x1=\"585\" y1=\"70\" x2=\"585\" y2=\"280\" stroke=\"#2c2c36\" stroke-width=\"1\"/><text x=\"696\" y=\"179\" class=\"dg-vl-mut\" text-anchor=\"start\">TD</text><text x=\"585\" y=\"298\" class=\"dg-vl-mut\" text-anchor=\"middle\">RD</text><text x=\"577\" y=\"167\" class=\"dg-t\" text-anchor=\"end\">ND</text><circle cx=\"634\" cy=\"175\" r=\"6\" class=\"dg-lp-acc\"/><text x=\"634\" y=\"159\" class=\"dg-tb-acc\" text-anchor=\"middle\">projected pole</text><line x1=\"585\" y1=\"215\" x2=\"634\" y2=\"215\" class=\"dg-route\"/><text x=\"609.5\" y=\"231\" class=\"dg-t\" text-anchor=\"middle\">r = R tan(&#952;/2)</text></svg><div class=\"diagram-caption\">A pole at angle &#952; from ND lands at a distance R tan(&#952;/2) from the centre. A pole along ND lands at the centre; one in the sheet plane lands on the rim.</div></div>"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Only poles in the <strong>upper hemisphere</strong> are plotted. A plane's normal can point either way, so the lower half adds nothing.",
+            "Poles on the rim appear at <strong>both ends of a diameter</strong>. The lecture says this is essentially half of each pole plotted on the positive side and half on the negative side.",
+            "A pole figure is labelled with a family: the slide's “(001) pole figure” should really be \\(\\{001\\}\\), because all <strong>symmetric equivalents</strong> are included. This is the plane family from Week 2: a plane and every plane equivalent to it by the crystal's symmetry.",
+            "<strong>Random texture:</strong> dots scattered everywhere. <strong>Preferred orientation:</strong> dots clustered in a few places."
+          ]
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 276\" role=\"img\" aria-label=\"Pole figures of a single cubic crystal aligned with the sheet, and of a hexagonal crystal\" xmlns=\"http://www.w3.org/2000/svg\"><defs></defs><circle cx=\"80\" cy=\"112\" r=\"66\" fill=\"#101016\" stroke=\"#6a6a78\" stroke-width=\"1.6\"/><line x1=\"14\" y1=\"112\" x2=\"146\" y2=\"112\" stroke=\"#2c2c36\"/><line x1=\"80\" y1=\"46\" x2=\"80\" y2=\"178\" stroke=\"#2c2c36\"/><text x=\"80\" y=\"38\" class=\"dg-tb\" text-anchor=\"middle\">{100}</text><text x=\"80\" y=\"202\" class=\"dg-t\" text-anchor=\"middle\">cube: 3 planes</text><circle cx=\"235\" cy=\"112\" r=\"66\" fill=\"#101016\" stroke=\"#6a6a78\" stroke-width=\"1.6\"/><line x1=\"169\" y1=\"112\" x2=\"301\" y2=\"112\" stroke=\"#2c2c36\"/><line x1=\"235\" y1=\"46\" x2=\"235\" y2=\"178\" stroke=\"#2c2c36\"/><text x=\"235\" y=\"38\" class=\"dg-tb\" text-anchor=\"middle\">{110}</text><text x=\"235\" y=\"202\" class=\"dg-t\" text-anchor=\"middle\">cube: 6 planes</text><circle cx=\"390\" cy=\"112\" r=\"66\" fill=\"#101016\" stroke=\"#6a6a78\" stroke-width=\"1.6\"/><line x1=\"324\" y1=\"112\" x2=\"456\" y2=\"112\" stroke=\"#2c2c36\"/><line x1=\"390\" y1=\"46\" x2=\"390\" y2=\"178\" stroke=\"#2c2c36\"/><text x=\"390\" y=\"38\" class=\"dg-tb\" text-anchor=\"middle\">{111}</text><text x=\"390\" y=\"202\" class=\"dg-t\" text-anchor=\"middle\">cube: 4 planes</text><circle cx=\"545\" cy=\"112\" r=\"66\" fill=\"#101016\" stroke=\"#6a6a78\" stroke-width=\"1.6\"/><line x1=\"479\" y1=\"112\" x2=\"611\" y2=\"112\" stroke=\"#2c2c36\"/><line x1=\"545\" y1=\"46\" x2=\"545\" y2=\"178\" stroke=\"#2c2c36\"/><text x=\"545\" y=\"38\" class=\"dg-tb\" text-anchor=\"middle\">(0001)</text><text x=\"545\" y=\"202\" class=\"dg-t\" text-anchor=\"middle\">hexagonal: basal</text><circle cx=\"700\" cy=\"112\" r=\"66\" fill=\"#101016\" stroke=\"#6a6a78\" stroke-width=\"1.6\"/><line x1=\"634\" y1=\"112\" x2=\"766\" y2=\"112\" stroke=\"#2c2c36\"/><line x1=\"700\" y1=\"46\" x2=\"700\" y2=\"178\" stroke=\"#2c2c36\"/><text x=\"700\" y=\"38\" class=\"dg-tb\" text-anchor=\"middle\">{10&#8722;10}</text><text x=\"700\" y=\"202\" class=\"dg-t\" text-anchor=\"middle\">hexagonal: prism</text><circle cx=\"80\" cy=\"112\" r=\"6\" fill=\"#e63946\" stroke=\"#0c0c10\" stroke-width=\"1.2\"/><circle cx=\"146\" cy=\"112\" r=\"6\" fill=\"#e63946\" stroke=\"#0c0c10\" stroke-width=\"1.2\"/><circle cx=\"80\" cy=\"178\" r=\"6\" fill=\"#e63946\" stroke=\"#0c0c10\" stroke-width=\"1.2\"/><circle cx=\"14\" cy=\"112\" r=\"6\" fill=\"#e63946\" stroke=\"#0c0c10\" stroke-width=\"1.2\"/><circle cx=\"80\" cy=\"46\" r=\"6\" fill=\"#e63946\" stroke=\"#0c0c10\" stroke-width=\"1.2\"/><circle cx=\"262.3\" cy=\"112\" r=\"6\" fill=\"#2fa15c\" stroke=\"#0c0c10\" stroke-width=\"1.2\"/><circle cx=\"235\" cy=\"139.3\" r=\"6\" fill=\"#2fa15c\" stroke=\"#0c0c10\" stroke-width=\"1.2\"/><circle cx=\"207.7\" cy=\"112\" r=\"6\" fill=\"#2fa15c\" stroke=\"#0c0c10\" stroke-width=\"1.2\"/><circle cx=\"235\" cy=\"84.7\" r=\"6\" fill=\"#2fa15c\" stroke=\"#0c0c10\" stroke-width=\"1.2\"/><circle cx=\"281.7\" cy=\"158.7\" r=\"6\" fill=\"#2fa15c\" stroke=\"#0c0c10\" stroke-width=\"1.2\"/><circle cx=\"188.3\" cy=\"158.7\" r=\"6\" fill=\"#2fa15c\" stroke=\"#0c0c10\" stroke-width=\"1.2\"/><circle cx=\"188.3\" cy=\"65.3\" r=\"6\" fill=\"#2fa15c\" stroke=\"#0c0c10\" stroke-width=\"1.2\"/><circle cx=\"281.7\" cy=\"65.3\" r=\"6\" fill=\"#2fa15c\" stroke=\"#0c0c10\" stroke-width=\"1.2\"/><circle cx=\"414.2\" cy=\"136.2\" r=\"6\" fill=\"#4a90e2\" stroke=\"#0c0c10\" stroke-width=\"1.2\"/><circle cx=\"365.8\" cy=\"136.2\" r=\"6\" fill=\"#4a90e2\" stroke=\"#0c0c10\" stroke-width=\"1.2\"/><circle cx=\"365.8\" cy=\"87.8\" r=\"6\" fill=\"#4a90e2\" stroke=\"#0c0c10\" stroke-width=\"1.2\"/><circle cx=\"414.2\" cy=\"87.8\" r=\"6\" fill=\"#4a90e2\" stroke=\"#0c0c10\" stroke-width=\"1.2\"/><circle cx=\"545\" cy=\"112\" r=\"6\" fill=\"#8855f5\" stroke=\"#0c0c10\" stroke-width=\"1.2\"/><circle cx=\"757.2\" cy=\"145\" r=\"6\" fill=\"#8855f5\" stroke=\"#0c0c10\" stroke-width=\"1.2\"/><circle cx=\"700\" cy=\"178\" r=\"6\" fill=\"#8855f5\" stroke=\"#0c0c10\" stroke-width=\"1.2\"/><circle cx=\"642.8\" cy=\"145\" r=\"6\" fill=\"#8855f5\" stroke=\"#0c0c10\" stroke-width=\"1.2\"/><circle cx=\"642.8\" cy=\"79\" r=\"6\" fill=\"#8855f5\" stroke=\"#0c0c10\" stroke-width=\"1.2\"/><circle cx=\"700\" cy=\"46\" r=\"6\" fill=\"#8855f5\" stroke=\"#0c0c10\" stroke-width=\"1.2\"/><circle cx=\"757.2\" cy=\"79\" r=\"6\" fill=\"#8855f5\" stroke=\"#0c0c10\" stroke-width=\"1.2\"/><text x=\"134\" y=\"103\" class=\"dg-vl-mut\" text-anchor=\"end\">TD</text><text x=\"92\" y=\"164\" class=\"dg-vl-mut\" text-anchor=\"start\">RD</text><text x=\"90\" y=\"104\" class=\"dg-t\" text-anchor=\"start\">ND</text><text x=\"390\" y=\"262\" class=\"dg-t\" text-anchor=\"middle\">Crystal axes lined up with the sheet axes (RD down, TD right, ND out of the page).</text></svg><div class=\"diagram-caption\">Dots on the rim come in opposite pairs, so the rim has two dots per plane. Counts: {100} gives 5 dots, {110} gives 8, {111} gives 4.</div></div>"
+        },
+        {
+          "type": "example",
+          "label": "Worked example: count the dots",
+          "q": "A cubic crystal sits with its cube axes along RD, TD and ND. How many dots does its \\(\\{110\\}\\) pole figure show?",
+          "steps": [
+            "\\(\\{110\\}\\) holds 6 distinct planes: \\((110),(1\\bar10),(101),(10\\bar1),(011),(01\\bar1)\\)",
+            "Four of them, \\((101),(10\\bar1),(011),(01\\bar1)\\), have normals 45° from ND, so they give 4 dots inside the circle (towards RD and TD)",
+            "\\((110)\\) and \\((1\\bar10)\\) lie in the sheet plane, so their normals are on the rim, each drawn at both ends of a diameter: 4 more dots"
+          ],
+          "answer": "<strong>8 dots</strong> for 6 planes (4 inside, 4 on the rim). The same method gives 5 for \\(\\{100\\}\\) and 4 for \\(\\{111\\}\\)."
+        },
+        {
+          "type": "conceptbox",
+          "variant": "note",
+          "title": "A pole figure is not the whole story",
+          "html": "<p>One pole figure shows where <em>one</em> crystal direction points: two angles. A full orientation needs three, because the crystal can still be spun about that direction. So several pole figures, or an orientation distribution function (below), are needed. This is the reason for the next two sections.</p>"
+        },
+        {
+          "type": "h2",
+          "id": "w3-euler",
+          "text": "Euler Angles and Orientation Space"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"analogy\"><span class=\"analogy-icon\">💡</span><div class=\"analogy-text\"><strong>Aircraft attitude.</strong> To say how an aircraft is oriented you give three turns: yaw, pitch and roll. Three angles, applied in a fixed order, pin the orientation down completely. Euler angles do the same job for a crystal: three rotations take the sample axes onto the crystal axes.</div></div>"
+        },
+        {
+          "type": "p",
+          "text": "<strong>Bunge Euler angles</strong> \\((\\varphi_1,\\Phi,\\varphi_2)\\) describe a crystal orientation with respect to the sample axes by a sequence of three rotations:",
+          "class": ""
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Rotation 1 (\\(\\varphi_1\\)):</strong> rotate the sample axes about <strong>ND</strong>",
+            "<strong>Rotation 2 (\\(\\Phi\\)):</strong> rotate about the <strong>rotated RD</strong>",
+            "<strong>Rotation 3 (\\(\\varphi_2\\)):</strong> rotate about the <strong>rotated ND</strong>"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Every possible orientation is one point in a 3D <strong>orientation space</strong> with axes \\(\\varphi_1,\\Phi,\\varphi_2\\). A texture is then a <em>cloud of points</em> in that space. Each named rolling texture component is a fixed point:",
+          "class": ""
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Component</th><th>Miller indices</th><th>Euler angles (φ₁, Φ, φ₂)</th></tr></thead><tbody><tr><td>Cube</td><td>\\(\\{001\\}\\langle100\\rangle\\)</td><td>(0°, 0°, 0°)</td></tr><tr><td>Goss</td><td>\\(\\{110\\}\\langle001\\rangle\\)</td><td>(0°, 45°, 0°)</td></tr><tr><td>Brass</td><td>\\(\\{110\\}\\langle\\bar112\\rangle\\)</td><td>(35°, 45°, 0°)</td></tr><tr><td>Copper</td><td>\\(\\{112\\}\\langle111\\rangle\\)</td><td>(90°, 35°, 45°)</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "p",
+          "text": "Convention: \\(\\{hkl\\}\\langle uvw\\rangle\\) means the plane \\(\\{hkl\\}\\) is parallel to the rolling plane (normal ND) and the direction \\(\\langle uvw\\rangle\\) is parallel to RD. Some lecture slides write the same thing as \\(\\langle uvw\\rangle\\{hkl\\}\\); it means the same orientation.",
+          "class": ""
+        },
+        {
+          "type": "conceptbox",
+          "variant": "note",
+          "title": "Check this one against your notes",
+          "html": "<p>The lecture slide lists Copper as <strong>(90°, 45°, 45°)</strong>. The exact value of \\(\\Phi\\) for \\(\\{112\\}\\langle111\\rangle\\) is <strong>35.26°</strong>, the angle between \\((001)\\) and \\((112)\\). With \\(\\Phi=45^\\circ\\) the plane normal is \\((1,1,\\sqrt2)\\), which is not a \\(\\{112\\}\\) plane. This site uses 35°. Confirm with your lecturer which value the exam expects.</p>"
+        },
+        {
+          "type": "h2",
+          "id": "w3-odf",
+          "text": "ODFs and Fibre Textures in bcc Metals"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"analogy\"><span class=\"analogy-icon\">💡</span><div class=\"analogy-text\"><strong>A topographic map.</strong> Instead of plotting every grain as a dot, count how many grains sit near each orientation and draw contour lines, like hills on a walking map. High ground is a strong texture component. The <strong>Orientation Distribution Function (ODF)</strong>, \\(f(g)\\), is that map for orientation space.</div></div>"
+        },
+        {
+          "type": "formulablock",
+          "name": "Orientation distribution function",
+          "eqs": [
+            "\\frac{\\Delta V}{V}=f(g)\\,dg \\qquad g=\\{\\varphi_1,\\Phi,\\varphi_2\\}"
+          ],
+          "vars": [
+            {
+              "symbol": "f(g)",
+              "desc": "density of grains having the orientation g"
+            },
+            {
+              "symbol": "ΔV/V",
+              "desc": "volume fraction of grains in a small region dg around g"
+            }
+          ],
+          "note": "A random texture has \\(f(g)=1\\) everywhere. Contour levels are quoted in <strong>multiples of random</strong> (the lecture's example runs 0.5, 1, 2, 4, 8, 16). ODFs are drawn as 3D plots or as a stack of 2D sections at constant \\(\\varphi_2\\) (5° steps on the slide). The ODF is calculated from several measured pole figures."
+        },
+        {
+          "type": "h3",
+          "text": "Fibre textures in bcc metals"
+        },
+        {
+          "type": "p",
+          "text": "A <strong>fibre</strong> is a line of orientations in Euler space that all share one crystal direction with one sample direction. In bcc rolled metals most of the action lies on a few fibres, which can be seen on the \\(\\varphi_2=45^\\circ\\) section.",
+          "class": ""
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Fibre</th><th>Fibre axis</th></tr></thead><tbody><tr><td>α-fibre</td><td>\\(\\langle110\\rangle\\parallel\\) RD</td></tr><tr><td>γ-fibre</td><td>\\(\\langle111\\rangle\\parallel\\) ND</td></tr><tr><td>η-fibre</td><td>\\(\\langle001\\rangle\\parallel\\) RD</td></tr><tr><td>ε-fibre</td><td>\\(\\langle110\\rangle\\parallel\\) TD</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 372\" role=\"img\" aria-label=\"The phi2 equals 45 degree section of Euler space showing the alpha, gamma and epsilon fibres of bcc metals\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"fb-mut\" viewBox=\"0 0 10 10\" refX=\"8.5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" class=\"dg-ah-mut\"/></marker></defs><rect x=\"130\" y=\"54\" width=\"360\" height=\"240\" fill=\"#101016\" stroke=\"#6a6a78\" stroke-width=\"1.6\"/><line x1=\"190\" y1=\"54\" x2=\"190\" y2=\"294\" stroke=\"#22222a\"/><line x1=\"130\" y1=\"94\" x2=\"490\" y2=\"94\" stroke=\"#22222a\"/><line x1=\"250\" y1=\"54\" x2=\"250\" y2=\"294\" stroke=\"#22222a\"/><line x1=\"130\" y1=\"134\" x2=\"490\" y2=\"134\" stroke=\"#22222a\"/><line x1=\"310\" y1=\"54\" x2=\"310\" y2=\"294\" stroke=\"#22222a\"/><line x1=\"130\" y1=\"174\" x2=\"490\" y2=\"174\" stroke=\"#22222a\"/><line x1=\"370\" y1=\"54\" x2=\"370\" y2=\"294\" stroke=\"#22222a\"/><line x1=\"130\" y1=\"214\" x2=\"490\" y2=\"214\" stroke=\"#22222a\"/><line x1=\"430\" y1=\"54\" x2=\"430\" y2=\"294\" stroke=\"#22222a\"/><line x1=\"130\" y1=\"254\" x2=\"490\" y2=\"254\" stroke=\"#22222a\"/><text x=\"310\" y=\"34\" class=\"dg-tb\" text-anchor=\"middle\">&#966;&#8321; (0 to 90&#176;)</text><text x=\"116\" y=\"174\" class=\"dg-tb\" text-anchor=\"end\">&#934;</text><text x=\"116\" y=\"60\" class=\"dg-t\" text-anchor=\"end\">0&#176;</text><text x=\"116\" y=\"298\" class=\"dg-t\" text-anchor=\"end\">90&#176;</text><text x=\"130\" y=\"48\" class=\"dg-t\" text-anchor=\"middle\">0&#176;</text><text x=\"490\" y=\"48\" class=\"dg-t\" text-anchor=\"middle\">90&#176;</text><line x1=\"130\" y1=\"54\" x2=\"130\" y2=\"294\" stroke=\"#e63946\" stroke-width=\"5\"/><line x1=\"130\" y1=\"200\" x2=\"490\" y2=\"200\" stroke=\"#f4a261\" stroke-width=\"5\"/><line x1=\"490\" y1=\"54\" x2=\"490\" y2=\"294\" stroke=\"#8855f5\" stroke-width=\"5\"/><circle cx=\"130\" cy=\"54\" r=\"6.5\" fill=\"#f0f0f5\" stroke=\"#0c0c10\" stroke-width=\"1.4\"/><circle cx=\"130\" cy=\"294\" r=\"6.5\" fill=\"#f0f0f5\" stroke=\"#0c0c10\" stroke-width=\"1.4\"/><circle cx=\"490\" cy=\"54\" r=\"6.5\" fill=\"#f0f0f5\" stroke=\"#0c0c10\" stroke-width=\"1.4\"/><circle cx=\"490\" cy=\"294\" r=\"6.5\" fill=\"#4a90e2\" stroke=\"#0c0c10\" stroke-width=\"1.4\"/><text x=\"506\" y=\"292\" class=\"dg-tb-blue\" text-anchor=\"start\">Goss</text><text x=\"506\" y=\"309\" class=\"dg-t\" text-anchor=\"start\">(110)[001]</text><text x=\"506\" y=\"62\" class=\"dg-t\" text-anchor=\"start\">(001)[&#8722;1&#8722;10]</text><text x=\"138\" y=\"48\" class=\"dg-t\"></text><line x1=\"560\" y1=\"96\" x2=\"594\" y2=\"96\" stroke=\"#e63946\" stroke-width=\"5\"/><text x=\"604\" y=\"94\" class=\"dg-tb-red\" text-anchor=\"start\">&#945;-fibre</text><text x=\"604\" y=\"112\" class=\"dg-t\" text-anchor=\"start\">&lt;110&gt; || RD</text><line x1=\"560\" y1=\"150\" x2=\"594\" y2=\"150\" stroke=\"#f4a261\" stroke-width=\"5\"/><text x=\"604\" y=\"148\" class=\"dg-tb-amb\" text-anchor=\"start\">&#947;-fibre</text><text x=\"604\" y=\"166\" class=\"dg-t\" text-anchor=\"start\">&lt;111&gt; || ND</text><line x1=\"560\" y1=\"204\" x2=\"594\" y2=\"204\" stroke=\"#8855f5\" stroke-width=\"5\"/><text x=\"604\" y=\"202\" class=\"dg-tb\" text-anchor=\"start\">&#949;-fibre</text><text x=\"604\" y=\"220\" class=\"dg-t\" text-anchor=\"start\">&lt;110&gt; || TD</text><text x=\"130\" y=\"338\" class=\"dg-t\" text-anchor=\"start\">The fibres sit on this section of Euler space.</text><text x=\"130\" y=\"358\" class=\"dg-t\" text-anchor=\"start\">The &#951;-fibre (&lt;001&gt; || RD) lies in a different section.</text><text x=\"136\" y=\"70\" class=\"dg-t\" text-anchor=\"start\">(001)[1&#8722;10]</text><text x=\"136\" y=\"286\" class=\"dg-t\" text-anchor=\"start\">(110)[1&#8722;10]</text></svg><div class=\"diagram-caption\">Bunge Euler angles, &#966;&#8322; = 45&#176; section. A fibre is a line of orientations that share one crystal direction with one sample direction.</div></div>"
+        },
+        {
+          "type": "p",
+          "text": "Goss appears at \\((110)[001]\\) in the bottom right corner of this section. In the table above it is \\((0^\\circ,45^\\circ,0^\\circ)\\): the same orientation, a different Euler triple, because cubic symmetry gives each orientation several equivalent descriptions. The η-fibre runs from Cube to Goss and does not lie on this section.",
+          "class": ""
+        },
+        {
+          "type": "h2",
+          "id": "w3-sim",
+          "text": "Interactive: Euler Angles to Pole Figure"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"sim-embed\"><span class=\"sim-tag\">Interactive · Week 3</span><iframe data-src=\"widgets/pole-figure.html\" data-sim=\"pole-figure.html\" title=\"Euler angles and pole figures\" style=\"height:760px\"></iframe><div class=\"sim-credit\">Built for this site to illustrate the lecture material (not one of the lecturer's animations).</div></div><div class=\"sim-guide\"><div><h5>What you are looking at</h5><p>Three sliders set the Bunge Euler angles. The left plot is the pole figure of the chosen plane family. The right plot shows the same cubic crystal sitting in the sheet, with its axes in red, green and blue. The text underneath names the orientation.</p></div><div class=\"sg-try\"><h5>Try this</h5><ul><li>Press <strong>Cube</strong> with {100} selected: you get the pattern from the diagram above.</li><li>Press <strong>Goss</strong>, then <strong>Brass</strong>, then <strong>Copper</strong> and watch the {111} poles move.</li><li>Drag only φ<sub>1</sub>: the whole pole pattern spins about the centre, because φ<sub>1</sub> is a turn about ND.</li><li>Drag only Φ: the crystal tips about RD and the poles slide up and down the page.</li></ul></div><div><h5>Why it matters</h5><p>An exam question may give you Euler angles and ask for the ideal orientation, or give a pole figure and ask what it shows. Seeing the three angles act one at a time makes both much easier.</p></div></div>"
+        },
+        {
+          "type": "h2",
+          "id": "w3-roll",
+          "text": "Texture Development During Rolling (Zr and Ti)"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"analogy\"><span class=\"analogy-icon\">💡</span><div class=\"analogy-text\"><strong>Rolling out pastry, but with a grain.</strong> Roll dough and it spreads and thins. Now imagine the dough is full of tiny stiff plates. As it thins, each plate is shoved and turned, and the ones that twist into easy positions keep going while the awkward ones snap or flip. What is left is a population of plates pointing mostly one way. Rolling a metal sheet works like this at the scale of crystals.</div></div>"
+        },
+        {
+          "type": "h3",
+          "text": "Example 1: hot rolling of Zr"
+        },
+        {
+          "type": "p",
+          "text": "The starting material is <strong>β-quenched</strong>, which gives a lamellar microstructure and a near-random texture. The lecture follows it through 10, 20, 40 and 60% reduction, watching the \\(\\{0002\\}\\) (basal) pole figure.",
+          "class": ""
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Reduction</th><th>Microstructure</th><th>What the {0002} pole figure is doing (slide wording)</th></tr></thead><tbody><tr><td>β-quenched</td><td>Lamellar microstructure</td><td>Random texture</td></tr><tr><td>10%</td><td>Lamellae break up and distort</td><td>c-axes moving from RD towards the normal? 85° twin?</td></tr><tr><td>20%</td><td>Recrystallisation, early or delayed</td><td>c-axes moving from TD towards the normal? Slip or twin?</td></tr><tr><td>40% and 60%</td><td>Bimodal grain structure; selective grain growth?</td><td>Typical cold-rolling texture</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "p",
+          "text": "The question marks are the lecturer's own: the point of the example is to work out which mechanism does what. His <strong>main findings</strong>, from experiments plus CPFEM (crystal plasticity finite element) modelling:",
+          "class": ""
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Twinning plays a major role</strong> in the early stages.",
+            "<strong>Recrystallisation determines the final texture.</strong>"
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Detail: 10% and 20% reduction"
+        },
+        {
+          "type": "cardgrid",
+          "cards": [
+            {
+              "title": "10% rolling",
+              "color": "#8855f5",
+              "text": "<strong>Lamellae break up by 85° \\(\\langle11\\bar20\\rangle\\) tensile twinning.</strong> The three twin variants are called modes i, ii and iii. Mode i is strongly active; modes ii and iii are poorly active at 10%. Discontinuous recrystallisation (boundaries of 22 to 35° about \\(\\langle0001\\rangle\\)) is less common in the TD component."
+            },
+            {
+              "title": "20% rolling",
+              "color": "#0ea5c6",
+              "text": "Grains are visibly strained. There is <strong>selective generation of 22 to 35° \\(\\langle0001\\rangle\\)</strong> boundaries, <strong>less twin activity and more slip activity</strong>, and new orientations appear (violet and yellow on the slide's colour map, along an ND to RD line)."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": "<strong>Discontinuous recrystallisation</strong> means new strain-free grains nucleate and then grow into the deformed matrix. It is the process the lecturer says sets the final texture.",
+          "class": ""
+        },
+        {
+          "type": "h3",
+          "text": "Example 2: cold rolling of α-Ti"
+        },
+        {
+          "type": "p",
+          "text": "Same story in titanium. The \\(\\{0002\\}\\) pole figures run from β-quenched through 10, 20, 40, 60 and 80% reduction. Early on, <strong>twinning</strong> operates, through three twin modes of rotation 85°, 65° and 35°. After that the slide marks the rest of the range as <strong>slip-dominant deformation</strong>. As reduction increases the basal poles gather towards the sheet normal and spread along TD, which is the <em>typical cold-rolling texture</em> for hcp titanium.",
+          "class": ""
+        },
+        {
+          "type": "conceptbox",
+          "variant": "note",
+          "title": "The big picture for rolling",
+          "html": "<p>Early deformation: twinning reorients regions by large angles, and slip rotates them gradually. Later deformation: slip dominates, and the texture sharpens. If the sheet is then annealed, <strong>recrystallisation</strong> picks new grains and sets the final texture. This is why the Zr and Ti examples are both used to make the same point: texture is the outcome of competing micro-mechanisms.</p>"
+        },
+        {
+          "type": "h2",
+          "id": "w3-load",
+          "text": "Texture Development During Loading (Ti Alloys)"
+        },
+        {
+          "type": "p",
+          "text": "Texture does not only appear during manufacture. A part that is <strong>loaded in service</strong> can change texture too, and uniaxial loading (tensors above) is the simplest case.",
+          "class": ""
+        },
+        {
+          "type": "h3",
+          "text": "Deformation twinning in α+β Ti alloys"
+        },
+        {
+          "type": "p",
+          "text": "The slide shows a Ti-6Al-4V cylinder compressed to 4%, 6% and 14% strain, with \\((0002)\\) pole figures at each stage and the 85° \\(\\langle11\\bar20\\rangle\\) twin as the mechanism. The texture changes substantially even at moderate strain.",
+          "class": ""
+        },
+        {
+          "type": "h3",
+          "text": "Example: twin evolution in α-Ti under compression"
+        },
+        {
+          "type": "p",
+          "text": "The variables that control twinning are <strong>grain size, temperature, plastic strain, strain rate and loading direction</strong>. The lecture follows the role of plastic strain at a strain rate of \\(10^{-3}\\ \\text{s}^{-1}\\) (pole figures at 4%, 9% and 15%). Major findings:",
+          "class": ""
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Twinning is a dominant deformation mode in α-Ti</strong> and is responsible for drastic texture change at moderate strain.",
+            "<strong>High plastic strain increases the twin fraction</strong>, so the texture changes sharply."
+          ]
+        },
+        {
+          "type": "h2",
+          "id": "w3-hardsoft",
+          "text": "Hard and Soft Orientations"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"analogy\"><span class=\"analogy-icon\">💡</span><div class=\"analogy-text\"><strong>Pushing a pencil.</strong> Squeeze a hexagonal pencil end to end and it resists strongly. Squeeze it across the flats and it yields far sooner. Same pencil, different loading direction. For a crystal the “end” is the c-axis.</div></div>"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 376\" role=\"img\" aria-label=\"A hexagonal crystal loaded along its c-axis (hard) and across it (soft)\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"hs-red\" viewBox=\"0 0 10 10\" refX=\"8.5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#e63946\"/></marker><marker id=\"hs-blue\" viewBox=\"0 0 10 10\" refX=\"8.5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#4a90e2\"/></marker></defs><rect x=\"10\" y=\"10\" width=\"370\" height=\"356\" rx=\"8\" class=\"dg-frame\"/><text x=\"195\" y=\"32\" class=\"dg-tb\" text-anchor=\"middle\">A: load parallel to c</text><line x1=\"247\" y1=\"112\" x2=\"247\" y2=\"182\" stroke=\"#6a6a78\" stroke-width=\"1.3\" stroke-dasharray=\"0\"/><line x1=\"221\" y1=\"127.6\" x2=\"221\" y2=\"197.6\" stroke=\"#6a6a78\" stroke-width=\"1.3\" stroke-dasharray=\"0\"/><line x1=\"169\" y1=\"127.6\" x2=\"169\" y2=\"197.6\" stroke=\"#6a6a78\" stroke-width=\"1.3\" stroke-dasharray=\"0\"/><line x1=\"143\" y1=\"112\" x2=\"143\" y2=\"182\" stroke=\"#6a6a78\" stroke-width=\"1.3\" stroke-dasharray=\"3 3\"/><line x1=\"169\" y1=\"96.4\" x2=\"169\" y2=\"166.4\" stroke=\"#6a6a78\" stroke-width=\"1.3\" stroke-dasharray=\"3 3\"/><line x1=\"221\" y1=\"96.4\" x2=\"221\" y2=\"166.4\" stroke=\"#6a6a78\" stroke-width=\"1.3\" stroke-dasharray=\"3 3\"/><polygon points=\"247,182 221,197.6 169,197.6 143,182 169,166.4 221,166.4\" fill=\"rgba(14,165,198,.10)\" stroke=\"#c9c9d6\" stroke-width=\"1.6\"/><polygon points=\"247,112 221,127.6 169,127.6 143,112 169,96.4 221,96.4\" fill=\"rgba(14,165,198,.22)\" stroke=\"#c9c9d6\" stroke-width=\"1.6\"/><line x1=\"195\" y1=\"182\" x2=\"195\" y2=\"108\" stroke=\"#4a90e2\" stroke-width=\"2.6\" marker-end=\"url(#hs-blue)\"/><text x=\"207\" y=\"142\" class=\"dg-vl-acc\" text-anchor=\"start\">c</text><rect x=\"125\" y=\"80\" width=\"140\" height=\"8\" rx=\"2\" fill=\"#3a3a46\" stroke=\"#8c8c9c\"/><rect x=\"125\" y=\"206\" width=\"140\" height=\"8\" rx=\"2\" fill=\"#3a3a46\" stroke=\"#8c8c9c\"/><line x1=\"155\" y1=\"46\" x2=\"155\" y2=\"76\" stroke=\"#e63946\" stroke-width=\"4\" marker-end=\"url(#hs-red)\"/><line x1=\"155\" y1=\"258\" x2=\"155\" y2=\"218\" stroke=\"#e63946\" stroke-width=\"4\" marker-end=\"url(#hs-red)\"/><line x1=\"235\" y1=\"46\" x2=\"235\" y2=\"76\" stroke=\"#e63946\" stroke-width=\"4\" marker-end=\"url(#hs-red)\"/><line x1=\"235\" y1=\"258\" x2=\"235\" y2=\"218\" stroke=\"#e63946\" stroke-width=\"4\" marker-end=\"url(#hs-red)\"/><text x=\"195\" y=\"290\" class=\"dg-tb-red\" text-anchor=\"middle\">HARD ORIENTATION</text><text x=\"195\" y=\"312\" class=\"dg-t\" text-anchor=\"middle\">Basal slip: zero shear on the slip plane</text><text x=\"195\" y=\"332\" class=\"dg-t\" text-anchor=\"middle\">Prismatic slip: zero shear in the slip direction</text><text x=\"195\" y=\"352\" class=\"dg-t\" text-anchor=\"middle\">Only &lt;c+a&gt; slip is left, and it needs a high stress</text><rect x=\"400\" y=\"10\" width=\"370\" height=\"356\" rx=\"8\" class=\"dg-frame\"/><text x=\"585\" y=\"32\" class=\"dg-tb\" text-anchor=\"middle\">B: load perpendicular to c</text><line x1=\"637\" y1=\"112\" x2=\"637\" y2=\"182\" stroke=\"#6a6a78\" stroke-width=\"1.3\" stroke-dasharray=\"0\"/><line x1=\"611\" y1=\"127.6\" x2=\"611\" y2=\"197.6\" stroke=\"#6a6a78\" stroke-width=\"1.3\" stroke-dasharray=\"0\"/><line x1=\"559\" y1=\"127.6\" x2=\"559\" y2=\"197.6\" stroke=\"#6a6a78\" stroke-width=\"1.3\" stroke-dasharray=\"0\"/><line x1=\"533\" y1=\"112\" x2=\"533\" y2=\"182\" stroke=\"#6a6a78\" stroke-width=\"1.3\" stroke-dasharray=\"3 3\"/><line x1=\"559\" y1=\"96.4\" x2=\"559\" y2=\"166.4\" stroke=\"#6a6a78\" stroke-width=\"1.3\" stroke-dasharray=\"3 3\"/><line x1=\"611\" y1=\"96.4\" x2=\"611\" y2=\"166.4\" stroke=\"#6a6a78\" stroke-width=\"1.3\" stroke-dasharray=\"3 3\"/><polygon points=\"637,182 611,197.6 559,197.6 533,182 559,166.4 611,166.4\" fill=\"rgba(14,165,198,.10)\" stroke=\"#c9c9d6\" stroke-width=\"1.6\"/><polygon points=\"637,112 611,127.6 559,127.6 533,112 559,96.4 611,96.4\" fill=\"rgba(14,165,198,.22)\" stroke=\"#c9c9d6\" stroke-width=\"1.6\"/><line x1=\"585\" y1=\"182\" x2=\"585\" y2=\"108\" stroke=\"#4a90e2\" stroke-width=\"2.6\" marker-end=\"url(#hs-blue)\"/><text x=\"597\" y=\"142\" class=\"dg-vl-acc\" text-anchor=\"start\">c</text><rect x=\"513\" y=\"90\" width=\"8\" height=\"114\" rx=\"2\" fill=\"#3a3a46\" stroke=\"#8c8c9c\"/><rect x=\"649\" y=\"90\" width=\"8\" height=\"114\" rx=\"2\" fill=\"#3a3a46\" stroke=\"#8c8c9c\"/><line x1=\"425\" y1=\"108\" x2=\"509\" y2=\"108\" stroke=\"#e63946\" stroke-width=\"4\" marker-end=\"url(#hs-red)\"/><line x1=\"745\" y1=\"108\" x2=\"661\" y2=\"108\" stroke=\"#e63946\" stroke-width=\"4\" marker-end=\"url(#hs-red)\"/><line x1=\"425\" y1=\"186\" x2=\"509\" y2=\"186\" stroke=\"#e63946\" stroke-width=\"4\" marker-end=\"url(#hs-red)\"/><line x1=\"745\" y1=\"186\" x2=\"661\" y2=\"186\" stroke=\"#e63946\" stroke-width=\"4\" marker-end=\"url(#hs-red)\"/><text x=\"585\" y=\"290\" class=\"dg-tb-acc\" text-anchor=\"middle\">SOFT ORIENTATION</text><text x=\"585\" y=\"312\" class=\"dg-t\" text-anchor=\"middle\">Basal slip: well placed to shear</text><text x=\"585\" y=\"332\" class=\"dg-t\" text-anchor=\"middle\">Prismatic slip: well placed to shear</text><text x=\"585\" y=\"352\" class=\"dg-t\" text-anchor=\"middle\">Yields at a low stress</text></svg><div class=\"diagram-caption\">Red arrows push flat plates onto the crystal (a compressive load). The blue arrow is the hexagonal c-axis. Same crystal, very different response.</div></div>"
+        },
+        {
+          "type": "p",
+          "text": "The lecture compares two loading directions on the same hcp crystal. <strong>A:</strong> load along the c-axis, a <strong>hard orientation</strong>. <strong>B:</strong> load perpendicular to c, a <strong>soft orientation</strong>. The easy slip modes of hcp metals, basal \\(\\langle11\\bar20\\rangle\\{0001\\}\\) and prismatic \\(\\langle11\\bar20\\rangle\\{10\\bar10\\}\\), are well placed in B and not in A.",
+          "class": ""
+        },
+        {
+          "type": "formulablock",
+          "name": "Schmid factor (extra, the reasoning behind hard and soft)",
+          "eqs": [
+            "\\tau = \\sigma\\cos\\phi\\cos\\lambda"
+          ],
+          "vars": [
+            {
+              "symbol": "τ",
+              "desc": "resolved shear stress on the slip system"
+            },
+            {
+              "symbol": "σ",
+              "desc": "applied uniaxial stress"
+            },
+            {
+              "symbol": "φ",
+              "desc": "angle between the load axis and the slip-plane normal"
+            },
+            {
+              "symbol": "λ",
+              "desc": "angle between the load axis and the slip direction"
+            },
+            {
+              "symbol": "cosφ cosλ",
+              "desc": "the Schmid factor, at most 0.5"
+            }
+          ],
+          "note": "Slip starts when \\(\\tau\\) reaches the <strong>critical resolved shear stress</strong> of the system. A small Schmid factor means a high applied stress is needed: a <em>hard</em> orientation."
+        },
+        {
+          "type": "example",
+          "label": "Worked example: hard or soft?",
+          "q": "An hcp crystal is loaded along its c-axis. Find the Schmid factor for basal \\(\\langle11\\bar20\\rangle\\{0001\\}\\) slip. Then repeat for a load at 45° to both the slip-plane normal and the slip direction, with \\(\\sigma=20\\) MPa.",
+          "steps": [
+            "Load along c: the slip-plane normal (c) is along the load, so \\(\\phi=0^\\circ\\) and \\(\\cos\\phi=1\\). The slip direction \\(\\langle11\\bar20\\rangle\\) lies in the basal plane, perpendicular to c, so \\(\\lambda=90^\\circ\\) and \\(\\cos\\lambda=0\\)",
+            "Schmid factor \\(=1\\times0=0\\), so \\(\\tau=0\\): basal slip cannot start, which is the hard orientation",
+            "At 45° to both: \\(\\cos45^\\circ\\cos45^\\circ=0.5\\), so \\(\\tau=0.5\\times20=10\\) MPa"
+          ],
+          "answer": "Along c: <strong>0</strong> (hard). At 45° and 45°: <strong>10 MPa</strong>, the largest the Schmid factor can be."
+        },
+        {
+          "type": "conceptbox",
+          "variant": "note",
+          "title": "Two links back to earlier ideas",
+          "html": "<p><strong>Stiffness:</strong> the same hard direction (along c) is also the stiff one in titanium, which is the 40% modulus difference at the top of this page. <strong>Twinning:</strong> when a grain is in a hard orientation for slip, twinning can supply the shape change instead. Check the slide's label for the “A” slip icon against your notes: it shows an \\(\\langle a\\rangle\\)-type direction, which has zero shear under a c-axis load, so the mode that actually matters there is \\(\\langle c+a\\rangle\\) slip or twinning.</p>"
+        }
+      ],
+      "essentialsTitle": "Texture essentials",
+      "essentialsHeading": "Week 3 in one screen",
+      "essentials": [
+        "A polycrystal is isotropic only if all orientations are equally present. <strong>Texture</strong> is a non-random orientation distribution, and almost all processing creates one.",
+        "<strong>Rolling</strong> is plane strain: \\(\\varepsilon=\\mathrm{diag}(+\\Delta,0,-\\Delta)\\) in (RD, TD, ND). <strong>Uniaxial</strong> loading gives \\(\\mathrm{diag}(\\pm N,\\mp N/2,\\mp N/2)\\) and a fibre texture.",
+        "Texture develops by <strong>slip</strong> (gradual lattice rotation) and <strong>twinning</strong> (sudden mirror reorientation), then <strong>recrystallisation</strong> can reset it.",
+        "FCC: 12 slip systems. BCC: 12, 12, 24. HCP: basal 3, prismatic 3, pyramidal 6, with no way to strain along c, so <strong>twinning matters</strong> in Ti and Zr.",
+        "A <strong>pole figure</strong> is the stereographic projection of one plane family's normals (upper hemisphere) in the sample axes RD, TD, ND. Rim poles are drawn at both ends of a diameter.",
+        "<strong>Bunge Euler angles:</strong> \\(\\varphi_1\\) about ND, \\(\\Phi\\) about the rotated RD, \\(\\varphi_2\\) about the rotated ND. Cube (0,0,0), Goss (0,45,0), Brass (35,45,0), Copper (90,35,45).",
+        "The <strong>ODF</strong> \\(f(g)\\) is the density of grains at orientation \\(g\\); random is 1. bcc fibres: α \\(\\langle110\\rangle\\parallel\\)RD, γ \\(\\langle111\\rangle\\parallel\\)ND, η \\(\\langle001\\rangle\\parallel\\)RD, ε \\(\\langle110\\rangle\\parallel\\)TD.",
+        "In rolled Zr and Ti, <strong>twinning</strong> drives early texture change (85° \\(\\langle11\\bar20\\rangle\\) tensile twin) and <strong>recrystallisation sets the final texture</strong>. Load along c is <strong>hard</strong>; load across c is <strong>soft</strong>."
+      ],
+      "desc": "Texture and anisotropy, slip and twinning, rolling and uniaxial strain, pole figures, Euler angles, ODFs, bcc fibres, Zr and Ti case studies, and hard and soft orientations.",
+      "difficulty": "Medium",
+      "readTime": "40 min",
+      "color": "#8855f5"
+    },
+    {
       "soon": true,
       "numLabel": "Order · to come",
       "title": "Ionic Structures and Pauling's Rules",
@@ -1351,6 +1962,85 @@ window.SITE_CONTENT = {
           "note": "Octahedral about 0.414 r, tetrahedral about 0.225 r."
         }
       ]
+    },
+    {
+      "heading": "W3: Crystallographic Texture",
+      "blocks": [
+        {
+          "type": "formulablock",
+          "name": "Rolling (plane strain)",
+          "eqs": [
+            "\\varepsilon=\\begin{pmatrix}+\\Delta&0&0\\\\0&0&0\\\\0&0&-\\Delta\\end{pmatrix}"
+          ],
+          "note": "Axes in the order RD, TD, ND. Trace is zero, so volume is conserved."
+        },
+        {
+          "type": "formulablock",
+          "name": "Uniaxial tension and compression",
+          "eqs": [
+            "d\\varepsilon_{T}=\\mathrm{diag}\\left(+N,-\\tfrac{N}{2},-\\tfrac{N}{2}\\right)\\qquad d\\varepsilon_{C}=\\mathrm{diag}\\left(-N,+\\tfrac{N}{2},+\\tfrac{N}{2}\\right)"
+          ],
+          "note": "Loading axis first. Gives a fibre texture."
+        },
+        {
+          "type": "formulablock",
+          "name": "Schmid factor",
+          "eqs": [
+            "\\tau=\\sigma\\cos\\phi\\cos\\lambda"
+          ],
+          "vars": [
+            {
+              "symbol": "φ",
+              "desc": "load axis to slip-plane normal"
+            },
+            {
+              "symbol": "λ",
+              "desc": "load axis to slip direction"
+            }
+          ],
+          "note": "Maximum value of cosφ cosλ is 0.5."
+        },
+        {
+          "type": "formulablock",
+          "name": "Stereographic projection",
+          "eqs": [
+            "r=R\\tan\\frac{\\theta}{2}"
+          ],
+          "vars": [
+            {
+              "symbol": "θ",
+              "desc": "angle from ND to the pole"
+            },
+            {
+              "symbol": "R",
+              "desc": "radius of the pole figure circle"
+            }
+          ],
+          "note": "ND maps to the centre (θ = 0). A pole in the sheet plane (θ = 90°) maps to the rim."
+        },
+        {
+          "type": "formulablock",
+          "name": "Bunge Euler angles",
+          "eqs": [
+            "g=\\{\\varphi_1,\\Phi,\\varphi_2\\}"
+          ],
+          "note": "&phi;<sub>1</sub> about ND, then &Phi; about the rotated RD, then &phi;<sub>2</sub> about the rotated ND. Components: Cube (0,0,0), Goss (0,45,0), Brass (35,45,0), Copper (90,35.26,45)."
+        },
+        {
+          "type": "formulablock",
+          "name": "Orientation distribution function",
+          "eqs": [
+            "\\frac{\\Delta V}{V}=f(g)\\,dg"
+          ],
+          "vars": [
+            {
+              "symbol": "f(g)",
+              "desc": "density of grains at orientation g (1 for random)"
+            }
+          ],
+          "note": "Contours in multiples of random."
+        }
+      ]
     }
   ],
   "formulaSheetSubtitle": "Every equation covered so far. Variables defined. Grows as more weeks are added.",
@@ -1477,6 +2167,71 @@ window.SITE_CONTENT = {
           "tag": "W2 · T12",
           "claim": "\"The &lt;111&gt; family has 4 members in a cubic crystal.\"",
           "truth": "<strong>FALSE.</strong> It has 8, because each of the 4 body diagonals can be traversed in two directions."
+        }
+      ]
+    },
+    {
+      "heading": "Week 3: Crystallographic Texture",
+      "items": [
+        {
+          "tag": "W3 · T1",
+          "claim": "\"A polycrystal is always isotropic because it contains so many grains.\"",
+          "truth": "<strong>FALSE.</strong> It is isotropic only if all possible orientations are present in equal amounts. A textured polycrystal is anisotropic even though it has many grains."
+        },
+        {
+          "tag": "W3 · T2",
+          "claim": "\"Texture means the grains are elongated or flattened.\"",
+          "truth": "<strong>FALSE.</strong> Crystallographic texture is about the distribution of crystal <em>orientations</em>. Grain shape and size are separate things, and equiaxed grains can be strongly textured."
+        },
+        {
+          "tag": "W3 · T3",
+          "claim": "\"Rolling is uniaxial deformation.\"",
+          "truth": "<strong>FALSE.</strong> Rolling is plane strain: extension along RD, compression along ND and <em>zero</em> strain along TD. Uniaxial loading has a loading axis with equal opposite strain in the other two directions."
+        },
+        {
+          "tag": "W3 · T4",
+          "claim": "\"In uniaxial compression the strain is negative in all three directions.\"",
+          "truth": "<strong>FALSE.</strong> It is negative along the axis and <em>positive</em> (+N/2) in the two transverse directions. The three strains sum to zero because volume is conserved."
+        },
+        {
+          "tag": "W3 · T5",
+          "claim": "\"A pole figure fully specifies a crystal orientation.\"",
+          "truth": "<strong>FALSE.</strong> A single pole figure gives where one crystal direction points (two angles). The crystal can still spin about that direction. You need several pole figures or an ODF."
+        },
+        {
+          "tag": "W3 · T6",
+          "claim": "\"A (001) pole figure shows only the (001) poles.\"",
+          "truth": "<strong>FALSE.</strong> It should be written \\(\\{001\\}\\): it includes all symmetrically equivalent planes. For a cubic crystal that is 3 planes and 5 dots (centre plus four on the rim)."
+        },
+        {
+          "tag": "W3 · T7",
+          "claim": "\"Pole figures plot both hemispheres of the sphere.\"",
+          "truth": "<strong>FALSE.</strong> Only the upper (positive) hemisphere is plotted. Poles on the rim appear at both ends of a diameter."
+        },
+        {
+          "tag": "W3 · T8",
+          "claim": "\"HCP metals deform easily by slip alone, so twinning is irrelevant.\"",
+          "truth": "<strong>FALSE.</strong> HCP slip gives only 3 + 3 + 6 systems of \\(\\langle a\\rangle\\) type and none strains the crystal along c. Twinning (85° \\(\\langle11\\bar20\\rangle\\) in Ti and Zr) is a dominant mode and drives drastic texture change."
+        },
+        {
+          "tag": "W3 · T9",
+          "claim": "\"Loading along the c-axis is a soft orientation for hcp slip.\"",
+          "truth": "<strong>FALSE.</strong> It is the <em>hard</em> orientation: basal and prismatic slip have a Schmid factor of zero. Loading perpendicular to c (B) is the soft orientation."
+        },
+        {
+          "tag": "W3 · T10",
+          "claim": "\"Recrystallisation has little effect on the final texture of rolled Zr.\"",
+          "truth": "<strong>FALSE.</strong> One of the two main findings of the Zr work is that recrystallisation determines the final texture. The other is that twinning plays a major role early on."
+        },
+        {
+          "tag": "W3 · T11",
+          "claim": "\"The γ-fibre is \\(\\langle110\\rangle\\parallel\\) RD.\"",
+          "truth": "<strong>FALSE.</strong> That is the α-fibre. γ is \\(\\langle111\\rangle\\parallel\\) ND, η is \\(\\langle001\\rangle\\parallel\\) RD and ε is \\(\\langle110\\rangle\\parallel\\) TD."
+        },
+        {
+          "tag": "W3 · T12",
+          "claim": "\"Copper is (90°, 45°, 45°) in Euler space.\"",
+          "truth": "<strong>Careful.</strong> The lecture slide gives this, but the geometry of \\(\\{112\\}\\langle111\\rangle\\) requires \\(\\Phi=35.26^\\circ\\). Learn Copper as about (90°, 35°, 45°) and check what the exam paper uses."
         }
       ]
     }
