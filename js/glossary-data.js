@@ -114,7 +114,7 @@ const glossaryData = {
       ],
       [
         "Unit cell",
-        "The smallest component that reproduces the whole crystal by pure translation; chosen with short, near-perpendicular sides that show the full symmetry"
+        "A block that reproduces the whole crystal by pure translation; conventionally the smallest one that still shows the full symmetry, with short, near-perpendicular sides (the primitive cell is the smallest of all)"
       ],
       [
         "Primitive cell",
@@ -130,7 +130,7 @@ const glossaryData = {
       ],
       [
         "Crystal system",
-        "One of 7 cell shapes in 3D, grouped by symmetry (the cell edges and angles)"
+        "One of the 7 groups of 3D lattices, defined by the minimum rotational symmetry the lattice has (not by how the cell looks); the symmetry then constrains the cell edges and angles"
       ],
       [
         "Primitive (P) lattice",
@@ -556,7 +556,7 @@ const glossaryData = {
       ],
       [
         "α and β phases (Ti, Zr)",
-        "α is the low-temperature hcp phase; β is the high-temperature bcc phase (about 865 C for Zr, 882 C for Ti)"
+        "α is the low-temperature hcp phase; β is the high-temperature bcc phase (transforming at about 865 °C for Zr and 882 °C for Ti)"
       ],
       [
         "Ti-6Al-4V",
