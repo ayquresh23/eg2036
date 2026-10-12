@@ -16,13 +16,14 @@ Study site for EG2036 (Order in Materials) at Swansea University.
   - close packing in 2D and 3D (HCP, CCP/FCC, BCC), octahedral and tetrahedral voids
   - atomic packing factor derivations for simple cubic, BCC, FCC and HCP, worked examples and practice questions
 - Week 3: Crystallographic Texture
-  - why texture matters, the Zr fuel cladding case study, slip systems and twinning
+  - why texture matters, a notation guide (brackets, bars, hexagonal four-index symbols), the Zr fuel cladding case study with hydrides explained, slip systems and twinning
   - sample axes (RD, TD, ND), plane strain in rolling vs uniaxial strain
   - pole figures, Bunge Euler angles, orientation distribution functions, bcc fibres
-  - texture development in rolled Zr and Ti and in loaded Ti alloys, hard and soft orientations
-- 18 inline SVG diagrams (generated in the site's dark theme)
-- 6 interactive simulations in `widgets/` (5 3D / plotted, 1 pole-figure tool)
-- 116 glossary terms with flashcard mode, formula sheet (23 blocks), 35 MCQ trap cards
+  - how textures are measured (XRD and EBSD), texture development in rolled Zr and Ti and in loaded Ti alloys, hard and soft orientations
+  - 12 practice questions with worked answers
+- 22 inline SVG diagrams (generated in the site's dark theme)
+- 6 interactive simulations in `widgets/` (5 3D / plotted, 1 pole-figure tool with cubic and hexagonal modes)
+- 150 glossary terms with flashcard mode, formula sheet (26 blocks), 41 MCQ trap cards
 - Later Order topics (ionic structures, solid solutions) and the disorder topics will be added as they are taught
 
 ## Structure

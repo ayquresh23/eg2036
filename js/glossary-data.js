@@ -284,7 +284,7 @@ const glossaryData = {
     "terms": [
       [
         "Crystallographic texture",
-        "A non-random distribution of crystal orientations in a polycrystal"
+        "A non-random distribution of crystal orientations in a polycrystal; says nothing about grain shape"
       ],
       [
         "Random texture",
@@ -296,7 +296,15 @@ const glossaryData = {
       ],
       [
         "Anisotropy",
-        "Properties that depend on direction; single crystals are anisotropic"
+        "Properties that depend on direction; single crystals are anisotropic (copper: 67 GPa along [100], 191 GPa along [111])"
+      ],
+      [
+        "Polycrystal",
+        "A solid made of many small single crystals (grains), each with its own lattice orientation"
+      ],
+      [
+        "Grain",
+        "One single-crystal region in a polycrystal, separated from its neighbours by grain boundaries"
       ],
       [
         "Earing",
@@ -315,6 +323,14 @@ const glossaryData = {
         "The direction perpendicular to the sheet surface, through its thickness"
       ],
       [
+        "Thickness reduction",
+        "Percentage by which rolling makes a sheet thinner: (t0 - t) / t0. Not the same as true strain"
+      ],
+      [
+        "True strain",
+        "ln(t/t0) for thickness; negative along ND in rolling. 20% reduction is -0.223"
+      ],
+      [
         "Plane strain",
         "Deformation with extension or compression in two directions and zero strain in the third; the strain state of rolling"
       ],
@@ -323,8 +339,64 @@ const glossaryData = {
         "Loading along one axis; the other two directions strain equally and oppositely, giving a fibre texture"
       ],
       [
+        "Strain rate",
+        "How fast strain accumulates; 10^-3 /s means 0.1% per second"
+      ],
+      [
         "Fibre texture",
         "A texture in which one crystal direction lines up with a sample direction while grains are free to rotate about it"
+      ],
+      [
+        "(hkl)",
+        "Round brackets: one specific plane"
+      ],
+      [
+        "{hkl}",
+        "Curly brackets: a family of symmetry-equivalent planes"
+      ],
+      [
+        "[uvw]",
+        "Square brackets: one specific direction"
+      ],
+      [
+        "<uvw>",
+        "Angle brackets: a family of symmetry-equivalent directions"
+      ],
+      [
+        "Bar over an index",
+        "A negative index, so (1-10) is the plane with indices 1, -1, 0"
+      ],
+      [
+        "Parallel (||)",
+        "\"Is parallel to\"; <111> || ND means the <111> direction points along the sheet normal"
+      ],
+      [
+        "{hkl}<uvw> notation",
+        "An orientation: plane {hkl} lies in the sheet (normal along ND) and direction <uvw> points along RD"
+      ],
+      [
+        "Miller-Bravais indices",
+        "Four-index notation (hkil) for hexagonal planes, with i = -(h+k); directions [uvtw] with t = -(u+v)"
+      ],
+      [
+        "c-axis",
+        "The vertical axis of a hexagonal crystal, perpendicular to the basal plane"
+      ],
+      [
+        "a-axes",
+        "The three equivalent in-plane axes of a hexagonal crystal, 120 degrees apart, with a1 + a2 + a3 = 0"
+      ],
+      [
+        "<a> direction",
+        "A direction along an a-axis, such as <11-20>; the main slip direction in hcp metals"
+      ],
+      [
+        "<c+a> direction",
+        "A direction with both c and a components, such as <11-23>; the only slip that can strain a crystal along c"
+      ],
+      [
+        "c/a ratio",
+        "Height of the hexagonal cell divided by its base edge; about 1.59 for Ti and Zr, ideal 1.633"
       ],
       [
         "Thermomechanical processing",
@@ -335,8 +407,12 @@ const glossaryData = {
         "Plastic deformation below the recrystallisation temperature; dislocations tangle and the metal hardens"
       ],
       [
+        "Work hardening",
+        "Metal gets stronger as deformation continues because dislocations multiply and tangle"
+      ],
+      [
         "Dislocation",
-        "A line defect whose motion carries slip"
+        "A line defect, like an extra half-plane of atoms, whose motion carries slip"
       ],
       [
         "Slip",
@@ -347,12 +423,20 @@ const glossaryData = {
         "A slip plane together with a slip direction lying in it"
       ],
       [
+        "Independent slip systems",
+        "A crystal needs five independent systems to change shape arbitrarily; hcp <a> slip gives only four"
+      ],
+      [
         "Twinning",
         "A shear that reorients a region of crystal into a mirror image of the parent, giving a sudden large rotation"
       ],
       [
+        "Twin variant",
+        "One of the equivalent twin orientations; six {10-12} planes give six variants in hcp"
+      ],
+      [
         "Tensile twin (85° <11-20>)",
-        "The main twin in Ti and Zr: an 85° rotation about <11-20> on {10-12} planes"
+        "The main twin in Ti and Zr: an 85° rotation about <11-20> on {10-12} planes, formed when the c-axis is stretched"
       ],
       [
         "Basal plane",
@@ -367,6 +451,18 @@ const glossaryData = {
         "A {10-11} plane of an hcp crystal, inclined to the c-axis"
       ],
       [
+        "Zirconium hydride",
+        "Brittle compound ZrHx that precipitates as plates when dissolved hydrogen in Zr exceeds its solubility"
+      ],
+      [
+        "Hydride orientation relationship",
+        "(0001) of Zr parallel to (111) of the hydride, so plates lie close to the basal plane of the host grain"
+      ],
+      [
+        "Fuel cladding",
+        "The thin metal tube, usually a zirconium alloy, that holds nuclear fuel pellets and keeps fission products in"
+      ],
+      [
         "Pole",
         "The normal to a crystal plane, drawn out to the surface of the reference sphere"
       ],
@@ -379,12 +475,28 @@ const glossaryData = {
         "A map of the upper hemisphere onto a disc by projecting from the opposite pole; a pole at angle θ lands at R tan(θ/2)"
       ],
       [
+        "Equal-area projection",
+        "A projection that keeps areas true so pole figure intensities are fair; the stereographic one keeps angles instead"
+      ],
+      [
+        "{0002} pole figure",
+        "Shows basal plane normals (c-axes) in hcp metals; (0001) is extinct in diffraction so (0002) is measured"
+      ],
+      [
+        "Sample symmetry",
+        "Rolled sheets have mirror symmetry in RD, TD, ND, so one quarter of a pole figure is enough"
+      ],
+      [
         "Euler angles",
         "Three successive rotations (φ1, Φ, φ2) that fix a crystal orientation relative to the sample axes"
       ],
       [
         "Bunge convention",
         "Euler rotations about ND, then the rotated RD, then the rotated ND"
+      ],
+      [
+        "Orientation matrix",
+        "The 3x3 matrix g from the Euler angles; its columns are RD, TD, ND in crystal coordinates"
       ],
       [
         "Orientation space",
@@ -395,8 +507,12 @@ const glossaryData = {
         "f(g): the density of grains at each orientation g in orientation space"
       ],
       [
-        "Multiples of random",
+        "Multiples of random (MRD)",
         "Units for ODF and pole figure intensity; 1 means the same density as a random texture"
+      ],
+      [
+        "ODF section",
+        "A 2D slice of the ODF at constant φ2, drawn with φ1 and Φ as the two axes"
       ],
       [
         "Cube component",
@@ -404,15 +520,19 @@ const glossaryData = {
       ],
       [
         "Goss component",
-        "{110}<001> component, Euler angles (0, 45, 0); used in transformer steel"
+        "{110}<001> component, Euler angles (0, 45, 0); used in transformer steel; named after Norman Goss"
       ],
       [
         "Brass component",
-        "{110}<-112> component, Euler angles (35, 45, 0)"
+        "{110}<-112> component, Euler angles (35, 45, 0); found in rolled brass"
       ],
       [
         "Copper component",
-        "{112}<111> component, Euler angles about (90, 35, 45)"
+        "{112}<111> component, Euler angles about (90, 35, 45); found in rolled copper"
+      ],
+      [
+        "Fibre (in Euler space)",
+        "A line of orientations that all share one crystal direction parallel to one sample direction"
       ],
       [
         "α-fibre",
@@ -420,7 +540,7 @@ const glossaryData = {
       ],
       [
         "γ-fibre",
-        "bcc fibre with <111> parallel to ND"
+        "bcc fibre with <111> parallel to ND; good for deep drawing of steel sheet"
       ],
       [
         "η-fibre",
@@ -429,6 +549,18 @@ const glossaryData = {
       [
         "ε-fibre",
         "bcc fibre with <110> parallel to TD"
+      ],
+      [
+        "β-quench",
+        "Heating Ti or Zr into the bcc β range and cooling fast, so hcp α forms as thin plates with a near-random texture"
+      ],
+      [
+        "α and β phases (Ti, Zr)",
+        "α is the low-temperature hcp phase; β is the high-temperature bcc phase (about 865 C for Zr, 882 C for Ti)"
+      ],
+      [
+        "Ti-6Al-4V",
+        "The most common titanium alloy: about 6 wt% Al and 4 wt% V, an α+β alloy"
       ],
       [
         "Lamellar microstructure",
@@ -447,6 +579,10 @@ const glossaryData = {
         "A grain size distribution with two populations, for example large and small grains together"
       ],
       [
+        "Misorientation",
+        "The smallest rotation that takes one grain lattice onto its neighbour; low-angle boundaries are under about 15 degrees"
+      ],
+      [
         "Hard orientation",
         "A crystal orientation with a small Schmid factor, needing a high stress to yield; for hcp, load along c"
       ],
@@ -463,20 +599,20 @@ const glossaryData = {
         "The resolved shear stress at which a slip system starts to operate"
       ],
       [
+        "XRD pole figure",
+        "Pole figure measured by tilting and rotating a sample in an X-ray beam at a fixed diffraction angle; averages over a large area"
+      ],
+      [
         "EBSD",
         "Electron backscatter diffraction: a scanning-electron-microscope technique that maps crystal orientation point by point"
       ],
       [
         "IPF map",
-        "Inverse pole figure map: a colour map in which each pixel is coloured by its crystal orientation"
+        "Inverse pole figure map: a colour map in which each pixel is coloured by its crystal direction along a chosen sample axis"
       ],
       [
         "CPFEM",
         "Crystal plasticity finite element modelling: simulates deformation grain by grain using slip and twinning laws"
-      ],
-      [
-        "Hydride",
-        "A brittle zirconium hydride phase that precipitates in Zr alloys with (0001) of Zr parallel to (111) of the hydride"
       ]
     ]
   }
