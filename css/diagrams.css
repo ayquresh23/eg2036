@@ -59,3 +59,20 @@ body.revise-mode .sim-embed,body.revise-mode .sim-credit,body.revise-mode .sim-t
 .mini-wrap{overflow-x:auto}
 .bar{text-decoration:overline}
 @media (max-width:620px){.sim-embed iframe{height:820px}.dg-t{font-size:13px}}
+
+/* Seven crystal systems: unit-cell drawings with their symmetry axes */
+.dg-symax{stroke:var(--c-amb);stroke-width:2;stroke-dasharray:6 4;stroke-linecap:round}
+.dg-sym{fill:var(--c-amb);stroke:#131318;stroke-width:1.2}
+.dg-cap{fill:var(--c-mut);font-size:11px;font-family:'IBM Plex Mono',monospace}
+.dg-vl-amb2{fill:var(--c-amb);font-size:13px;font-weight:700;font-style:italic;font-family:'IBM Plex Mono',monospace}
+.dg-vl-acc2{fill:var(--c-acc);font-size:12.5px;font-weight:700;font-family:'IBM Plex Mono',monospace}
+.dg-edge-acc{stroke:var(--c-acc);stroke-width:1.6}
+.dg-edge-acc-h{stroke:var(--c-acc);stroke-width:1.3;stroke-dasharray:4 4;opacity:.7}
+.dg-cellsys .dg-vl-mut{font-size:13px}
+.cellsys-table td{vertical-align:middle}
+.cellsys-table td.cellsys-fig{width:212px;padding:4px 6px;background:#131318}
+.dg-cellsys{display:block;width:200px;height:auto}
+.cellsys-key{display:flex;flex-wrap:wrap;gap:6px 18px;margin:-4px 0 14px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted)}
+.cellsys-key span{display:inline-flex;align-items:center;gap:6px}
+.cellsys-key svg{height:13px;width:auto;overflow:visible}
+@media (max-width:620px){.cellsys-table td.cellsys-fig{width:150px}.dg-cellsys{width:146px}}
