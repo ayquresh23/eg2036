@@ -617,3 +617,116 @@ const glossaryData = {
     ]
   }
 };
+
+/* Side-by-side comparisons, shown in term previews and expanded glossary entries */
+const glossaryComparisons = [
+  { terms: ["Isotropy", "Anisotropy"],
+    defs: ["Properties are the same whichever direction they are measured in", ""],
+    aliases: [["isotropic"], ["anisotropic"]],
+    rows: [
+      ["Properties", "Same in every direction", "Depend on direction"],
+      ["Texture", "Random texture", "Preferred orientation (crystallographic texture)"],
+      ["Examples", "Untextured polycrystal, glass", "Single crystal, rolled sheet (earing), Zr cladding"]
+    ] },
+  { terms: ["Single crystal", "Polycrystal", "Amorphous solid"],
+    rows: [
+      ["Order", "Long-range, one orientation throughout", "Long-range within each grain", "Short-range only"],
+      ["Grain boundaries", "None", "Many", "None (no grains)"],
+      ["Examples", "Turbine blades, Si wafers", "Most engineering metals", "Glass, many plastics, a-Si"]
+    ] },
+  { terms: ["Long-range order", "Short-range order"],
+    rows: [
+      ["Extent", "Repeats over many atomic distances", "Only a few neighbours"],
+      ["Found in", "Crystals", "Amorphous solids (and crystals)"]
+    ] },
+  { terms: ["Lattice", "Crystal structure"],
+    rows: [
+      ["What it is", "Infinite array of identical points", "Lattice + motif (atoms at each point)"],
+      ["Contains atoms?", "No, purely geometric", "Yes"]
+    ] },
+  { terms: ["Primitive cell", "Non-primitive cell"],
+    rows: [
+      ["Lattice points per cell", "Exactly one", "More than one"],
+      ["Why use it", "Smallest possible repeat unit", "Shows the lattice symmetry more clearly (e.g. cubic FCC cell)"]
+    ] },
+  { terms: ["FCC", "BCC", "HCP"],
+    rows: [
+      ["Close-packed?", "Yes (ABCABC)", "No", "Yes (ABAB)"],
+      ["Coordination number", "12", "8", "12"],
+      ["Packing factor", "0.74", "0.68", "0.74"],
+      ["Atoms per cell", "4", "2", "6 (hexagonal prism)"],
+      ["Examples", "Al, Cu, Ni", "α-Fe, W, Cr", "Mg, Ti, Zr"]
+    ] },
+  { terms: ["Octahedral void", "Tetrahedral void"],
+    rows: [
+      ["Neighbouring atoms", "6", "4"],
+      ["Size in FCC (r/R)", "0.414", "0.225"],
+      ["Number per FCC cell", "4", "8"]
+    ] },
+  { terms: ["(hkl)", "{hkl}"],
+    rows: [
+      ["Means", "One specific plane", "The family of equivalent planes"],
+      ["Example", "(100)", "{100} = (100), (010), (001)…"]
+    ] },
+  { terms: ["[uvw]", "<uvw>"],
+    rows: [
+      ["Means", "One specific direction", "The family of equivalent directions"],
+      ["Example", "[100]", "<100> = [100], [010], [001]…"]
+    ] },
+  { terms: ["Random texture", "Preferred orientation"],
+    rows: [
+      ["Grain orientations", "Evenly spread", "Clustered around particular orientations"],
+      ["Pole figure", "Uniform, ~1 MRD everywhere", "Strong peaks"],
+      ["Properties", "Isotropic", "Anisotropic"]
+    ] },
+  { terms: ["Slip", "Twinning"],
+    rows: [
+      ["Mechanism", "Dislocation glide on slip planes", "A region shears into a mirror orientation"],
+      ["Lattice orientation", "Unchanged", "Reoriented (e.g. ~85° for a tensile twin)"],
+      ["Direction", "Works forwards and backwards", "Polar, works in one sense only"],
+      ["Matters most in", "FCC, BCC", "HCP (few independent slip systems)"]
+    ] },
+  { terms: ["Basal plane", "Prismatic plane", "Pyramidal plane"],
+    rows: [
+      ["Indices", "{0001}", "{10-10}", "{10-11}"],
+      ["Slip direction", "<a>", "<a>", "<a> or <c+a>"],
+      ["Note", "Easy slip in Mg, Zn", "Main slip plane in Ti, Zr", "Needed for c-axis strain"]
+    ] },
+  { terms: ["Hard orientation", "Soft orientation"],
+    rows: [
+      ["Schmid factor", "Low", "High"],
+      ["Yield", "Later (higher stress)", "Earlier (lower stress)"]
+    ] },
+  { terms: ["Rolling direction", "Transverse direction", "Normal direction"],
+    rows: [
+      ["Points", "Along the rolling direction", "Across the sheet, in its plane", "Out of the sheet surface"]
+    ] },
+  { terms: ["Pole figure", "ODF", "IPF map"],
+    rows: [
+      ["Shows", "Where one plane normal points, in sample axes", "Full 3D orientation density in Euler space", "Each grain's orientation as a colour"],
+      ["From", "XRD or EBSD", "Calculated from several pole figures or EBSD", "EBSD"],
+      ["Spatial info?", "No", "No", "Yes, a map"]
+    ] },
+  { terms: ["XRD pole figure", "EBSD"],
+    rows: [
+      ["Scale", "Bulk macro-texture, large volume", "Micro-texture, grain by grain"],
+      ["Spatial information", "None", "Orientation map of the surface"],
+      ["Statistics", "Excellent (many grains)", "Limited to the area scanned"]
+    ] },
+  { terms: ["Cube component", "Goss component"],
+    rows: [
+      ["Ideal orientation", "{001}<100>", "{110}<001>"],
+      ["Typical origin", "Recrystallised FCC sheet", "Grain-oriented electrical steel"]
+    ] },
+  { terms: ["Brass component", "Copper component"],
+    rows: [
+      ["Ideal orientation", "{110}<112>", "{112}<111>"],
+      ["Typical in", "Rolled low stacking fault energy metals", "Rolled high stacking fault energy metals"]
+    ] },
+  { terms: ["Cold work", "Recrystallisation"],
+    rows: [
+      ["Dislocation density", "Increases", "Drops sharply (new grains)"],
+      ["Strength", "Rises (work hardening)", "Falls"],
+      ["Texture", "Rolling (deformation) texture", "Recrystallisation texture"]
+    ] }
+];
