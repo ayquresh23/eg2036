@@ -3,20 +3,24 @@
 window.SITE_CONFIG = {
   "slug": "eg2036",
   "topicIds": [
-    "w1"
+    "w1",
+    "w2"
   ],
   "navOrder": [
     "home",
     "w1",
+    "w2",
     "formulas",
     "glossary",
     "traps"
   ],
   "topicColors": {
-    "w1": "#0ea5c6"
+    "w1": "#0ea5c6",
+    "w2": "#f4a261"
   },
   "topicLabels": {
-    "w1": "Crystal Structures"
+    "w1": "Crystal Structures",
+    "w2": "Directions, Planes, Packing"
   }
 };
 
@@ -24,10 +28,10 @@ window.SITE_CONTENT = {
   "home": {
     "tag": "Order in Materials · Swansea University",
     "title": "EG2036 Study Site",
-    "subtitle": "How atoms arrange themselves in solids and why it matters: bonding, lattices, unit cells, crystal systems, and later directions, planes, close packing and solid solutions. Built out week by week as lectures run, with interactive simulations for the ideas that are easier to see than to read.",
+    "subtitle": "How atoms arrange themselves in solids and why it matters: bonding, lattices, unit cells, crystal systems, directions and planes, close packing and packing factors, and later ionic structures and solid solutions. Built out week by week as lectures run, with interactive simulations for the ideas that are easier to see than to read.",
     "stats": [
       {
-        "value": "1",
+        "value": "2",
         "label": "Weeks built"
       },
       {
@@ -35,15 +39,15 @@ window.SITE_CONTENT = {
         "label": "Simulations"
       },
       {
-        "value": "37",
+        "value": "67",
         "label": "Terms"
       },
       {
-        "value": "7",
+        "value": "17",
         "label": "Formulas"
       },
       {
-        "value": "11",
+        "value": "23",
         "label": "Exam Traps"
       }
     ],
@@ -62,7 +66,7 @@ window.SITE_CONTENT = {
       },
       {
         "type": "raw",
-        "html": "<div class=\"card-grid\"><div class=\"topic-card\" onclick=\"showSection('formulas')\" style=\"--bar-color:#0ea5c6\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">📐 Formula Sheet</div><div class=\"topic-desc\">Every equation so far, with variables defined.</div></div><div class=\"topic-card\" onclick=\"showSection('glossary')\" style=\"--bar-color:#2fa15c\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">📚 Glossary</div><div class=\"topic-desc\">37 terms from Week 1. Search, filter, and flashcard mode.</div></div><div class=\"topic-card\" onclick=\"showSection('traps')\" style=\"--bar-color:#e04545\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">⚠️ MCQ Traps</div><div class=\"topic-desc\">Plausible-but-wrong claims the exam uses.</div></div></div>"
+        "html": "<div class=\"card-grid\"><div class=\"topic-card\" onclick=\"showSection('formulas')\" style=\"--bar-color:#0ea5c6\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">📐 Formula Sheet</div><div class=\"topic-desc\">Every equation so far, with variables defined.</div></div><div class=\"topic-card\" onclick=\"showSection('glossary')\" style=\"--bar-color:#2fa15c\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">📚 Glossary</div><div class=\"topic-desc\">67 terms from Weeks 1 and 2. Search, filter, and flashcard mode.</div></div><div class=\"topic-card\" onclick=\"showSection('traps')\" style=\"--bar-color:#e04545\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">⚠️ MCQ Traps</div><div class=\"topic-desc\">Plausible-but-wrong claims the exam uses.</div></div></div>"
       }
     ]
   },
@@ -543,20 +547,611 @@ window.SITE_CONTENT = {
       "color": "#0ea5c6"
     },
     {
-      "soon": true,
-      "numLabel": "Order · to come",
-      "title": "Lattice Directions and Miller Indices",
-      "desc": "Coming soon. Added once covered in lectures.",
-      "color": "#3b82e8",
-      "sections": []
-    },
-    {
-      "soon": true,
-      "numLabel": "Order · to come",
-      "title": "Close-Packed Structures of Metals",
-      "desc": "Coming soon. Added once covered in lectures.",
-      "color": "#8855f5",
-      "sections": []
+      "id": "w2",
+      "numLabel": "Week 2",
+      "title": "Directions, Planes and Close Packing",
+      "subtitle": "The notation for pointing at things inside a crystal (fractional coordinates, [uvw] directions, (hkl) Miller planes), then why metals pack the way they do (HCP, FCC, BCC) and how to calculate how full each unit cell is.",
+      "sections": [
+        {
+          "type": "toc",
+          "title": "This week",
+          "items": [
+            {
+              "href": "#w2-recap",
+              "label": "Recap: the unit cell and the seven crystal systems"
+            },
+            {
+              "href": "#w2-frac",
+              "label": "Fractional coordinates: where the atoms sit"
+            },
+            {
+              "href": "#w2-dirs",
+              "label": "Lattice directions [uvw]"
+            },
+            {
+              "href": "#w2-miller",
+              "label": "Miller indices (hkl): naming planes"
+            },
+            {
+              "href": "#w2-close",
+              "label": "Close packing: why metals pile up like oranges"
+            },
+            {
+              "href": "#w2-apf",
+              "label": "Atomic packing factor: FCC, BCC and HCP"
+            },
+            {
+              "href": "#w2-why",
+              "label": "Why any of this matters"
+            },
+            {
+              "href": "#w2-practice",
+              "label": "Test yourself"
+            }
+          ]
+        },
+        {
+          "type": "h2",
+          "id": "w2-recap",
+          "text": "Recap: The Unit Cell and the Seven Crystal Systems"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"analogy\"><span class=\"analogy-icon\">🧱</span><div class=\"analogy-text\"><strong>Think of a tiled floor.</strong> You never describe every tile. You describe one tile and say \"repeat it by sliding, never turning or flipping\". The unit cell is that tile in 3D, and the whole crystal is built from it by translation alone.</div></div>"
+        },
+        {
+          "type": "p",
+          "text": "The unit cell is the smallest block that rebuilds the whole crystal by <strong>translation only</strong>. It has to carry the full symmetry of the crystal, so it contains everything needed to reproduce the structure. Its shape is set by six <strong>lattice parameters</strong>: the edge lengths a, b, c and the angles α, β, γ.",
+          "class": ""
+        },
+        {
+          "type": "p",
+          "text": "The seven crystal systems are not defined by what the box looks like. They are defined by the <strong>minimum symmetry</strong> the lattice must have. An <em>n</em>-fold rotation axis means turning the crystal by 360°/<em>n</em> leaves it looking identical.",
+          "class": ""
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Crystal system</th><th>Minimum symmetry</th></tr></thead><tbody><tr><td>Cubic</td><td>Four 3-fold axes (along the body diagonals of the cube)</td></tr><tr><td>Tetragonal</td><td>One 4-fold axis (along c)</td></tr><tr><td>Orthorhombic</td><td>Three 2-fold axes (along a, b and c)</td></tr><tr><td>Monoclinic</td><td>One 2-fold axis (along b)</td></tr><tr><td>Triclinic</td><td>None</td></tr><tr><td>Trigonal</td><td>One 3-fold axis (along a body diagonal)</td></tr><tr><td>Hexagonal</td><td>One 6-fold axis (along c)</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "conceptbox",
+          "variant": "note",
+          "title": "The trap",
+          "html": "<p>A cell that <em>looks</em> like a cube is not automatically cubic. Stretch a cube along c and the four body-diagonal 3-fold axes are gone, so it is tetragonal. The system is decided by symmetry, not by eyeballing the box.</p>"
+        },
+        {
+          "type": "h2",
+          "id": "w2-frac",
+          "text": "Fractional Coordinates: Where the Atoms Sit"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"analogy\"><span class=\"analogy-icon\">🎬</span><div class=\"analogy-text\"><strong>Think of a cinema seat.</strong> Saying \"halfway along the row and a third of the way back\" works in a small screening room and in an IMAX. You are giving the position as a fraction of the room, not in metres. Fractional coordinates do the same for a unit cell.</div></div>"
+        },
+        {
+          "type": "p",
+          "text": "Atom positions are written as a triple (x, y, z), where each number is a <strong>fraction of the lattice constant</strong> along a, b and c, measured from a corner origin. Using the lattice constants as the unit means the description is independent of the cell size and works for non-cubic cells where a, b and c differ.",
+          "class": ""
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Structure</th><th>Atom positions in the conventional cell</th></tr></thead><tbody><tr><td>Simple cubic</td><td>(0, 0, 0)</td></tr><tr><td>BCC</td><td>(0, 0, 0) and (½, ½, ½)</td></tr><tr><td>FCC</td><td>(0, 0, 0), (½, ½, 0), (½, 0, ½), (0, ½, ½)</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "p",
+          "text": "The FCC list is the four <em>distinct</em> positions per cell: one corner (all eight corners are equivalent by translation) plus the three face-centre types. This matches the 4 atoms per cell counted later.",
+          "class": ""
+        },
+        {
+          "type": "h2",
+          "id": "w2-dirs",
+          "text": "Lattice Directions [uvw]"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"analogy\"><span class=\"analogy-icon\">🧭</span><div class=\"analogy-text\"><strong>Think of a compass bearing.</strong> \"North-east\" describes a way of travelling, not a place. A crystal direction works the same way. It matters because metals deform by atoms slipping along particular directions, and an electron beam in a microscope is aimed along one.</div></div>"
+        },
+        {
+          "type": "conceptbox",
+          "variant": "",
+          "title": "The algorithm",
+          "html": "<ol><li>Slide the vector so it passes through the origin of the unit cell.</li><li>Read its projections on a, b and c, in units of a, b and c.</li><li>Clear fractions and reduce to the <strong>smallest integers</strong>.</li><li>Write in <strong>square brackets with no commas</strong>: [uvw]. Negatives get a bar over the number, for example [<span class=\"bar\">1</span>11].</li></ol>"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 270\" role=\"img\" aria-label=\"Three directions drawn from the origin of a unit cube: [201], [121] and [111]\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"dr-amb\" viewBox=\"0 0 10 10\" refX=\"8.5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" class=\"dg-ah-amb\"/></marker><marker id=\"dr-acc\" viewBox=\"0 0 10 10\" refX=\"8.5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" class=\"dg-ah-acc\"/></marker></defs><line x1=\"52\" y1=\"212\" x2=\"52\" y2=\"104\" class=\"dg-edge\"/><line x1=\"52\" y1=\"212\" x2=\"160\" y2=\"212\" class=\"dg-edge\"/><line x1=\"52\" y1=\"212\" x2=\"96\" y2=\"180\" class=\"dg-edge-h\"/><line x1=\"52\" y1=\"104\" x2=\"160\" y2=\"104\" class=\"dg-edge\"/><line x1=\"52\" y1=\"104\" x2=\"96\" y2=\"72\" class=\"dg-edge\"/><line x1=\"160\" y1=\"212\" x2=\"160\" y2=\"104\" class=\"dg-edge\"/><line x1=\"160\" y1=\"212\" x2=\"204\" y2=\"180\" class=\"dg-edge\"/><line x1=\"160\" y1=\"104\" x2=\"204\" y2=\"72\" class=\"dg-edge\"/><line x1=\"96\" y1=\"180\" x2=\"96\" y2=\"72\" class=\"dg-edge-h\"/><line x1=\"96\" y1=\"180\" x2=\"204\" y2=\"180\" class=\"dg-edge-h\"/><line x1=\"96\" y1=\"72\" x2=\"204\" y2=\"72\" class=\"dg-edge\"/><line x1=\"204\" y1=\"180\" x2=\"204\" y2=\"72\" class=\"dg-edge\"/><line x1=\"52\" y1=\"212\" x2=\"33.5\" y2=\"225.4\" class=\"dg-axis\"/><text x=\"25.5\" y=\"234.4\" class=\"dg-tb\" text-anchor=\"middle\">a</text><line x1=\"160\" y1=\"212\" x2=\"201\" y2=\"212\" class=\"dg-axis\"/><text x=\"210\" y=\"216\" class=\"dg-tb\" text-anchor=\"middle\">b</text><line x1=\"52\" y1=\"104\" x2=\"52\" y2=\"63\" class=\"dg-axis\"/><text x=\"52\" y=\"55\" class=\"dg-tb\" text-anchor=\"middle\">c</text><line x1=\"52\" y1=\"212\" x2=\"96\" y2=\"126\" class=\"dg-vec-amb\" marker-end=\"url(#dr-amb)\"/><circle cx=\"52\" cy=\"212\" r=\"4.5\" class=\"dg-lp-o\"/><text x=\"128\" y=\"26\" class=\"dg-vl-amb\" text-anchor=\"middle\">[201]</text><text x=\"128\" y=\"256\" class=\"dg-t\" text-anchor=\"middle\">(1, 0, ½) × 2 = (2, 0, 1)</text><line x1=\"312\" y1=\"212\" x2=\"312\" y2=\"104\" class=\"dg-edge\"/><line x1=\"312\" y1=\"212\" x2=\"420\" y2=\"212\" class=\"dg-edge\"/><line x1=\"312\" y1=\"212\" x2=\"356\" y2=\"180\" class=\"dg-edge-h\"/><line x1=\"312\" y1=\"104\" x2=\"420\" y2=\"104\" class=\"dg-edge\"/><line x1=\"312\" y1=\"104\" x2=\"356\" y2=\"72\" class=\"dg-edge\"/><line x1=\"420\" y1=\"212\" x2=\"420\" y2=\"104\" class=\"dg-edge\"/><line x1=\"420\" y1=\"212\" x2=\"464\" y2=\"180\" class=\"dg-edge\"/><line x1=\"420\" y1=\"104\" x2=\"464\" y2=\"72\" class=\"dg-edge\"/><line x1=\"356\" y1=\"180\" x2=\"356\" y2=\"72\" class=\"dg-edge-h\"/><line x1=\"356\" y1=\"180\" x2=\"464\" y2=\"180\" class=\"dg-edge-h\"/><line x1=\"356\" y1=\"72\" x2=\"464\" y2=\"72\" class=\"dg-edge\"/><line x1=\"464\" y1=\"180\" x2=\"464\" y2=\"72\" class=\"dg-edge\"/><line x1=\"312\" y1=\"212\" x2=\"293.5\" y2=\"225.4\" class=\"dg-axis\"/><text x=\"285.5\" y=\"234.4\" class=\"dg-tb\" text-anchor=\"middle\">a</text><line x1=\"420\" y1=\"212\" x2=\"461\" y2=\"212\" class=\"dg-axis\"/><text x=\"470\" y=\"216\" class=\"dg-tb\" text-anchor=\"middle\">b</text><line x1=\"312\" y1=\"104\" x2=\"312\" y2=\"63\" class=\"dg-axis\"/><text x=\"312\" y=\"55\" class=\"dg-tb\" text-anchor=\"middle\">c</text><line x1=\"312\" y1=\"212\" x2=\"442\" y2=\"142\" class=\"dg-vec-acc\" marker-end=\"url(#dr-acc)\"/><circle cx=\"312\" cy=\"212\" r=\"4.5\" class=\"dg-lp-o\"/><text x=\"388\" y=\"26\" class=\"dg-vl-acc\" text-anchor=\"middle\">[121]</text><text x=\"388\" y=\"256\" class=\"dg-t\" text-anchor=\"middle\">(½, 1, ½) × 2 = (1, 2, 1)</text><line x1=\"572\" y1=\"212\" x2=\"572\" y2=\"104\" class=\"dg-edge\"/><line x1=\"572\" y1=\"212\" x2=\"680\" y2=\"212\" class=\"dg-edge\"/><line x1=\"572\" y1=\"212\" x2=\"616\" y2=\"180\" class=\"dg-edge-h\"/><line x1=\"572\" y1=\"104\" x2=\"680\" y2=\"104\" class=\"dg-edge\"/><line x1=\"572\" y1=\"104\" x2=\"616\" y2=\"72\" class=\"dg-edge\"/><line x1=\"680\" y1=\"212\" x2=\"680\" y2=\"104\" class=\"dg-edge\"/><line x1=\"680\" y1=\"212\" x2=\"724\" y2=\"180\" class=\"dg-edge\"/><line x1=\"680\" y1=\"104\" x2=\"724\" y2=\"72\" class=\"dg-edge\"/><line x1=\"616\" y1=\"180\" x2=\"616\" y2=\"72\" class=\"dg-edge-h\"/><line x1=\"616\" y1=\"180\" x2=\"724\" y2=\"180\" class=\"dg-edge-h\"/><line x1=\"616\" y1=\"72\" x2=\"724\" y2=\"72\" class=\"dg-edge\"/><line x1=\"724\" y1=\"180\" x2=\"724\" y2=\"72\" class=\"dg-edge\"/><line x1=\"572\" y1=\"212\" x2=\"553.5\" y2=\"225.4\" class=\"dg-axis\"/><text x=\"545.5\" y=\"234.4\" class=\"dg-tb\" text-anchor=\"middle\">a</text><line x1=\"680\" y1=\"212\" x2=\"721\" y2=\"212\" class=\"dg-axis\"/><text x=\"730\" y=\"216\" class=\"dg-tb\" text-anchor=\"middle\">b</text><line x1=\"572\" y1=\"104\" x2=\"572\" y2=\"63\" class=\"dg-axis\"/><text x=\"572\" y=\"55\" class=\"dg-tb\" text-anchor=\"middle\">c</text><line x1=\"572\" y1=\"212\" x2=\"724\" y2=\"72\" class=\"dg-vec-amb\" marker-end=\"url(#dr-amb)\"/><circle cx=\"572\" cy=\"212\" r=\"4.5\" class=\"dg-lp-o\"/><text x=\"648\" y=\"26\" class=\"dg-vl-amb\" text-anchor=\"middle\">[111]</text><text x=\"648\" y=\"256\" class=\"dg-t\" text-anchor=\"middle\">body diagonal, (1, 1, 1)</text></svg></div>"
+        },
+        {
+          "type": "example",
+          "label": "Worked example: with fractions",
+          "q": "A vector runs from the origin to the point (1, 0, ½). What is its direction?",
+          "steps": [
+            "Projections: \\(1,\\ 0,\\ \\tfrac12\\)",
+            "Clear the fraction by multiplying by 2: \\(2,\\ 0,\\ 1\\)"
+          ],
+          "answer": "The direction is <strong>[201]</strong>."
+        },
+        {
+          "type": "example",
+          "label": "Worked example: reading from a diagram",
+          "q": "A vector ends at x = a/2, y = b, z = 0. What is its direction?",
+          "steps": [
+            "In units of a, b, c: \\(\\tfrac12,\\ 1,\\ 0\\)",
+            "Multiply by 2: \\(1,\\ 2,\\ 0\\)"
+          ],
+          "answer": "The direction is <strong>[120]</strong>."
+        },
+        {
+          "type": "formulablock",
+          "name": "Direction between two points",
+          "eqs": [
+            "[\\,u\\,v\\,w\\,] = [\\,x_2-x_1,\\ \\ y_2-y_1,\\ \\ z_2-z_1\\,] \\quad \\text{(then reduce)}"
+          ],
+          "vars": [
+            {
+              "symbol": "(x₁, y₁, z₁)",
+              "desc": "tail of the vector"
+            },
+            {
+              "symbol": "(x₂, y₂, z₂)",
+              "desc": "head of the vector"
+            }
+          ],
+          "note": "Always head minus tail, in fractional coordinates, then reduce to the smallest integers."
+        },
+        {
+          "type": "example",
+          "label": "Worked example: not starting at the origin",
+          "q": "A line runs from (½, 0, 0) to (1, 1, ½). What is its direction?",
+          "steps": [
+            "Head minus tail: \\((1-\\tfrac12,\\ 1-0,\\ \\tfrac12-0)=(\\tfrac12,\\ 1,\\ \\tfrac12)\\)",
+            "Multiply by 2: \\((1,\\ 2,\\ 1)\\)"
+          ],
+          "answer": "The direction is <strong>[121]</strong>."
+        },
+        {
+          "type": "h3",
+          "text": "Directions of a form: &lt;uvw&gt;"
+        },
+        {
+          "type": "p",
+          "text": "Directions that symmetry makes physically identical are grouped as a <strong>family</strong> with angle brackets, &lt;uvw&gt;. The number of members depends on the crystal system, because it is the symmetry that decides what counts as equivalent.",
+          "class": ""
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Family (cubic)</th><th>Members</th><th>Where it is</th></tr></thead><tbody><tr><td>&lt;100&gt;</td><td>6</td><td>The cube edges, both ways along a, b and c</td></tr><tr><td>&lt;110&gt;</td><td>12</td><td>The face diagonals</td></tr><tr><td>&lt;111&gt;</td><td>8</td><td>The body diagonals</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "conceptbox",
+          "variant": "note",
+          "title": "Same indices, different family size",
+          "html": "<p>In a <strong>tetragonal</strong> crystal [100] and [010] are equivalent but [001] is not, because c is a different length. So &lt;100&gt; has 4 members there, not 6. Never assume cubic counts apply to other systems.</p>"
+        },
+        {
+          "type": "h2",
+          "id": "w2-miller",
+          "text": "Miller Indices (hkl): Naming Planes"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"analogy\"><span class=\"analogy-icon\">🧀</span><div class=\"analogy-text\"><strong>Think of slicing a block of cheese.</strong> What matters is the <em>angle</em> of the cut, and any parallel slice is the same cut. Miller indices record the orientation of a plane, not where it sits. That orientation decides where a crystal cleaves, how it grows, and how reactive its surface is.</div></div>"
+        },
+        {
+          "type": "p",
+          "text": "A set of parallel planes passes through every lattice point, so one label covers the whole family. The plane (hkl) cuts the axes at <strong>a/h, b/k and c/l</strong>. In other words, the Miller index is the <em>reciprocal</em> of the intercept.",
+          "class": ""
+        },
+        {
+          "type": "conceptbox",
+          "variant": "",
+          "title": "The algorithm",
+          "html": "<ol><li>Find the <strong>intercepts</strong> of the plane on a, b and c, in units of a, b and c.</li><li>Take the <strong>reciprocals</strong>.</li><li>Clear fractions and reduce to the <strong>smallest integers</strong>.</li><li>Write in <strong>round brackets, no commas</strong>: (hkl). Negatives get a bar. If an index has two digits, separate with commas, for example (10,1,1).</li></ol>"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 252\" role=\"img\" aria-label=\"Four planes in a unit cube: (100), (110), (111) and (210), with their axis intercepts\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"68,168 160,168 160,76 68,76\" class=\"dg-cell-acc\"/><line x1=\"30\" y1=\"196\" x2=\"30\" y2=\"104\" class=\"dg-edge\"/><line x1=\"30\" y1=\"196\" x2=\"122\" y2=\"196\" class=\"dg-edge\"/><line x1=\"30\" y1=\"196\" x2=\"68\" y2=\"168\" class=\"dg-edge-h\"/><line x1=\"30\" y1=\"104\" x2=\"122\" y2=\"104\" class=\"dg-edge\"/><line x1=\"30\" y1=\"104\" x2=\"68\" y2=\"76\" class=\"dg-edge\"/><line x1=\"122\" y1=\"196\" x2=\"122\" y2=\"104\" class=\"dg-edge\"/><line x1=\"122\" y1=\"196\" x2=\"160\" y2=\"168\" class=\"dg-edge\"/><line x1=\"122\" y1=\"104\" x2=\"160\" y2=\"76\" class=\"dg-edge\"/><line x1=\"68\" y1=\"168\" x2=\"68\" y2=\"76\" class=\"dg-edge-h\"/><line x1=\"68\" y1=\"168\" x2=\"160\" y2=\"168\" class=\"dg-edge-h\"/><line x1=\"68\" y1=\"76\" x2=\"160\" y2=\"76\" class=\"dg-edge\"/><line x1=\"160\" y1=\"168\" x2=\"160\" y2=\"76\" class=\"dg-edge\"/><line x1=\"30\" y1=\"196\" x2=\"14\" y2=\"207.8\" class=\"dg-axis\"/><text x=\"6\" y=\"216.8\" class=\"dg-tb\" text-anchor=\"middle\">a</text><line x1=\"122\" y1=\"196\" x2=\"157\" y2=\"196\" class=\"dg-axis\"/><text x=\"166\" y=\"200\" class=\"dg-tb\" text-anchor=\"middle\">b</text><line x1=\"30\" y1=\"104\" x2=\"30\" y2=\"69\" class=\"dg-axis\"/><text x=\"30\" y=\"61\" class=\"dg-tb\" text-anchor=\"middle\">c</text><circle cx=\"68\" cy=\"168\" r=\"4\" class=\"dg-lp-amb\"/><text x=\"96\" y=\"26\" class=\"dg-vl-acc\" text-anchor=\"middle\">(100)</text><text x=\"96\" y=\"240\" class=\"dg-t\" text-anchor=\"middle\">intercepts 1, ∞, ∞</text><polygon points=\"263,168 317,196 317,104 263,76\" class=\"dg-cell-acc\"/><line x1=\"225\" y1=\"196\" x2=\"225\" y2=\"104\" class=\"dg-edge\"/><line x1=\"225\" y1=\"196\" x2=\"317\" y2=\"196\" class=\"dg-edge\"/><line x1=\"225\" y1=\"196\" x2=\"263\" y2=\"168\" class=\"dg-edge-h\"/><line x1=\"225\" y1=\"104\" x2=\"317\" y2=\"104\" class=\"dg-edge\"/><line x1=\"225\" y1=\"104\" x2=\"263\" y2=\"76\" class=\"dg-edge\"/><line x1=\"317\" y1=\"196\" x2=\"317\" y2=\"104\" class=\"dg-edge\"/><line x1=\"317\" y1=\"196\" x2=\"355\" y2=\"168\" class=\"dg-edge\"/><line x1=\"317\" y1=\"104\" x2=\"355\" y2=\"76\" class=\"dg-edge\"/><line x1=\"263\" y1=\"168\" x2=\"263\" y2=\"76\" class=\"dg-edge-h\"/><line x1=\"263\" y1=\"168\" x2=\"355\" y2=\"168\" class=\"dg-edge-h\"/><line x1=\"263\" y1=\"76\" x2=\"355\" y2=\"76\" class=\"dg-edge\"/><line x1=\"355\" y1=\"168\" x2=\"355\" y2=\"76\" class=\"dg-edge\"/><line x1=\"225\" y1=\"196\" x2=\"209\" y2=\"207.8\" class=\"dg-axis\"/><text x=\"201\" y=\"216.8\" class=\"dg-tb\" text-anchor=\"middle\">a</text><line x1=\"317\" y1=\"196\" x2=\"352\" y2=\"196\" class=\"dg-axis\"/><text x=\"361\" y=\"200\" class=\"dg-tb\" text-anchor=\"middle\">b</text><line x1=\"225\" y1=\"104\" x2=\"225\" y2=\"69\" class=\"dg-axis\"/><text x=\"225\" y=\"61\" class=\"dg-tb\" text-anchor=\"middle\">c</text><circle cx=\"263\" cy=\"168\" r=\"4\" class=\"dg-lp-amb\"/><circle cx=\"317\" cy=\"196\" r=\"4\" class=\"dg-lp-amb\"/><text x=\"291\" y=\"26\" class=\"dg-vl-acc\" text-anchor=\"middle\">(110)</text><text x=\"291\" y=\"240\" class=\"dg-t\" text-anchor=\"middle\">intercepts 1, 1, ∞</text><polygon points=\"458,168 512,196 420,104\" class=\"dg-cell-acc\"/><line x1=\"420\" y1=\"196\" x2=\"420\" y2=\"104\" class=\"dg-edge\"/><line x1=\"420\" y1=\"196\" x2=\"512\" y2=\"196\" class=\"dg-edge\"/><line x1=\"420\" y1=\"196\" x2=\"458\" y2=\"168\" class=\"dg-edge-h\"/><line x1=\"420\" y1=\"104\" x2=\"512\" y2=\"104\" class=\"dg-edge\"/><line x1=\"420\" y1=\"104\" x2=\"458\" y2=\"76\" class=\"dg-edge\"/><line x1=\"512\" y1=\"196\" x2=\"512\" y2=\"104\" class=\"dg-edge\"/><line x1=\"512\" y1=\"196\" x2=\"550\" y2=\"168\" class=\"dg-edge\"/><line x1=\"512\" y1=\"104\" x2=\"550\" y2=\"76\" class=\"dg-edge\"/><line x1=\"458\" y1=\"168\" x2=\"458\" y2=\"76\" class=\"dg-edge-h\"/><line x1=\"458\" y1=\"168\" x2=\"550\" y2=\"168\" class=\"dg-edge-h\"/><line x1=\"458\" y1=\"76\" x2=\"550\" y2=\"76\" class=\"dg-edge\"/><line x1=\"550\" y1=\"168\" x2=\"550\" y2=\"76\" class=\"dg-edge\"/><line x1=\"420\" y1=\"196\" x2=\"404\" y2=\"207.8\" class=\"dg-axis\"/><text x=\"396\" y=\"216.8\" class=\"dg-tb\" text-anchor=\"middle\">a</text><line x1=\"512\" y1=\"196\" x2=\"547\" y2=\"196\" class=\"dg-axis\"/><text x=\"556\" y=\"200\" class=\"dg-tb\" text-anchor=\"middle\">b</text><line x1=\"420\" y1=\"104\" x2=\"420\" y2=\"69\" class=\"dg-axis\"/><text x=\"420\" y=\"61\" class=\"dg-tb\" text-anchor=\"middle\">c</text><circle cx=\"458\" cy=\"168\" r=\"4\" class=\"dg-lp-amb\"/><circle cx=\"512\" cy=\"196\" r=\"4\" class=\"dg-lp-amb\"/><circle cx=\"420\" cy=\"104\" r=\"4\" class=\"dg-lp-amb\"/><text x=\"486\" y=\"26\" class=\"dg-vl-acc\" text-anchor=\"middle\">(111)</text><text x=\"486\" y=\"240\" class=\"dg-t\" text-anchor=\"middle\">intercepts 1, 1, 1</text><polygon points=\"634,182 707,196 707,104 634,90\" class=\"dg-cell-acc\"/><line x1=\"615\" y1=\"196\" x2=\"615\" y2=\"104\" class=\"dg-edge\"/><line x1=\"615\" y1=\"196\" x2=\"707\" y2=\"196\" class=\"dg-edge\"/><line x1=\"615\" y1=\"196\" x2=\"653\" y2=\"168\" class=\"dg-edge-h\"/><line x1=\"615\" y1=\"104\" x2=\"707\" y2=\"104\" class=\"dg-edge\"/><line x1=\"615\" y1=\"104\" x2=\"653\" y2=\"76\" class=\"dg-edge\"/><line x1=\"707\" y1=\"196\" x2=\"707\" y2=\"104\" class=\"dg-edge\"/><line x1=\"707\" y1=\"196\" x2=\"745\" y2=\"168\" class=\"dg-edge\"/><line x1=\"707\" y1=\"104\" x2=\"745\" y2=\"76\" class=\"dg-edge\"/><line x1=\"653\" y1=\"168\" x2=\"653\" y2=\"76\" class=\"dg-edge-h\"/><line x1=\"653\" y1=\"168\" x2=\"745\" y2=\"168\" class=\"dg-edge-h\"/><line x1=\"653\" y1=\"76\" x2=\"745\" y2=\"76\" class=\"dg-edge\"/><line x1=\"745\" y1=\"168\" x2=\"745\" y2=\"76\" class=\"dg-edge\"/><line x1=\"615\" y1=\"196\" x2=\"599\" y2=\"207.8\" class=\"dg-axis\"/><text x=\"591\" y=\"216.8\" class=\"dg-tb\" text-anchor=\"middle\">a</text><line x1=\"707\" y1=\"196\" x2=\"742\" y2=\"196\" class=\"dg-axis\"/><text x=\"751\" y=\"200\" class=\"dg-tb\" text-anchor=\"middle\">b</text><line x1=\"615\" y1=\"104\" x2=\"615\" y2=\"69\" class=\"dg-axis\"/><text x=\"615\" y=\"61\" class=\"dg-tb\" text-anchor=\"middle\">c</text><circle cx=\"634\" cy=\"182\" r=\"4\" class=\"dg-lp-amb\"/><circle cx=\"707\" cy=\"196\" r=\"4\" class=\"dg-lp-amb\"/><text x=\"681\" y=\"26\" class=\"dg-vl-acc\" text-anchor=\"middle\">(210)</text><text x=\"681\" y=\"240\" class=\"dg-t\" text-anchor=\"middle\">intercepts ½, 1, ∞</text></svg></div>"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Intercepts (a, b, c)</th><th>Reciprocals</th><th>Miller index</th></tr></thead><tbody><tr><td>1, ∞, ∞</td><td>1, 0, 0</td><td>(100)</td></tr><tr><td>1, 1, ∞</td><td>1, 1, 0</td><td>(110)</td></tr><tr><td>1, 1, 1</td><td>1, 1, 1</td><td>(111)</td></tr><tr><td>½, 1, ∞</td><td>2, 1, 0</td><td>(210)</td></tr><tr><td>⅓, ⅕, ∞</td><td>3, 5, 0</td><td>(350)</td></tr><tr><td>⅓, ⅕, 1</td><td>3, 5, 1</td><td>(351)</td></tr><tr><td>-1, 1, ∞</td><td><span class=\"bar\">1</span>, 1, 0</td><td>(<span class=\"bar\">1</span>10)</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "h3",
+          "text": "Why reciprocals?"
+        },
+        {
+          "type": "p",
+          "text": "A plane parallel to an axis meets it at infinity. Taking the reciprocal turns that awkward ∞ into a clean <strong>0</strong>. It also makes the index track plane spacing: bigger indices mean planes packed closer together. In the cubic system the spacing between neighbouring (hkl) planes is",
+          "class": ""
+        },
+        {
+          "type": "formulablock",
+          "name": "Plane spacing (cubic only)",
+          "eqs": [
+            "d_{hkl}=\\frac{a}{\\sqrt{h^{2}+k^{2}+l^{2}}}"
+          ],
+          "vars": [
+            {
+              "symbol": "a",
+              "desc": "cubic lattice parameter"
+            },
+            {
+              "symbol": "h, k, l",
+              "desc": "Miller indices of the plane family"
+            }
+          ],
+          "note": "So (110) planes are spaced \\(a/\\sqrt2\\) apart, closer than (100) planes at \\(a\\). This result is not on the Week 2 slides, so treat it as extra context unless the lecturer covers it."
+        },
+        {
+          "type": "h3",
+          "text": "Rules to remember"
+        },
+        {
+          "type": "conceptbox",
+          "variant": "",
+          "title": "Reading an index at a glance",
+          "html": "<ul><li><strong>A zero means parallel.</strong> (0kl) is parallel to a, (h0l) to b, (hk0) to c.</li><li><strong>A small index means nearly parallel</strong> to that axis.</li><li><strong>Parallel planes share the same indices.</strong> Miller indices give orientation, not position.</li><li>If the plane passes through the origin, you cannot take a reciprocal of 0. Shift the origin, or use a parallel plane.</li><li>Negative intercepts give a bar: intercept -1 on a gives <span class=\"bar\">1</span>.</li></ul>"
+        },
+        {
+          "type": "p",
+          "text": "The lecture shows the series (010), (110), (210), (310), (510), (10,1,0). Reading them off: (010) is parallel to a. As h grows against k = 1, the a-intercept 1/h shrinks towards the origin and the plane swings round until (10,1,0) is nearly parallel to b, almost a (100) plane. The small index is the axis the plane is nearly parallel to.",
+          "class": ""
+        },
+        {
+          "type": "h3",
+          "text": "Planes of a form: {hkl}"
+        },
+        {
+          "type": "p",
+          "text": "Curly brackets group symmetry-equivalent planes. In the cubic system {100} is the six faces of the cube (three pairs). In the <strong>tetragonal</strong> system the same label covers four planes of the {100} type but only two of the {001} type, because c is different. As with directions, the grouping depends on the crystal system.",
+          "class": ""
+        },
+        {
+          "type": "h3",
+          "text": "Drawing a plane from its index"
+        },
+        {
+          "type": "p",
+          "text": "Reverse the algorithm. Take reciprocals to get intercepts, mark them on the axes, and join the marks. Where an intercept is ∞ draw lines parallel to that axis out to the cell edge.",
+          "class": ""
+        },
+        {
+          "type": "example",
+          "label": "Worked example: draw (351)",
+          "q": "Find the intercepts of (351) so you can draw it.",
+          "steps": [
+            "Reciprocals of the indices: \\(\\tfrac13,\\ \\tfrac15,\\ 1\\)",
+            "Mark ⅓ along a, ⅕ along b and 1 along c, then join the three points."
+          ],
+          "answer": "Intercepts are <strong>a = ⅓, b = ⅕, c = 1</strong>. If the third index were 0, as in (350), the c intercept is infinite and the plane is parallel to c."
+        },
+        {
+          "type": "example",
+          "label": "Practice: the intercepts of three more planes",
+          "q": "Give the intercepts of (251), (114) and (10,1,1).",
+          "steps": [
+            "(251): \\(\\tfrac12,\\ \\tfrac15,\\ 1\\)",
+            "(114): \\(1,\\ 1,\\ \\tfrac14\\)",
+            "(10,1,1): \\(\\tfrac1{10},\\ 1,\\ 1\\)"
+          ],
+          "answer": "Then draw each in a unit cell and check it with the unit cell tool on Canvas."
+        },
+        {
+          "type": "conceptbox",
+          "variant": "note",
+          "title": "Direction vs plane: do not mix them up",
+          "html": "<p>[hkl] with square brackets is a <strong>direction</strong>, (hkl) with round brackets is a <strong>plane</strong>. In cubic crystals only, the direction [hkl] is perpendicular to the plane (hkl). In other crystal systems that is not true.</p>"
+        },
+        {
+          "type": "h2",
+          "id": "w2-close",
+          "text": "Close Packing: Why Metals Pile Up Like Oranges"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"analogy\"><span class=\"analogy-icon\">🍊</span><div class=\"analogy-text\"><strong>Think of oranges stacked at a market stall.</strong> The stable stack puts each orange in the dip between three below it, because that is the densest way to pack equal spheres. Metals do the same. Usually only one element is present, so every atom is the same size. Metallic bonding is non-directional, so nothing forces a loose open arrangement. And short nearest-neighbour distances lower the bond energy.</div></div>"
+        },
+        {
+          "type": "h3",
+          "text": "Start in 2D"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 262\" role=\"img\" aria-label=\"Square packing of circles (0.785) versus hexagonal packing (0.907) with the repeat cell highlighted\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"10\" y=\"38\" width=\"360\" height=\"212\" rx=\"8\" class=\"dg-frame\"/><text x=\"190\" y=\"24\" class=\"dg-tb\" text-anchor=\"middle\">Square packing</text><circle cx=\"133\" cy=\"70\" r=\"19\" class=\"dg-atomA dg-dim\"/><circle cx=\"133\" cy=\"108\" r=\"19\" class=\"dg-atomA dg-dim\"/><circle cx=\"133\" cy=\"146\" r=\"19\" class=\"dg-atomA dg-dim\"/><circle cx=\"133\" cy=\"184\" r=\"19\" class=\"dg-atomA dg-dim\"/><circle cx=\"171\" cy=\"70\" r=\"19\" class=\"dg-atomA dg-dim\"/><circle cx=\"171\" cy=\"108\" r=\"19\" class=\"dg-atomA dg-dim\"/><circle cx=\"171\" cy=\"146\" r=\"19\" class=\"dg-atomA dg-dim\"/><circle cx=\"171\" cy=\"184\" r=\"19\" class=\"dg-atomA dg-dim\"/><circle cx=\"209\" cy=\"70\" r=\"19\" class=\"dg-atomA dg-dim\"/><circle cx=\"209\" cy=\"108\" r=\"19\" class=\"dg-atomA dg-dim\"/><circle cx=\"209\" cy=\"146\" r=\"19\" class=\"dg-atomA dg-dim\"/><circle cx=\"209\" cy=\"184\" r=\"19\" class=\"dg-atomA dg-dim\"/><circle cx=\"247\" cy=\"70\" r=\"19\" class=\"dg-atomA dg-dim\"/><circle cx=\"247\" cy=\"108\" r=\"19\" class=\"dg-atomA dg-dim\"/><circle cx=\"247\" cy=\"146\" r=\"19\" class=\"dg-atomA dg-dim\"/><circle cx=\"247\" cy=\"184\" r=\"19\" class=\"dg-atomA dg-dim\"/><polygon points=\"171,108 209,108 209,146 171,146\" class=\"dg-cell-amb\"/><circle cx=\"171\" cy=\"108\" r=\"19\" class=\"dg-atomA\"/><circle cx=\"209\" cy=\"108\" r=\"19\" class=\"dg-atomA\"/><circle cx=\"209\" cy=\"146\" r=\"19\" class=\"dg-atomA\"/><circle cx=\"171\" cy=\"146\" r=\"19\" class=\"dg-atomA\"/><text x=\"190\" y=\"236\" class=\"dg-t\" text-anchor=\"middle\">4 neighbours · efficiency π/4 = 0.785</text><rect x=\"400\" y=\"38\" width=\"370\" height=\"212\" rx=\"8\" class=\"dg-frame\"/><text x=\"585\" y=\"24\" class=\"dg-tb\" text-anchor=\"middle\">Hexagonal packing</text><circle cx=\"518\" cy=\"70\" r=\"19\" class=\"dg-atomG dg-dim\"/><circle cx=\"556\" cy=\"70\" r=\"19\" class=\"dg-atomG dg-dim\"/><circle cx=\"594\" cy=\"70\" r=\"19\" class=\"dg-atomG dg-dim\"/><circle cx=\"632\" cy=\"70\" r=\"19\" class=\"dg-atomG dg-dim\"/><circle cx=\"537\" cy=\"102.9\" r=\"19\" class=\"dg-atomG dg-dim\"/><circle cx=\"575\" cy=\"102.9\" r=\"19\" class=\"dg-atomG dg-dim\"/><circle cx=\"613\" cy=\"102.9\" r=\"19\" class=\"dg-atomG dg-dim\"/><circle cx=\"651\" cy=\"102.9\" r=\"19\" class=\"dg-atomG dg-dim\"/><circle cx=\"518\" cy=\"135.8\" r=\"19\" class=\"dg-atomG dg-dim\"/><circle cx=\"556\" cy=\"135.8\" r=\"19\" class=\"dg-atomG dg-dim\"/><circle cx=\"594\" cy=\"135.8\" r=\"19\" class=\"dg-atomG dg-dim\"/><circle cx=\"632\" cy=\"135.8\" r=\"19\" class=\"dg-atomG dg-dim\"/><circle cx=\"537\" cy=\"168.7\" r=\"19\" class=\"dg-atomG dg-dim\"/><circle cx=\"575\" cy=\"168.7\" r=\"19\" class=\"dg-atomG dg-dim\"/><circle cx=\"613\" cy=\"168.7\" r=\"19\" class=\"dg-atomG dg-dim\"/><circle cx=\"651\" cy=\"168.7\" r=\"19\" class=\"dg-atomG dg-dim\"/><polygon points=\"556,102.9 594,102.9 613,135.8 575,135.8\" class=\"dg-cell-amb\"/><circle cx=\"556\" cy=\"102.9\" r=\"19\" class=\"dg-atomG\"/><circle cx=\"594\" cy=\"102.9\" r=\"19\" class=\"dg-atomG\"/><circle cx=\"613\" cy=\"135.8\" r=\"19\" class=\"dg-atomG\"/><circle cx=\"575\" cy=\"135.8\" r=\"19\" class=\"dg-atomG\"/><text x=\"585\" y=\"236\" class=\"dg-t\" text-anchor=\"middle\">6 neighbours · efficiency π/(2√3) = 0.907</text></svg></div>"
+        },
+        {
+          "type": "formulablock",
+          "name": "2D packing efficiency",
+          "eqs": [
+            "\\text{square: } \\frac{\\pi r^{2}}{(2r)^{2}} = 0.785 \\qquad \\text{hexagonal: } \\frac{\\pi r^{2}}{2\\sqrt3\\,r^{2}} = 0.907"
+          ],
+          "vars": [
+            {
+              "symbol": "r",
+              "desc": "circle radius"
+            },
+            {
+              "symbol": "2√3 r²",
+              "desc": "area of the hexagonal rhombus cell: base 2r times height 2r·sin 60° = √3 r"
+            }
+          ],
+          "note": "Each cell holds exactly one circle: four quarter-circles in the square, and two 60° sectors plus two 120° sectors in the rhombus."
+        },
+        {
+          "type": "h3",
+          "text": "Then stack the layers in 3D"
+        },
+        {
+          "type": "p",
+          "text": "Take a hexagonally packed layer A. A second layer B sits in half of the dips of A. The third layer then has a choice, and that choice makes two different crystals.",
+          "class": ""
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 262\" role=\"img\" aria-label=\"Schematic side view of ABAB and ABCABC stacking of close-packed layers\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"16\" y=\"38\" width=\"372\" height=\"212\" rx=\"8\" class=\"dg-frame\"/><text x=\"202\" y=\"24\" class=\"dg-tb\" text-anchor=\"middle\">ABAB…  hexagonal close-packed</text><text x=\"28\" y=\"219\" class=\"dg-tb-blue\" text-anchor=\"middle\">A</text><circle cx=\"52\" cy=\"214\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"84.4\" cy=\"214\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"116.8\" cy=\"214\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"149.2\" cy=\"214\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"181.6\" cy=\"214\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"214\" cy=\"214\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"246.4\" cy=\"214\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"278.8\" cy=\"214\" r=\"12\" class=\"dg-atomA\"/><text x=\"28\" y=\"189\" class=\"dg-tb-acc\" text-anchor=\"middle\">B</text><circle cx=\"64\" cy=\"184\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"96.4\" cy=\"184\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"128.8\" cy=\"184\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"161.2\" cy=\"184\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"193.6\" cy=\"184\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"226\" cy=\"184\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"258.4\" cy=\"184\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"290.8\" cy=\"184\" r=\"12\" class=\"dg-atomG\"/><text x=\"28\" y=\"159\" class=\"dg-tb-blue\" text-anchor=\"middle\">A</text><circle cx=\"52\" cy=\"154\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"84.4\" cy=\"154\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"116.8\" cy=\"154\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"149.2\" cy=\"154\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"181.6\" cy=\"154\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"214\" cy=\"154\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"246.4\" cy=\"154\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"278.8\" cy=\"154\" r=\"12\" class=\"dg-atomA\"/><text x=\"28\" y=\"129\" class=\"dg-tb-acc\" text-anchor=\"middle\">B</text><circle cx=\"64\" cy=\"124\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"96.4\" cy=\"124\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"128.8\" cy=\"124\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"161.2\" cy=\"124\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"193.6\" cy=\"124\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"226\" cy=\"124\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"258.4\" cy=\"124\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"290.8\" cy=\"124\" r=\"12\" class=\"dg-atomG\"/><text x=\"202\" y=\"244\" class=\"dg-t\" text-anchor=\"middle\">third layer sits directly over the first</text><rect x=\"396\" y=\"38\" width=\"372\" height=\"212\" rx=\"8\" class=\"dg-frame\"/><text x=\"582\" y=\"24\" class=\"dg-tb\" text-anchor=\"middle\">ABCABC…  cubic close-packed</text><text x=\"408\" y=\"219\" class=\"dg-tb-blue\" text-anchor=\"middle\">A</text><circle cx=\"432\" cy=\"214\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"464.4\" cy=\"214\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"496.8\" cy=\"214\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"529.2\" cy=\"214\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"561.6\" cy=\"214\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"594\" cy=\"214\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"626.4\" cy=\"214\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"658.8\" cy=\"214\" r=\"12\" class=\"dg-atomA\"/><text x=\"408\" y=\"189\" class=\"dg-tb-acc\" text-anchor=\"middle\">B</text><circle cx=\"444\" cy=\"184\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"476.4\" cy=\"184\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"508.8\" cy=\"184\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"541.2\" cy=\"184\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"573.6\" cy=\"184\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"606\" cy=\"184\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"638.4\" cy=\"184\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"670.8\" cy=\"184\" r=\"12\" class=\"dg-atomG\"/><text x=\"408\" y=\"159\" class=\"dg-tb-amb\" text-anchor=\"middle\">C</text><circle cx=\"456\" cy=\"154\" r=\"12\" class=\"dg-atomB\"/><circle cx=\"488.4\" cy=\"154\" r=\"12\" class=\"dg-atomB\"/><circle cx=\"520.8\" cy=\"154\" r=\"12\" class=\"dg-atomB\"/><circle cx=\"553.2\" cy=\"154\" r=\"12\" class=\"dg-atomB\"/><circle cx=\"585.6\" cy=\"154\" r=\"12\" class=\"dg-atomB\"/><circle cx=\"618\" cy=\"154\" r=\"12\" class=\"dg-atomB\"/><circle cx=\"650.4\" cy=\"154\" r=\"12\" class=\"dg-atomB\"/><circle cx=\"682.8\" cy=\"154\" r=\"12\" class=\"dg-atomB\"/><text x=\"408\" y=\"129\" class=\"dg-tb-blue\" text-anchor=\"middle\">A</text><circle cx=\"432\" cy=\"124\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"464.4\" cy=\"124\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"496.8\" cy=\"124\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"529.2\" cy=\"124\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"561.6\" cy=\"124\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"594\" cy=\"124\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"626.4\" cy=\"124\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"658.8\" cy=\"124\" r=\"12\" class=\"dg-atomA\"/><text x=\"582\" y=\"244\" class=\"dg-t\" text-anchor=\"middle\">third layer sits over the remaining hollows (C)</text></svg></div>"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th></th><th>HCP</th><th>CCP (the FCC cell)</th></tr></thead><tbody><tr><td>Stacking</td><td>ABAB…</td><td>ABCABC…</td></tr><tr><td>Third layer</td><td>directly over the first (A)</td><td>over the other set of dips (C)</td></tr><tr><td>Coordination number</td><td>12</td><td>12</td></tr><tr><td>APF</td><td>0.74</td><td>0.74</td></tr><tr><td>Close-packed planes</td><td>the basal planes</td><td>the {111} planes of the FCC cell</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "p",
+          "text": "Coordination number 12 comes from 6 neighbours in the same layer, 3 in the layer above and 3 below. Both stackings pack equal spheres as densely as is possible.",
+          "class": ""
+        },
+        {
+          "type": "conceptbox",
+          "variant": "note",
+          "title": "The FCC trap",
+          "html": "<p>The unit cell of a cubic close-packed arrangement is the familiar <strong>face-centred cubic</strong> cell, with atoms at the corners and face centres. But the <em>faces</em> of that cell are not the close-packed layers. The close-packed layers lie parallel to the <strong>{111}</strong> planes, slicing diagonally through the cube. This is why the link between ccp and fcc is not obvious from the cell alone.</p>"
+        },
+        {
+          "type": "h3",
+          "text": "Voids between the atoms"
+        },
+        {
+          "type": "p",
+          "text": "Packed spheres leave gaps, and the shape of the gap matters later when small atoms sit inside a metal (interstitial solid solutions).",
+          "class": ""
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Void</th><th>Surrounded by</th><th>Size (as fraction of atom radius r)</th><th>Per atom</th><th>Per FCC cell</th></tr></thead><tbody><tr><td>Octahedral</td><td>6 atoms</td><td>about 0.414 r</td><td>1</td><td>4</td></tr><tr><td>Tetrahedral</td><td>4 atoms</td><td>about 0.225 r</td><td>2</td><td>8</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "p",
+          "text": "The lecture task is to build ABAB and ABCABC with the coloured spheres, locate both kinds of void, and draw the 2D projection of each stacking. Do it physically if you can. It is hard to see the voids from a drawing alone.",
+          "class": ""
+        },
+        {
+          "type": "h2",
+          "id": "w2-apf",
+          "text": "Atomic Packing Factor: FCC, BCC and HCP"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"analogy\"><span class=\"analogy-icon\">🧳</span><div class=\"analogy-text\"><strong>Think of packing a suitcase.</strong> The APF is the fraction of the suitcase that is actually clothes rather than air. For crystals the clothes are hard spheres, and the suitcase is the unit cell.</div></div>"
+        },
+        {
+          "type": "formulablock",
+          "name": "Atomic packing factor",
+          "eqs": [
+            "\\mathrm{APF}=\\frac{\\text{(atoms per cell)}\\times\\frac43\\pi r^{3}}{V_{\\text{cell}}}"
+          ],
+          "vars": [
+            {
+              "symbol": "r",
+              "desc": "atomic radius (hard-sphere model)"
+            },
+            {
+              "symbol": "V_cell",
+              "desc": "unit cell volume, a³ for a cube"
+            }
+          ],
+          "note": "Count atoms with corners = ⅛, face centres = ½, body centre = 1. Then use geometry to find where the spheres touch, which gives a in terms of r."
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 262\" role=\"img\" aria-label=\"Atoms touching along the face diagonal in FCC and along the body diagonal in BCC\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"tc-amb\" viewBox=\"0 0 10 10\" refX=\"8.5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" class=\"dg-ah-amb\"/></marker><clipPath id=\"tc-f\"><rect x=\"125\" y=\"56\" width=\"150\" height=\"150\"/></clipPath><clipPath id=\"tc-b\"><rect x=\"468\" y=\"56\" width=\"184\" height=\"130\"/></clipPath></defs><text x=\"200\" y=\"26\" class=\"dg-tb\" text-anchor=\"middle\">FCC: touch along the face diagonal</text><rect x=\"125\" y=\"56\" width=\"150\" height=\"150\" class=\"dg-cell-acc\"/><g clip-path=\"url(#tc-f)\"><circle cx=\"125\" cy=\"56\" r=\"53\" class=\"dg-atomA\" fill-opacity=\"0.78\"/><circle cx=\"275\" cy=\"56\" r=\"53\" class=\"dg-atomA\" fill-opacity=\"0.78\"/><circle cx=\"125\" cy=\"206\" r=\"53\" class=\"dg-atomA\" fill-opacity=\"0.78\"/><circle cx=\"275\" cy=\"206\" r=\"53\" class=\"dg-atomA\" fill-opacity=\"0.78\"/><circle cx=\"200\" cy=\"131\" r=\"53\" class=\"dg-atomA\" fill-opacity=\"0.78\"/></g><rect x=\"125\" y=\"56\" width=\"150\" height=\"150\" class=\"dg-edge\" fill=\"none\"/><line x1=\"125\" y1=\"206\" x2=\"275\" y2=\"56\" class=\"dg-route-acc\" stroke-dasharray=\"6 4\"/><text x=\"200\" y=\"232\" class=\"dg-vl-acc\" text-anchor=\"middle\">4r = a√2</text><text x=\"200\" y=\"252\" class=\"dg-t\" text-anchor=\"middle\">APF = 0.74</text><text x=\"560\" y=\"26\" class=\"dg-tb\" text-anchor=\"middle\">BCC: touch along the body diagonal</text><rect x=\"468\" y=\"56\" width=\"183.8\" height=\"130\" class=\"dg-cell-amb\"/><g clip-path=\"url(#tc-b)\"><circle cx=\"468\" cy=\"56\" r=\"56.3\" class=\"dg-atomB\" fill-opacity=\"0.78\"/><circle cx=\"651.8\" cy=\"56\" r=\"56.3\" class=\"dg-atomB\" fill-opacity=\"0.78\"/><circle cx=\"468\" cy=\"186\" r=\"56.3\" class=\"dg-atomB\" fill-opacity=\"0.78\"/><circle cx=\"651.8\" cy=\"186\" r=\"56.3\" class=\"dg-atomB\" fill-opacity=\"0.78\"/><circle cx=\"559.9\" cy=\"121\" r=\"56.3\" class=\"dg-atomB\" fill-opacity=\"0.78\"/></g><rect x=\"468\" y=\"56\" width=\"183.8\" height=\"130\" class=\"dg-edge\" fill=\"none\"/><line x1=\"468\" y1=\"186\" x2=\"651.8\" y2=\"56\" class=\"dg-route-acc\" stroke-dasharray=\"6 4\"/><text x=\"560\" y=\"212\" class=\"dg-vl-amb\" text-anchor=\"middle\">4r = a√3</text><text x=\"560\" y=\"232\" class=\"dg-t\" text-anchor=\"middle\">APF = 0.68</text><text x=\"560\" y=\"252\" class=\"dg-t\" text-anchor=\"middle\">(cut through the cell along a body diagonal)</text></svg></div>"
+        },
+        {
+          "type": "h3",
+          "text": "FCC"
+        },
+        {
+          "type": "p",
+          "text": "Atoms per cell: \\(8\\times\\tfrac18+6\\times\\tfrac12=4\\). They touch along the face diagonal, which is \\(4r\\) long (a corner atom, a whole face-centre atom, and a corner atom) and also \\(a\\sqrt2\\).",
+          "class": ""
+        },
+        {
+          "type": "formulablock",
+          "name": "FCC packing factor",
+          "eqs": [
+            "4r=\\sqrt2\\,a \\;\\Rightarrow\\; a=2\\sqrt2\\,r",
+            "\\mathrm{APF}=\\frac{4\\cdot\\frac43\\pi r^{3}}{(2\\sqrt2\\,r)^{3}}=\\frac{\\pi}{3\\sqrt2}=0.74"
+          ],
+          "vars": [
+            {
+              "symbol": "Z",
+              "desc": "4 atoms per cell"
+            },
+            {
+              "symbol": "CN",
+              "desc": "12"
+            },
+            {
+              "symbol": "close-packed direction",
+              "desc": "&lt;110&gt; (face diagonals)"
+            }
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "BCC"
+        },
+        {
+          "type": "p",
+          "text": "Atoms per cell: \\(1+8\\times\\tfrac18=2\\). They touch along the body diagonal, which is \\(4r\\) long and also \\(a\\sqrt3\\). Not close-packed, so coordination is only 8.",
+          "class": ""
+        },
+        {
+          "type": "formulablock",
+          "name": "BCC packing factor",
+          "eqs": [
+            "4r=\\sqrt3\\,a \\;\\Rightarrow\\; a=\\frac{4r}{\\sqrt3}",
+            "\\mathrm{APF}=\\frac{2\\cdot\\frac43\\pi r^{3}}{\\left(4r/\\sqrt3\\right)^{3}}=\\frac{\\sqrt3\\,\\pi}{8}=0.68"
+          ],
+          "vars": [
+            {
+              "symbol": "Z",
+              "desc": "2 atoms per cell"
+            },
+            {
+              "symbol": "CN",
+              "desc": "8"
+            },
+            {
+              "symbol": "close-packed direction",
+              "desc": "&lt;111&gt; (body diagonals)"
+            }
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "HCP and the summary"
+        },
+        {
+          "type": "p",
+          "text": "The HCP unit cell is a hexagonal prism holding 6 atoms. With ideal sphere stacking the height-to-width ratio is \\(c/a=\\sqrt{8/3}\\approx1.633\\), and it reaches the same APF as FCC, 0.74.",
+          "class": ""
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Structure</th><th>Atoms per cell</th><th>Atoms touch along</th><th>Coordination</th><th>APF</th></tr></thead><tbody><tr><td>Simple cubic</td><td>1</td><td>cell edge, a = 2r</td><td>6</td><td>0.52</td></tr><tr><td>BCC</td><td>2</td><td>body diagonal, √3·a = 4r</td><td>8</td><td>0.68</td></tr><tr><td>FCC</td><td>4</td><td>face diagonal, √2·a = 4r</td><td>12</td><td>0.74</td></tr><tr><td>HCP</td><td>6</td><td>in the basal plane, a = 2r</td><td>12</td><td>0.74</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "example",
+          "label": "Worked example: lattice parameter from radius",
+          "q": "Copper is FCC with atomic radius 0.128 nm. Find its lattice parameter. Then do the same for BCC iron, r = 0.124 nm.",
+          "steps": [
+            "FCC: \\(a=2\\sqrt2\\,r=2\\sqrt2\\times0.128=0.362\\) nm",
+            "BCC: \\(a=\\dfrac{4r}{\\sqrt3}=\\dfrac{4\\times0.124}{\\sqrt3}=0.286\\) nm"
+          ],
+          "answer": "Copper <strong>a ≈ 0.362 nm</strong>; BCC iron <strong>a ≈ 0.286 nm</strong>. Both agree with measured values, which shows the hard-sphere picture works."
+        },
+        {
+          "type": "example",
+          "label": "Worked example: derive the simple cubic APF",
+          "q": "Atoms touch along the cube edge, so a = 2r. What is the APF?",
+          "steps": [
+            "One atom per cell: \\(8\\times\\tfrac18=1\\)",
+            "\\(\\mathrm{APF}=\\dfrac{\\frac43\\pi r^{3}}{(2r)^{3}}=\\dfrac{\\pi}{6}\\)"
+          ],
+          "answer": "APF = <strong>0.52</strong>. This is why simple cubic is almost never seen in metals: half the volume is empty."
+        },
+        {
+          "type": "h2",
+          "id": "w2-why",
+          "text": "Why Any of This Matters"
+        },
+        {
+          "type": "cardgrid",
+          "cards": [
+            {
+              "title": "Ductility",
+              "color": "#2fa15c",
+              "text": "FCC metals (copper, aluminium, gold) slip easily on the close-packed {111} planes along &lt;110&gt; directions, and there are 12 such combinations. That is why they are so ductile. This is the direction and plane notation doing real work."
+            },
+            {
+              "title": "Steel",
+              "color": "#e63946",
+              "text": "Iron is BCC at room temperature and changes to FCC above about 912 °C. FCC iron has bigger octahedral voids (about 0.414 r), so it can dissolve far more carbon (up to about 2 wt%) than BCC iron (about 0.02 wt%). That gap is the basis of heat treatment."
+            },
+            {
+              "title": "Surfaces",
+              "color": "#4a90e2",
+              "text": "Different planes expose different arrangements of atoms. Which {hkl} faces a nanoparticle shows controls how reactive it is, which is why Miller indices appear in catalysis and corrosion."
+            }
+          ]
+        },
+        {
+          "type": "h2",
+          "id": "w2-practice",
+          "text": "Test Yourself"
+        },
+        {
+          "type": "p",
+          "text": "Try each question on paper first, then reveal the answer.",
+          "class": ""
+        },
+        {
+          "type": "example",
+          "label": "Q1",
+          "q": "A vector runs from (0, ½, 0) to (1, 1, ½). What is its direction?",
+          "steps": [
+            "Head minus tail: \\((1,\\ \\tfrac12,\\ \\tfrac12)\\)",
+            "Multiply by 2 to clear fractions."
+          ],
+          "answer": "<strong>[221]</strong>"
+        },
+        {
+          "type": "example",
+          "label": "Q2",
+          "q": "A plane has intercepts ½, ⅓ and ∞. What are its Miller indices?",
+          "steps": [
+            "Reciprocals: \\(2,\\ 3,\\ 0\\)"
+          ],
+          "answer": "<strong>(230)</strong>"
+        },
+        {
+          "type": "example",
+          "label": "Q3",
+          "q": "Why are the faces of the FCC cell not the close-packed layers?",
+          "steps": [
+            "The close-packed layers are hexagonally packed sheets.",
+            "The cell faces are square-packed."
+          ],
+          "answer": "Square-packed layers (APF in 2D 0.785) are less dense than hexagonal ones (0.907). The hexagonal sheets lie parallel to the <strong>{111}</strong> planes."
+        },
+        {
+          "type": "example",
+          "label": "Q4",
+          "q": "How many octahedral and tetrahedral voids are in one FCC cell?",
+          "steps": [
+            "Per atom there is 1 octahedral and 2 tetrahedral void.",
+            "An FCC cell holds 4 atoms."
+          ],
+          "answer": "<strong>4 octahedral and 8 tetrahedral</strong>."
+        },
+        {
+          "type": "example",
+          "label": "Q5",
+          "q": "Derive the APF of BCC from scratch.",
+          "steps": [
+            "Count atoms, then find where they touch."
+          ],
+          "answer": "2 atoms per cell; \\(4r=\\sqrt3\\,a\\); \\(\\mathrm{APF}=2\\cdot\\frac43\\pi r^3\\,/\\,(4r/\\sqrt3)^3=\\sqrt3\\pi/8=\\) <strong>0.68</strong>."
+        },
+        {
+          "type": "h2",
+          "id": "",
+          "text": "Week 2 essentials"
+        },
+        {
+          "type": "conceptbox",
+          "variant": "",
+          "title": "Quick recap",
+          "html": "<ul><li>Unit cell = smallest block that rebuilds the crystal by translation. Crystal system = minimum symmetry, not the look of the box.</li><li>Fractional coordinates (x, y, z) are fractions of a, b, c from a corner origin.</li><li>Direction [uvw]: head minus tail, clear fractions, smallest integers, square brackets. Family &lt;uvw&gt;.</li><li>Plane (hkl): intercepts, reciprocals, clear fractions, round brackets. Zero means parallel. Family {hkl}.</li><li>Parallel planes share indices. Family sizes depend on the crystal system.</li><li>Close packing: hexagonal beats square in 2D (0.907 vs 0.785). 3D stacking: ABAB = HCP, ABC = CCP = FCC. Both CN 12, APF 0.74.</li><li>FCC close-packed layers are the {111} planes, not the cell faces.</li><li>Voids per atom: 1 octahedral, 2 tetrahedral. FCC cell: 4 and 8.</li><li>FCC: 4 atoms, \\(4r=\\sqrt2a\\), APF 0.74. BCC: 2 atoms, \\(4r=\\sqrt3a\\), APF 0.68. HCP: 6 atoms, c/a ≈ 1.633, APF 0.74.</li></ul>"
+        }
+      ],
+      "essentialsTitle": null,
+      "essentialsHeading": null,
+      "essentials": null,
+      "desc": "Fractional coordinates, lattice directions, Miller indices, planes and directions of a form, close packing in 2D and 3D, HCP, FCC and BCC, and atomic packing factor.",
+      "difficulty": "Medium",
+      "readTime": "40 min",
+      "color": "#f4a261"
     },
     {
       "soon": true,
@@ -661,6 +1256,101 @@ window.SITE_CONTENT = {
           ]
         }
       ]
+    },
+    {
+      "heading": "W2: Directions, Planes and Close Packing",
+      "blocks": [
+        {
+          "type": "formulablock",
+          "name": "Fractional coordinates",
+          "eqs": [
+            "(x,\\,y,\\,z)=\\left(\\frac{x_{abs}}{a},\\ \\frac{y_{abs}}{b},\\ \\frac{z_{abs}}{c}\\right)"
+          ],
+          "note": "BCC: (0,0,0), (½,½,½). FCC: (0,0,0), (½,½,0), (½,0,½), (0,½,½)."
+        },
+        {
+          "type": "formulablock",
+          "name": "Direction between two points",
+          "eqs": [
+            "[\\,uvw\\,]=[\\,x_2-x_1,\\ y_2-y_1,\\ z_2-z_1\\,]\\ \\text{reduced}"
+          ],
+          "note": "Square brackets. Family &lt;uvw&gt;."
+        },
+        {
+          "type": "formulablock",
+          "name": "Miller indices",
+          "eqs": [
+            "(hkl)=\\left(\\frac1{p},\\ \\frac1{q},\\ \\frac1{s}\\right)\\ \\text{reduced}"
+          ],
+          "vars": [
+            {
+              "symbol": "p, q, s",
+              "desc": "intercepts on a, b, c in units of a, b, c"
+            }
+          ],
+          "note": "Round brackets. Family {hkl}. Zero index means parallel to that axis."
+        },
+        {
+          "type": "formulablock",
+          "name": "Plane spacing (cubic)",
+          "eqs": [
+            "d_{hkl}=\\frac{a}{\\sqrt{h^2+k^2+l^2}}"
+          ],
+          "note": "Cubic only. Not on the Week 2 slides."
+        },
+        {
+          "type": "formulablock",
+          "name": "2D packing efficiency",
+          "eqs": [
+            "\\text{square}=\\frac{\\pi}{4}=0.785 \\qquad \\text{hexagonal}=\\frac{\\pi}{2\\sqrt3}=0.907"
+          ]
+        },
+        {
+          "type": "formulablock",
+          "name": "Atomic packing factor",
+          "eqs": [
+            "\\mathrm{APF}=\\frac{Z\\cdot\\frac43\\pi r^{3}}{V_{cell}}"
+          ],
+          "vars": [
+            {
+              "symbol": "Z",
+              "desc": "atoms per cell"
+            }
+          ]
+        },
+        {
+          "type": "formulablock",
+          "name": "FCC",
+          "eqs": [
+            "4r=\\sqrt2\\,a \\qquad Z=4 \\qquad \\mathrm{APF}=\\frac{\\pi}{3\\sqrt2}=0.74"
+          ],
+          "note": "CN 12. Close-packed direction &lt;110&gt;, close-packed planes {111}."
+        },
+        {
+          "type": "formulablock",
+          "name": "BCC",
+          "eqs": [
+            "4r=\\sqrt3\\,a \\qquad Z=2 \\qquad \\mathrm{APF}=\\frac{\\sqrt3\\pi}{8}=0.68"
+          ],
+          "note": "CN 8. Close-packed direction &lt;111&gt;."
+        },
+        {
+          "type": "formulablock",
+          "name": "HCP",
+          "eqs": [
+            "Z=6 \\qquad \\frac{c}{a}=\\sqrt{\\tfrac83}\\approx1.633 \\qquad \\mathrm{APF}=0.74"
+          ],
+          "note": "CN 12. Stacking ABAB…"
+        },
+        {
+          "type": "formulablock",
+          "name": "Voids in close packing",
+          "eqs": [
+            "\\text{per atom: 1 octahedral, 2 tetrahedral} \\qquad \\text{FCC cell: 4 and 8}"
+          ],
+          "note": "Octahedral about 0.414 r, tetrahedral about 0.225 r."
+        }
+      ]
     }
   ],
   "formulaSheetSubtitle": "Every equation covered so far. Variables defined. Grows as more weeks are added.",
@@ -722,6 +1412,71 @@ window.SITE_CONTENT = {
           "tag": "W1 · T11",
           "claim": "\"Metals are ductile because metallic bonds are directional.\"",
           "truth": "<strong>FALSE.</strong> Metallic bonding is <strong>non-directional</strong>. Delocalised electrons re-adjust when ions move, which gives ductility and malleability, and also lets metal atoms pack densely."
+        }
+      ]
+    },
+    {
+      "heading": "Week 2: Directions, Planes and Close Packing",
+      "items": [
+        {
+          "tag": "W2 · T1",
+          "claim": "\"A cell shaped like a cube must be cubic.\"",
+          "truth": "<strong>FALSE.</strong> The crystal system is set by minimum symmetry. Cubic needs four 3-fold axes along the body diagonals. A cell stretched along one axis is tetragonal."
+        },
+        {
+          "tag": "W2 · T2",
+          "claim": "\"[hkl] and (hkl) mean the same thing.\"",
+          "truth": "<strong>FALSE.</strong> Square brackets are a <strong>direction</strong>, round brackets are a <strong>plane</strong>. Only in cubic crystals is the direction [hkl] perpendicular to the plane (hkl)."
+        },
+        {
+          "tag": "W2 · T3",
+          "claim": "\"The Miller index of a plane is its intercepts.\"",
+          "truth": "<strong>FALSE.</strong> It is the <strong>reciprocals</strong> of the intercepts, cleared to the smallest integers. Intercepts ½, 1, ∞ give (210), not (½ 1 ∞)."
+        },
+        {
+          "tag": "W2 · T4",
+          "claim": "\"A plane that is parallel to an axis has an index of ∞ on it.\"",
+          "truth": "<strong>FALSE.</strong> It has an intercept of ∞, so the index is <strong>0</strong>."
+        },
+        {
+          "tag": "W2 · T5",
+          "claim": "\"The notation brackets are interchangeable.\"",
+          "truth": "<strong>FALSE.</strong> [uvw] direction, &lt;uvw&gt; family of directions, (hkl) plane, {hkl} family of planes. Mixing them loses marks."
+        },
+        {
+          "tag": "W2 · T6",
+          "claim": "\"There are always six planes in {100}.\"",
+          "truth": "<strong>FALSE.</strong> That is for cubic. In tetragonal there are four {100}-type planes and two {001}-type, because c is a different length."
+        },
+        {
+          "tag": "W2 · T7",
+          "claim": "\"The faces of the FCC unit cell are the close-packed layers.\"",
+          "truth": "<strong>FALSE.</strong> The close-packed layers are the <strong>{111}</strong> planes, which cut diagonally through the cell."
+        },
+        {
+          "tag": "W2 · T8",
+          "claim": "\"BCC is a close-packed structure.\"",
+          "truth": "<strong>FALSE.</strong> Coordination number is 8 and APF is 0.68. Close-packed structures (FCC, HCP) have CN 12 and APF 0.74."
+        },
+        {
+          "tag": "W2 · T9",
+          "claim": "\"FCC packs more densely than HCP.\"",
+          "truth": "<strong>FALSE.</strong> Both have APF 0.74 and CN 12. They differ only in the stacking sequence (ABC vs ABAB)."
+        },
+        {
+          "tag": "W2 · T10",
+          "claim": "\"The packing efficiency of hexagonal packing is 0.74.\"",
+          "truth": "<strong>FALSE.</strong> 0.74 is the <strong>3D</strong> APF of FCC and HCP. Hexagonal packing in <strong>2D</strong> is 0.907 (square packing is 0.785)."
+        },
+        {
+          "tag": "W2 · T11",
+          "claim": "\"An FCC unit cell has 14 atoms.\"",
+          "truth": "<strong>FALSE.</strong> 14 is the number of positions, not atoms. Corners and faces are shared with neighbouring cells: 8 × ⅛ + 6 × ½ = <strong>4</strong> atoms."
+        },
+        {
+          "tag": "W2 · T12",
+          "claim": "\"The &lt;111&gt; family has 4 members in a cubic crystal.\"",
+          "truth": "<strong>FALSE.</strong> It has 8, because each of the 4 body diagonals can be traversed in two directions."
         }
       ]
     }

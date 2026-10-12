@@ -57,4 +57,5 @@ body.revise-mode .sim-embed,body.revise-mode .sim-credit,body.revise-mode .sim-t
 .mini-table th{background:var(--surface-2);color:var(--text);font-weight:600}
 .mini-table td:first-child{color:var(--text);font-weight:600;white-space:nowrap}
 .mini-wrap{overflow-x:auto}
+.bar{text-decoration:overline}
 @media (max-width:620px){.sim-embed iframe{height:820px}.dg-t{font-size:13px}}

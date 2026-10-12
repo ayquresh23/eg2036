@@ -153,5 +153,130 @@ const glossaryData = {
         "A flat face of a crystal or nanoparticle corresponding to a particular crystal plane"
       ]
     ]
+  },
+  "w2": {
+    "name": "Week 2: Directions, Planes and Close Packing",
+    "terms": [
+      [
+        "Fractional coordinates",
+        "Atom positions written as (x, y, z), each a fraction of the lattice constant along a, b and c, measured from a corner origin"
+      ],
+      [
+        "Lattice parameters",
+        "The edge lengths a, b, c and angles α, β, γ that describe the shape of a unit cell"
+      ],
+      [
+        "n-fold rotation axis",
+        "An axis about which turning the crystal by 360°/n leaves it looking identical"
+      ],
+      [
+        "Minimum symmetry",
+        "The least symmetry a lattice must have to belong to a crystal system, for example four 3-fold axes for cubic"
+      ],
+      [
+        "Lattice direction",
+        "A direction in the crystal, given relative to the crystal axes as the ratio u : v : w and written [uvw]"
+      ],
+      [
+        "[uvw]",
+        "Notation for one lattice direction: smallest integers, square brackets, no commas, negatives with a bar"
+      ],
+      [
+        "Direction family",
+        "All directions made equivalent by the crystal symmetry, written in angle brackets; in cubic the 100 family has 6 members"
+      ],
+      [
+        "Miller indices (hkl)",
+        "Three integers naming a family of parallel planes: the reduced reciprocals of the plane's intercepts on a, b and c"
+      ],
+      [
+        "Intercept",
+        "The point where a plane meets a crystal axis, in units of the lattice parameter; infinity if the plane is parallel to the axis"
+      ],
+      [
+        "Plane family {hkl}",
+        "All planes made equivalent by the crystal symmetry, written with curly brackets; in cubic {100} is the six cube faces"
+      ],
+      [
+        "Interplanar spacing",
+        "The perpendicular distance between neighbouring planes of a family; in cubic d = a / √(h² + k² + l²)"
+      ],
+      [
+        "Close-packed structure",
+        "An arrangement of equal spheres with the highest possible density, coordination number 12 and APF 0.74"
+      ],
+      [
+        "Packing efficiency (2D)",
+        "The fraction of a plane covered by circles: 0.785 for square packing and 0.907 for hexagonal packing"
+      ],
+      [
+        "Coordination number",
+        "The number of nearest neighbours of an atom: 12 for FCC and HCP, 8 for BCC, 6 for simple cubic"
+      ],
+      [
+        "Stacking sequence",
+        "The order in which close-packed layers sit on one another, labelled A, B and C by their position"
+      ],
+      [
+        "ABAB stacking",
+        "Every second layer sits directly above the first; this gives hexagonal close-packed (HCP)"
+      ],
+      [
+        "ABCABC stacking",
+        "The third layer sits over the dips not used by B, repeating every three layers; this gives cubic close-packed (CCP = FCC)"
+      ],
+      [
+        "Hexagonal close-packed (HCP)",
+        "Close-packed structure with ABAB stacking; 6 atoms per hexagonal cell, CN 12, APF 0.74, ideal c/a ≈ 1.633"
+      ],
+      [
+        "Cubic close-packed (CCP)",
+        "Close-packed structure with ABC stacking; its unit cell is face-centred cubic"
+      ],
+      [
+        "Face-centred cubic (FCC)",
+        "Cubic cell with atoms at the corners and face centres; 4 atoms per cell, CN 12, APF 0.74"
+      ],
+      [
+        "Body-centred cubic (BCC)",
+        "Cubic cell with atoms at the corners and the body centre; 2 atoms per cell, CN 8, APF 0.68"
+      ],
+      [
+        "Close-packed direction",
+        "The direction along which atoms touch: the 110 family (face diagonals) in FCC and the 111 family (body diagonals) in BCC"
+      ],
+      [
+        "Close-packed plane",
+        "The most densely packed plane of atoms: the {111} planes in FCC, the basal planes in HCP"
+      ],
+      [
+        "Octahedral void",
+        "A gap surrounded by 6 atoms, about 0.414 r in radius; 1 per atom, 4 per FCC cell"
+      ],
+      [
+        "Tetrahedral void",
+        "A gap surrounded by 4 atoms, about 0.225 r in radius; 2 per atom, 8 per FCC cell"
+      ],
+      [
+        "Interstitial site",
+        "A void between host atoms where a small foreign atom can sit"
+      ],
+      [
+        "Atomic packing factor (APF)",
+        "The fraction of a unit cell's volume occupied by atoms, treated as hard spheres"
+      ],
+      [
+        "Hard-sphere model",
+        "Treating atoms as rigid touching spheres, used to relate lattice parameter to atomic radius"
+      ],
+      [
+        "Atoms per unit cell",
+        "Counted with corners = ⅛, edges = ¼, faces = ½, inside = 1: simple cubic 1, BCC 2, FCC 4, HCP 6"
+      ],
+      [
+        "c/a ratio",
+        "The height-to-width ratio of the hexagonal cell; ideal sphere stacking gives √(8/3) ≈ 1.633"
+      ]
+    ]
   }
 };
