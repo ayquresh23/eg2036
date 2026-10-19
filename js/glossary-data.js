@@ -615,6 +615,63 @@ const glossaryData = {
         "Crystal plasticity finite element modelling: simulates deformation grain by grain using slip and twinning laws"
       ]
     ]
+  },
+  "w4": {
+    "name": "Week 4: Densities and Interstitial Holes",
+    "terms": [
+      [
+        "Linear density",
+        "Number of atoms whose centres lie on a crystal direction, per unit length of that direction (atoms per nm)"
+      ],
+      [
+        "Planar density",
+        "Number of atoms whose centres lie in a crystal plane, per unit area of that plane (atoms per nm²)"
+      ],
+      [
+        "2D repeat unit",
+        "The smallest patch of a crystal plane that, repeated, covers the whole plane; used to count planar density"
+      ],
+      [
+        "Close-packed direction",
+        "The direction along which atoms touch; linear density is at its maximum, 1/(2R). [110] in FCC, [111] in BCC"
+      ],
+      [
+        "Close-packed plane",
+        "The densest plane in a structure: {111} in FCC, basal (0001) in HCP. BCC has no truly close-packed plane; its densest is {110}"
+      ],
+      [
+        "Theoretical density",
+        "Density predicted from crystal structure: ρ = nA/(V_c N_A), the mass of the atoms in one unit cell divided by its volume"
+      ],
+      [
+        "Avogadro's number",
+        "6.022 × 10²³, the number of atoms in one mole; converts atomic weight in g/mol into grams per atom"
+      ],
+      [
+        "Interstitial hole",
+        "A gap between the atoms of a crystal where a smaller atom can sit; also called an interstitial site or interstice"
+      ],
+      [
+        "Octahedral hole",
+        "An interstitial hole surrounded by 6 atoms at the corners of an octahedron. Radius 0.414 R in FCC/HCP, 0.155 R in BCC"
+      ],
+      [
+        "Tetrahedral hole",
+        "An interstitial hole surrounded by 4 atoms at the corners of a tetrahedron. Radius 0.225 R in FCC/HCP, 0.291 R in BCC"
+      ],
+      [
+        "T+ and T− sites",
+        "The two sets of four tetrahedral holes in an FCC cell (¼¼¼-type and ¾¼¼-type); later used to build ionic structures"
+      ],
+      [
+        "Ferrite",
+        "BCC iron (α-iron), stable below 912 °C; dissolves only about 0.02 wt% carbon because its holes are small"
+      ],
+      [
+        "Austenite",
+        "FCC iron (γ-iron), stable above 912 °C; dissolves up to about 2 wt% carbon in its octahedral holes"
+      ]
+    ]
   }
 };
 

@@ -21,9 +21,13 @@ Study site for EG2036 (Order in Materials) at Swansea University.
   - pole figures, Bunge Euler angles, orientation distribution functions, bcc fibres
   - how textures are measured (XRD and EBSD), texture development in rolled Zr and Ti and in loaded Ti alloys, hard and soft orientations
   - 12 practice questions with worked answers
-- 22 inline SVG diagrams (generated in the site's dark theme)
+- Week 4: Densities and Interstitial Holes (Dr Willow's "Week 3 2026" slides)
+  - count-then-divide: linear density, planar density and theoretical density, with worked examples for Al, Cu and Fe
+  - octahedral and tetrahedral holes in FCC: positions, counts per cell, and size derivations (0.414 R, 0.225 R)
+  - BCC holes (0.155 R, 0.291 R), carbon in ferrite vs austenite, slide errata, 8 practice questions
+- 27 inline SVG diagrams (generated in the site's dark theme)
 - 6 interactive simulations in `widgets/` (5 3D / plotted, 1 pole-figure tool with cubic and hexagonal modes)
-- 150 glossary terms with flashcard mode, formula sheet (26 blocks), 41 MCQ trap cards
+- 163 glossary terms with flashcard mode, formula sheet (31 blocks), 50 MCQ trap cards
 - Later Order topics (ionic structures, solid solutions) and the disorder topics will be added as they are taught
 
 ## Structure
@@ -40,7 +44,7 @@ The simulations resize themselves via `postMessage` (see the listener at the bot
 
 ## Credits
 
-Five of the simulations are based on animations by **Dr Ashley Willow** (Swansea University, EG-2036 lecturer). They have been restyled to match this site, one broken colour string was fixed, and the physics is unchanged. The Week 3 pole-figure tool (`widgets/pole-figure.html`) is original to this site. The lecture content (Weeks 1 and 2, 2026, and the Week 3 Crystallographic Texture slides by Dr Leo Prakash) belongs to the lecturers, so check with them before making this repository public.
+Five of the simulations are based on animations by **Dr Ashley Willow** (Swansea University, EG-2036 lecturer). They have been restyled to match this site, one broken colour string was fixed, and the physics is unchanged. The Week 3 pole-figure tool (`widgets/pole-figure.html`) is original to this site. The lecture content (Dr Willow's Weeks 1 to 3, 2026, shown here as Weeks 1, 2 and 4, and the Week 3 Crystallographic Texture slides by Dr Leo Prakash) belongs to the lecturers, so check with them before making this repository public.
 
 ## Part of the MatSciEng hub
 

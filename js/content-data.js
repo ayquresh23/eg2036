@@ -6,13 +6,15 @@ window.SITE_CONFIG = {
   "topicIds": [
     "w1",
     "w2",
-    "w3"
+    "w3",
+    "w4"
   ],
   "navOrder": [
     "home",
     "w1",
     "w2",
     "w3",
+    "w4",
     "formulas",
     "glossary",
     "traps"
@@ -20,12 +22,14 @@ window.SITE_CONFIG = {
   "topicColors": {
     "w1": "#0ea5c6",
     "w2": "#f4a261",
-    "w3": "#8855f5"
+    "w3": "#8855f5",
+    "w4": "#d4609a"
   },
   "topicLabels": {
     "w1": "Crystal Structures",
     "w2": "Directions, Planes, Packing",
-    "w3": "Crystallographic Texture"
+    "w3": "Crystallographic Texture",
+    "w4": "Densities and Holes"
   }
 };
 
@@ -33,10 +37,10 @@ window.SITE_CONTENT = {
   "home": {
     "tag": "Order in Materials · Swansea University",
     "title": "EG2036 Study Site",
-    "subtitle": "How atoms arrange themselves in solids and why it matters: bonding, lattices, unit cells, crystal systems, directions and planes, close packing and packing factors, how crystal orientation (texture) builds up when metals are deformed, and later ionic structures and solid solutions. Built out week by week as lectures run, with interactive simulations for the ideas that are easier to see than to read.",
+    "subtitle": "How atoms arrange themselves in solids and why it matters: bonding, lattices, unit cells, crystal systems, directions and planes, close packing and packing factors, linear, planar and theoretical density, interstitial holes, how crystal orientation (texture) builds up when metals are deformed, and later ionic structures and solid solutions. Built out week by week as lectures run, with interactive simulations for the ideas that are easier to see than to read.",
     "stats": [
       {
-        "value": "3",
+        "value": "4",
         "label": "Weeks built"
       },
       {
@@ -44,15 +48,15 @@ window.SITE_CONTENT = {
         "label": "Simulations"
       },
       {
-        "value": "150",
+        "value": "163",
         "label": "Terms"
       },
       {
-        "value": "26",
+        "value": "31",
         "label": "Formulas"
       },
       {
-        "value": "41",
+        "value": "50",
         "label": "Exam Traps"
       }
     ],
@@ -71,7 +75,7 @@ window.SITE_CONTENT = {
       },
       {
         "type": "raw",
-        "html": "<div class=\"card-grid\"><div class=\"topic-card\" onclick=\"showSection('formulas')\" style=\"--bar-color:#0ea5c6\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">📐 Formula Sheet</div><div class=\"topic-desc\">Every equation so far, with variables defined.</div></div><div class=\"topic-card\" onclick=\"showSection('glossary')\" style=\"--bar-color:#2fa15c\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">📚 Glossary</div><div class=\"topic-desc\">150 terms from Weeks 1 to 3. Search, filter, and flashcard mode.</div></div><div class=\"topic-card\" onclick=\"showSection('traps')\" style=\"--bar-color:#e04545\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">⚠️ MCQ Traps</div><div class=\"topic-desc\">Plausible-but-wrong claims the exam uses.</div></div></div>"
+        "html": "<div class=\"card-grid\"><div class=\"topic-card\" onclick=\"showSection('formulas')\" style=\"--bar-color:#0ea5c6\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">📐 Formula Sheet</div><div class=\"topic-desc\">Every equation so far, with variables defined.</div></div><div class=\"topic-card\" onclick=\"showSection('glossary')\" style=\"--bar-color:#2fa15c\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">📚 Glossary</div><div class=\"topic-desc\">163 terms from Weeks 1 to 4. Search, filter, and flashcard mode.</div></div><div class=\"topic-card\" onclick=\"showSection('traps')\" style=\"--bar-color:#e04545\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">⚠️ MCQ Traps</div><div class=\"topic-desc\">Plausible-but-wrong claims the exam uses.</div></div></div>"
       }
     ]
   },
@@ -2375,6 +2379,642 @@ window.SITE_CONTENT = {
       "color": "#8855f5"
     },
     {
+      "id": "w4",
+      "numLabel": "Week 4",
+      "title": "Densities and Interstitial Holes",
+      "subtitle": "How to count atoms along a line, on a plane and in a box, how to predict a metal's density from its structure, and where the holes between the atoms are and how big they get. Dr Willow's slides for this are titled \"Week 3 2026\"; on this site it comes after the texture week.",
+      "essentialsTitle": "Densities and holes essentials",
+      "essentialsHeading": "Week 4 in one screen",
+      "essentials": [
+        "Every calculation is <strong>count the atoms, then divide</strong> by a length, an area or a volume. Only count atoms whose centres lie on the line or in the plane. Shared atoms count as fractions.",
+        "Touching rules: <strong>FCC</strong> \\(4R=\\sqrt2\\,a\\) (face diagonal [110]); <strong>BCC</strong> \\(4R=\\sqrt3\\,a\\) (body diagonal [111]). Cube lengths: [100] = a, [110] = √2 a, [111] = √3 a.",
+        "<strong>Linear density</strong> = atoms on the line / length. Maximum 1/(2R) along the close-packed direction: [110] in FCC, [111] in BCC.",
+        "<strong>Planar density</strong> = atoms in the 2D repeat unit / its area. Densest plane: {111} in FCC, {110} in BCC. Iron: (100) 12.2, (110) 17.2, (111) 7.0 nm⁻².",
+        "<strong>Theoretical density</strong> \\(\\rho=nA/(V_cN_A)\\). Convert a to cm before cubing. Copper 8.89, iron 7.88 g/cm³.",
+        "<strong>FCC holes:</strong> 4 octahedral (body centre + 12 edges × ¼), 8 tetrahedral (the ¼¼¼ positions). Sizes 0.414 R and 0.225 R.",
+        "<strong>BCC holes:</strong> octahedral 0.155 R, tetrahedral 0.291 R. Lower APF but smaller holes, so FCC iron dissolves about 100 times more carbon than BCC iron.",
+        "Derive hole sizes from <strong>hole-to-atom distance = R + r</strong>. Octahedral (FCC and BCC): \\(a=2R+2r\\)."
+      ],
+      "desc": "Linear and planar density, theoretical density, octahedral and tetrahedral holes: where they are, how many, and how big. Why FCC iron holds more carbon than BCC iron.",
+      "difficulty": "Medium",
+      "readTime": "35 min",
+      "color": "#d4609a",
+      "sections": [
+        {
+          "type": "toc",
+          "title": "This week",
+          "items": [
+            {
+              "href": "#w4-idea",
+              "label": "The one idea behind this week: count, then divide"
+            },
+            {
+              "href": "#w4-linear",
+              "label": "Linear density: atoms per length"
+            },
+            {
+              "href": "#w4-planar",
+              "label": "Planar density: atoms per area"
+            },
+            {
+              "href": "#w4-density",
+              "label": "Theoretical density: mass per volume"
+            },
+            {
+              "href": "#w4-holes",
+              "label": "Holes between the atoms: where they are"
+            },
+            {
+              "href": "#w4-size",
+              "label": "How big the holes are"
+            },
+            {
+              "href": "#w4-steel",
+              "label": "Why it matters: carbon in steel"
+            },
+            {
+              "href": "#w4-slides",
+              "label": "Check against your slides"
+            },
+            {
+              "href": "#w4-practice",
+              "label": "Test yourself"
+            }
+          ]
+        },
+        {
+          "type": "h2",
+          "id": "w4-idea",
+          "text": "The One Idea Behind This Week: Count, Then Divide"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"analogy\"><span class=\"analogy-icon\">🧮</span><div class=\"analogy-text\"><strong>Every calculation this week is the same move.</strong> Pick a line, a flat patch or a box inside the crystal. Count how many atoms belong to it. Divide by its length, area or volume. That is it. The only skill is counting the atoms correctly.</div></div>"
+        },
+        {
+          "type": "cardgrid",
+          "cards": [
+            {
+              "title": "Linear density",
+              "color": "#0ea5c6",
+              "text": "Atoms per <strong>length</strong> along a direction. Like counting beads on a necklace per centimetre."
+            },
+            {
+              "title": "Planar density",
+              "color": "#f4a261",
+              "text": "Atoms per <strong>area</strong> on a plane. Like counting floor tiles per square metre."
+            },
+            {
+              "title": "Theoretical density",
+              "color": "#2fa15c",
+              "text": "<strong>Mass</strong> of atoms per <strong>volume</strong> of the unit cell. Like weighing one egg box to know how heavy a whole lorry of eggs is."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": "You need two facts from Week 2 for all of it: <strong>how many atoms are in the unit cell</strong> (FCC 4, BCC 2) and <strong>which way the atoms touch</strong>, because that is what links the cell size \\(a\\) to the atom radius \\(R\\).",
+          "class": ""
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 320\" role=\"img\" aria-label=\"A cube showing the [100] edge, the [110] face diagonal and the [111] body diagonal from one corner\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"dir-amb\" viewBox=\"0 0 10 10\" refX=\"8.5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" class=\"dg-ah-amb\"/></marker><marker id=\"dir-acc\" viewBox=\"0 0 10 10\" refX=\"8.5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" class=\"dg-ah-acc\"/></marker><marker id=\"dir-red\" viewBox=\"0 0 10 10\" refX=\"8.5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" class=\"dg-ah-red\"/></marker><marker id=\"dir-mut\" viewBox=\"0 0 10 10\" refX=\"8.5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" class=\"dg-ah-mut\"/></marker></defs><rect x=\"10\" y=\"10\" width=\"760\" height=\"300\" rx=\"8\" class=\"dg-frame\"/><line x1=\"80.0\" y1=\"280.0\" x2=\"80.0\" y2=\"108.0\" class=\"dg-edge\"/><line x1=\"80.0\" y1=\"280.0\" x2=\"147.9\" y2=\"240.3\" class=\"dg-edge-h\"/><line x1=\"80.0\" y1=\"280.0\" x2=\"252.0\" y2=\"280.0\" class=\"dg-edge\"/><line x1=\"80.0\" y1=\"108.0\" x2=\"147.9\" y2=\"68.3\" class=\"dg-edge\"/><line x1=\"80.0\" y1=\"108.0\" x2=\"252.0\" y2=\"108.0\" class=\"dg-edge\"/><line x1=\"147.9\" y1=\"240.3\" x2=\"147.9\" y2=\"68.3\" class=\"dg-edge-h\"/><line x1=\"147.9\" y1=\"240.3\" x2=\"319.9\" y2=\"240.3\" class=\"dg-edge-h\"/><line x1=\"147.9\" y1=\"68.3\" x2=\"319.9\" y2=\"68.3\" class=\"dg-edge\"/><line x1=\"252.0\" y1=\"280.0\" x2=\"252.0\" y2=\"108.0\" class=\"dg-edge\"/><line x1=\"252.0\" y1=\"280.0\" x2=\"319.9\" y2=\"240.3\" class=\"dg-edge\"/><line x1=\"252.0\" y1=\"108.0\" x2=\"319.9\" y2=\"68.3\" class=\"dg-edge\"/><line x1=\"319.9\" y1=\"240.3\" x2=\"319.9\" y2=\"68.3\" class=\"dg-edge\"/><line x1=\"80.0\" y1=\"280.0\" x2=\"252.0\" y2=\"280.0\" class=\"dg-vec-amb\" marker-end=\"url(#dir-amb)\"/><line x1=\"80.0\" y1=\"280.0\" x2=\"319.9\" y2=\"240.3\" class=\"dg-vec-acc\" marker-end=\"url(#dir-acc)\"/><line x1=\"80.0\" y1=\"280.0\" x2=\"319.9\" y2=\"68.3\" class=\"dg-vec-red\" marker-end=\"url(#dir-red)\"/><text x=\"222.0\" y=\"302.0\" class=\"dg-tb-amb\" text-anchor=\"middle\">[100]</text><text x=\"349.9\" y=\"246.3\" class=\"dg-tb-acc\" text-anchor=\"middle\">[110]</text><text x=\"323.9\" y=\"56.3\" class=\"dg-tb-red\" text-anchor=\"middle\">[111]</text><circle cx=\"80.0\" cy=\"280.0\" r=\"4.0\" class=\"dg-lp\"/><text x=\"76.0\" y=\"302.0\" class=\"dg-t\" text-anchor=\"middle\">origin</text><text x=\"420.0\" y=\"54.0\" class=\"dg-tb\" text-anchor=\"start\">Three directions you need all week</text><text x=\"420.0\" y=\"96.0\" class=\"dg-tb-amb\" text-anchor=\"start\">[100]</text><text x=\"482.0\" y=\"96.0\" class=\"dg-t\" text-anchor=\"start\">along an edge</text><text x=\"650.0\" y=\"96.0\" class=\"dg-tb\" text-anchor=\"start\">length  a</text><text x=\"420.0\" y=\"140.0\" class=\"dg-tb-acc\" text-anchor=\"start\">[110]</text><text x=\"482.0\" y=\"140.0\" class=\"dg-t\" text-anchor=\"start\">across one face</text><text x=\"650.0\" y=\"140.0\" class=\"dg-tb\" text-anchor=\"start\">length  √2 a</text><text x=\"420.0\" y=\"184.0\" class=\"dg-tb-red\" text-anchor=\"start\">[111]</text><text x=\"482.0\" y=\"184.0\" class=\"dg-t\" text-anchor=\"start\">through the middle</text><text x=\"650.0\" y=\"184.0\" class=\"dg-tb\" text-anchor=\"start\">length  √3 a</text><text x=\"420.0\" y=\"246.0\" class=\"dg-t\" text-anchor=\"start\">Shortcut: count the zeros in the brackets.</text><text x=\"420.0\" y=\"268.0\" class=\"dg-t\" text-anchor=\"start\">Two zeros = edge · one zero = face diagonal</text><text x=\"420.0\" y=\"288.0\" class=\"dg-t\" text-anchor=\"start\">No zeros = body diagonal</text></svg></div>"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Structure</th><th>Atoms per cell</th><th>Atoms touch along</th><th>So</th><th>Which gives</th></tr></thead><tbody><tr><td>FCC</td><td>4</td><td>the face diagonal [110]</td><td>\\(4R=\\sqrt2\\,a\\)</td><td>\\(a=2\\sqrt2\\,R\\)</td></tr><tr><td>BCC</td><td>2</td><td>the body diagonal [111]</td><td>\\(4R=\\sqrt3\\,a\\)</td><td>\\(a=4R/\\sqrt3\\)</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "conceptbox",
+          "variant": "note",
+          "title": "Why \"4R\"?",
+          "html": "<p>Along the touching line you cross half a corner atom (\\(R\\)), a whole middle atom (\\(2R\\)) and half of the far corner atom (\\(R\\)). That adds up to \\(4R\\). The middle atom is the face-centre atom in FCC and the body-centre atom in BCC.</p>"
+        },
+        {
+          "type": "h2",
+          "id": "w4-linear",
+          "text": "Linear Density: Atoms per Length"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"analogy\"><span class=\"analogy-icon\">📿</span><div class=\"analogy-text\"><strong>Think of beads on a necklace.</strong> Linear density asks: if I walk along this direction through the crystal, how many atoms do I pass through per nanometre? Directions where the atoms are packed tight, bead touching bead, score highest.</div></div>"
+        },
+        {
+          "type": "formulablock",
+          "name": "Linear density",
+          "eqs": [
+            "\\mathrm{LD}=\\frac{\\text{atoms whose centres sit on the line}}{\\text{length of the line}}"
+          ],
+          "vars": [
+            {
+              "symbol": "line",
+              "desc": "one repeat of the direction vector, e.g. a for [100], √2 a for [110], √3 a for [111]"
+            }
+          ],
+          "note": "Units are atoms per nm (written nm⁻¹)."
+        },
+        {
+          "type": "h3",
+          "text": "The counting rules"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Only count an atom if the line goes through its <strong>centre</strong>. An atom the line just grazes does not count.",
+            "An atom at either <strong>end</strong> of the line counts as <strong>½</strong>, because the other half belongs to the next repeat of the line.",
+            "An atom in the <strong>middle</strong> counts as <strong>1</strong>."
+          ]
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 310\" role=\"img\" aria-label=\"Linear density: three touching atoms along the FCC face diagonal compared with two separated atoms along the BCC cube edge. Dashed outlines show the halves of the end atoms that belong to the next repeat.\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"10\" y=\"38\" width=\"370\" height=\"262\" rx=\"8\" class=\"dg-frame\"/><rect x=\"400\" y=\"38\" width=\"370\" height=\"262\" rx=\"8\" class=\"dg-frame\"/><text x=\"195.0\" y=\"24.0\" class=\"dg-tb\" text-anchor=\"middle\">FCC along [110]: atoms touch</text><text x=\"585.0\" y=\"24.0\" class=\"dg-tb\" text-anchor=\"middle\">BCC along [100]: gaps between atoms</text><clipPath id=\"ld-f\"><rect x=\"75\" y=\"60\" width=\"240\" height=\"200\"/></clipPath><g clip-path=\"url(#ld-f)\"><circle cx=\"75.0\" cy=\"150.0\" r=\"60.0\" class=\"dg-atomA\"/><circle cx=\"195.0\" cy=\"150.0\" r=\"60.0\" class=\"dg-atomA\"/><circle cx=\"315.0\" cy=\"150.0\" r=\"60.0\" class=\"dg-atomA\"/></g><circle cx=\"75.0\" cy=\"150.0\" r=\"60.0\" class=\"dg-lp\" style=\"fill:none;stroke:#4a90e2;stroke-dasharray:4 4;opacity:.6\"/><circle cx=\"315.0\" cy=\"150.0\" r=\"60.0\" class=\"dg-lp\" style=\"fill:none;stroke:#4a90e2;stroke-dasharray:4 4;opacity:.6\"/><line x1=\"75.0\" y1=\"150.0\" x2=\"315.0\" y2=\"150.0\" class=\"dg-route-acc\"/><text x=\"105.0\" y=\"78.0\" class=\"dg-vl-acc\" text-anchor=\"middle\">½</text><text x=\"195.0\" y=\"78.0\" class=\"dg-vl-acc\" text-anchor=\"middle\">1</text><text x=\"285.0\" y=\"78.0\" class=\"dg-vl-acc\" text-anchor=\"middle\">½</text><text x=\"195.0\" y=\"258.0\" class=\"dg-t\" text-anchor=\"middle\">½ + 1 + ½ = 2 atoms in length √2 a</text><text x=\"195.0\" y=\"282.0\" class=\"dg-tb-acc\" text-anchor=\"middle\">√2 a = 4R  →  LD = 2 / 4R = 1 / (2R)</text><clipPath id=\"ld-b\"><rect x=\"495\" y=\"60\" width=\"180\" height=\"200\"/></clipPath><g clip-path=\"url(#ld-b)\"><circle cx=\"495.0\" cy=\"150.0\" r=\"77.9\" class=\"dg-atomB\"/><circle cx=\"675.0\" cy=\"150.0\" r=\"77.9\" class=\"dg-atomB\"/></g><circle cx=\"495.0\" cy=\"150.0\" r=\"77.9\" class=\"dg-lp\" style=\"fill:none;stroke:#f4a261;stroke-dasharray:4 4;opacity:.6\"/><circle cx=\"675.0\" cy=\"150.0\" r=\"77.9\" class=\"dg-lp\" style=\"fill:none;stroke:#f4a261;stroke-dasharray:4 4;opacity:.6\"/><line x1=\"495.0\" y1=\"150.0\" x2=\"675.0\" y2=\"150.0\" class=\"dg-route-acc\"/><text x=\"534.0\" y=\"60.1\" class=\"dg-vl-acc\" text-anchor=\"middle\">½</text><text x=\"636.0\" y=\"60.1\" class=\"dg-vl-acc\" text-anchor=\"middle\">½</text><text x=\"585.0\" y=\"140.0\" class=\"dg-tb-amb\" text-anchor=\"middle\">gap</text><text x=\"585.0\" y=\"258.0\" class=\"dg-t\" text-anchor=\"middle\">½ + ½ = 1 atom in length a</text><text x=\"585.0\" y=\"282.0\" class=\"dg-tb-amb\" text-anchor=\"middle\">a = 4R/√3  →  LD = √3 / (4R)</text></svg></div>"
+        },
+        {
+          "type": "p",
+          "text": "In FCC the atoms along [110] touch, so the line is completely full of atoms. In BCC along [100] there is a gap between the corner atoms, because BCC atoms only touch along the body diagonal.",
+          "class": ""
+        },
+        {
+          "type": "example",
+          "label": "Worked example (from the slides): aluminium along [110]",
+          "q": "Aluminium is FCC with \\(a=0.405\\) nm. What is the linear density along [110]?",
+          "steps": [
+            "Length of [110] in one cell: the face diagonal, \\(\\sqrt2\\,a=\\sqrt2\\times0.405=0.573\\) nm",
+            "Atoms on it: ½ (start) + 1 (face centre) + ½ (end) = 2",
+            "\\(\\mathrm{LD}=2/0.573\\)"
+          ],
+          "answer": "<strong>LD = 3.5 atoms per nm</strong>"
+        },
+        {
+          "type": "example",
+          "label": "Worked example (from the slides): BCC in terms of R",
+          "q": "Find the linear density of a BCC metal along [100], [110] and [111]. Use \\(a=4R/\\sqrt3\\).",
+          "steps": [
+            "[100]: 1 atom per length \\(a\\), so \\(\\mathrm{LD}=\\dfrac1a=\\dfrac{\\sqrt3}{4R}\\)",
+            "[110]: 1 atom per length \\(\\sqrt2\\,a\\) (no atom in the middle of a BCC face), so \\(\\mathrm{LD}=\\dfrac{1}{\\sqrt2\\,a}=\\dfrac{\\sqrt3}{4\\sqrt2\\,R}\\)",
+            "[111]: 2 atoms per length \\(\\sqrt3\\,a\\) (½ + body centre + ½), so \\(\\mathrm{LD}=\\dfrac{2}{\\sqrt3\\,a}=\\dfrac{1}{2R}\\)"
+          ],
+          "answer": "[111] wins with <strong>1/(2R)</strong>. That is one atom per atom diameter: the line is completely full. It is the close-packed direction of BCC."
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Direction</th><th>FCC</th><th>BCC</th></tr></thead><tbody><tr><td>[100]</td><td>0.354 / R</td><td>0.433 / R</td></tr><tr><td>[110]</td><td><strong>0.500 / R</strong> (close-packed)</td><td>0.306 / R</td></tr><tr><td>[111]</td><td>0.204 / R</td><td><strong>0.500 / R</strong> (close-packed)</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "conceptbox",
+          "variant": "",
+          "title": "Remember",
+          "html": "<p>The biggest possible linear density is <strong>1/(2R)</strong>: atoms touching end to end. You only get it along the direction where the atoms touch: <strong>[110] in FCC</strong>, <strong>[111] in BCC</strong>.</p>"
+        },
+        {
+          "type": "h2",
+          "id": "w4-planar",
+          "text": "Planar Density: Atoms per Area"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"analogy\"><span class=\"analogy-icon\">🟫</span><div class=\"analogy-text\"><strong>Think of tiles on a floor.</strong> Slice the crystal along a plane and look straight down at it. Planar density asks how many atoms you see per square nanometre. Pick the smallest patch that repeats to cover the whole plane (the \"2D repeat unit\"), count the atoms in it, and divide by its area.</div></div>"
+        },
+        {
+          "type": "formulablock",
+          "name": "Planar density",
+          "eqs": [
+            "\\mathrm{PD}=\\frac{\\text{atoms whose centres sit in the patch}}{\\text{area of the patch}}"
+          ],
+          "vars": [
+            {
+              "symbol": "patch",
+              "desc": "the 2D repeat unit: a square for (100), a rectangle for (110), a rhombus for (111)"
+            }
+          ],
+          "note": "Units are atoms per nm² (nm⁻²). To get atoms per m², multiply by 10¹⁸."
+        },
+        {
+          "type": "h3",
+          "text": "The counting rules"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Only count atoms whose <strong>centre lies in the plane</strong>. An atom just above or below does not count, even if it is close.",
+            "A corner of a rectangular patch is shared by 4 patches, so a corner atom counts <strong>¼</strong>.",
+            "An atom on an edge counts <strong>½</strong>. An atom fully inside counts <strong>1</strong>."
+          ]
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 330\" role=\"img\" aria-label=\"Two-dimensional repeat units for the BCC (100) plane, the BCC (110) plane and the close-packed FCC (111) plane, with the atoms each one contains\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"10\" y=\"38\" width=\"250\" height=\"282\" rx=\"8\" class=\"dg-frame\"/><rect x=\"270\" y=\"38\" width=\"250\" height=\"282\" rx=\"8\" class=\"dg-frame\"/><rect x=\"530\" y=\"38\" width=\"250\" height=\"282\" rx=\"8\" class=\"dg-frame\"/><text x=\"135.0\" y=\"24.0\" class=\"dg-tb\" text-anchor=\"middle\">BCC (100)</text><clipPath id=\"pd-a\"><rect x=\"60\" y=\"80\" width=\"150\" height=\"150\"/></clipPath><g clip-path=\"url(#pd-a)\"><circle cx=\"60.0\" cy=\"80.0\" r=\"65.0\" class=\"dg-atomB\"/><circle cx=\"210.0\" cy=\"80.0\" r=\"65.0\" class=\"dg-atomB\"/><circle cx=\"60.0\" cy=\"230.0\" r=\"65.0\" class=\"dg-atomB\"/><circle cx=\"210.0\" cy=\"230.0\" r=\"65.0\" class=\"dg-atomB\"/></g><rect x=\"60\" y=\"80\" width=\"150\" height=\"150\" class=\"dg-cell-amb\"/><text x=\"135.0\" y=\"262.0\" class=\"dg-t\" text-anchor=\"middle\">4 corners × ¼ = 1 atom</text><text x=\"135.0\" y=\"282.0\" class=\"dg-t\" text-anchor=\"middle\">area a²</text><text x=\"135.0\" y=\"306.0\" class=\"dg-tb-amb\" text-anchor=\"middle\">PD = 1 / a²</text><text x=\"395.0\" y=\"24.0\" class=\"dg-tb\" text-anchor=\"middle\">BCC (110)</text><clipPath id=\"pd-b\"><rect x=\"310.1\" y=\"95\" width=\"169.7\" height=\"120\"/></clipPath><g clip-path=\"url(#pd-b)\"><circle cx=\"310.1\" cy=\"95.0\" r=\"52.0\" class=\"dg-atomB\"/><circle cx=\"479.9\" cy=\"95.0\" r=\"52.0\" class=\"dg-atomB\"/><circle cx=\"310.1\" cy=\"215.0\" r=\"52.0\" class=\"dg-atomB\"/><circle cx=\"479.9\" cy=\"215.0\" r=\"52.0\" class=\"dg-atomB\"/><circle cx=\"395.0\" cy=\"155.0\" r=\"52.0\" class=\"dg-atomB\"/></g><rect x=\"310.1\" y=\"95\" width=\"169.7\" height=\"120\" class=\"dg-cell-amb\"/><text x=\"395.0\" y=\"262.0\" class=\"dg-t\" text-anchor=\"middle\">4 × ¼ + 1 centre = 2 atoms</text><text x=\"395.0\" y=\"282.0\" class=\"dg-t\" text-anchor=\"middle\">area a × √2 a = √2 a²</text><text x=\"395.0\" y=\"306.0\" class=\"dg-tb-amb\" text-anchor=\"middle\">PD = 2 / (√2 a²)</text><circle cx=\"560.0\" cy=\"120.0\" r=\"26.0\" class=\"dg-atomA dg-dim\"/><circle cx=\"612.0\" cy=\"120.0\" r=\"26.0\" class=\"dg-atomA dg-dim\"/><circle cx=\"664.0\" cy=\"120.0\" r=\"26.0\" class=\"dg-atomA dg-dim\"/><circle cx=\"716.0\" cy=\"120.0\" r=\"26.0\" class=\"dg-atomA dg-dim\"/><circle cx=\"586.0\" cy=\"165.0\" r=\"26.0\" class=\"dg-atomA dg-dim\"/><circle cx=\"638.0\" cy=\"165.0\" r=\"26.0\" class=\"dg-atomA dg-dim\"/><circle cx=\"690.0\" cy=\"165.0\" r=\"26.0\" class=\"dg-atomA dg-dim\"/><circle cx=\"742.0\" cy=\"165.0\" r=\"26.0\" class=\"dg-atomA dg-dim\"/><circle cx=\"560.0\" cy=\"210.1\" r=\"26.0\" class=\"dg-atomA dg-dim\"/><circle cx=\"612.0\" cy=\"210.1\" r=\"26.0\" class=\"dg-atomA dg-dim\"/><circle cx=\"664.0\" cy=\"210.1\" r=\"26.0\" class=\"dg-atomA dg-dim\"/><circle cx=\"716.0\" cy=\"210.1\" r=\"26.0\" class=\"dg-atomA dg-dim\"/><circle cx=\"638.0\" cy=\"165.0\" r=\"26.0\" class=\"dg-atomA\"/><circle cx=\"690.0\" cy=\"165.0\" r=\"26.0\" class=\"dg-atomA\"/><circle cx=\"664.0\" cy=\"210.1\" r=\"26.0\" class=\"dg-atomA\"/><circle cx=\"612.0\" cy=\"210.1\" r=\"26.0\" class=\"dg-atomA\"/><polygon points=\"638.0,165.0 690.0,165.0 664.0,210.1 612.0,210.1\" class=\"dg-cell-acc\"/><text x=\"655.0\" y=\"24.0\" class=\"dg-tb\" text-anchor=\"middle\">FCC (111)</text><text x=\"655.0\" y=\"262.0\" class=\"dg-t\" text-anchor=\"middle\">rhombus holds exactly 1 atom</text><text x=\"655.0\" y=\"282.0\" class=\"dg-t\" text-anchor=\"middle\">area 2√3 R²</text><text x=\"655.0\" y=\"306.0\" class=\"dg-tb-acc\" text-anchor=\"middle\">PD = 1 / (2√3 R²)</text></svg></div>"
+        },
+        {
+          "type": "h3",
+          "text": "Step by step for the three BCC planes"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>(100)</strong> is a cube face. Four corner atoms, each ¼, gives 1 atom. Area \\(a^2\\). The body-centre atom is half a cell away, so it is not in the plane.",
+            "<strong>(110)</strong> cuts diagonally through the cube, from one edge to the opposite edge. It is a rectangle \\(a\\) tall and \\(\\sqrt2\\,a\\) wide, and it passes straight through the body-centre atom. Four corners × ¼ + 1 = 2 atoms.",
+            "<strong>(111)</strong> cuts off a corner of the cube. Its atoms sit on a triangular pattern, spaced \\(\\sqrt2\\,a\\) apart (a face diagonal). The repeat unit is a rhombus of area \\(\\sqrt3\\,a^2\\) holding 1 atom. This plane is quite empty."
+          ]
+        },
+        {
+          "type": "example",
+          "label": "Worked example (from the slides): iron (100)",
+          "q": "Below 912 °C iron is BCC with \\(R=0.1241\\) nm. Find the planar density of (100).",
+          "steps": [
+            "\\(a=4R/\\sqrt3=4\\times0.1241/1.732=0.2866\\) nm",
+            "Atoms in the square: 4 × ¼ = 1",
+            "\\(\\mathrm{PD}=1/a^2=1/0.08214\\)"
+          ],
+          "answer": "<strong>PD = 12.2 atoms per nm²</strong> (1.22 × 10¹⁹ per m²). The slide writes 12.1 because it cuts off rather than rounds."
+        },
+        {
+          "type": "example",
+          "label": "Worked example (from the slides): iron (111)",
+          "q": "Same iron. Find the planar density of (111).",
+          "steps": [
+            "Atoms in the plane are spaced \\(\\sqrt2\\,a=0.4053\\) nm apart in a triangular pattern",
+            "The rhombus repeat unit has area: base × height \\(=\\sqrt2\\,a\\times\\dfrac{\\sqrt3}{2}\\sqrt2\\,a=\\sqrt3\\,a^2=0.1423\\) nm²",
+            "It holds 1 atom, so \\(\\mathrm{PD}=1/0.1423\\)"
+          ],
+          "answer": "<strong>PD = 7.0 atoms per nm²</strong>. The slide shows 7.6, which does not match its own area formula. See \"Check against your slides\" below."
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Plane</th><th>FCC (copper, R = 0.128 nm)</th><th>BCC (iron, R = 0.1241 nm)</th></tr></thead><tbody><tr><td>(100)</td><td>15.3 nm⁻²</td><td>12.2 nm⁻²</td></tr><tr><td>(110)</td><td>10.8 nm⁻²</td><td><strong>17.2 nm⁻²</strong> (densest in BCC)</td></tr><tr><td>(111)</td><td><strong>17.6 nm⁻²</strong> (densest in FCC)</td><td>7.0 nm⁻²</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "conceptbox",
+          "variant": "",
+          "title": "Remember",
+          "html": "<p>The densest plane is <strong>{111} in FCC</strong> (it is the close-packed layer from Week 2) and <strong>{110} in BCC</strong>. Densest planes and densest directions are where metals slip when they bend, so these numbers come back when you study deformation.</p>"
+        },
+        {
+          "type": "h2",
+          "id": "w4-density",
+          "text": "Theoretical Density: Mass per Volume"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"analogy\"><span class=\"analogy-icon\">🥚</span><div class=\"analogy-text\"><strong>Weigh one egg box, know the whole lorry.</strong> Every unit cell in a crystal is identical. So the density of one cell is the density of the whole lump of metal. Work out the mass of the atoms in one cell, divide by the volume of that cell, and you have predicted the density without weighing anything.</div></div>"
+        },
+        {
+          "type": "formulablock",
+          "name": "Theoretical density",
+          "eqs": [
+            "\\rho=\\frac{n\\,A}{V_c\\,N_A}"
+          ],
+          "vars": [
+            {
+              "symbol": "n",
+              "desc": "atoms per unit cell (FCC 4, BCC 2, HCP 6)"
+            },
+            {
+              "symbol": "A",
+              "desc": "atomic weight in g/mol"
+            },
+            {
+              "symbol": "V_c",
+              "desc": "volume of the unit cell in cm³ (a³ for a cube)"
+            },
+            {
+              "symbol": "N_A",
+              "desc": "Avogadro's number, 6.022 × 10²³ atoms per mol"
+            }
+          ],
+          "note": "\\(nA/N_A\\) is simply the mass of the atoms in one cell, in grams."
+        },
+        {
+          "type": "h3",
+          "text": "The five steps"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>n</strong>: how many atoms in the cell? (FCC 4, BCC 2)",
+            "<strong>a</strong>: use the touching rule to get \\(a\\) from \\(R\\)",
+            "<strong>Convert</strong> \\(a\\) to centimetres: 1 nm = 10⁻⁷ cm",
+            "<strong>Cube it</strong> to get \\(V_c\\) in cm³",
+            "<strong>Substitute</strong> and the answer comes out in g/cm³"
+          ]
+        },
+        {
+          "type": "example",
+          "label": "Worked example (from the slides, finished): copper",
+          "q": "Copper is FCC, \\(A=63.55\\) g/mol, \\(R=0.128\\) nm. Predict its density.",
+          "steps": [
+            "\\(n=4\\)",
+            "\\(a=2\\sqrt2\\,R=2\\times1.414\\times0.128=0.362\\) nm",
+            "\\(a=0.362\\times10^{-7}\\) cm, so \\(V_c=a^3=4.75\\times10^{-23}\\) cm³",
+            "\\(\\rho=\\dfrac{4\\times63.55}{4.75\\times10^{-23}\\times6.022\\times10^{23}}=\\dfrac{254.2}{28.6}\\)"
+          ],
+          "answer": "<strong>ρ = 8.89 g/cm³</strong>. The measured value is 8.94 g/cm³, so the hard-sphere model is within about 1%. The slide stops before this last step."
+        },
+        {
+          "type": "example",
+          "label": "Worked example: iron",
+          "q": "Iron is BCC, \\(A=55.85\\) g/mol, \\(R=0.1241\\) nm. Predict its density.",
+          "steps": [
+            "\\(n=2\\)",
+            "\\(a=4R/\\sqrt3=0.2866\\) nm, so \\(V_c=(0.2866\\times10^{-7})^3=2.354\\times10^{-23}\\) cm³",
+            "\\(\\rho=\\dfrac{2\\times55.85}{2.354\\times10^{-23}\\times6.022\\times10^{23}}\\)"
+          ],
+          "answer": "<strong>ρ = 7.88 g/cm³</strong> (measured 7.87)."
+        },
+        {
+          "type": "conceptbox",
+          "variant": "note",
+          "title": "Units trap",
+          "html": "<p>Radii are given in nm but density is wanted in g/cm³. Convert \\(a\\) to cm <em>before</em> cubing. If you cube first in nm you need \\(10^{-21}\\), not \\(10^{-7}\\). Getting an answer like 8 × 10²¹ g/cm³ means you forgot.</p>"
+        },
+        {
+          "type": "p",
+          "text": "For HCP the cell is a hexagonal prism, not a cube: \\(V_c=\\frac{3\\sqrt3}{2}a^2c\\) with \\(n=6\\). Magnesium (\\(a=0.3209\\), \\(c=0.5211\\) nm) gives 1.74 g/cm³, which matches the measured value.",
+          "class": ""
+        },
+        {
+          "type": "h2",
+          "id": "w4-holes",
+          "text": "Holes Between the Atoms: Where They Are"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"analogy\"><span class=\"analogy-icon\">🍊</span><div class=\"analogy-text\"><strong>Oranges in a crate leave gaps.</strong> Even the best packing (FCC and HCP) leaves 26% of the space empty. That space is not spread out evenly. It comes as small, well-defined holes, and small atoms like carbon, hydrogen and nitrogen live in them. That is how carbon gets into iron to make steel.</div></div>"
+        },
+        {
+          "type": "p",
+          "text": "There are two kinds of hole, named after the shape made by the atoms around them:",
+          "class": ""
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th></th><th>Octahedral hole</th><th>Tetrahedral hole</th></tr></thead><tbody><tr><td>Atoms touching it</td><td>6 (they make an octahedron)</td><td>4 (they make a tetrahedron)</td></tr><tr><td>How many, per atom</td><td>1</td><td>2</td></tr><tr><td>How many per FCC cell (4 atoms)</td><td><strong>4</strong></td><td><strong>8</strong></td></tr><tr><td>Size of the biggest ball that fits</td><td><strong>0.414 R</strong> (bigger)</td><td><strong>0.225 R</strong> (smaller)</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 368\" role=\"img\" aria-label=\"FCC unit cell showing the four octahedral holes (body centre and edge midpoints) and the eight tetrahedral holes at the quarter positions\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"10\" y=\"38\" width=\"370\" height=\"320\" rx=\"8\" class=\"dg-frame\"/><rect x=\"400\" y=\"38\" width=\"370\" height=\"320\" rx=\"8\" class=\"dg-frame\"/><text x=\"195.0\" y=\"24.0\" class=\"dg-tb-red\" text-anchor=\"middle\">Octahedral holes (red)</text><text x=\"585.0\" y=\"24.0\" class=\"dg-tb\" text-anchor=\"middle\">Tetrahedral holes (green)</text><line x1=\"75.0\" y1=\"280.0\" x2=\"75.0\" y2=\"95.0\" class=\"dg-edge\"/><line x1=\"75.0\" y1=\"280.0\" x2=\"148.0\" y2=\"237.3\" class=\"dg-edge-h\"/><line x1=\"75.0\" y1=\"280.0\" x2=\"260.0\" y2=\"280.0\" class=\"dg-edge\"/><line x1=\"75.0\" y1=\"95.0\" x2=\"148.0\" y2=\"52.3\" class=\"dg-edge\"/><line x1=\"75.0\" y1=\"95.0\" x2=\"260.0\" y2=\"95.0\" class=\"dg-edge\"/><line x1=\"148.0\" y1=\"237.3\" x2=\"148.0\" y2=\"52.3\" class=\"dg-edge-h\"/><line x1=\"148.0\" y1=\"237.3\" x2=\"333.0\" y2=\"237.3\" class=\"dg-edge-h\"/><line x1=\"148.0\" y1=\"52.3\" x2=\"333.0\" y2=\"52.3\" class=\"dg-edge\"/><line x1=\"260.0\" y1=\"280.0\" x2=\"260.0\" y2=\"95.0\" class=\"dg-edge\"/><line x1=\"260.0\" y1=\"280.0\" x2=\"333.0\" y2=\"237.3\" class=\"dg-edge\"/><line x1=\"260.0\" y1=\"95.0\" x2=\"333.0\" y2=\"52.3\" class=\"dg-edge\"/><line x1=\"333.0\" y1=\"237.3\" x2=\"333.0\" y2=\"52.3\" class=\"dg-edge\"/><line x1=\"204.0\" y1=\"258.6\" x2=\"167.5\" y2=\"187.5\" class=\"dg-edge-acc-h\"/><line x1=\"204.0\" y1=\"258.6\" x2=\"240.5\" y2=\"144.8\" class=\"dg-edge-acc-h\"/><line x1=\"204.0\" y1=\"258.6\" x2=\"111.5\" y2=\"166.1\" class=\"dg-edge-acc-h\"/><line x1=\"204.0\" y1=\"258.6\" x2=\"296.5\" y2=\"166.1\" class=\"dg-edge-acc-h\"/><line x1=\"204.0\" y1=\"73.6\" x2=\"167.5\" y2=\"187.5\" class=\"dg-edge-acc-h\"/><line x1=\"204.0\" y1=\"73.6\" x2=\"240.5\" y2=\"144.8\" class=\"dg-edge-acc-h\"/><line x1=\"204.0\" y1=\"73.6\" x2=\"111.5\" y2=\"166.1\" class=\"dg-edge-acc-h\"/><line x1=\"204.0\" y1=\"73.6\" x2=\"296.5\" y2=\"166.1\" class=\"dg-edge-acc-h\"/><line x1=\"167.5\" y1=\"187.5\" x2=\"111.5\" y2=\"166.1\" class=\"dg-edge-acc-h\"/><line x1=\"167.5\" y1=\"187.5\" x2=\"296.5\" y2=\"166.1\" class=\"dg-edge-acc-h\"/><line x1=\"240.5\" y1=\"144.8\" x2=\"111.5\" y2=\"166.1\" class=\"dg-edge-acc-h\"/><line x1=\"240.5\" y1=\"144.8\" x2=\"296.5\" y2=\"166.1\" class=\"dg-edge-acc-h\"/><circle cx=\"148.0\" cy=\"237.3\" r=\"11.0\" class=\"dg-atomA\"/><circle cx=\"148.0\" cy=\"52.3\" r=\"11.0\" class=\"dg-atomA\"/><circle cx=\"333.0\" cy=\"237.3\" r=\"11.0\" class=\"dg-atomA\"/><circle cx=\"333.0\" cy=\"52.3\" r=\"11.0\" class=\"dg-atomA\"/><circle cx=\"240.5\" cy=\"144.8\" r=\"11.0\" class=\"dg-atomA\"/><circle cx=\"240.5\" cy=\"237.3\" r=\"7.0\" class=\"dg-atomR\"/><circle cx=\"240.5\" cy=\"52.3\" r=\"7.0\" class=\"dg-atomR\"/><circle cx=\"148.0\" cy=\"144.8\" r=\"7.0\" class=\"dg-atomR\"/><circle cx=\"333.0\" cy=\"144.8\" r=\"7.0\" class=\"dg-atomR\"/><circle cx=\"204.0\" cy=\"258.6\" r=\"11.0\" class=\"dg-atomA\"/><circle cx=\"204.0\" cy=\"73.6\" r=\"11.0\" class=\"dg-atomA\"/><circle cx=\"111.5\" cy=\"166.1\" r=\"11.0\" class=\"dg-atomA\"/><circle cx=\"296.5\" cy=\"166.1\" r=\"11.0\" class=\"dg-atomA\"/><circle cx=\"204.0\" cy=\"166.1\" r=\"7.0\" class=\"dg-atomR\"/><circle cx=\"111.5\" cy=\"258.6\" r=\"7.0\" class=\"dg-atomR\"/><circle cx=\"111.5\" cy=\"73.6\" r=\"7.0\" class=\"dg-atomR\"/><circle cx=\"296.5\" cy=\"258.6\" r=\"7.0\" class=\"dg-atomR\"/><circle cx=\"296.5\" cy=\"73.6\" r=\"7.0\" class=\"dg-atomR\"/><circle cx=\"75.0\" cy=\"280.0\" r=\"11.0\" class=\"dg-atomA\"/><circle cx=\"75.0\" cy=\"95.0\" r=\"11.0\" class=\"dg-atomA\"/><circle cx=\"260.0\" cy=\"280.0\" r=\"11.0\" class=\"dg-atomA\"/><circle cx=\"260.0\" cy=\"95.0\" r=\"11.0\" class=\"dg-atomA\"/><circle cx=\"167.5\" cy=\"187.5\" r=\"11.0\" class=\"dg-atomA\"/><circle cx=\"167.5\" cy=\"280.0\" r=\"7.0\" class=\"dg-atomR\"/><circle cx=\"167.5\" cy=\"95.0\" r=\"7.0\" class=\"dg-atomR\"/><circle cx=\"75.0\" cy=\"187.5\" r=\"7.0\" class=\"dg-atomR\"/><circle cx=\"260.0\" cy=\"187.5\" r=\"7.0\" class=\"dg-atomR\"/><text x=\"195.0\" y=\"322.0\" class=\"dg-t\" text-anchor=\"middle\">1 at the centre + 12 edges × ¼ = 4</text><text x=\"195.0\" y=\"342.0\" class=\"dg-t\" text-anchor=\"middle\">Each touches 6 atoms (dashed octahedron)</text><line x1=\"465.0\" y1=\"280.0\" x2=\"465.0\" y2=\"95.0\" class=\"dg-edge\"/><line x1=\"465.0\" y1=\"280.0\" x2=\"538.0\" y2=\"237.3\" class=\"dg-edge-h\"/><line x1=\"465.0\" y1=\"280.0\" x2=\"650.0\" y2=\"280.0\" class=\"dg-edge\"/><line x1=\"465.0\" y1=\"95.0\" x2=\"538.0\" y2=\"52.3\" class=\"dg-edge\"/><line x1=\"465.0\" y1=\"95.0\" x2=\"650.0\" y2=\"95.0\" class=\"dg-edge\"/><line x1=\"538.0\" y1=\"237.3\" x2=\"538.0\" y2=\"52.3\" class=\"dg-edge-h\"/><line x1=\"538.0\" y1=\"237.3\" x2=\"723.0\" y2=\"237.3\" class=\"dg-edge-h\"/><line x1=\"538.0\" y1=\"52.3\" x2=\"723.0\" y2=\"52.3\" class=\"dg-edge\"/><line x1=\"650.0\" y1=\"280.0\" x2=\"650.0\" y2=\"95.0\" class=\"dg-edge\"/><line x1=\"650.0\" y1=\"280.0\" x2=\"723.0\" y2=\"237.3\" class=\"dg-edge\"/><line x1=\"650.0\" y1=\"95.0\" x2=\"723.0\" y2=\"52.3\" class=\"dg-edge\"/><line x1=\"723.0\" y1=\"237.3\" x2=\"723.0\" y2=\"52.3\" class=\"dg-edge\"/><line x1=\"465.0\" y1=\"280.0\" x2=\"594.0\" y2=\"258.6\" class=\"dg-edge-acc-h\"/><line x1=\"465.0\" y1=\"280.0\" x2=\"557.5\" y2=\"187.5\" class=\"dg-edge-acc-h\"/><line x1=\"465.0\" y1=\"280.0\" x2=\"501.5\" y2=\"166.1\" class=\"dg-edge-acc-h\"/><line x1=\"594.0\" y1=\"258.6\" x2=\"557.5\" y2=\"187.5\" class=\"dg-edge-acc-h\"/><line x1=\"594.0\" y1=\"258.6\" x2=\"501.5\" y2=\"166.1\" class=\"dg-edge-acc-h\"/><line x1=\"557.5\" y1=\"187.5\" x2=\"501.5\" y2=\"166.1\" class=\"dg-edge-acc-h\"/><circle cx=\"538.0\" cy=\"237.3\" r=\"11.0\" class=\"dg-atomA\"/><circle cx=\"538.0\" cy=\"52.3\" r=\"11.0\" class=\"dg-atomA\"/><circle cx=\"723.0\" cy=\"237.3\" r=\"11.0\" class=\"dg-atomA\"/><circle cx=\"723.0\" cy=\"52.3\" r=\"11.0\" class=\"dg-atomA\"/><circle cx=\"630.5\" cy=\"144.8\" r=\"11.0\" class=\"dg-atomA\"/><circle cx=\"566.0\" cy=\"201.7\" r=\"7.0\" class=\"dg-atomG\"/><circle cx=\"566.0\" cy=\"109.2\" r=\"7.0\" class=\"dg-atomG\"/><circle cx=\"658.5\" cy=\"201.7\" r=\"7.0\" class=\"dg-atomG\"/><circle cx=\"658.5\" cy=\"109.2\" r=\"7.0\" class=\"dg-atomG\"/><circle cx=\"594.0\" cy=\"258.6\" r=\"11.0\" class=\"dg-atomA\"/><circle cx=\"594.0\" cy=\"73.6\" r=\"11.0\" class=\"dg-atomA\"/><circle cx=\"501.5\" cy=\"166.1\" r=\"11.0\" class=\"dg-atomA\"/><circle cx=\"686.5\" cy=\"166.1\" r=\"11.0\" class=\"dg-atomA\"/><circle cx=\"529.5\" cy=\"223.1\" r=\"7.0\" class=\"dg-atomG\"/><circle cx=\"529.5\" cy=\"130.6\" r=\"7.0\" class=\"dg-atomG\"/><circle cx=\"622.0\" cy=\"223.1\" r=\"7.0\" class=\"dg-atomG\"/><circle cx=\"622.0\" cy=\"130.6\" r=\"7.0\" class=\"dg-atomG\"/><circle cx=\"465.0\" cy=\"280.0\" r=\"11.0\" class=\"dg-atomA\"/><circle cx=\"465.0\" cy=\"95.0\" r=\"11.0\" class=\"dg-atomA\"/><circle cx=\"650.0\" cy=\"280.0\" r=\"11.0\" class=\"dg-atomA\"/><circle cx=\"650.0\" cy=\"95.0\" r=\"11.0\" class=\"dg-atomA\"/><circle cx=\"557.5\" cy=\"187.5\" r=\"11.0\" class=\"dg-atomA\"/><text x=\"585.0\" y=\"322.0\" class=\"dg-t\" text-anchor=\"middle\">8 holes, all fully inside the cell</text><text x=\"585.0\" y=\"342.0\" class=\"dg-t\" text-anchor=\"middle\">Each touches 4 atoms (dashed tetrahedron)</text></svg></div>"
+        },
+        {
+          "type": "h3",
+          "text": "Where exactly (FCC, as fractions of a)"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Atoms:</strong> 000, ½½0, 0½½, ½0½",
+            "<strong>Octahedral holes:</strong> ½½½ (the very centre of the cube) and 00½, ½00, 0½0 (the middles of the edges)",
+            "<strong>Tetrahedral holes:</strong> all the \"quarter\" positions such as ¼¼¼ and ¾¾¾. There are 8: picture the cube cut into 8 small cubes, and there is one hole in the middle of each small cube."
+          ]
+        },
+        {
+          "type": "conceptbox",
+          "variant": "",
+          "title": "How do you get 4 and 8?",
+          "html": "<p><strong>Octahedral:</strong> the centre hole belongs only to this cell, so it counts 1. Each of the 12 edge holes is shared by 4 cells, so each counts ¼. Total \\(1+12\\times\\tfrac14=4\\).</p><p><strong>Tetrahedral:</strong> all 8 sit completely inside the cell, so each counts 1. Total 8.</p><p>So an FCC cell has 4 atoms, 4 octahedral holes and 8 tetrahedral holes: the 1 : 1 : 2 ratio.</p>"
+        },
+        {
+          "type": "p",
+          "text": "The slides split the tetrahedral holes into two sets of 4, called T+ (¼¼¼, ¾¾¼, ¾¼¾, ¼¾¾) and T− (¾¼¼, ¼¼¾, ¼¾¼, ¾¾¾). This matters later: many ionic crystals are made by filling all, half or none of the T+, T− and octahedral holes of an FCC arrangement. For now, just know there are two sets of 4.",
+          "class": ""
+        },
+        {
+          "type": "h2",
+          "id": "w4-size",
+          "text": "How Big the Holes Are"
+        },
+        {
+          "type": "p",
+          "text": "\"Size of a hole\" means the radius \\(r\\) of the biggest ball that fits in it without pushing the atoms apart. That ball just touches its neighbours, so the distance from the hole to the centre of a neighbouring atom is exactly \\(R+r\\). Every derivation uses that one fact.",
+          "class": ""
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 378\" role=\"img\" aria-label=\"Octahedral hole size: in FCC the hole on a cube edge sits between two corner atoms, in BCC the hole on a shared face sits between two body-centre atoms. Both give a equals 2R plus 2r.\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"hs-amb\" viewBox=\"0 0 10 10\" refX=\"8.5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" class=\"dg-ah-amb\"/></marker><marker id=\"hs-acc\" viewBox=\"0 0 10 10\" refX=\"8.5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" class=\"dg-ah-acc\"/></marker><marker id=\"hs-red\" viewBox=\"0 0 10 10\" refX=\"8.5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" class=\"dg-ah-red\"/></marker><marker id=\"hs-mut\" viewBox=\"0 0 10 10\" refX=\"8.5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" class=\"dg-ah-mut\"/></marker></defs><rect x=\"10\" y=\"38\" width=\"370\" height=\"330\" rx=\"8\" class=\"dg-frame\"/><rect x=\"400\" y=\"38\" width=\"370\" height=\"330\" rx=\"8\" class=\"dg-frame\"/><text x=\"195.0\" y=\"24.0\" class=\"dg-tb\" text-anchor=\"middle\">FCC: look at one cube face</text><text x=\"585.0\" y=\"24.0\" class=\"dg-tb\" text-anchor=\"middle\">BCC: slice through two stacked cells</text><clipPath id=\"hs-f\"><rect x=\"95\" y=\"62\" width=\"200\" height=\"200\"/></clipPath><g clip-path=\"url(#hs-f)\"><circle cx=\"95.0\" cy=\"62.0\" r=\"70.7\" class=\"dg-atomA\"/><circle cx=\"295.0\" cy=\"62.0\" r=\"70.7\" class=\"dg-atomA\"/><circle cx=\"95.0\" cy=\"262.0\" r=\"70.7\" class=\"dg-atomA\"/><circle cx=\"295.0\" cy=\"262.0\" r=\"70.7\" class=\"dg-atomA\"/><circle cx=\"195.0\" cy=\"162.0\" r=\"70.7\" class=\"dg-atomA\"/><circle cx=\"195.0\" cy=\"262.0\" r=\"29.3\" class=\"dg-atomR\"/></g><rect x=\"95\" y=\"62\" width=\"200\" height=\"200\" class=\"dg-edge\" fill=\"none\"/><circle cx=\"195.0\" cy=\"262.0\" r=\"29.3\" class=\"dg-atomR\"/><line x1=\"95.0\" y1=\"288.0\" x2=\"295.0\" y2=\"288.0\" class=\"dg-vec-acc\" marker-start=\"url(#hs-acc)\" marker-end=\"url(#hs-acc)\"/><text x=\"195.0\" y=\"312.0\" class=\"dg-tb-acc\" text-anchor=\"middle\">edge a = R + 2r + R</text><text x=\"195.0\" y=\"346.0\" class=\"dg-tb\" text-anchor=\"middle\">a = 2√2 R  →  r = 0.414 R</text><rect x=\"525.0\" y=\"60\" width=\"120\" height=\"120\" class=\"dg-edge-h\"/><rect x=\"525.0\" y=\"180\" width=\"120\" height=\"120\" class=\"dg-edge-h\"/><circle cx=\"585.0\" cy=\"120.0\" r=\"52.0\" class=\"dg-atomB\"/><circle cx=\"585.0\" cy=\"240.0\" r=\"52.0\" class=\"dg-atomB\"/><circle cx=\"585.0\" cy=\"180.0\" r=\"8.0\" class=\"dg-atomR\"/><text x=\"515.0\" y=\"125.0\" class=\"dg-t\" text-anchor=\"end\">body-centre atom</text><text x=\"515.0\" y=\"245.0\" class=\"dg-t\" text-anchor=\"end\">body-centre atom</text><text x=\"515.0\" y=\"185.0\" class=\"dg-tb-red\" text-anchor=\"end\">hole</text><line x1=\"671.0\" y1=\"120.0\" x2=\"671.0\" y2=\"240.0\" class=\"dg-vec-acc\" marker-start=\"url(#hs-acc)\" marker-end=\"url(#hs-acc)\"/><text x=\"681.0\" y=\"185.0\" class=\"dg-tb-acc\" text-anchor=\"start\">a</text><text x=\"585.0\" y=\"322.0\" class=\"dg-tb-acc\" text-anchor=\"middle\">centre to centre a = R + 2r + R</text><text x=\"585.0\" y=\"346.0\" class=\"dg-tb\" text-anchor=\"middle\">a = 4R/√3  →  r = 0.155 R</text></svg></div>"
+        },
+        {
+          "type": "h3",
+          "text": "FCC octahedral hole: 0.414 R"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Take the hole in the middle of a cube edge. Along that edge you have: a corner atom, the hole, a corner atom.",
+            "So the edge length is \\(R+2r+R\\), which means \\(a=2R+2r\\).",
+            "For FCC, \\(a=2\\sqrt2\\,R\\). Put that in: \\(2\\sqrt2\\,R=2R+2r\\).",
+            "Divide by 2: \\(r=\\sqrt2\\,R-R=(\\sqrt2-1)R\\)."
+          ]
+        },
+        {
+          "type": "formulablock",
+          "name": "FCC octahedral hole",
+          "eqs": [
+            "r=(\\sqrt2-1)R=0.414\\,R=0.146\\,a"
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "FCC tetrahedral hole: 0.225 R"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Take the hole at ¼¼¼. Its nearest atom is the corner at 000.",
+            "That distance is a quarter of the body diagonal: \\(\\tfrac14\\sqrt3\\,a\\).",
+            "So \\(\\tfrac{\\sqrt3}{4}a=R+r\\). Put in \\(a=2\\sqrt2\\,R\\): \\(\\tfrac{\\sqrt3}{4}\\times2\\sqrt2\\,R=\\sqrt{\\tfrac32}\\,R=1.225\\,R\\).",
+            "So \\(r=1.225R-R\\)."
+          ]
+        },
+        {
+          "type": "formulablock",
+          "name": "FCC tetrahedral hole",
+          "eqs": [
+            "r=\\left(\\sqrt{\\tfrac32}-1\\right)R=0.225\\,R=0.0795\\,a"
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "BCC octahedral hole: 0.155 R (from the slides)"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Take the hole in the middle of a cube face. Its two nearest atoms are the body-centre atoms of the cells on either side, one above and one below.",
+            "Centre to centre those two atoms are \\(a\\) apart, and the hole sits halfway. So again \\(a=2R+2r\\).",
+            "But now \\(a=4R/\\sqrt3\\) (BCC). So \\(r=\\tfrac{a}{2}-R=\\tfrac{2R}{\\sqrt3}-R\\)."
+          ]
+        },
+        {
+          "type": "formulablock",
+          "name": "BCC octahedral hole",
+          "eqs": [
+            "r=\\left(\\tfrac{2}{\\sqrt3}-1\\right)R=0.155\\,R"
+          ]
+        },
+        {
+          "type": "conceptbox",
+          "variant": "note",
+          "title": "Same equation, different answer",
+          "html": "<p>FCC and BCC octahedral holes both obey \\(a=2R+2r\\). The answers differ (0.414 against 0.155) only because \\(a\\) is a different multiple of \\(R\\) in each structure. Learn the method, not just the numbers.</p>"
+        },
+        {
+          "type": "h3",
+          "text": "BCC tetrahedral hole: 0.291 R (not on the slides)"
+        },
+        {
+          "type": "p",
+          "text": "BCC also has tetrahedral holes, at positions such as ½¼0 on each face. The nearest four atoms are \\(\\tfrac{\\sqrt5}{4}a\\) away, which gives \\(r=(\\sqrt{5/3}-1)R=0.291R\\). A BCC cell has 6 octahedral and 12 tetrahedral holes. The BCC octahedral hole is squashed: 2 of its 6 neighbours are much closer than the other 4, which is why it ends up smaller than the tetrahedral hole.",
+          "class": ""
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Structure</th><th>Octahedral</th><th>Tetrahedral</th><th>Biggest hole</th></tr></thead><tbody><tr><td>FCC (and HCP)</td><td>0.414 R</td><td>0.225 R</td><td><strong>0.414 R</strong></td></tr><tr><td>BCC</td><td>0.155 R</td><td>0.291 R</td><td><strong>0.291 R</strong></td></tr></tbody></table></div>"
+        },
+        {
+          "type": "conceptbox",
+          "variant": "",
+          "title": "The surprise",
+          "html": "<p>BCC has <em>more</em> empty space than FCC (APF 0.68 against 0.74), yet its biggest hole is <em>smaller</em>. BCC's empty space is chopped into lots of small gaps. FCC's is gathered into fewer, bigger ones. That is exactly why the next section works the way it does.</p>"
+        },
+        {
+          "type": "h2",
+          "id": "w4-steel",
+          "text": "Why It Matters: Carbon in Steel"
+        },
+        {
+          "type": "p",
+          "text": "Iron is BCC (called <strong>ferrite</strong>) below 912 °C and FCC (called <strong>austenite</strong>) above it. Steel is iron with a little carbon dissolved in it, and the carbon sits in the holes. Iron atoms have \\(R=0.124\\) nm and a carbon atom has a radius of about 0.077 nm. Compare:",
+          "class": ""
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Iron form</th><th>Biggest hole</th><th>Hole radius</th><th>Carbon (0.077 nm)</th></tr></thead><tbody><tr><td>FCC austenite</td><td>octahedral, 0.414 R</td><td>0.051 nm</td><td>too big, but only a bit</td></tr><tr><td>BCC ferrite</td><td>tetrahedral, 0.291 R</td><td>0.036 nm</td><td>far too big</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "p",
+          "text": "Carbon never fits cleanly. It squeezes in and pushes the iron atoms apart. In FCC the squeeze is much smaller, so FCC iron can dissolve up to about 2 wt% carbon. BCC iron manages only about 0.02 wt%, about 100 times less.",
+          "class": ""
+        },
+        {
+          "type": "conceptbox",
+          "variant": "",
+          "title": "Why this makes heat treatment work",
+          "html": "<p>Heat steel above 912 °C and the iron becomes FCC, so lots of carbon dissolves. Cool it slowly and the iron goes back to BCC, which cannot hold the carbon, so the carbon comes out as a separate phase. Cool it very fast and the carbon is trapped in a strained crystal, which makes the steel very hard. All of that follows from the hole sizes on this page.</p>"
+        },
+        {
+          "type": "p",
+          "text": "This section links the lecture to a real material. The slides do not make this link themselves, so treat it as context rather than as lecture content.",
+          "class": "learn-only"
+        },
+        {
+          "type": "h2",
+          "id": "w4-slides",
+          "text": "Check Against Your Slides"
+        },
+        {
+          "type": "p",
+          "text": "Every number on this page was recalculated. Most of the slides agree. These do not, or are easy to misread:",
+          "class": ""
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>BCC (111) planar density:</strong> the slide gives 7.6 nm⁻² (0.76 × 10¹⁹ m⁻²). Its own area formula, \\(16\\sqrt3R^2/3\\), gives <strong>7.0 nm⁻²</strong>. 7.6 looks like an arithmetic slip, but check the original slide.",
+            "<strong>BCC (100) planar density:</strong> the slide shows 12.1 nm⁻². The exact value is 12.17, so 12.2 is the correctly rounded answer.",
+            "<strong>Direction table:</strong> the slide lists [100], [111], [110] next to lengths a, √3a, √2a. Match them carefully: [100] is a, [110] is √2 a, [111] is √3 a.",
+            "<strong>Copper density:</strong> the slide stops at \\(a=\\sqrt8\\,r\\). The finished answer is 8.89 g/cm³."
+          ]
+        },
+        {
+          "type": "h2",
+          "id": "w4-practice",
+          "text": "Test Yourself"
+        },
+        {
+          "type": "p",
+          "text": "Try each question on paper first, then reveal the answer.",
+          "class": ""
+        },
+        {
+          "type": "example",
+          "label": "Q1",
+          "q": "Copper is FCC with \\(R=0.128\\) nm. What is its linear density along [110]?",
+          "steps": [
+            "[110] is the close-packed direction in FCC, so the atoms touch: one atom per diameter."
+          ],
+          "answer": "\\(\\mathrm{LD}=1/(2R)=1/0.256=\\) <strong>3.91 atoms per nm</strong>"
+        },
+        {
+          "type": "example",
+          "label": "Q2",
+          "q": "Which direction has the highest linear density in BCC, and why?",
+          "steps": [
+            "Where do BCC atoms touch?"
+          ],
+          "answer": "<strong>[111]</strong>, the body diagonal. It is the only direction where BCC atoms touch, so the line is completely full: LD = 1/(2R)."
+        },
+        {
+          "type": "example",
+          "label": "Q3",
+          "q": "Find the planar density of copper (100). FCC, \\(R=0.128\\) nm.",
+          "steps": [
+            "An FCC cube face has 4 corner atoms (each ¼) and 1 face-centre atom: 2 atoms",
+            "\\(a=2\\sqrt2\\,R=0.362\\) nm, so the area is \\(a^2=0.131\\) nm²"
+          ],
+          "answer": "\\(\\mathrm{PD}=2/0.131=\\) <strong>15.3 atoms per nm²</strong>"
+        },
+        {
+          "type": "example",
+          "label": "Q4",
+          "q": "Aluminium is FCC with \\(A=26.98\\) g/mol and \\(R=0.143\\) nm. Predict its density.",
+          "steps": [
+            "\\(n=4\\), \\(a=2\\sqrt2\\times0.143=0.4045\\) nm",
+            "\\(V_c=(0.4045\\times10^{-7})^3=6.62\\times10^{-23}\\) cm³",
+            "\\(\\rho=\\dfrac{4\\times26.98}{6.62\\times10^{-23}\\times6.022\\times10^{23}}\\)"
+          ],
+          "answer": "<strong>ρ = 2.71 g/cm³</strong> (measured 2.70)"
+        },
+        {
+          "type": "example",
+          "label": "Q5 (exam style)",
+          "q": "Iron has \\(R=0.124\\) nm, \\(A=55.85\\) g/mol and a measured density of 7.87 g/cm³. Is it BCC or FCC at room temperature?",
+          "steps": [
+            "Try BCC: \\(n=2\\), \\(a=4R/\\sqrt3=0.2864\\) nm, \\(\\rho=7.90\\) g/cm³",
+            "Try FCC: \\(n=4\\), \\(a=2\\sqrt2\\,R=0.3507\\) nm, \\(\\rho=8.60\\) g/cm³"
+          ],
+          "answer": "BCC matches. Iron is <strong>BCC</strong> at room temperature. Comparing a calculated density with a measured one is a standard way to identify a structure."
+        },
+        {
+          "type": "example",
+          "label": "Q6",
+          "q": "What is the largest atom that fits in a tetrahedral hole in copper (\\(R=0.128\\) nm)? And in an octahedral hole?",
+          "steps": [
+            "Tetrahedral: \\(0.225\\times0.128\\)",
+            "Octahedral: \\(0.414\\times0.128\\)"
+          ],
+          "answer": "Tetrahedral <strong>0.029 nm</strong>, octahedral <strong>0.053 nm</strong>."
+        },
+        {
+          "type": "example",
+          "label": "Q7",
+          "q": "Derive the size of the BCC octahedral hole.",
+          "steps": [
+            "Hole at a face centre, between the body-centre atoms of the two cells either side: \\(a=2R+2r\\)",
+            "BCC: \\(a=4R/\\sqrt3\\), so \\(r=\\tfrac{2R}{\\sqrt3}-R\\)"
+          ],
+          "answer": "\\(r=(2/\\sqrt3-1)R=\\) <strong>0.155 R</strong>"
+        },
+        {
+          "type": "example",
+          "label": "Q8",
+          "q": "BCC has a lower APF than FCC. Does that mean BCC iron can dissolve more carbon?",
+          "steps": [
+            "Compare the biggest hole in each, not the total empty space."
+          ],
+          "answer": "<strong>No.</strong> BCC's biggest hole is 0.291 R, smaller than FCC's 0.414 R. BCC's empty space is split into many small holes, so FCC iron dissolves about 100 times more carbon."
+        }
+      ]
+    },
+    {
       "soon": true,
       "numLabel": "Order · to come",
       "title": "Ionic Structures and Pauling's Rules",
@@ -2699,6 +3339,70 @@ window.SITE_CONTENT = {
           "note": "Contours in multiples of random."
         }
       ]
+    },
+    {
+      "heading": "W4: Densities and Interstitial Holes",
+      "blocks": [
+        {
+          "type": "formulablock",
+          "name": "Cube lengths",
+          "eqs": [
+            "[100]=a\\qquad[110]=\\sqrt2\\,a\\qquad[111]=\\sqrt3\\,a"
+          ],
+          "note": "Two zeros = edge, one zero = face diagonal, no zeros = body diagonal."
+        },
+        {
+          "type": "formulablock",
+          "name": "Linear density",
+          "eqs": [
+            "\\mathrm{LD}=\\frac{\\text{atoms centred on the line}}{\\text{length}}\\qquad \\mathrm{LD}_{\\max}=\\frac{1}{2R}"
+          ],
+          "note": "End atoms count ½. Maximum along [110] in FCC and [111] in BCC."
+        },
+        {
+          "type": "formulablock",
+          "name": "Planar density",
+          "eqs": [
+            "\\mathrm{PD}=\\frac{\\text{atoms centred in the repeat unit}}{\\text{area of the repeat unit}}"
+          ],
+          "note": "Corner of a rectangle ¼, edge ½, inside 1. FCC (111) = 1/(2√3 R²); BCC (100) = 1/a², (110) = 2/(√2 a²), (111) = 1/(√3 a²)."
+        },
+        {
+          "type": "formulablock",
+          "name": "Theoretical density",
+          "eqs": [
+            "\\rho=\\frac{n\\,A}{V_c\\,N_A}"
+          ],
+          "vars": [
+            {
+              "symbol": "n",
+              "desc": "atoms per cell"
+            },
+            {
+              "symbol": "A",
+              "desc": "atomic weight, g/mol"
+            },
+            {
+              "symbol": "V_c",
+              "desc": "cell volume in cm³ (1 nm = 10⁻⁷ cm)"
+            },
+            {
+              "symbol": "N_A",
+              "desc": "6.022 × 10²³ mol⁻¹"
+            }
+          ],
+          "note": "HCP: \\(V_c=\\tfrac{3\\sqrt3}{2}a^2c\\), n = 6."
+        },
+        {
+          "type": "formulablock",
+          "name": "Interstitial hole sizes",
+          "eqs": [
+            "\\text{FCC: } r_{oct}=(\\sqrt2-1)R=0.414R\\qquad r_{tet}=\\left(\\sqrt{\\tfrac32}-1\\right)R=0.225R",
+            "\\text{BCC: } r_{oct}=\\left(\\tfrac{2}{\\sqrt3}-1\\right)R=0.155R\\qquad r_{tet}=\\left(\\sqrt{\\tfrac53}-1\\right)R=0.291R"
+          ],
+          "note": "Method: hole-to-neighbour distance = R + r. FCC cell: 4 octahedral, 8 tetrahedral holes. BCC cell: 6 and 12."
+        }
+      ]
     }
   ],
   "formulaSheetSubtitle": "Every equation covered so far. Variables defined. Grows as more weeks are added.",
@@ -2920,6 +3624,56 @@ window.SITE_CONTENT = {
           "tag": "W3 · T18",
           "claim": "\"Copper is (90°, 45°, 45°) in Euler space.\"",
           "truth": "<strong>Careful.</strong> The lecture slide gives this, but the geometry of \\(\\{112\\}\\langle111\\rangle\\) requires \\(\\Phi=35.26^\\circ\\). Learn Copper as about (90°, 35°, 45°) and check what the exam paper uses."
+        }
+      ]
+    },
+    {
+      "heading": "Week 4: Densities and Interstitial Holes",
+      "items": [
+        {
+          "tag": "W4 · T1",
+          "claim": "\"An atom counts towards linear density if the line passes through any part of it.\"",
+          "truth": "<strong>FALSE.</strong> Only atoms whose <strong>centres</strong> lie on the line count. The same rule applies to planes."
+        },
+        {
+          "tag": "W4 · T2",
+          "claim": "\"The atoms at each end of the direction vector count as 1 each.\"",
+          "truth": "<strong>FALSE.</strong> They count <strong>½</strong> each, because each end atom is shared with the next repeat of the line."
+        },
+        {
+          "tag": "W4 · T3",
+          "claim": "\"[111] is the close-packed direction in FCC.\"",
+          "truth": "<strong>FALSE.</strong> FCC atoms touch along <strong>[110]</strong> (face diagonal). [111] is the close-packed direction in <strong>BCC</strong>."
+        },
+        {
+          "tag": "W4 · T4",
+          "claim": "\"The densest plane in BCC is (111).\"",
+          "truth": "<strong>FALSE.</strong> It is <strong>(110)</strong>, 17.2 nm⁻² in iron. BCC (111) is one of the emptiest at 7.0 nm⁻². (111) is the densest plane in <strong>FCC</strong>."
+        },
+        {
+          "tag": "W4 · T5",
+          "claim": "\"In ρ = nA/(V_c N_A) you can leave a in nm.\"",
+          "truth": "<strong>FALSE.</strong> Convert to cm first (1 nm = 10⁻⁷ cm) to get g/cm³. Cubing nm needs 10⁻²¹."
+        },
+        {
+          "tag": "W4 · T6",
+          "claim": "\"Tetrahedral holes are bigger than octahedral holes because there are more of them.\"",
+          "truth": "<strong>FALSE.</strong> There are twice as many tetrahedral holes, but they are smaller: 0.225 R against 0.414 R in FCC."
+        },
+        {
+          "tag": "W4 · T7",
+          "claim": "\"BCC has a lower APF, so it has bigger holes and dissolves more carbon.\"",
+          "truth": "<strong>FALSE.</strong> BCC's biggest hole is 0.291 R, smaller than FCC's 0.414 R. FCC iron dissolves about 100 times more carbon."
+        },
+        {
+          "tag": "W4 · T8",
+          "claim": "\"The FCC octahedral hole radius is 0.414 a.\"",
+          "truth": "<strong>FALSE.</strong> It is 0.414 <strong>R</strong>, which is 0.146 a."
+        },
+        {
+          "tag": "W4 · T9",
+          "claim": "\"The volume of an HCP unit cell is a³.\"",
+          "truth": "<strong>FALSE.</strong> It is a hexagonal prism: \\(V_c=\\tfrac{3\\sqrt3}{2}a^2c\\), holding 6 atoms."
         }
       ]
     }

@@ -76,3 +76,7 @@ body.revise-mode .sim-embed,body.revise-mode .sim-credit,body.revise-mode .sim-t
 .cellsys-key span{display:inline-flex;align-items:center;gap:6px}
 .cellsys-key svg{height:13px;width:auto;overflow:visible}
 @media (max-width:620px){.cellsys-table td.cellsys-fig{width:150px}.dg-cellsys{width:146px}}
+
+/* Densities and holes page */
+.dg-vec-red{stroke:var(--c-red);stroke-width:2.6;fill:none}
+.dg-ah-red{fill:var(--c-red)}
