@@ -25,10 +25,14 @@ Study site for EG2036 (Order in Materials) at Swansea University.
   - count-then-divide: linear density, planar density and theoretical density, with worked examples for Al, Cu and Fe
   - octahedral and tetrahedral holes in FCC: positions, counts per cell, and size derivations (0.414 R, 0.225 R)
   - BCC holes (0.155 R, 0.291 R), carbon in ferrite vs austenite, slide errata, 8 practice questions
-- 27 inline SVG diagrams (generated in the site's dark theme)
-- 6 interactive simulations in `widgets/` (5 3D / plotted, 1 pole-figure tool with cubic and hexagonal modes)
-- 163 glossary terms with flashcard mode, formula sheet (31 blocks), 50 MCQ trap cards
-- Later Order topics (ionic structures, solid solutions) and the disorder topics will be added as they are taught
+- Week 5: Solid Solutions, Covalent and Ionic Structures (Dr Willow's "Week 4-5 2026" slides, Lectures 7 and 8)
+  - interstitial vs substitutional solid solutions, Hume-Rothery rules, the 8 - N rule, polymorphism (iron)
+  - ionic structures: radius ratio with geometric proofs, Pauling's two rules, NaCl, CsCl, zinc blende, wurtzite, CaF2, CaTiO3, TiO worked example
+  - a symbols guide, 16 worked examples and practice questions
+- 39 inline SVG diagrams (generated in the site's dark theme)
+- 7 interactive simulations in `widgets/` (5 3D / plotted, 1 pole-figure tool with cubic and hexagonal modes, 1 radius-ratio explorer)
+- 206 glossary terms with flashcard mode, formula sheet (36 blocks), 60 MCQ trap cards
+- The disorder topics will be added as they are taught
 
 ## Structure
 
@@ -37,14 +41,14 @@ index.html            page shell (loads study-site-core from jsDelivr)
 css/diagrams.css      styling for SVG diagrams and embedded simulations
 js/content-data.js    all site content
 js/glossary-data.js   glossary terms
-widgets/              six self-contained simulations (embedded as iframes)
+widgets/              seven self-contained simulations (embedded as iframes)
 ```
 
 The simulations resize themselves via `postMessage` (see the listener at the bottom of `index.html`) and pause rendering when off screen. Three.js, OrbitControls and Chart.js load from a CDN.
 
 ## Credits
 
-Five of the simulations are based on animations by **Dr Ashley Willow** (Swansea University, EG-2036 lecturer). They have been restyled to match this site, one broken colour string was fixed, and the physics is unchanged. The Week 3 pole-figure tool (`widgets/pole-figure.html`) is original to this site. The lecture content (Dr Willow's Weeks 1 to 3, 2026, shown here as Weeks 1, 2 and 4, and the Week 3 Crystallographic Texture slides by Dr Leo Prakash) belongs to the lecturers, so check with them before making this repository public.
+Five of the simulations are based on animations by **Dr Ashley Willow** (Swansea University, EG-2036 lecturer). They have been restyled to match this site, one broken colour string was fixed, and the physics is unchanged. The Week 3 pole-figure tool (`widgets/pole-figure.html`) and the Week 5 radius-ratio explorer (`widgets/radius-ratio.html`) are original to this site. The lecture content (Dr Willow's Weeks 1 to 5, 2026, shown here as Weeks 1, 2, 4 and 5, and the Week 3 Crystallographic Texture slides by Dr Leo Prakash) belongs to the lecturers, so check with them before making this repository public.
 
 ## Part of the MatSciEng hub
 

@@ -80,3 +80,6 @@ body.revise-mode .sim-embed,body.revise-mode .sim-credit,body.revise-mode .sim-t
 /* Densities and holes page */
 .dg-vec-red{stroke:var(--c-red);stroke-width:2.6;fill:none}
 .dg-ah-red{fill:var(--c-red)}
+
+/* Week 5: solid solutions, covalent and ionic structures */
+.dg-zone{stroke-width:1.6}

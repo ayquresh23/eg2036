@@ -672,6 +672,183 @@ const glossaryData = {
         "FCC iron (γ-iron), stable above 912 °C; dissolves up to about 2 wt% carbon in its octahedral holes"
       ]
     ]
+  },
+  "w5": {
+    "name": "Week 5: Solid Solutions, Covalent and Ionic Structures",
+    "terms": [
+      [
+        "Solid solution",
+        "A crystal in which atoms of one element (the solute) are dissolved in the crystal of another (the solvent) without forming a new structure"
+      ],
+      [
+        "Solvent",
+        "The host element in a solid solution, whose crystal structure is kept"
+      ],
+      [
+        "Solute",
+        "The element dissolved in the solvent"
+      ],
+      [
+        "Interstice",
+        "A gap between the atoms of a lattice, such as an octahedral or tetrahedral hole"
+      ],
+      [
+        "Interstitial solid solution",
+        "A solid solution in which small solute atoms (H, O, N, C or B) sit in the interstices of the host lattice; for example C in austenite"
+      ],
+      [
+        "Substitutional solid solution",
+        "A solid solution in which solute atoms replace host atoms on lattice sites"
+      ],
+      [
+        "Hume-Rothery rules",
+        "Four conditions for complete substitutional solubility: sizes within 15%, same crystal structure, similar electronegativity, same valence; necessary but not sufficient"
+      ],
+      [
+        "Complete solid solubility",
+        "Two components mix in all proportions in one crystal structure, as Cu and Ni do"
+      ],
+      [
+        "Terminal solid solution",
+        "A solid solution at one end of a phase diagram (B dissolved in A, or A in B); also called a primary solid solution"
+      ],
+      [
+        "Intermediate phase",
+        "A phase in the middle of a phase diagram with its own structure, usually an intermetallic compound; Cu-Zn has several"
+      ],
+      [
+        "Multicomponent system",
+        "An alloy that holds both substitutional and interstitial solutes, such as manganese steel"
+      ],
+      [
+        "8 − N rule",
+        "For covalent non-metals each atom has 8 − N nearest neighbours, where N is its group number"
+      ],
+      [
+        "Diatomic molecule",
+        "A molecule of two atoms joined by a strong covalent bond, such as I2"
+      ],
+      [
+        "Van der Waals forces",
+        "Weak attractions between molecules that hold diatomic molecules together in a crystal"
+      ],
+      [
+        "Puckered sheet",
+        "A layer of 3-fold bonded atoms that is not flat, found in As, Sb, Bi and phosphorus"
+      ],
+      [
+        "Diamond cubic",
+        "The structure of C, Si, Ge and grey tin: each atom has 4 neighbours in a tetrahedron"
+      ],
+      [
+        "Grey tin",
+        "The low-temperature form of tin, with the diamond cubic structure"
+      ],
+      [
+        "White tin",
+        "The more metallic form of tin, body-centred tetragonal"
+      ],
+      [
+        "Body-centred tetragonal (bct)",
+        "A body-centred cell with a square base whose height differs from the base edge; the structure of white tin"
+      ],
+      [
+        "Polymorphism",
+        "An element or compound having more than one crystal structure, each stable under different conditions"
+      ],
+      [
+        "Polymorph",
+        "One of the crystal structures of a polymorphic substance, such as α-iron or γ-iron"
+      ],
+      [
+        "Cation",
+        "A positively charged ion, usually the smaller one in an ionic crystal"
+      ],
+      [
+        "Anion",
+        "A negatively charged ion, usually the larger one in an ionic crystal"
+      ],
+      [
+        "Coordination polyhedron",
+        "The shape formed by the neighbours around an ion, such as an octahedron of anions around a cation"
+      ],
+      [
+        "Radius ratio",
+        "The cation radius divided by the anion radius, r_c / r_a; it predicts the coordination number"
+      ],
+      [
+        "Pauling's first rule",
+        "A coordination polyhedron of anions forms round every cation and is stable only if the cation touches every neighbour; the radius ratio sets its size"
+      ],
+      [
+        "Pauling's second rule",
+        "The sum of the electrostatic bond strengths reaching an anion from its cations equals the anion charge"
+      ],
+      [
+        "Electrostatic bond strength",
+        "The charge a cation shares with each neighbour: its valence divided by its coordination number, s = m / n"
+      ],
+      [
+        "Electroneutrality",
+        "The charges balance locally: each ion receives bond strength equal to its own valence"
+      ],
+      [
+        "Cubo-octahedral coordination",
+        "Coordination number 12, only possible when the cation and anion are the same size"
+      ],
+      [
+        "Cubic coordination",
+        "Coordination number 8, for radius ratios from 0.732 to 1"
+      ],
+      [
+        "Octahedral coordination",
+        "Coordination number 6, for radius ratios from 0.414 to 0.732"
+      ],
+      [
+        "Tetrahedral coordination",
+        "Coordination number 4, for radius ratios from 0.225 to 0.414"
+      ],
+      [
+        "Triangular coordination",
+        "Coordination number 3, for radius ratios from 0.155 to 0.225"
+      ],
+      [
+        "Linear coordination",
+        "Coordination number 2, for radius ratios below 0.155"
+      ],
+      [
+        "NaCl structure",
+        "Rock salt: an FCC array of anions with cations in all the octahedral holes, 6:6 coordination"
+      ],
+      [
+        "CsCl structure",
+        "A simple cubic array of anions with a cation at the body centre, 8:8 coordination; the lattice is primitive"
+      ],
+      [
+        "Zinc blende",
+        "ZnS with S2- in an FCC array and Zn2+ in half the tetrahedral holes, 4:4 coordination"
+      ],
+      [
+        "Wurtzite",
+        "The hexagonal form of ZnS: S2- in an HCP array with Zn2+ in half the tetrahedral holes, 4:4 coordination"
+      ],
+      [
+        "Fluorite",
+        "CaF2: Ca2+ in an FCC array with F- in all the tetrahedral holes; 8:4 coordination"
+      ],
+      [
+        "Perovskite",
+        "CaTiO3: Ca2+ and O2- form an FCC-like array and Ti4+ fills one quarter of the octahedral holes"
+      ],
+      [
+        "Spinel",
+        "MgAl2O4: octahedral Al3+ and tetrahedral Mg2+, with each O2- bonded to 3 Al and 1 Mg"
+      ],
+      [
+        "Primitive cubic lattice",
+        "A cubic lattice with lattice points only at the corners, as in CsCl"
+      ]
+    ]
   }
 };
 
@@ -785,5 +962,23 @@ const glossaryComparisons = [
       ["Dislocation density", "Increases", "Drops sharply (new grains)"],
       ["Strength", "Rises (work hardening)", "Falls"],
       ["Texture", "Rolling (deformation) texture", "Recrystallisation texture"]
+    ] },
+  { terms: ["Interstitial solid solution","Substitutional solid solution"],
+    rows: [
+      ["Where the solute sits","In the gaps between host atoms","On host lattice sites"],
+      ["Size needed","Very small (H, O, N, C, B)","Within 15% of the host"],
+      ["Example","Carbon in austenite","Nickel in copper"]
+    ] },
+  { terms: ["Zinc blende","Wurtzite"],
+    rows: [
+      ["Anion stacking","ABC (FCC)","ABAB (HCP)"],
+      ["Coordination","4:4","4:4"],
+      ["Cation sites","Half the tetrahedral holes","Half the tetrahedral holes"]
+    ] },
+  { terms: ["NaCl structure","CsCl structure"],
+    rows: [
+      ["Radius ratio","0.52","0.93"],
+      ["Coordination","6:6, octahedral","8:8, cubic"],
+      ["Lattice","FCC anion array","Primitive cubic"]
     ] }
 ];

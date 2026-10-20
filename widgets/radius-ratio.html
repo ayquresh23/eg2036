@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Radius ratio explorer</title>
+<link rel="stylesheet" href="shared.css">
+<script src="shared.js"></script>
+<style>
+  .stage { min-height: 440px; }
+  .rr-ctl { display:flex; flex-direction:column; gap:12px; }
+  .rr-row label { display:flex; justify-content:space-between; font-size:12px; color:var(--text-2); margin-bottom:2px; }
+  .rr-row label b { font-family:'IBM Plex Mono',ui-monospace,monospace; font-weight:600; }
+  .rr-row.cat label b { color:var(--gold); }
+  .rr-row.an label b { color:#2fa15c; }
+  .rr-row input[type=range] { width:100%; cursor:pointer; accent-color:var(--accent); }
+  .rr-presets { display:flex; flex-wrap:wrap; gap:6px; }
+  .rr-presets button.btn { padding:6px 10px; }
+  .rr-out { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+  .rr-out > div { background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:8px 10px; }
+  .rr-out .k { font-size:10.5px; color:var(--text-2); letter-spacing:.4px; text-transform:uppercase; }
+  .rr-out .v { font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:17px; font-weight:600; margin-top:2px; }
+  .zonebar { position:relative; display:flex; height:34px; border-radius:6px; overflow:visible; margin:6px 0 20px; }
+  .zonebar .z { display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; color:#fff; border:1px solid rgba(255,255,255,.18); }
+  .zonebar .z:first-child { border-radius:6px 0 0 6px; } .zonebar .z:last-child { border-radius:0 6px 6px 0; }
+  .zonebar .mk { position:absolute; top:-6px; bottom:-6px; width:3px; margin-left:-1.5px; background:#fff; border-radius:2px; box-shadow:0 0 0 2px rgba(0,0,0,.45); transition:left .08s; }
+  .zonelab { display:flex; font-size:10px; color:var(--muted); margin-top:-16px; margin-bottom:8px; }
+  .zonelab span { text-align:center; overflow:hidden; white-space:nowrap; }
+  .rr-msg { font-size:13px; line-height:1.55; color:var(--text); background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:8px; padding:10px 12px; min-height:64px; }
+  .rr-msg.bad { border-left-color:var(--red); }
+  .rr-note { font-size:11px; color:var(--muted); }
+  @media (max-width:780px) { .rr-out { grid-template-columns:1fr 1fr 1fr; } }
+</style>
+</head>
+<body>
+<div class="sim sim-root">
+  <div class="stage" id="stage">
+    <canvas class="webgl" id="cv" aria-label="Cross-section of an octahedral site showing the cation and four of the six anions"></canvas>
+    <div class="hud" id="hud" style="--hud:#f4a261">
+      <div class="hud-label">Radius ratio, r<sub>c</sub> / r<sub>a</sub></div>
+      <div class="hud-value" id="hudv">0.52</div>
+      <div class="hud-sub" id="huds">octahedral, CN 6</div>
+    </div>
+  </div>
+  <div class="plot">
+    <h2>Radius ratio explorer</h2>
+    <p>Set the size of the cation and the anion. The picture is a slice through an octahedral site. The bar shows which coordination number the radius ratio predicts.</p>
+    <div class="rr-ctl">
+      <div class="rr-presets" id="presets"></div>
+      <div class="rr-row cat"><label for="rc">Cation radius r<sub>c</sub> <b id="rcv"></b></label><input type="range" id="rc" min="0.030" max="0.200" step="0.001"></div>
+      <div class="rr-row an"><label for="ra">Anion radius r<sub>a</sub> <b id="rav"></b></label><input type="range" id="ra" min="0.100" max="0.220" step="0.001"></div>
+      <div class="rr-out">
+        <div><div class="k">Ratio</div><div class="v" id="oR">0.52</div></div>
+        <div><div class="k">Coordination</div><div class="v" id="oC">6</div></div>
+        <div><div class="k">Geometry</div><div class="v" id="oG" style="font-size:13px;padding-top:3px">octahedral</div></div>
+      </div>
+      <div>
+        <div class="zonebar" id="zb"></div>
+        <div class="zonelab" id="zl"></div>
+      </div>
+      <div class="rr-msg" id="msg"></div>
+      <div class="rr-note">Radii in nm. Preset radii are from the lecture slides (TiO) or standard ionic radius values.</div>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  'use strict';
+  var ZONES = [
+    { lo: 0,     hi: 0.155, cn: 2, name: 'linear',      col: '#6a6a78' },
+    { lo: 0.155, hi: 0.225, cn: 3, name: 'triangular',  col: '#8855f5' },
+    { lo: 0.225, hi: 0.414, cn: 4, name: 'tetrahedral', col: '#4a90e2' },
+    { lo: 0.414, hi: 0.732, cn: 6, name: 'octahedral',  col: '#2fa15c' },
+    { lo: 0.732, hi: 1.0,   cn: 8, name: 'cubic',       col: '#f4a261' }
+  ];
+  var PRESETS = [
+    { n: 'NaCl', rc: 0.095, ra: 0.181 }, { n: 'MgO', rc: 0.072, ra: 0.140 }, { n: 'TiO', rc: 0.0745, ra: 0.140 },
+    { n: 'ZnS', rc: 0.074, ra: 0.184 }, { n: 'CsCl', rc: 0.169, ra: 0.181 }, { n: 'CaF₂', rc: 0.099, ra: 0.136 }
+  ];
+  var $ = function (id) { return document.getElementById(id); };
+  var rcEl = $('rc'), raEl = $('ra'), cv = $('cv'), ctx = cv.getContext('2d'), stage = $('stage');
+
+  function zoneOf(r) {
+    if (r >= 0.9995) return { cn: 12, name: 'cubo-octahedral', col: '#f4a261' };
+    for (var i = 0; i < ZONES.length; i++) if (r < ZONES[i].hi) return ZONES[i];
+    return ZONES[ZONES.length - 1];
+  }
+  function message(r) {
+    if (r > 1.0005) return ['The "cation" is bigger than the anion. The rules assume the cation is the smaller ion, so swap the roles.', true];
+    if (r >= 0.9995) return ['Equal-sized ions: coordination 12 (cubo-octahedral) is possible.', false];
+    if (r < 0.155) return ['Too small to hold even 3 anions apart. Only 2 fit: linear coordination.', false];
+    if (r < 0.225) return ['Only 3 anions can touch the cation: triangular coordination.', false];
+    if (r < 0.414) return ['Below 0.414 the 6 anions would overlap each other (see the red overlap), so octahedral is impossible. Only 4 fit: tetrahedral coordination.', true];
+    if (r < 0.732) return ['Octahedral: the cation touches all 6 anions and the anions are held apart. A stable fit.', false];
+    return ['Above 0.732 the cation is big enough to hold 8 anions apart: cubic coordination is preferred over the 6 drawn here.', false];
+  }
+
+  // zone bar
+  (function buildBar() {
+    var zb = $('zb'), zl = $('zl');
+    ZONES.forEach(function (z) {
+      var d = document.createElement('div'); d.className = 'z'; d.style.width = ((z.hi - z.lo) * 100) + '%';
+      d.style.background = z.col + '99'; d.textContent = z.cn; zb.appendChild(d);
+      var s = document.createElement('span'); s.style.width = ((z.hi - z.lo) * 100) + '%'; s.textContent = z.name; zl.appendChild(s);
+    });
+    var mk = document.createElement('div'); mk.className = 'mk'; mk.id = 'mk'; zb.appendChild(mk);
+  })();
+
+  // presets
+  var pbox = $('presets');
+  PRESETS.forEach(function (p, i) {
+    var b = document.createElement('button'); b.className = 'btn'; b.textContent = p.n; b.dataset.i = i;
+    b.addEventListener('click', function () { rcEl.value = p.rc; raEl.value = p.ra; update(i); });
+    pbox.appendChild(b);
+  });
+
+  function sizeCanvas() {
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var w = Math.max(stage.clientWidth, 1), h = Math.max(stage.clientHeight, 1);
+    cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return { w: w, h: h };
+  }
+
+  function draw(rc, ra) {
+    var sz = sizeCanvas(), w = sz.w, h = sz.h;
+    ctx.clearRect(0, 0, w, h);
+    var k = (Math.min(w, h * 1.05) * 0.40) / 0.64;     // px per nm, fixed so size changes are visible
+    var cx = w / 2, cy = h / 2 + 8, d = ra + rc;
+    var pos = [[1, 0], [0, 1], [-1, 0], [0, -1]].map(function (v) { return [cx + v[0] * d * k, cy + v[1] * d * k]; });
+    var rA = ra * k, rC = rc * k;
+    // anions
+    pos.forEach(function (p) {
+      ctx.beginPath(); ctx.arc(p[0], p[1], rA, 0, 6.2832); ctx.fillStyle = 'rgba(47,161,92,0.55)'; ctx.fill();
+      ctx.lineWidth = 2; ctx.strokeStyle = '#2fa15c'; ctx.stroke();
+    });
+    // overlaps between neighbouring anions
+    var overlap = d * Math.SQRT2 < 2 * ra - 1e-6;
+    if (overlap) {
+      for (var i = 0; i < 4; i++) {
+        var a = pos[i], b = pos[(i + 1) % 4];
+        ctx.save(); ctx.beginPath(); ctx.arc(a[0], a[1], rA, 0, 6.2832); ctx.clip();
+        ctx.beginPath(); ctx.arc(b[0], b[1], rA, 0, 6.2832); ctx.fillStyle = 'rgba(230,57,70,0.85)'; ctx.fill(); ctx.restore();
+      }
+    }
+    // cation
+    ctx.beginPath(); ctx.arc(cx, cy, rC, 0, 6.2832); ctx.fillStyle = '#f4a261'; ctx.fill(); ctx.lineWidth = 2; ctx.strokeStyle = '#0c0c10'; ctx.stroke();
+    // labels
+    ctx.font = '600 12px Inter, system-ui, sans-serif'; ctx.textAlign = 'center'; ctx.fillStyle = '#e6e6ee';
+    ctx.fillText('anion', pos[0][0], pos[0][1] + 4); ctx.fillText('anion', pos[2][0], pos[2][1] + 4);
+    ctx.fillStyle = '#e6e6ee';
+    if (rC > 16) { ctx.fillStyle = '#1a1205'; ctx.fillText('cation', cx, cy + 4); }
+    ctx.font = '11px Inter, system-ui, sans-serif'; ctx.fillStyle = '#9a9aa8';
+    ctx.fillText('Slice through an octahedral site: 4 of the 6 anions are shown', cx, h - 12);
+    if (overlap) { ctx.font = '700 12px Inter, system-ui, sans-serif'; ctx.fillStyle = '#e63946'; ctx.fillText('anions overlap: not allowed', cx, h - 32); }
+  }
+
+  function update(presetIdx) {
+    var rc = parseFloat(rcEl.value), ra = parseFloat(raEl.value), r = rc / ra, z = zoneOf(r);
+    $('rcv').textContent = rc.toFixed(3) + ' nm'; $('rav').textContent = ra.toFixed(3) + ' nm';
+    $('oR').textContent = r.toFixed(3); $('oC').textContent = z.cn; $('oG').textContent = z.name;
+    $('hudv').textContent = r.toFixed(2); $('huds').textContent = z.name + ', CN ' + z.cn;
+    $('hud').style.setProperty('--hud', z.col);
+    $('mk').style.left = (Math.min(r, 1) * 100) + '%';
+    var m = message(r); var el = $('msg'); el.textContent = m[0]; el.className = 'rr-msg' + (m[1] ? ' bad' : '');
+    Array.prototype.forEach.call(pbox.children, function (b, i) { b.classList.toggle('active', presetIdx === i); });
+    draw(rc, ra);
+  }
+  rcEl.addEventListener('input', function () { update(-1); });
+  raEl.addEventListener('input', function () { update(-1); });
+  if (window.ResizeObserver) new ResizeObserver(function () { update(currentPreset()); }).observe(stage);
+  else window.addEventListener('resize', function () { update(currentPreset()); });
+  function currentPreset() { var a = -1; Array.prototype.forEach.call(pbox.children, function (b, i) { if (b.classList.contains('active')) a = i; }); return a; }
+
+  rcEl.value = PRESETS[0].rc; raEl.value = PRESETS[0].ra; update(0);
+})();
+</script>
+</body>
+</html>

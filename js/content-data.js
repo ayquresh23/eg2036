@@ -7,7 +7,8 @@ window.SITE_CONFIG = {
     "w1",
     "w2",
     "w3",
-    "w4"
+    "w4",
+    "w5"
   ],
   "navOrder": [
     "home",
@@ -15,6 +16,7 @@ window.SITE_CONFIG = {
     "w2",
     "w3",
     "w4",
+    "w5",
     "formulas",
     "glossary",
     "traps"
@@ -23,13 +25,15 @@ window.SITE_CONFIG = {
     "w1": "#0ea5c6",
     "w2": "#f4a261",
     "w3": "#8855f5",
-    "w4": "#d4609a"
+    "w4": "#d4609a",
+    "w5": "#4a90e2"
   },
   "topicLabels": {
     "w1": "Crystal Structures",
     "w2": "Directions, Planes, Packing",
     "w3": "Crystallographic Texture",
-    "w4": "Densities and Holes"
+    "w4": "Densities and Holes",
+    "w5": "Solutions, Covalent, Ionic"
   }
 };
 
@@ -37,26 +41,26 @@ window.SITE_CONTENT = {
   "home": {
     "tag": "Order in Materials · Swansea University",
     "title": "EG2036 Study Site",
-    "subtitle": "How atoms arrange themselves in solids and why it matters: bonding, lattices, unit cells, crystal systems, directions and planes, close packing and packing factors, linear, planar and theoretical density, interstitial holes, how crystal orientation (texture) builds up when metals are deformed, and later ionic structures and solid solutions. Built out week by week as lectures run, with interactive simulations for the ideas that are easier to see than to read.",
+    "subtitle": "How atoms arrange themselves in solids and why it matters: bonding, lattices, unit cells, crystal systems, directions and planes, close packing and packing factors, linear, planar and theoretical density, interstitial holes, how crystal orientation (texture) builds up when metals are deformed, solid solutions and alloys, covalent structures and polymorphism, and ionic structures with Pauling's rules. Built out week by week as lectures run, with interactive simulations for the ideas that are easier to see than to read.",
     "stats": [
       {
-        "value": "4",
+        "value": "5",
         "label": "Weeks built"
       },
       {
-        "value": "6",
+        "value": "7",
         "label": "Simulations"
       },
       {
-        "value": "163",
+        "value": "206",
         "label": "Terms"
       },
       {
-        "value": "31",
+        "value": "36",
         "label": "Formulas"
       },
       {
-        "value": "50",
+        "value": "60",
         "label": "Exam Traps"
       }
     ],
@@ -75,7 +79,7 @@ window.SITE_CONTENT = {
       },
       {
         "type": "raw",
-        "html": "<div class=\"card-grid\"><div class=\"topic-card\" onclick=\"showSection('formulas')\" style=\"--bar-color:#0ea5c6\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">📐 Formula Sheet</div><div class=\"topic-desc\">Every equation so far, with variables defined.</div></div><div class=\"topic-card\" onclick=\"showSection('glossary')\" style=\"--bar-color:#2fa15c\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">📚 Glossary</div><div class=\"topic-desc\">163 terms from Weeks 1 to 4. Search, filter, and flashcard mode.</div></div><div class=\"topic-card\" onclick=\"showSection('traps')\" style=\"--bar-color:#e04545\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">⚠️ MCQ Traps</div><div class=\"topic-desc\">Plausible-but-wrong claims the exam uses.</div></div></div>"
+        "html": "<div class=\"card-grid\"><div class=\"topic-card\" onclick=\"showSection('formulas')\" style=\"--bar-color:#0ea5c6\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">📐 Formula Sheet</div><div class=\"topic-desc\">Every equation so far, with variables defined.</div></div><div class=\"topic-card\" onclick=\"showSection('glossary')\" style=\"--bar-color:#2fa15c\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">📚 Glossary</div><div class=\"topic-desc\">206 terms from Weeks 1 to 5. Search, filter, and flashcard mode.</div></div><div class=\"topic-card\" onclick=\"showSection('traps')\" style=\"--bar-color:#e04545\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">⚠️ MCQ Traps</div><div class=\"topic-desc\">Plausible-but-wrong claims the exam uses.</div></div></div>"
       }
     ]
   },
@@ -3015,20 +3019,703 @@ window.SITE_CONTENT = {
       ]
     },
     {
-      "soon": true,
-      "numLabel": "Order · to come",
-      "title": "Ionic Structures and Pauling's Rules",
-      "desc": "Coming soon. Added once covered in lectures.",
-      "color": "#e04545",
-      "sections": []
-    },
-    {
-      "soon": true,
-      "numLabel": "Order · to come",
-      "title": "Interstitial and Substitutional Solid Solutions",
-      "desc": "Coming soon. Added once covered in lectures.",
-      "color": "#d89800",
-      "sections": []
+      "id": "w5",
+      "numLabel": "Week 5",
+      "title": "Solid Solutions, Covalent and Ionic Structures",
+      "subtitle": "Which atoms can sit next to which, and how many fit around each one. Mixing metals, the 8 − N rule for non-metals, polymorphism, and why ionic crystals such as NaCl, CsCl, ZnS, CaF2 and CaTiO3 take the structures they do. Dr Willow's slides for this are titled \"Week 4-5 2026\" (Lectures 7 and 8).",
+      "essentialsTitle": "Solid solutions and ionic structures essentials",
+      "essentialsHeading": "Week 5 in one screen",
+      "essentials": [
+        "<strong>Interstitial:</strong> a small atom (H, O, N, C or B) sits in a gap and must fit snugly. <strong>Substitutional:</strong> a similar-sized atom swaps places with a host atom.",
+        "<strong>Hume-Rothery</strong> for complete solubility (SCEV): <strong>S</strong>ize within 15%, same <strong>C</strong>rystal structure, similar <strong>E</strong>lectronegativity, same <strong>V</strong>alence. Necessary, not sufficient.",
+        "<strong>8 − N rule</strong> (non-metals): neighbours = 8 − N. VII: 1 (molecules). VI: 2 (chains, rings). V: 3 (puckered sheets). IV: 4 (diamond cubic). Group III: the rule fails.",
+        "<strong>Polymorphism:</strong> pressure favours the denser form, heat tends to favour the looser one. Iron: BCC α below 910 °C, FCC γ to 1400 °C, BCC δ above.",
+        "<strong>Rule 1, radius ratio</strong> \\(r_c/r_a\\): 1 gives 12. 1 to 0.732 gives 8 (cubic). 0.732 to 0.414 gives 6 (octahedral). 0.414 to 0.225 gives 4 (tetrahedral). 0.225 to 0.155 gives 3. Below 0.155 gives 2.",
+        "<strong>Rule 2, bond strength</strong> \\(s=m/n\\) (valence over coordination). Add the \\(s\\) values around an anion to get the anion's charge.",
+        "<strong>Structures:</strong> NaCl 6:6 (FCC Cl<sup>-</sup>, all octahedral holes). CsCl 8:8 (primitive cubic, not BCC). ZnS 4:4 (half the tetrahedral holes: FCC blende, HCP wurtzite). CaF<sub>2</sub> 8:4. CaTiO<sub>3</sub>: Ti 6, Ca 12.",
+        "The limits \\(0.414\\) and \\(0.225\\) are the <strong>same hole sizes as Week 4</strong>. Ionic crystal = big anions stacking, small cations in the holes."
+      ],
+      "desc": "How metals mix (interstitial and substitutional solid solutions, Hume-Rothery), how non-metals bond (the 8 - N rule), polymorphism, and why ionic crystals take the structures they do (radius ratio and Pauling's two rules).",
+      "difficulty": "Medium",
+      "readTime": "55 min",
+      "color": "#4a90e2",
+      "sections": [
+        {
+          "type": "toc",
+          "title": "This week",
+          "items": [
+            {
+              "href": "#w5-idea",
+              "label": "The one idea behind this week: neighbours have rules"
+            },
+            {
+              "href": "#w5-solutions",
+              "label": "Mixing metals: solid solutions"
+            },
+            {
+              "href": "#w5-covalent",
+              "label": "Non-metals: the 8 - N rule"
+            },
+            {
+              "href": "#w5-poly",
+              "label": "One element, several structures: polymorphism"
+            },
+            {
+              "href": "#w5-ionic",
+              "label": "Ionic structures: fitting balls around a ball"
+            },
+            {
+              "href": "#w5-rule2",
+              "label": "Pauling's second rule: charge must balance"
+            },
+            {
+              "href": "#w5-types",
+              "label": "The famous ionic structures"
+            },
+            {
+              "href": "#w5-slides",
+              "label": "Check against your slides"
+            },
+            {
+              "href": "#w5-practice",
+              "label": "Test yourself"
+            }
+          ]
+        },
+        {
+          "type": "h2",
+          "id": "w5-idea",
+          "text": "The One Idea Behind This Week: Neighbours Have Rules"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"analogy\"><span class=\"analogy-icon\">🪑</span><div class=\"analogy-text\"><strong>Every atom is choosy about who sits next to it.</strong> Some neighbours are the wrong size. Some bring the wrong number of electrons. Some carry the wrong charge. This week is three versions of the same question: <em>who can sit next to whom, and how many of them fit?</em></div></div>"
+        },
+        {
+          "type": "cardgrid",
+          "cards": [
+            {
+              "title": "Mixing metals",
+              "color": "#0ea5c6",
+              "text": "Two metals mix into one crystal only if they are close enough in <strong>size</strong> and <strong>type</strong>. Small atoms can also hide in the gaps. These are <strong>solid solutions</strong>."
+            },
+            {
+              "title": "Non-metals",
+              "color": "#f4a261",
+              "text": "Atoms share electrons. The number of electrons an atom still needs sets <strong>how many neighbours</strong> it has. This is the <strong>8 − N rule</strong>."
+            },
+            {
+              "title": "Ionic solids",
+              "color": "#2fa15c",
+              "text": "Charged balls. The <strong>size ratio</strong> sets how many fit around each ion, and the <strong>charges must balance</strong>. These are <strong>Pauling's two rules</strong>."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": "You will lean on three earlier ideas: the <strong>unit cell</strong> and <strong>lattice plus motif</strong> from Week 1, the <strong>holes</strong> in close-packed structures from Weeks 2 and 4, and the <strong>touching rules</strong> that link the cell edge to the atom radius.",
+          "class": ""
+        },
+        {
+          "type": "conceptbox",
+          "variant": "",
+          "title": "Symbols you will see this week",
+          "html": "<p>If a formula looks like alphabet soup, come back to this table.</p>[object Object]<p>Atoms touch along one particular line, and that line is how \\(R\\) is linked to \\(a\\). Along it you cross half an atom, a whole atom and half an atom, which is \\(R+2R+R=4R\\). In BCC that line is the body diagonal, so \\(4R=\\sqrt3\\,a\\). In FCC it is the face diagonal, so \\(4R=\\sqrt2\\,a\\).</p>"
+        },
+        {
+          "type": "conceptbox",
+          "variant": "note",
+          "title": "This week reuses Week 4",
+          "html": "<p>The hole sizes you worked out in Week 4 are the same numbers that appear in ionic structures. In an ionic crystal the big anions form a close-packed array and the small cations sit in its <strong>holes</strong>. The biggest ball that fits an octahedral hole is \\(0.414\\,R\\), and the biggest that fits a tetrahedral hole is \\(0.225\\,R\\). Both numbers come back below as the limits for coordination 6 and 4.</p>"
+        },
+        {
+          "type": "h2",
+          "id": "w5-solutions",
+          "text": "Mixing Metals: Solid Solutions"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"analogy\"><span class=\"analogy-icon\">🍊</span><div class=\"analogy-text\"><strong>A box of oranges.</strong> You can slip a few grapes into the gaps between the oranges. That is an <strong>interstitial</strong> solid solution. Or you can swap some oranges for tangerines of similar size. That is a <strong>substitutional</strong> solid solution. You cannot swap an orange for a watermelon, and you cannot jam a grapefruit into a gap. Size decides almost everything.</div></div>"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 345\" role=\"img\" aria-label=\"Two grids of atoms: on the left small atoms sit in the gaps (interstitial), on the right some atoms are swapped for similar-sized atoms (substitutional)\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"10\" y=\"10\" width=\"760\" height=\"325\" rx=\"8\" class=\"dg-frame\"/><circle cx=\"80\" cy=\"100\" r=\"22\" class=\"dg-atomA\"/><circle cx=\"138\" cy=\"100\" r=\"22\" class=\"dg-atomA\"/><circle cx=\"196\" cy=\"100\" r=\"22\" class=\"dg-atomA\"/><circle cx=\"254\" cy=\"100\" r=\"22\" class=\"dg-atomA\"/><circle cx=\"312\" cy=\"100\" r=\"22\" class=\"dg-atomA\"/><circle cx=\"80\" cy=\"158\" r=\"22\" class=\"dg-atomA\"/><circle cx=\"138\" cy=\"158\" r=\"22\" class=\"dg-atomA\"/><circle cx=\"196\" cy=\"158\" r=\"22\" class=\"dg-atomA\"/><circle cx=\"254\" cy=\"158\" r=\"22\" class=\"dg-atomA\"/><circle cx=\"312\" cy=\"158\" r=\"22\" class=\"dg-atomA\"/><circle cx=\"80\" cy=\"216\" r=\"22\" class=\"dg-atomA\"/><circle cx=\"138\" cy=\"216\" r=\"22\" class=\"dg-atomA\"/><circle cx=\"196\" cy=\"216\" r=\"22\" class=\"dg-atomA\"/><circle cx=\"254\" cy=\"216\" r=\"22\" class=\"dg-atomA\"/><circle cx=\"312\" cy=\"216\" r=\"22\" class=\"dg-atomA\"/><circle cx=\"80\" cy=\"274\" r=\"22\" class=\"dg-atomA\"/><circle cx=\"138\" cy=\"274\" r=\"22\" class=\"dg-atomA\"/><circle cx=\"196\" cy=\"274\" r=\"22\" class=\"dg-atomA\"/><circle cx=\"254\" cy=\"274\" r=\"22\" class=\"dg-atomA\"/><circle cx=\"312\" cy=\"274\" r=\"22\" class=\"dg-atomA\"/><circle cx=\"109\" cy=\"129\" r=\"9\" class=\"dg-atomB\"/><circle cx=\"225\" cy=\"187\" r=\"9\" class=\"dg-atomB\"/><circle cx=\"283\" cy=\"129\" r=\"9\" class=\"dg-atomB\"/><circle cx=\"167\" cy=\"245\" r=\"9\" class=\"dg-atomB\"/><circle cx=\"283\" cy=\"245\" r=\"9\" class=\"dg-atomB\"/><circle cx=\"450\" cy=\"100\" r=\"22\" class=\"dg-atomA\"/><circle cx=\"508\" cy=\"100\" r=\"22\" class=\"dg-atomG\"/><circle cx=\"566\" cy=\"100\" r=\"22\" class=\"dg-atomA\"/><circle cx=\"624\" cy=\"100\" r=\"22\" class=\"dg-atomA\"/><circle cx=\"682\" cy=\"100\" r=\"22\" class=\"dg-atomA\"/><circle cx=\"450\" cy=\"158\" r=\"22\" class=\"dg-atomA\"/><circle cx=\"508\" cy=\"158\" r=\"22\" class=\"dg-atomA\"/><circle cx=\"566\" cy=\"158\" r=\"22\" class=\"dg-atomA\"/><circle cx=\"624\" cy=\"158\" r=\"22\" class=\"dg-atomG\"/><circle cx=\"682\" cy=\"158\" r=\"22\" class=\"dg-atomA\"/><circle cx=\"450\" cy=\"216\" r=\"22\" class=\"dg-atomG\"/><circle cx=\"508\" cy=\"216\" r=\"22\" class=\"dg-atomA\"/><circle cx=\"566\" cy=\"216\" r=\"22\" class=\"dg-atomG\"/><circle cx=\"624\" cy=\"216\" r=\"22\" class=\"dg-atomA\"/><circle cx=\"682\" cy=\"216\" r=\"22\" class=\"dg-atomA\"/><circle cx=\"450\" cy=\"274\" r=\"22\" class=\"dg-atomA\"/><circle cx=\"508\" cy=\"274\" r=\"22\" class=\"dg-atomA\"/><circle cx=\"566\" cy=\"274\" r=\"22\" class=\"dg-atomA\"/><circle cx=\"624\" cy=\"274\" r=\"22\" class=\"dg-atomA\"/><circle cx=\"682\" cy=\"274\" r=\"22\" class=\"dg-atomG\"/><text x=\"205\" y=\"52\" class=\"dg-tb-amb\" text-anchor=\"middle\">Interstitial</text><text x=\"205\" y=\"72\" class=\"dg-t\" text-anchor=\"middle\">small atoms squeeze into the gaps</text><text x=\"575\" y=\"52\" class=\"dg-tb-acc\" text-anchor=\"middle\">Substitutional</text><text x=\"575\" y=\"72\" class=\"dg-t\" text-anchor=\"middle\">similar atoms swap places</text><circle cx=\"120\" cy=\"322\" r=\"7\" class=\"dg-atomA\"/><text x=\"132\" y=\"326\" class=\"dg-t\" text-anchor=\"start\">host atom</text><circle cx=\"230\" cy=\"322\" r=\"5\" class=\"dg-atomB\"/><text x=\"240\" y=\"326\" class=\"dg-t\" text-anchor=\"start\">small solute</text><circle cx=\"480\" cy=\"322\" r=\"7\" class=\"dg-atomA\"/><text x=\"492\" y=\"326\" class=\"dg-t\" text-anchor=\"start\">host atom</text><circle cx=\"590\" cy=\"322\" r=\"7\" class=\"dg-atomG\"/><text x=\"602\" y=\"326\" class=\"dg-t\" text-anchor=\"start\">similar-size solute</text></svg></div><div class=\"diagram-caption\">Blue atoms are the host crystal (the solvent). In an interstitial solution small atoms sit in the gaps. In a substitutional solution similar-sized atoms take over host positions.</div>"
+        },
+        {
+          "type": "h3",
+          "text": "Interstitial solid solutions"
+        },
+        {
+          "type": "p",
+          "text": "The small atom sits in an <strong>interstice</strong>, a hole between the host atoms. The classic example is <strong>carbon in austenite</strong> (γ-iron, FCC), where carbon sits in the octahedral holes. Only a few atoms are small enough:",
+          "class": ""
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Atom</th><th>Radius (nm)</th></tr></thead><tbody><tr><td>H</td><td>0.046</td></tr><tr><td>O</td><td>0.060</td></tr><tr><td>N</td><td>0.071</td></tr><tr><td>C</td><td>0.077</td></tr><tr><td>B</td><td>0.097</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 300\" role=\"img\" aria-label=\"Three cases of a small atom in the gap between four touching host atoms: too small and it rattles, a snug fit, and too big so it pushes the host atoms apart\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"10\" y=\"10\" width=\"760\" height=\"280\" rx=\"8\" class=\"dg-frame\"/><circle cx=\"110\" cy=\"105\" r=\"30\" class=\"dg-atomA\"/><circle cx=\"170\" cy=\"105\" r=\"30\" class=\"dg-atomA\"/><circle cx=\"110\" cy=\"165\" r=\"30\" class=\"dg-atomA\"/><circle cx=\"170\" cy=\"165\" r=\"30\" class=\"dg-atomA\"/><circle cx=\"140\" cy=\"135\" r=\"8\" class=\"dg-atomB\"/><circle cx=\"140\" cy=\"135\" r=\"12.4\" class=\"dg-grain\"/><text x=\"140\" y=\"62\" class=\"dg-tb\" text-anchor=\"middle\">Too small</text><text x=\"140\" y=\"222\" class=\"dg-t\" text-anchor=\"middle\">It rattles around in the gap.</text><text x=\"140\" y=\"240\" class=\"dg-t\" text-anchor=\"middle\">Unstable.</text><text x=\"140\" y=\"268\" class=\"dg-vl-acc\" text-anchor=\"middle\">r = 0.27 R</text><circle cx=\"360\" cy=\"105\" r=\"30\" class=\"dg-atomA\"/><circle cx=\"420\" cy=\"105\" r=\"30\" class=\"dg-atomA\"/><circle cx=\"360\" cy=\"165\" r=\"30\" class=\"dg-atomA\"/><circle cx=\"420\" cy=\"165\" r=\"30\" class=\"dg-atomA\"/><circle cx=\"390\" cy=\"135\" r=\"12.4\" class=\"dg-atomB\"/><text x=\"390\" y=\"62\" class=\"dg-tb\" text-anchor=\"middle\">Snug fit</text><text x=\"390\" y=\"222\" class=\"dg-t\" text-anchor=\"middle\">Touches every neighbour.</text><text x=\"390\" y=\"240\" class=\"dg-t\" text-anchor=\"middle\">The ideal case.</text><text x=\"390\" y=\"268\" class=\"dg-vl-acc\" text-anchor=\"middle\">r = 0.414 R</text><circle cx=\"605.4\" cy=\"100.4\" r=\"30\" class=\"dg-atomA\"/><circle cx=\"674.6\" cy=\"100.4\" r=\"30\" class=\"dg-atomA\"/><circle cx=\"605.4\" cy=\"169.6\" r=\"30\" class=\"dg-atomA\"/><circle cx=\"674.6\" cy=\"169.6\" r=\"30\" class=\"dg-atomA\"/><circle cx=\"640\" cy=\"135\" r=\"19\" class=\"dg-atomB\"/><text x=\"640\" y=\"62\" class=\"dg-tb\" text-anchor=\"middle\">Too big</text><text x=\"640\" y=\"222\" class=\"dg-t\" text-anchor=\"middle\">Pushes the host atoms apart.</text><text x=\"640\" y=\"240\" class=\"dg-t\" text-anchor=\"middle\">Strain energy, unstable.</text><text x=\"640\" y=\"268\" class=\"dg-vl-acc\" text-anchor=\"middle\">r = 0.63 R</text></svg></div><div class=\"diagram-caption\">A 2D picture of the same idea: the gap between four touching atoms has radius 0.414 R, as you found in Week 4.</div>"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Too small:</strong> the atom rattles around in the gap and the structure is unstable.",
+            "<strong>Slightly larger than the gap:</strong> the host lattice stretches a little. This is acceptable and is the usual case. Carbon is a little bigger than the hole in iron, so it swells the lattice a bit.",
+            "<strong>Much too big:</strong> the lattice strain energy is huge, so the atom will not dissolve in the gap. It would have to go on a lattice site instead."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Substitutional solid solutions"
+        },
+        {
+          "type": "p",
+          "text": "Two metals can mix in <em>all</em> proportions (complete solid solubility) only if they pass all four <strong>Hume-Rothery rules</strong>. Remember them as <strong>SCEV</strong>: Size, Crystal, Electronegativity, Valence.",
+          "class": ""
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Size:</strong> atoms differ by less than 15%. A bigger gap distorts the lattice too much.",
+            "<strong>Crystal structure:</strong> the same for both. If not, the lattice would have to change as you add more of one metal.",
+            "<strong>Electronegativity:</strong> no appreciable difference. A big difference makes the atoms prefer each other and form a compound with covalent bonding instead of a random mix.",
+            "<strong>Valence:</strong> the same, so both atoms contribute the same number of bonding electrons."
+          ]
+        },
+        {
+          "type": "conceptbox",
+          "variant": "",
+          "title": "Necessary, not sufficient",
+          "html": "<p>The four rules are the <strong>entry ticket</strong>. Passing them means complete solubility is <em>possible</em>. It does not guarantee it. Cu and Ag are the example below.</p>"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>System</th><th>Size gap (from the lattice parameters)</th><th>Crystal structures</th><th>What you get</th></tr></thead><tbody><tr><td>Cu-Ni</td><td>\\(a\\) = 0.3615 and 0.3524 nm: about 2.6%</td><td>Both FCC</td><td><strong>Complete</strong> solid solubility: Ni dissolves Cu in every proportion</td></tr><tr><td>Cu-Ag</td><td>\\(a\\) = 0.3615 and 0.4086 nm: about 13%</td><td>Both FCC</td><td>Not complete. Only <strong>terminal (primary) solid solutions</strong> at each end, with a two-phase mixture in between</td></tr><tr><td>Cu-Zn</td><td>Not given on the slides</td><td>Cu is FCC, <strong>Zn is hcp</strong></td><td>Further phases appear on the phase diagram: <strong>intermediate (intermetallic) phases</strong></td></tr></tbody></table></div>"
+        },
+        {
+          "type": "p",
+          "text": "The slides do not say why Cu-Ag fails. A likely reason is that 13% is close to the 15% limit (this is my reading, not the lecturer's). Cu-Zn fails the structure rule outright.",
+          "class": ""
+        },
+        {
+          "type": "conceptbox",
+          "variant": "",
+          "title": "Solid solution or mixture of phases?",
+          "html": "<p>At the Cu end of the Cu-Ag diagram, a little Ag dissolves in Cu: that is a solid solution of Ag in Cu. At the Ag end, a little Cu dissolves in Ag. In the middle the two metals do <strong>not</strong> mix at the atomic level. You get grains of one next to grains of the other, like a bag of two kinds of sand. That is a <em>mixture of phases</em>, not a solid solution.</p>"
+        },
+        {
+          "type": "h3",
+          "text": "Both at once: multicomponent systems"
+        },
+        {
+          "type": "p",
+          "text": "Real alloys often have both kinds of solute. In <strong>manganese steel</strong>, Mn atoms replace Fe on some lattice sites (substitutional) while C atoms sit in the gaps (interstitial).",
+          "class": ""
+        },
+        {
+          "type": "example",
+          "label": "Worked example: Cu-Ni against the size rule",
+          "q": "Ni is FCC with \\(a=0.3524\\) nm and Cu is FCC with \\(a=0.3615\\) nm. Do they pass the size and structure rules?",
+          "steps": [
+            "Size gap: \\((0.3615-0.3524)/0.3524=0.0091/0.3524=0.026\\), which is 2.6%",
+            "2.6% is well under 15%, so the size rule is passed",
+            "Both are FCC, so the structure rule is passed"
+          ],
+          "answer": "<strong>Both pass.</strong> Cu and Ni are completely soluble, as the slide says."
+        },
+        {
+          "type": "h2",
+          "id": "w5-covalent",
+          "text": "Non-Metals: The 8 − N Rule"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"analogy\"><span class=\"analogy-icon\">🪑</span><div class=\"analogy-text\"><strong>Seats at a table of 8.</strong> A non-metal atom wants a full outer shell of 8 electrons. It already has \\(N\\) of them (its group number). Every covalent bond fills one empty seat by sharing one electron. So the atom needs <strong>8 − N bonds</strong>, and that means <strong>8 − N close neighbours</strong>.</div></div>"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 330\" role=\"img\" aria-label=\"Five atoms drawn with the number of bonds the 8-N rule predicts: one for Group VII, two for Group VI, three for Group V, four for Group IV, and a question mark for Group III\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"10\" y=\"10\" width=\"760\" height=\"310\" rx=\"8\" class=\"dg-frame\"/><text x=\"96\" y=\"52\" class=\"dg-tb\" text-anchor=\"middle\">Group VII</text><text x=\"96\" y=\"72\" class=\"dg-t\" text-anchor=\"middle\">8 - 7 = 1 bond</text><line x1=\"72\" y1=\"130\" x2=\"120\" y2=\"130\" class=\"dg-bondthick\"/><circle cx=\"72\" cy=\"130\" r=\"15\" class=\"dg-atomB\"/><circle cx=\"120\" cy=\"130\" r=\"15\" class=\"dg-atomA\"/><text x=\"243\" y=\"52\" class=\"dg-tb\" text-anchor=\"middle\">Group VI</text><text x=\"243\" y=\"72\" class=\"dg-t\" text-anchor=\"middle\">8 - 6 = 2 bonds</text><line x1=\"203\" y1=\"152\" x2=\"243\" y2=\"116\" class=\"dg-bondthick\"/><line x1=\"243\" y1=\"116\" x2=\"283\" y2=\"152\" class=\"dg-bondthick\"/><circle cx=\"203\" cy=\"152\" r=\"13\" class=\"dg-atomA\"/><circle cx=\"243\" cy=\"116\" r=\"15\" class=\"dg-atomB\"/><circle cx=\"283\" cy=\"152\" r=\"13\" class=\"dg-atomA\"/><text x=\"390\" y=\"52\" class=\"dg-tb\" text-anchor=\"middle\">Group V</text><text x=\"390\" y=\"72\" class=\"dg-t\" text-anchor=\"middle\">8 - 5 = 3 bonds</text><line x1=\"390\" y1=\"130\" x2=\"390\" y2=\"88\" class=\"dg-bondthick\"/><line x1=\"390\" y1=\"130\" x2=\"352\" y2=\"156\" class=\"dg-bondthick\"/><line x1=\"390\" y1=\"130\" x2=\"428\" y2=\"156\" class=\"dg-bondthick\"/><circle cx=\"390\" cy=\"88\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"352\" cy=\"156\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"428\" cy=\"156\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"390\" cy=\"130\" r=\"15\" class=\"dg-atomB\"/><text x=\"537\" y=\"52\" class=\"dg-tb\" text-anchor=\"middle\">Group IV</text><text x=\"537\" y=\"72\" class=\"dg-t\" text-anchor=\"middle\">8 - 4 = 4 bonds</text><line x1=\"537\" y1=\"130\" x2=\"503\" y2=\"96\" class=\"dg-bondthick\"/><line x1=\"537\" y1=\"130\" x2=\"571\" y2=\"96\" class=\"dg-bondthick\"/><line x1=\"537\" y1=\"130\" x2=\"503\" y2=\"164\" class=\"dg-bondthick\"/><line x1=\"537\" y1=\"130\" x2=\"571\" y2=\"164\" class=\"dg-bondthick\"/><circle cx=\"503\" cy=\"96\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"571\" cy=\"96\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"503\" cy=\"164\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"571\" cy=\"164\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"537\" cy=\"130\" r=\"15\" class=\"dg-atomB\"/><text x=\"684\" y=\"52\" class=\"dg-tb\" text-anchor=\"middle\">Group III</text><text x=\"684\" y=\"72\" class=\"dg-t\" text-anchor=\"middle\">rule fails</text><line x1=\"684\" y1=\"130\" x2=\"684\" y2=\"88\" class=\"dg-bond\" stroke-dasharray=\"4 4\"/><line x1=\"684\" y1=\"130\" x2=\"644\" y2=\"117\" class=\"dg-bond\" stroke-dasharray=\"4 4\"/><line x1=\"684\" y1=\"130\" x2=\"659\" y2=\"164\" class=\"dg-bond\" stroke-dasharray=\"4 4\"/><line x1=\"684\" y1=\"130\" x2=\"709\" y2=\"164\" class=\"dg-bond\" stroke-dasharray=\"4 4\"/><line x1=\"684\" y1=\"130\" x2=\"724\" y2=\"117\" class=\"dg-bond\" stroke-dasharray=\"4 4\"/><circle cx=\"684\" cy=\"88\" r=\"11\" class=\"dg-atomA dg-dim\"/><circle cx=\"644\" cy=\"117\" r=\"11\" class=\"dg-atomA dg-dim\"/><circle cx=\"659\" cy=\"164\" r=\"11\" class=\"dg-atomA dg-dim\"/><circle cx=\"709\" cy=\"164\" r=\"11\" class=\"dg-atomA dg-dim\"/><circle cx=\"724\" cy=\"117\" r=\"11\" class=\"dg-atomA dg-dim\"/><circle cx=\"684\" cy=\"130\" r=\"15\" class=\"dg-atomB\"/><text x=\"684\" y=\"136\" class=\"dg-tb\" text-anchor=\"middle\">?</text><text x=\"96\" y=\"222\" class=\"dg-tb-acc\" text-anchor=\"middle\">F, Cl, Br, I</text><text x=\"96\" y=\"242\" class=\"dg-t\" text-anchor=\"middle\">small molecules</text><text x=\"243\" y=\"222\" class=\"dg-tb-acc\" text-anchor=\"middle\">S, Se, Te</text><text x=\"243\" y=\"242\" class=\"dg-t\" text-anchor=\"middle\">chains and rings</text><text x=\"390\" y=\"222\" class=\"dg-tb-acc\" text-anchor=\"middle\">As, Sb, Bi</text><text x=\"390\" y=\"242\" class=\"dg-t\" text-anchor=\"middle\">puckered sheets</text><text x=\"537\" y=\"222\" class=\"dg-tb-acc\" text-anchor=\"middle\">C, Si, Ge</text><text x=\"537\" y=\"242\" class=\"dg-t\" text-anchor=\"middle\">diamond cubic</text><text x=\"684\" y=\"222\" class=\"dg-tb-acc\" text-anchor=\"middle\">5 neighbours do not</text><text x=\"684\" y=\"242\" class=\"dg-t\" text-anchor=\"middle\">tile space: more metallic</text><text x=\"390\" y=\"290\" class=\"dg-t\" text-anchor=\"middle\">Central atom (amber) and its nearest neighbours (blue). Schematic: real bond angles differ.</text></svg></div><div class=\"diagram-caption\">The number of bonds an atom makes sets the structure: molecules, chains, sheets or a 3D network.</div>"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Group</th><th>N</th><th>Neighbours (8 − N)</th><th>Structure</th><th>Examples</th></tr></thead><tbody><tr><td>VIIA</td><td>7</td><td>1</td><td>Strong covalent bond inside a pair, so <strong>diatomic molecules</strong>. Molecules are packed together by weak Van der Waals forces</td><td>F<sub>2</sub>, Cl<sub>2</sub>, Br<sub>2</sub>, I<sub>2</sub></td></tr><tr><td>VIA</td><td>6</td><td>2</td><td><strong>Chains or rings</strong></td><td>S, Se, Te</td></tr><tr><td>VA</td><td>5</td><td>3</td><td><strong>Puckered sheets</strong>. The crystal is rhombohedral (trigonal), a slightly distorted simple cubic</td><td>As, Sb, Bi</td></tr><tr><td>IVA</td><td>4</td><td>4</td><td><strong>Diamond cubic</strong>, a 3D network</td><td>C, Si, Ge (and grey tin)</td></tr><tr><td>IIIA</td><td>3</td><td>Rule fails</td><td>Five neighbours cannot form a regular arrangement, so the bonding becomes more <strong>metallic</strong></td><td></td></tr></tbody></table></div>"
+        },
+        {
+          "type": "conceptbox",
+          "variant": "",
+          "title": "Why diatomic molecules?",
+          "html": "<p>A Group VII atom has only one neighbour. Two atoms bond to each other and that is the end of the story. The bond inside the pair is strong. The attraction between pairs is only weak Van der Waals force, so these solids are soft and melt easily (my inference, not on the slides).</p>"
+        },
+        {
+          "type": "h3",
+          "text": "Special cases worth knowing"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Group V (As, Sb, Bi):</strong> inside a sheet the bonds are covalent. <strong>Between</strong> sheets the bonds are longer, weaker and partly metallic.",
+            "<strong>Group IV:</strong> C, Si and Ge are all diamond cubic. Moving down the group the atoms get more metallic: grey tin is diamond cubic, white tin is a more metallic body-centred tetragonal (bct) form, and Pb is FCC and clearly metallic.",
+            "<strong>Group III:</strong> the rule does not apply. The 8 − N count would give five, which cannot tile space regularly."
+          ]
+        },
+        {
+          "type": "example",
+          "label": "Worked example: predict the structure",
+          "q": "Use the 8 − N rule on selenium (Group VIA) and antimony (Group VA).",
+          "steps": [
+            "Se: \\(N=6\\), so \\(8-6=2\\) neighbours",
+            "Sb: \\(N=5\\), so \\(8-5=3\\) neighbours"
+          ],
+          "answer": "<strong>Se</strong> has two neighbours each, so it forms <strong>chains or rings</strong>. <strong>Sb</strong> has three neighbours each, so it forms <strong>puckered sheets</strong>."
+        },
+        {
+          "type": "h2",
+          "id": "w5-poly",
+          "text": "One Element, Several Structures: Polymorphism"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"analogy\"><span class=\"analogy-icon\">🧱</span><div class=\"analogy-text\"><strong>Same bricks, different building.</strong> Diamond and the graphite in a pencil are both pure carbon. The atoms are identical and only the arrangement differs. An element with more than one crystal structure shows <strong>polymorphism</strong>, and each structure is a <strong>polymorph</strong>.</div></div>"
+        },
+        {
+          "type": "p",
+          "text": "Three things can flip an element from one structure to another:",
+          "class": ""
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Pressure.</strong> High pressure favours the more closely packed form. Squeeze carbon hard and <strong>diamond</strong> becomes more stable than the less dense <strong>graphite</strong>.",
+            "<strong>Temperature.</strong> Heat means bigger vibrations, which need more room, so a <em>lower-density</em> structure can win at high temperature. Iron goes from FCC (γ) to BCC (δ) at 1400 °C. Heat also shifts the energy of the electron orbitals (the energy bands), and that is what pushes iron to BCC (α) below 910 °C.",
+            "<strong>Deformation.</strong> Shearing α-graphite makes the layers slide over each other, like a sheared deck of cards, and it becomes β-graphite."
+          ]
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Temperature range</th><th>Form of iron</th><th>Structure</th></tr></thead><tbody><tr><td>Below 910 °C</td><td>α-iron</td><td>BCC</td></tr><tr><td>910 °C to 1400 °C</td><td>γ-iron</td><td>FCC</td></tr><tr><td>Above 1400 °C</td><td>δ-iron</td><td>BCC</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "conceptbox",
+          "variant": "",
+          "title": "Careful with the heat rule of thumb",
+          "html": "<p>\"Heat favours a looser structure\" explains γ → δ (FCC to BCC at 1400 °C). It does <strong>not</strong> explain α → γ at 910 °C, where heating goes from BCC to the denser FCC. The slide blames changes in the energy bands of the orbitals for that one. So treat the rule of thumb as a tendency, not a law.</p>"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Element</th><th>Forms</th><th>Note</th></tr></thead><tbody><tr><td>Phosphorus</td><td>4 (black, white, red, yellow)</td><td>All based on puckered sheets of 3-fold atoms, as 8 − N predicts for Group V</td></tr><tr><td>Sulphur</td><td>3</td><td>Built from S<sub>8</sub> rings, as 8 − N predicts for Group VI</td></tr><tr><td>Manganese</td><td>4</td><td></td></tr><tr><td>Iron</td><td>3</td><td>α, γ and δ</td></tr><tr><td>Tin</td><td>2</td><td>Grey (diamond cubic) and white (bct)</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "h2",
+          "id": "w5-ionic",
+          "text": "Ionic Structures: Fitting Balls Around a Ball"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"analogy\"><span class=\"analogy-icon\">🎾</span><div class=\"analogy-text\"><strong>A tennis ball in the middle, ping-pong balls around it.</strong> Pack as many ping-pong balls round the tennis ball as you can, as long as every one of them touches the middle ball. A bigger middle ball leaves room for more neighbours. A middle ball that is too small cannot hold the outer balls apart, so they bump into each other instead of touching it. In a salt crystal the middle ball is a small <strong>cation</strong> and the outer balls are bigger <strong>anions</strong>.</div></div>"
+        },
+        {
+          "type": "h3",
+          "text": "A guide to ionic structures"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>(a)</strong> Ions are charged, elastic spheres.",
+            "<strong>(b)</strong> Electrostatic attraction holds the crystal together. Cations are surrounded by anions and anions by cations.",
+            "<strong>(c)</strong> Attraction is maximised by having as many neighbours as possible, <em>provided</em> the central ion stays in contact with every one of them.",
+            "<strong>(d)</strong> Next-nearest neighbours are like ions (anion with anion, cation with cation). They repel, so like ions sit as far apart as they can. That gives high symmetry and a large volume.",
+            "<strong>(e)</strong> Local electroneutrality: an ion's valence equals the sum of the bond strengths coming in from its oppositely charged neighbours. This becomes Pauling's second rule."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Pauling's first rule: the radius ratio"
+        },
+        {
+          "type": "p",
+          "text": "A polyhedron of anions forms around every cation, and it is stable only if the cation <strong>touches every one of its neighbours</strong>. The cation-anion distance is the sum of the two radii. Whether the cation is big enough to touch them all depends on the <strong>radius ratio</strong> \\(r_c/r_a\\).",
+          "class": ""
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 250\" role=\"img\" aria-label=\"A number line of radius ratio from 0 to 1 split into zones: coordination 2 below 0.155, 3 up to 0.225, 4 up to 0.414, 6 up to 0.732, 8 up to 1.0\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"10\" y=\"10\" width=\"760\" height=\"230\" rx=\"8\" class=\"dg-frame\"/><text x=\"390\" y=\"32\" class=\"dg-tb\" text-anchor=\"middle\">Radius ratio  r(cation) / r(anion)  decides the coordination number</text><rect x=\"60\" y=\"116\" width=\"102.3\" height=\"40\" class=\"dg-zone\" style=\"fill:#6a6a7833;stroke:#6a6a78\"/><text x=\"111.2\" y=\"142\" class=\"dg-tb\" text-anchor=\"middle\">2</text><text x=\"111.2\" y=\"184\" class=\"dg-t\" text-anchor=\"middle\">linear</text><rect x=\"162.3\" y=\"116\" width=\"46.2\" height=\"40\" class=\"dg-zone\" style=\"fill:#8855f533;stroke:#8855f5\"/><text x=\"185.4\" y=\"142\" class=\"dg-tb\" text-anchor=\"middle\">3</text><text x=\"185.4\" y=\"184\" class=\"dg-t\" text-anchor=\"middle\">triangular</text><rect x=\"208.5\" y=\"116\" width=\"124.7\" height=\"40\" class=\"dg-zone\" style=\"fill:#4a90e233;stroke:#4a90e2\"/><text x=\"270.9\" y=\"142\" class=\"dg-tb\" text-anchor=\"middle\">4</text><text x=\"270.9\" y=\"184\" class=\"dg-t\" text-anchor=\"middle\">tetrahedral</text><rect x=\"333.2\" y=\"116\" width=\"209.9\" height=\"40\" class=\"dg-zone\" style=\"fill:#2fa15c33;stroke:#2fa15c\"/><text x=\"438.2\" y=\"142\" class=\"dg-tb\" text-anchor=\"middle\">6</text><text x=\"438.2\" y=\"184\" class=\"dg-t\" text-anchor=\"middle\">octahedral</text><rect x=\"543.1\" y=\"116\" width=\"176.9\" height=\"40\" class=\"dg-zone\" style=\"fill:#f4a26133;stroke:#f4a261\"/><text x=\"631.6\" y=\"142\" class=\"dg-tb\" text-anchor=\"middle\">8</text><text x=\"631.6\" y=\"184\" class=\"dg-t\" text-anchor=\"middle\">cubic</text><line x1=\"60\" y1=\"156\" x2=\"60\" y2=\"164\" class=\"dg-axis\"/><text x=\"60\" y=\"214\" class=\"dg-vl-mut\" text-anchor=\"middle\">0</text><line x1=\"162.3\" y1=\"156\" x2=\"162.3\" y2=\"164\" class=\"dg-axis\"/><text x=\"162.3\" y=\"214\" class=\"dg-vl-mut\" text-anchor=\"middle\">0.155</text><line x1=\"208.5\" y1=\"156\" x2=\"208.5\" y2=\"164\" class=\"dg-axis\"/><text x=\"208.5\" y=\"214\" class=\"dg-vl-mut\" text-anchor=\"middle\">0.225</text><line x1=\"333.2\" y1=\"156\" x2=\"333.2\" y2=\"164\" class=\"dg-axis\"/><text x=\"333.2\" y=\"214\" class=\"dg-vl-mut\" text-anchor=\"middle\">0.414</text><line x1=\"543.1\" y1=\"156\" x2=\"543.1\" y2=\"164\" class=\"dg-axis\"/><text x=\"543.1\" y=\"214\" class=\"dg-vl-mut\" text-anchor=\"middle\">0.732</text><line x1=\"720\" y1=\"156\" x2=\"720\" y2=\"164\" class=\"dg-axis\"/><text x=\"720\" y=\"214\" class=\"dg-vl-mut\" text-anchor=\"middle\">1.0</text><text x=\"720\" y=\"232\" class=\"dg-t\" text-anchor=\"end\">exactly 1.0: coordination 12</text><line x1=\"324\" y1=\"94\" x2=\"324\" y2=\"116\" class=\"dg-axis\"/><circle cx=\"324\" cy=\"94\" r=\"4\" class=\"dg-lp-amb\"/><text x=\"324\" y=\"82\" class=\"dg-tb-amb\" text-anchor=\"middle\">ZnS 0.40</text><line x1=\"406.5\" y1=\"94\" x2=\"406.5\" y2=\"116\" class=\"dg-axis\"/><circle cx=\"406.5\" cy=\"94\" r=\"4\" class=\"dg-lp-amb\"/><text x=\"406.5\" y=\"58\" class=\"dg-tb-amb\" text-anchor=\"middle\">NaCl 0.52, TiO 0.53</text><line x1=\"540.5\" y1=\"94\" x2=\"540.5\" y2=\"116\" class=\"dg-axis\"/><circle cx=\"540.5\" cy=\"94\" r=\"4\" class=\"dg-lp-amb\"/><text x=\"540.5\" y=\"82\" class=\"dg-tb-amb\" text-anchor=\"middle\">CaF2 0.73</text><line x1=\"676.4\" y1=\"94\" x2=\"676.4\" y2=\"116\" class=\"dg-axis\"/><circle cx=\"676.4\" cy=\"94\" r=\"4\" class=\"dg-lp-amb\"/><text x=\"676.4\" y=\"58\" class=\"dg-tb-amb\" text-anchor=\"middle\">CsCl 0.93</text><text x=\"54\" y=\"142\" class=\"dg-t\" text-anchor=\"end\">CN</text></svg></div><div class=\"diagram-caption\">The zones for coordination 2, 3, 4, 6 and 8, with the compounds from the lecture marked above the bar.</div>"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Coordination number</th><th>Shape of the anions</th><th>Radius ratio \\(r_c/r_a\\)</th><th>Example</th></tr></thead><tbody><tr><td>12</td><td>Cubo-octahedral</td><td>exactly 1 (ions the same size)</td><td></td></tr><tr><td>8</td><td>Cubic</td><td>1 down to 0.732</td><td>CsCl</td></tr><tr><td>6</td><td>Octahedral</td><td>0.732 down to 0.414</td><td>NaCl, TiO</td></tr><tr><td>4</td><td>Tetrahedral</td><td>0.414 down to 0.225</td><td>ZnS</td></tr><tr><td>3</td><td>Triangular</td><td>0.225 down to 0.155</td><td></td></tr><tr><td>2</td><td>Linear</td><td>below 0.155</td><td></td></tr></tbody></table></div>"
+        },
+        {
+          "type": "conceptbox",
+          "variant": "",
+          "title": "Why each limit is also the next limit up",
+          "html": "<p>Take the octahedral limit, 0.414. A cation just above it touches all 6 anions with room to spare. A cation just below it is too small. The 6 anions would have to overlap each other to reach it, so the structure drops to coordination 4. The same cut-off is therefore the <strong>bottom</strong> of the 6 zone and the <strong>top</strong> of the 4 zone.</p>"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 330\" role=\"img\" aria-label=\"Three slices through an octahedral site: with a cation ratio of 0.30 the four anions overlap, at 0.414 they just touch, at 0.55 there is room to spare\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"10\" y=\"10\" width=\"760\" height=\"310\" rx=\"8\" class=\"dg-frame\"/><circle cx=\"202\" cy=\"150\" r=\"40\" class=\"dg-atomG\" style=\"fill-opacity:.55\"/><circle cx=\"98\" cy=\"150\" r=\"40\" class=\"dg-atomG\" style=\"fill-opacity:.55\"/><circle cx=\"150\" cy=\"202\" r=\"40\" class=\"dg-atomG\" style=\"fill-opacity:.55\"/><circle cx=\"150\" cy=\"98\" r=\"40\" class=\"dg-atomG\" style=\"fill-opacity:.55\"/><circle cx=\"150\" cy=\"150\" r=\"12\" class=\"dg-atomB\"/><text x=\"150\" y=\"36\" class=\"dg-tb\" text-anchor=\"middle\">r(cation) / r(anion) = 0.30</text><text x=\"150\" y=\"262\" class=\"dg-tb-red\" text-anchor=\"middle\">Anions overlap.</text><text x=\"150\" y=\"282\" class=\"dg-t\" text-anchor=\"middle\">Impossible: CN 6 fails.</text><circle cx=\"446.6\" cy=\"150\" r=\"40\" class=\"dg-atomG\" style=\"fill-opacity:.55\"/><circle cx=\"333.4\" cy=\"150\" r=\"40\" class=\"dg-atomG\" style=\"fill-opacity:.55\"/><circle cx=\"390\" cy=\"206.6\" r=\"40\" class=\"dg-atomG\" style=\"fill-opacity:.55\"/><circle cx=\"390\" cy=\"93.4\" r=\"40\" class=\"dg-atomG\" style=\"fill-opacity:.55\"/><circle cx=\"390\" cy=\"150\" r=\"16.6\" class=\"dg-atomB\"/><text x=\"390\" y=\"36\" class=\"dg-tb\" text-anchor=\"middle\">r(cation) / r(anion) = 0.414</text><text x=\"390\" y=\"262\" class=\"dg-tb-acc\" text-anchor=\"middle\">Everything just touches.</text><text x=\"390\" y=\"282\" class=\"dg-t\" text-anchor=\"middle\">Lowest ratio for CN 6.</text><circle cx=\"692\" cy=\"150\" r=\"40\" class=\"dg-atomG\" style=\"fill-opacity:.55\"/><circle cx=\"568\" cy=\"150\" r=\"40\" class=\"dg-atomG\" style=\"fill-opacity:.55\"/><circle cx=\"630\" cy=\"212\" r=\"40\" class=\"dg-atomG\" style=\"fill-opacity:.55\"/><circle cx=\"630\" cy=\"88\" r=\"40\" class=\"dg-atomG\" style=\"fill-opacity:.55\"/><circle cx=\"630\" cy=\"150\" r=\"22\" class=\"dg-atomB\"/><text x=\"630\" y=\"36\" class=\"dg-tb\" text-anchor=\"middle\">r(cation) / r(anion) = 0.55</text><text x=\"630\" y=\"262\" class=\"dg-tb-acc\" text-anchor=\"middle\">Gaps between anions.</text><text x=\"630\" y=\"282\" class=\"dg-t\" text-anchor=\"middle\">Stable octahedral site.</text><text x=\"390\" y=\"312\" class=\"dg-t\" text-anchor=\"middle\">Slice through 4 of the 6 anions around the cation (the other two sit above and below the page).</text></svg></div><div class=\"diagram-caption\">The octahedral limit in 2D. The anions (green) touch each other exactly when the ratio is 0.414.</div>"
+        },
+        {
+          "type": "h3",
+          "text": "Where the numbers come from (the geometric proofs)"
+        },
+        {
+          "type": "p",
+          "text": "Each proof uses two touching conditions. The cation touches its anion neighbours along one line. At the <em>lowest</em> ratio for that coordination, the anions also touch <em>each other</em> along another line. Write both as equations, divide one by the other, and the cell edge \\(a\\) disappears.",
+          "class": ""
+        },
+        {
+          "type": "example",
+          "label": "Proof: cubic coordination (8)",
+          "q": "A cation sits at the centre of a cube of side \\(a\\) with anions at the 8 corners. Find the lowest \\(r_c/r_a\\).",
+          "steps": [
+            "Cation and anions touch along the body diagonal, length \\(\\sqrt3\\,a\\). It holds one anion radius, the cation diameter and one anion radius, so \\(2(r_c+r_a)=\\sqrt3\\,a\\)",
+            "At the lowest ratio the anions also touch along the cube edge: \\(2r_a=a\\)",
+            "Divide the first by the second: \\((r_c+r_a)/r_a=\\sqrt3\\), so \\(r_c/r_a+1=\\sqrt3\\)"
+          ],
+          "answer": "<strong>\\(r_c/r_a=\\sqrt3-1=0.732\\)</strong>. Cubic coordination needs \\(1>r_c/r_a>0.732\\)."
+        },
+        {
+          "type": "example",
+          "label": "Proof: octahedral coordination (6)",
+          "q": "A cation sits in the middle of an FCC cube of anions (cube side \\(a\\)). Find the lowest \\(r_c/r_a\\).",
+          "steps": [
+            "Along \\([100]\\) through the centre, face-centre anion, cation, face-centre anion touch: \\(2(r_c+r_a)=a\\)",
+            "At the lowest ratio the anions touch along the face diagonal \\([110]\\): \\(4r_a=\\sqrt2\\,a\\), so \\(2r_a=a/\\sqrt2\\)",
+            "Divide: \\((r_c+r_a)/r_a=\\sqrt2\\)"
+          ],
+          "answer": "<strong>\\(r_c/r_a=\\sqrt2-1=0.414\\)</strong>. Octahedral needs \\(0.732>r_c/r_a>0.414\\)."
+        },
+        {
+          "type": "example",
+          "label": "Proof: tetrahedral coordination (4)",
+          "q": "A cation sits at the \\((\\tfrac14,\\tfrac14,\\tfrac14)\\) site of an FCC cube of anions. Find the lowest \\(r_c/r_a\\).",
+          "steps": [
+            "The cation touches the corner anion along the body diagonal \\([111]\\), a distance \\(\\tfrac{\\sqrt3}{4}a\\): \\(r_c+r_a=\\tfrac{\\sqrt3}{4}a\\)",
+            "At the lowest ratio the anions touch along the face diagonal: \\(4r_a=\\sqrt2\\,a\\), so \\(r_a=\\tfrac{\\sqrt2}{4}a\\)",
+            "Divide: \\((r_c+r_a)/r_a=\\sqrt3/\\sqrt2=1.2247\\)"
+          ],
+          "answer": "<strong>\\(r_c/r_a=0.225\\)</strong>. Tetrahedral needs \\(0.414>r_c/r_a>0.225\\). This is the same 0.225 you met as the tetrahedral hole size in Week 4."
+        },
+        {
+          "type": "example",
+          "label": "Proof: triangular coordination (3)",
+          "q": "A cation sits at the centre of an equilateral triangle of anions (side \\(a\\)). Find the lowest \\(r_c/r_a\\).",
+          "steps": [
+            "The centre of a triangle is two thirds of the way along the height \\(\\tfrac{\\sqrt3}{2}a\\), so the cation-to-corner distance is \\(\\tfrac23\\cdot\\tfrac{\\sqrt3}{2}a=a/\\sqrt3\\). Hence \\(r_c+r_a=a/\\sqrt3\\)",
+            "At the lowest ratio the anions touch along the triangle side: \\(2r_a=a\\)",
+            "Divide: \\((r_c+r_a)/r_a=2/\\sqrt3=1.155\\)"
+          ],
+          "answer": "<strong>\\(r_c/r_a=0.155\\)</strong>. Triangular needs \\(0.225>r_c/r_a>0.155\\). Below 0.155 the cation holds only 2 anions apart (linear)."
+        },
+        {
+          "type": "p",
+          "text": "Coordination 12 needs ions of equal size (\\(r_c/r_a=1\\)).",
+          "class": ""
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"sim-embed\"><span class=\"sim-tag\">Interactive · Week 5</span><iframe data-src=\"widgets/radius-ratio.html\" data-sim=\"radius-ratio.html\" title=\"Radius ratio explorer\" style=\"height:560px\"></iframe><div class=\"sim-credit\">Built for this site to illustrate the lecture material (not one of the lecturer's animations).</div></div><div class=\"sim-guide\"><div><h5>What you are looking at</h5><p>A slice through an octahedral site: the cation in the middle and four of the six anions around it. Two sliders set the radii. The coloured bar shows which coordination number the radius ratio predicts.</p></div><div class=\"sg-try\"><h5>Try this</h5><ul><li>Press <strong>NaCl</strong>, <strong>MgO</strong> and <strong>TiO</strong>. They all land in the octahedral zone.</li><li>Shrink the cation slowly. At 0.414 the anions touch each other. Below it they overlap, which is not allowed.</li><li>Press <strong>CsCl</strong>: the ratio is high enough for 8 neighbours.</li><li>Press <strong>CaF<sub>2</sub></strong> and see how close it sits to the 0.732 border.</li></ul></div></div>"
+        },
+        {
+          "type": "h2",
+          "id": "w5-rule2",
+          "text": "Pauling's Second Rule: Charge Must Balance"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"analogy\"><span class=\"analogy-icon\">💷</span><div class=\"analogy-text\"><strong>Pocket money.</strong> Each cation has a fixed amount of charge to give away, and it hands it out <em>equally</em> to all its neighbours. Each anion collects shares from its neighbours. The structure is stable when every anion has collected <strong>exactly its own charge</strong>, not more and not less.</div></div>"
+        },
+        {
+          "type": "p",
+          "text": "The share a cation hands to each neighbour is its <strong>electrostatic bond strength</strong> (the lecture also calls it the effective bond strength):",
+          "class": ""
+        },
+        {
+          "type": "formulablock",
+          "name": "Electrostatic bond strength",
+          "eqs": [
+            "s=\\frac{m}{n}=\\frac{\\text{valence}}{\\text{coordination number}}",
+            "\\sum s=x"
+          ],
+          "vars": [
+            {
+              "symbol": "m",
+              "desc": "valence (charge) of the cation"
+            },
+            {
+              "symbol": "n",
+              "desc": "coordination number of the cation"
+            },
+            {
+              "symbol": "x",
+              "desc": "charge of the anion, ignoring the sign"
+            }
+          ],
+          "note": "Add up s over all the cations around one anion. The total must equal the anion charge."
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 340\" role=\"img\" aria-label=\"Left: one chloride ion receives one sixth of a charge from each of six sodium ions and adds up to 1. Right: one oxide ion receives one half from each of four cations and adds up to 2\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"p2-amb\" viewBox=\"0 0 10 10\" refX=\"8.5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" class=\"dg-ah-amb\"/></marker></defs><rect x=\"10\" y=\"10\" width=\"760\" height=\"320\" rx=\"8\" class=\"dg-frame\"/><line x1=\"195\" y1=\"114.6\" x2=\"195\" y2=\"139.2\" class=\"dg-vec-amb\" marker-end=\"url(#p2-amb)\"/><text x=\"213\" y=\"130.9\" class=\"dg-tb-amb\" text-anchor=\"start\">+1/6</text><line x1=\"195\" y1=\"229.4\" x2=\"195\" y2=\"204.8\" class=\"dg-vec-amb\" marker-end=\"url(#p2-amb)\"/><text x=\"213\" y=\"221.1\" class=\"dg-tb-amb\" text-anchor=\"start\">+1/6</text><line x1=\"137.6\" y1=\"172\" x2=\"162.2\" y2=\"172\" class=\"dg-vec-amb\" marker-end=\"url(#p2-amb)\"/><text x=\"149.9\" y=\"160\" class=\"dg-tb-amb\" text-anchor=\"middle\">+1/6</text><line x1=\"252.4\" y1=\"172\" x2=\"227.8\" y2=\"172\" class=\"dg-vec-amb\" marker-end=\"url(#p2-amb)\"/><text x=\"240.1\" y=\"160\" class=\"dg-tb-amb\" text-anchor=\"middle\">+1/6</text><circle cx=\"195\" cy=\"90\" r=\"17\" class=\"dg-atomB\"/><text x=\"195\" y=\"94\" class=\"dg-tb\" text-anchor=\"middle\">Na+</text><circle cx=\"195\" cy=\"254\" r=\"17\" class=\"dg-atomB\"/><text x=\"195\" y=\"258\" class=\"dg-tb\" text-anchor=\"middle\">Na+</text><circle cx=\"113\" cy=\"172\" r=\"17\" class=\"dg-atomB\"/><text x=\"113\" y=\"176\" class=\"dg-tb\" text-anchor=\"middle\">Na+</text><circle cx=\"277\" cy=\"172\" r=\"17\" class=\"dg-atomB\"/><text x=\"277\" y=\"176\" class=\"dg-tb\" text-anchor=\"middle\">Na+</text><circle cx=\"195\" cy=\"172\" r=\"24\" class=\"dg-atomG\"/><text x=\"195\" y=\"177\" class=\"dg-tb\" text-anchor=\"middle\">Cl-</text><text x=\"195\" y=\"282\" class=\"dg-tb\" text-anchor=\"middle\">Cl- in NaCl: 6 Na+ around it</text><text x=\"195\" y=\"304\" class=\"dg-vl-acc\" text-anchor=\"middle\">6 x (+1/6) = +1</text><text x=\"195\" y=\"324\" class=\"dg-t\" text-anchor=\"middle\">two more Na+ sit above and below the page</text><line x1=\"585\" y1=\"114.6\" x2=\"585\" y2=\"139.2\" class=\"dg-vec-amb\" marker-end=\"url(#p2-amb)\"/><text x=\"603\" y=\"130.9\" class=\"dg-tb-amb\" text-anchor=\"start\">+1/2</text><line x1=\"585\" y1=\"229.4\" x2=\"585\" y2=\"204.8\" class=\"dg-vec-amb\" marker-end=\"url(#p2-amb)\"/><text x=\"603\" y=\"221.1\" class=\"dg-tb-amb\" text-anchor=\"start\">+1/2</text><line x1=\"527.6\" y1=\"172\" x2=\"552.2\" y2=\"172\" class=\"dg-vec-amb\" marker-end=\"url(#p2-amb)\"/><text x=\"539.9\" y=\"160\" class=\"dg-tb-amb\" text-anchor=\"middle\">+1/2</text><line x1=\"642.4\" y1=\"172\" x2=\"617.8\" y2=\"172\" class=\"dg-vec-amb\" marker-end=\"url(#p2-amb)\"/><text x=\"630.1\" y=\"160\" class=\"dg-tb-amb\" text-anchor=\"middle\">+1/2</text><circle cx=\"585\" cy=\"90\" r=\"17\" class=\"dg-atomP\"/><text x=\"585\" y=\"94\" class=\"dg-tb\" text-anchor=\"middle\">Al</text><circle cx=\"585\" cy=\"254\" r=\"17\" class=\"dg-atomP\"/><text x=\"585\" y=\"258\" class=\"dg-tb\" text-anchor=\"middle\">Al</text><circle cx=\"503\" cy=\"172\" r=\"17\" class=\"dg-atomP\"/><text x=\"503\" y=\"176\" class=\"dg-tb\" text-anchor=\"middle\">Al</text><circle cx=\"667\" cy=\"172\" r=\"17\" class=\"dg-atomB\"/><text x=\"667\" y=\"176\" class=\"dg-tb\" text-anchor=\"middle\">Mg</text><circle cx=\"585\" cy=\"172\" r=\"24\" class=\"dg-atomG\"/><text x=\"585\" y=\"177\" class=\"dg-tb\" text-anchor=\"middle\">O2-</text><text x=\"585\" y=\"282\" class=\"dg-tb\" text-anchor=\"middle\">O2- in MgAl2O4: 3 Al3+ and 1 Mg2+</text><text x=\"585\" y=\"304\" class=\"dg-vl-acc\" text-anchor=\"middle\">4 x (+1/2) = +2</text><text x=\"585\" y=\"324\" class=\"dg-t\" text-anchor=\"middle\">Al3+: 3/6 = 1/2     Mg2+: 2/4 = 1/2</text><text x=\"390\" y=\"40\" class=\"dg-t\" text-anchor=\"middle\">Each cation shares its charge equally among its neighbours. The anion must collect exactly its own charge.</text></svg></div><div class=\"diagram-caption\">Left: NaCl. Right: the spinel MgAl2O4, where both cations happen to have the same bond strength.</div>"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Example</th><th>Cation bond strengths</th><th>Anion check</th><th>Verdict</th></tr></thead><tbody><tr><td>NaCl</td><td>Na<sup>+</sup> has 6 neighbours: \\(1/6\\)</td><td>Cl<sup>-</sup> has 6 Na<sup>+</sup>: \\(6\\times\\tfrac16=1\\), equal to the Cl<sup>-</sup> charge</td><td>Stable</td></tr><tr><td>Spinel MgAl<sub>2</sub>O<sub>4</sub></td><td>Mg<sup>2+</sup> (4): \\(2/4=\\tfrac12\\). Al<sup>3+</sup> (6): \\(3/6=\\tfrac12\\)</td><td>O<sup>2-</sup> has 3 Al<sup>3+</sup> and 1 Mg<sup>2+</sup>: \\(4\\times\\tfrac12=2\\), equal to the O<sup>2-</sup> charge</td><td>Stable</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "conceptbox",
+          "variant": "",
+          "title": "Exam recipe",
+          "html": "<ol><li>Use <strong>rule 1</strong> (radius ratio) to get the cation's coordination number \\(n\\).</li><li>Work out the bond strength \\(s=m/n\\).</li><li>Use <strong>rule 2</strong>: the anion needs \\(x\\) in total, so it needs \\(x/s\\) cation neighbours. That is the anion's coordination number.</li><li>Sanity check: <strong>(cations per formula unit) × (their coordination)</strong> must equal <strong>(anions per formula unit) × (their coordination)</strong>, because every bond has a cation at one end and an anion at the other.</li></ol>"
+        },
+        {
+          "type": "h2",
+          "id": "w5-types",
+          "text": "The Famous Ionic Structures"
+        },
+        {
+          "type": "p",
+          "text": "Almost every ionic structure is described the same way: <strong>the big ions form a stacking pattern, and the small ions sit in some of the holes</strong>. Learn each one as \"what stacks, and which holes are filled\".",
+          "class": ""
+        },
+        {
+          "type": "h3",
+          "text": "Rock salt, NaCl"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 330\" role=\"img\" aria-label=\"The sodium chloride unit cell: chloride ions on the corners and face centres, sodium ions on the edge midpoints and at the centre\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"10\" y=\"10\" width=\"760\" height=\"310\" rx=\"8\" class=\"dg-frame\"/><line x1=\"70\" y1=\"292\" x2=\"260\" y2=\"292\" class=\"dg-edge\"/><line x1=\"70\" y1=\"292\" x2=\"70\" y2=\"102\" class=\"dg-edge\"/><line x1=\"260\" y1=\"292\" x2=\"260\" y2=\"102\" class=\"dg-edge\"/><line x1=\"70\" y1=\"102\" x2=\"260\" y2=\"102\" class=\"dg-edge\"/><line x1=\"145\" y1=\"248\" x2=\"335\" y2=\"248\" class=\"dg-edge-h\"/><line x1=\"145\" y1=\"248\" x2=\"145\" y2=\"58\" class=\"dg-edge-h\"/><line x1=\"335\" y1=\"248\" x2=\"335\" y2=\"58\" class=\"dg-edge\"/><line x1=\"145\" y1=\"58\" x2=\"335\" y2=\"58\" class=\"dg-edge\"/><line x1=\"70\" y1=\"292\" x2=\"145\" y2=\"248\" class=\"dg-edge-h\"/><line x1=\"260\" y1=\"292\" x2=\"335\" y2=\"248\" class=\"dg-edge\"/><line x1=\"70\" y1=\"102\" x2=\"145\" y2=\"58\" class=\"dg-edge\"/><line x1=\"260\" y1=\"102\" x2=\"335\" y2=\"58\" class=\"dg-edge\"/><circle cx=\"145\" cy=\"248\" r=\"13\" class=\"dg-atomG\"/><circle cx=\"335\" cy=\"248\" r=\"13\" class=\"dg-atomG\"/><circle cx=\"240\" cy=\"248\" r=\"9\" class=\"dg-atomB\"/><circle cx=\"240\" cy=\"153\" r=\"13\" class=\"dg-atomG\"/><circle cx=\"145\" cy=\"153\" r=\"9\" class=\"dg-atomB\"/><circle cx=\"335\" cy=\"153\" r=\"9\" class=\"dg-atomB\"/><circle cx=\"145\" cy=\"58\" r=\"13\" class=\"dg-atomG\"/><circle cx=\"335\" cy=\"58\" r=\"13\" class=\"dg-atomG\"/><circle cx=\"240\" cy=\"58\" r=\"9\" class=\"dg-atomB\"/><circle cx=\"202.5\" cy=\"270\" r=\"13\" class=\"dg-atomG\"/><circle cx=\"107.5\" cy=\"270\" r=\"9\" class=\"dg-atomB\"/><circle cx=\"297.5\" cy=\"270\" r=\"9\" class=\"dg-atomB\"/><circle cx=\"107.5\" cy=\"175\" r=\"13\" class=\"dg-atomG\"/><circle cx=\"297.5\" cy=\"175\" r=\"13\" class=\"dg-atomG\"/><circle cx=\"202.5\" cy=\"175\" r=\"9\" class=\"dg-atomB\"/><circle cx=\"202.5\" cy=\"80\" r=\"13\" class=\"dg-atomG\"/><circle cx=\"107.5\" cy=\"80\" r=\"9\" class=\"dg-atomB\"/><circle cx=\"297.5\" cy=\"80\" r=\"9\" class=\"dg-atomB\"/><circle cx=\"70\" cy=\"292\" r=\"13\" class=\"dg-atomG\"/><circle cx=\"260\" cy=\"292\" r=\"13\" class=\"dg-atomG\"/><circle cx=\"165\" cy=\"292\" r=\"9\" class=\"dg-atomB\"/><circle cx=\"165\" cy=\"197\" r=\"13\" class=\"dg-atomG\"/><circle cx=\"70\" cy=\"197\" r=\"9\" class=\"dg-atomB\"/><circle cx=\"260\" cy=\"197\" r=\"9\" class=\"dg-atomB\"/><circle cx=\"70\" cy=\"102\" r=\"13\" class=\"dg-atomG\"/><circle cx=\"260\" cy=\"102\" r=\"13\" class=\"dg-atomG\"/><circle cx=\"165\" cy=\"102\" r=\"9\" class=\"dg-atomB\"/><text x=\"420\" y=\"56\" class=\"dg-tb\" text-anchor=\"start\">NaCl: rock salt, 6:6 coordination</text><circle cx=\"432\" cy=\"82\" r=\"7\" class=\"dg-atomG\"/><text x=\"450\" y=\"86\" class=\"dg-t\" text-anchor=\"start\">Cl- : fcc arrangement (corners and face centres)</text><circle cx=\"432\" cy=\"108\" r=\"7\" class=\"dg-atomB\"/><text x=\"450\" y=\"112\" class=\"dg-t\" text-anchor=\"start\">Na+ : every octahedral hole (edges and centre)</text><text x=\"420\" y=\"144\" class=\"dg-t\" text-anchor=\"start\">Cl- count: 8 x 1/8 + 6 x 1/2 = 4</text><text x=\"420\" y=\"168\" class=\"dg-t\" text-anchor=\"start\">Na+ count: 12 x 1/4 + 1 = 4</text><text x=\"420\" y=\"192\" class=\"dg-tb-acc\" text-anchor=\"start\">Ratio 4 : 4 = 1 : 1</text><text x=\"420\" y=\"304\" class=\"dg-cap\" text-anchor=\"start\">Ions drawn smaller than real size so every position is visible.</text></svg></div><div class=\"diagram-caption\">Chloride ions form an FCC array and sodium ions fill every octahedral hole.</div>"
+        },
+        {
+          "type": "list",
+          "items": [
+            "\\(r_{Na^+}=0.095\\) nm, \\(r_{Cl^-}=0.181\\) nm, ratio <strong>0.52</strong>, so octahedral coordination.",
+            "Cl<sup>-</sup> is FCC. Na<sup>+</sup> fills <strong>all</strong> the octahedral sites. Every Na<sup>+</sup> has 6 Cl<sup>-</sup> and vice versa."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Caesium chloride, CsCl"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 330\" role=\"img\" aria-label=\"The caesium chloride unit cell: chloride ions on the eight corners and one caesium ion at the body centre\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"10\" y=\"10\" width=\"760\" height=\"310\" rx=\"8\" class=\"dg-frame\"/><line x1=\"70\" y1=\"292\" x2=\"260\" y2=\"292\" class=\"dg-edge\"/><line x1=\"70\" y1=\"292\" x2=\"70\" y2=\"102\" class=\"dg-edge\"/><line x1=\"260\" y1=\"292\" x2=\"260\" y2=\"102\" class=\"dg-edge\"/><line x1=\"70\" y1=\"102\" x2=\"260\" y2=\"102\" class=\"dg-edge\"/><line x1=\"145\" y1=\"248\" x2=\"335\" y2=\"248\" class=\"dg-edge-h\"/><line x1=\"145\" y1=\"248\" x2=\"145\" y2=\"58\" class=\"dg-edge-h\"/><line x1=\"335\" y1=\"248\" x2=\"335\" y2=\"58\" class=\"dg-edge\"/><line x1=\"145\" y1=\"58\" x2=\"335\" y2=\"58\" class=\"dg-edge\"/><line x1=\"70\" y1=\"292\" x2=\"145\" y2=\"248\" class=\"dg-edge-h\"/><line x1=\"260\" y1=\"292\" x2=\"335\" y2=\"248\" class=\"dg-edge\"/><line x1=\"70\" y1=\"102\" x2=\"145\" y2=\"58\" class=\"dg-edge\"/><line x1=\"260\" y1=\"102\" x2=\"335\" y2=\"58\" class=\"dg-edge\"/><circle cx=\"145\" cy=\"248\" r=\"15\" class=\"dg-atomG\"/><circle cx=\"335\" cy=\"248\" r=\"15\" class=\"dg-atomG\"/><circle cx=\"145\" cy=\"58\" r=\"15\" class=\"dg-atomG\"/><circle cx=\"335\" cy=\"58\" r=\"15\" class=\"dg-atomG\"/><circle cx=\"202.5\" cy=\"175\" r=\"13\" class=\"dg-atomB\"/><circle cx=\"70\" cy=\"292\" r=\"15\" class=\"dg-atomG\"/><circle cx=\"260\" cy=\"292\" r=\"15\" class=\"dg-atomG\"/><circle cx=\"70\" cy=\"102\" r=\"15\" class=\"dg-atomG\"/><circle cx=\"260\" cy=\"102\" r=\"15\" class=\"dg-atomG\"/><text x=\"420\" y=\"56\" class=\"dg-tb\" text-anchor=\"start\">CsCl: 8:8 coordination</text><circle cx=\"432\" cy=\"82\" r=\"7\" class=\"dg-atomG\"/><text x=\"450\" y=\"86\" class=\"dg-t\" text-anchor=\"start\">Cl- : simple cubic arrangement (corners)</text><circle cx=\"432\" cy=\"108\" r=\"7\" class=\"dg-atomB\"/><text x=\"450\" y=\"112\" class=\"dg-t\" text-anchor=\"start\">Cs+ : body centre</text><text x=\"420\" y=\"144\" class=\"dg-t\" text-anchor=\"start\">Cl- count: 8 x 1/8 = 1</text><text x=\"420\" y=\"168\" class=\"dg-t\" text-anchor=\"start\">Cs+ count: 1</text><text x=\"420\" y=\"192\" class=\"dg-tb-red\" text-anchor=\"start\">Primitive cubic lattice, NOT body centred</text><text x=\"420\" y=\"216\" class=\"dg-t\" text-anchor=\"start\">Different ions at corner and centre.</text><text x=\"420\" y=\"304\" class=\"dg-cap\" text-anchor=\"start\">Ions drawn smaller than real size so every position is visible.</text></svg></div><div class=\"diagram-caption\">Chloride ions at the corners, one caesium ion in the middle.</div>"
+        },
+        {
+          "type": "list",
+          "items": [
+            "\\(r_{Cs^+}=0.169\\) nm, \\(r_{Cl^-}=0.181\\) nm, ratio <strong>0.93</strong>, so cubic coordination.",
+            "Cl<sup>-</sup> forms a simple cubic array and Cs<sup>+</sup> sits at the body centre. Every ion has 8 neighbours."
+          ]
+        },
+        {
+          "type": "conceptbox",
+          "variant": "",
+          "title": "CsCl is NOT body-centred cubic",
+          "html": "<p>A body-centred lattice needs the <em>same</em> atom at the corner and at the centre. In CsCl the corner is Cl<sup>-</sup> and the centre is Cs<sup>+</sup>, which are different. So there is only one lattice point per cell: the lattice is <strong>primitive cubic</strong>, and the motif (Week 1) is one Cs<sup>+</sup> plus one Cl<sup>-</sup>.</p>"
+        },
+        {
+          "type": "h3",
+          "text": "Zinc blende and wurtzite, ZnS"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 330\" role=\"img\" aria-label=\"The zinc blende unit cell: sulphide ions in a face-centred cubic arrangement with zinc ions in half of the tetrahedral holes\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"10\" y=\"10\" width=\"760\" height=\"310\" rx=\"8\" class=\"dg-frame\"/><line x1=\"70\" y1=\"292\" x2=\"260\" y2=\"292\" class=\"dg-edge\"/><line x1=\"70\" y1=\"292\" x2=\"70\" y2=\"102\" class=\"dg-edge\"/><line x1=\"260\" y1=\"292\" x2=\"260\" y2=\"102\" class=\"dg-edge\"/><line x1=\"70\" y1=\"102\" x2=\"260\" y2=\"102\" class=\"dg-edge\"/><line x1=\"145\" y1=\"248\" x2=\"335\" y2=\"248\" class=\"dg-edge-h\"/><line x1=\"145\" y1=\"248\" x2=\"145\" y2=\"58\" class=\"dg-edge-h\"/><line x1=\"335\" y1=\"248\" x2=\"335\" y2=\"58\" class=\"dg-edge\"/><line x1=\"145\" y1=\"58\" x2=\"335\" y2=\"58\" class=\"dg-edge\"/><line x1=\"70\" y1=\"292\" x2=\"145\" y2=\"248\" class=\"dg-edge-h\"/><line x1=\"260\" y1=\"292\" x2=\"335\" y2=\"248\" class=\"dg-edge\"/><line x1=\"70\" y1=\"102\" x2=\"145\" y2=\"58\" class=\"dg-edge\"/><line x1=\"260\" y1=\"102\" x2=\"335\" y2=\"58\" class=\"dg-edge\"/><circle cx=\"145\" cy=\"248\" r=\"14\" class=\"dg-atomG\"/><circle cx=\"335\" cy=\"248\" r=\"14\" class=\"dg-atomG\"/><circle cx=\"240\" cy=\"153\" r=\"14\" class=\"dg-atomG\"/><circle cx=\"145\" cy=\"58\" r=\"14\" class=\"dg-atomG\"/><circle cx=\"335\" cy=\"58\" r=\"14\" class=\"dg-atomG\"/><circle cx=\"268.8\" cy=\"211.5\" r=\"10\" class=\"dg-atomB\"/><circle cx=\"173.8\" cy=\"116.5\" r=\"10\" class=\"dg-atomB\"/><circle cx=\"202.5\" cy=\"270\" r=\"14\" class=\"dg-atomG\"/><circle cx=\"107.5\" cy=\"175\" r=\"14\" class=\"dg-atomG\"/><circle cx=\"297.5\" cy=\"175\" r=\"14\" class=\"dg-atomG\"/><circle cx=\"202.5\" cy=\"80\" r=\"14\" class=\"dg-atomG\"/><circle cx=\"136.3\" cy=\"233.5\" r=\"10\" class=\"dg-atomB\"/><circle cx=\"231.3\" cy=\"138.5\" r=\"10\" class=\"dg-atomB\"/><circle cx=\"70\" cy=\"292\" r=\"14\" class=\"dg-atomG\"/><circle cx=\"260\" cy=\"292\" r=\"14\" class=\"dg-atomG\"/><circle cx=\"165\" cy=\"197\" r=\"14\" class=\"dg-atomG\"/><circle cx=\"70\" cy=\"102\" r=\"14\" class=\"dg-atomG\"/><circle cx=\"260\" cy=\"102\" r=\"14\" class=\"dg-atomG\"/><text x=\"420\" y=\"56\" class=\"dg-tb\" text-anchor=\"start\">Zinc blende (sphalerite), 4:4</text><circle cx=\"432\" cy=\"82\" r=\"7\" class=\"dg-atomG\"/><text x=\"450\" y=\"86\" class=\"dg-t\" text-anchor=\"start\">S2- : fcc arrangement</text><circle cx=\"432\" cy=\"108\" r=\"7\" class=\"dg-atomB\"/><text x=\"450\" y=\"112\" class=\"dg-t\" text-anchor=\"start\">Zn2+ : 4 of the 8 tetrahedral holes</text><text x=\"420\" y=\"144\" class=\"dg-t\" text-anchor=\"start\">S2- count: 4 per cell</text><text x=\"420\" y=\"168\" class=\"dg-t\" text-anchor=\"start\">Zn2+ count: 4 per cell</text><text x=\"420\" y=\"192\" class=\"dg-t\" text-anchor=\"start\">Zn sites chosen as far apart as possible</text><text x=\"420\" y=\"216\" class=\"dg-tb-acc\" text-anchor=\"start\">Half the tetrahedral holes are filled</text><text x=\"420\" y=\"304\" class=\"dg-cap\" text-anchor=\"start\">Ions drawn smaller than real size so every position is visible.</text></svg></div><div class=\"diagram-caption\">Zinc blende: sulphide ions in an FCC array, zinc ions in half of the tetrahedral holes.</div>"
+        },
+        {
+          "type": "list",
+          "items": [
+            "\\(r_{Zn^{2+}}=0.074\\) nm, \\(r_{S^{2-}}=0.184\\) nm, ratio <strong>0.40</strong>, so tetrahedral coordination. The bonding also has some covalent character.",
+            "FCC has 8 tetrahedral holes per cell for 4 S<sup>2-</sup>. To keep the 1:1 formula only <strong>half</strong> of them are filled, chosen as far apart as possible.",
+            "<strong>Wurtzite</strong> is the hexagonal version: S<sup>2-</sup> in an HCP array, Zn<sup>2+</sup> in half the tetrahedral holes. Picture close-packed double layers, one of Zn and one of S."
+          ]
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 330\" role=\"img\" aria-label=\"Layer stacking of sulphide ions: zinc blende repeats A B C A, wurtzite repeats A B A B\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"10\" y=\"10\" width=\"760\" height=\"310\" rx=\"8\" class=\"dg-frame\"/><text x=\"230\" y=\"40\" class=\"dg-tb\" text-anchor=\"middle\">Zinc blende: A B C A B C</text><text x=\"230\" y=\"58\" class=\"dg-t\" text-anchor=\"middle\">face-centred cubic (fcc)</text><circle cx=\"110\" cy=\"80\" r=\"17\" class=\"dg-atomA\"/><circle cx=\"166\" cy=\"80\" r=\"17\" class=\"dg-atomA\"/><circle cx=\"222\" cy=\"80\" r=\"17\" class=\"dg-atomA\"/><circle cx=\"278\" cy=\"80\" r=\"17\" class=\"dg-atomA\"/><text x=\"70\" y=\"85\" class=\"dg-tb\" text-anchor=\"middle\">A</text><circle cx=\"128.7\" cy=\"130\" r=\"17\" class=\"dg-atomG\"/><circle cx=\"184.7\" cy=\"130\" r=\"17\" class=\"dg-atomG\"/><circle cx=\"240.7\" cy=\"130\" r=\"17\" class=\"dg-atomG\"/><circle cx=\"296.7\" cy=\"130\" r=\"17\" class=\"dg-atomG\"/><text x=\"70\" y=\"135\" class=\"dg-tb\" text-anchor=\"middle\">B</text><circle cx=\"147.3\" cy=\"180\" r=\"17\" class=\"dg-atomP\"/><circle cx=\"203.3\" cy=\"180\" r=\"17\" class=\"dg-atomP\"/><circle cx=\"259.3\" cy=\"180\" r=\"17\" class=\"dg-atomP\"/><circle cx=\"315.3\" cy=\"180\" r=\"17\" class=\"dg-atomP\"/><text x=\"70\" y=\"185\" class=\"dg-tb\" text-anchor=\"middle\">C</text><circle cx=\"110\" cy=\"230\" r=\"17\" class=\"dg-atomA\"/><circle cx=\"166\" cy=\"230\" r=\"17\" class=\"dg-atomA\"/><circle cx=\"222\" cy=\"230\" r=\"17\" class=\"dg-atomA\"/><circle cx=\"278\" cy=\"230\" r=\"17\" class=\"dg-atomA\"/><text x=\"70\" y=\"235\" class=\"dg-tb\" text-anchor=\"middle\">A</text><text x=\"610\" y=\"40\" class=\"dg-tb\" text-anchor=\"middle\">Wurtzite: A B A B</text><text x=\"610\" y=\"58\" class=\"dg-t\" text-anchor=\"middle\">hexagonal close packed (hcp)</text><line x1=\"490\" y1=\"97\" x2=\"490\" y2=\"163\" class=\"dg-dot-v\"/><line x1=\"546\" y1=\"97\" x2=\"546\" y2=\"163\" class=\"dg-dot-v\"/><line x1=\"602\" y1=\"97\" x2=\"602\" y2=\"163\" class=\"dg-dot-v\"/><line x1=\"658\" y1=\"97\" x2=\"658\" y2=\"163\" class=\"dg-dot-v\"/><circle cx=\"490\" cy=\"80\" r=\"17\" class=\"dg-atomA\"/><circle cx=\"546\" cy=\"80\" r=\"17\" class=\"dg-atomA\"/><circle cx=\"602\" cy=\"80\" r=\"17\" class=\"dg-atomA\"/><circle cx=\"658\" cy=\"80\" r=\"17\" class=\"dg-atomA\"/><text x=\"450\" y=\"85\" class=\"dg-tb\" text-anchor=\"middle\">A</text><circle cx=\"508.7\" cy=\"130\" r=\"17\" class=\"dg-atomG\"/><circle cx=\"564.7\" cy=\"130\" r=\"17\" class=\"dg-atomG\"/><circle cx=\"620.7\" cy=\"130\" r=\"17\" class=\"dg-atomG\"/><circle cx=\"676.7\" cy=\"130\" r=\"17\" class=\"dg-atomG\"/><text x=\"450\" y=\"135\" class=\"dg-tb\" text-anchor=\"middle\">B</text><circle cx=\"490\" cy=\"180\" r=\"17\" class=\"dg-atomA\"/><circle cx=\"546\" cy=\"180\" r=\"17\" class=\"dg-atomA\"/><circle cx=\"602\" cy=\"180\" r=\"17\" class=\"dg-atomA\"/><circle cx=\"658\" cy=\"180\" r=\"17\" class=\"dg-atomA\"/><text x=\"450\" y=\"185\" class=\"dg-tb\" text-anchor=\"middle\">A</text><circle cx=\"508.7\" cy=\"230\" r=\"17\" class=\"dg-atomG\"/><circle cx=\"564.7\" cy=\"230\" r=\"17\" class=\"dg-atomG\"/><circle cx=\"620.7\" cy=\"230\" r=\"17\" class=\"dg-atomG\"/><circle cx=\"676.7\" cy=\"230\" r=\"17\" class=\"dg-atomG\"/><text x=\"450\" y=\"235\" class=\"dg-tb\" text-anchor=\"middle\">B</text><text x=\"390\" y=\"300\" class=\"dg-t\" text-anchor=\"middle\">Each row is one close-packed layer of S2- seen edge-on. Zn2+ sits in the gaps between layers in both.</text></svg></div><div class=\"diagram-caption\">Same coordination (4:4) and same radius ratio. The only difference is the stacking: ABC (fcc) or ABAB (hcp).</div>"
+        },
+        {
+          "type": "h3",
+          "text": "Fluorite, CaF2"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 330\" role=\"img\" aria-label=\"The fluorite unit cell: calcium ions in a face-centred cubic arrangement with fluoride ions in all eight tetrahedral holes\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"10\" y=\"10\" width=\"760\" height=\"310\" rx=\"8\" class=\"dg-frame\"/><line x1=\"70\" y1=\"292\" x2=\"260\" y2=\"292\" class=\"dg-edge\"/><line x1=\"70\" y1=\"292\" x2=\"70\" y2=\"102\" class=\"dg-edge\"/><line x1=\"260\" y1=\"292\" x2=\"260\" y2=\"102\" class=\"dg-edge\"/><line x1=\"70\" y1=\"102\" x2=\"260\" y2=\"102\" class=\"dg-edge\"/><line x1=\"145\" y1=\"248\" x2=\"335\" y2=\"248\" class=\"dg-edge-h\"/><line x1=\"145\" y1=\"248\" x2=\"145\" y2=\"58\" class=\"dg-edge-h\"/><line x1=\"335\" y1=\"248\" x2=\"335\" y2=\"58\" class=\"dg-edge\"/><line x1=\"145\" y1=\"58\" x2=\"335\" y2=\"58\" class=\"dg-edge\"/><line x1=\"70\" y1=\"292\" x2=\"145\" y2=\"248\" class=\"dg-edge-h\"/><line x1=\"260\" y1=\"292\" x2=\"335\" y2=\"248\" class=\"dg-edge\"/><line x1=\"70\" y1=\"102\" x2=\"145\" y2=\"58\" class=\"dg-edge\"/><line x1=\"260\" y1=\"102\" x2=\"335\" y2=\"58\" class=\"dg-edge\"/><circle cx=\"145\" cy=\"248\" r=\"13\" class=\"dg-atomB\"/><circle cx=\"335\" cy=\"248\" r=\"13\" class=\"dg-atomB\"/><circle cx=\"240\" cy=\"153\" r=\"13\" class=\"dg-atomB\"/><circle cx=\"145\" cy=\"58\" r=\"13\" class=\"dg-atomB\"/><circle cx=\"335\" cy=\"58\" r=\"13\" class=\"dg-atomB\"/><circle cx=\"173.8\" cy=\"211.5\" r=\"11\" class=\"dg-atomG\"/><circle cx=\"268.8\" cy=\"211.5\" r=\"11\" class=\"dg-atomG\"/><circle cx=\"173.8\" cy=\"116.5\" r=\"11\" class=\"dg-atomG\"/><circle cx=\"268.8\" cy=\"116.5\" r=\"11\" class=\"dg-atomG\"/><circle cx=\"202.5\" cy=\"270\" r=\"13\" class=\"dg-atomB\"/><circle cx=\"107.5\" cy=\"175\" r=\"13\" class=\"dg-atomB\"/><circle cx=\"297.5\" cy=\"175\" r=\"13\" class=\"dg-atomB\"/><circle cx=\"202.5\" cy=\"80\" r=\"13\" class=\"dg-atomB\"/><circle cx=\"136.3\" cy=\"233.5\" r=\"11\" class=\"dg-atomG\"/><circle cx=\"231.3\" cy=\"233.5\" r=\"11\" class=\"dg-atomG\"/><circle cx=\"136.3\" cy=\"138.5\" r=\"11\" class=\"dg-atomG\"/><circle cx=\"231.3\" cy=\"138.5\" r=\"11\" class=\"dg-atomG\"/><circle cx=\"70\" cy=\"292\" r=\"13\" class=\"dg-atomB\"/><circle cx=\"260\" cy=\"292\" r=\"13\" class=\"dg-atomB\"/><circle cx=\"165\" cy=\"197\" r=\"13\" class=\"dg-atomB\"/><circle cx=\"70\" cy=\"102\" r=\"13\" class=\"dg-atomB\"/><circle cx=\"260\" cy=\"102\" r=\"13\" class=\"dg-atomB\"/><text x=\"420\" y=\"56\" class=\"dg-tb\" text-anchor=\"start\">CaF2 (fluorite): 8:4 coordination</text><circle cx=\"432\" cy=\"82\" r=\"7\" class=\"dg-atomB\"/><text x=\"450\" y=\"86\" class=\"dg-t\" text-anchor=\"start\">Ca2+ : fcc arrangement</text><circle cx=\"432\" cy=\"108\" r=\"7\" class=\"dg-atomG\"/><text x=\"450\" y=\"112\" class=\"dg-t\" text-anchor=\"start\">F- : all 8 tetrahedral holes</text><text x=\"420\" y=\"144\" class=\"dg-t\" text-anchor=\"start\">Ca2+ count: 4 per cell</text><text x=\"420\" y=\"168\" class=\"dg-t\" text-anchor=\"start\">F- count: 8 per cell</text><text x=\"420\" y=\"192\" class=\"dg-tb-acc\" text-anchor=\"start\">Ratio 4 : 8 = 1 : 2</text><text x=\"420\" y=\"216\" class=\"dg-t\" text-anchor=\"start\">Ca2+ has 8 F- neighbours, F- has 4 Ca2+</text><text x=\"420\" y=\"304\" class=\"dg-cap\" text-anchor=\"start\">Ions drawn smaller than real size so every position is visible.</text></svg></div><div class=\"diagram-caption\">Calcium ions form an FCC array and fluoride ions fill every tetrahedral hole.</div>"
+        },
+        {
+          "type": "list",
+          "items": [
+            "\\(r_{Ca^{2+}}=0.099\\) nm, \\(r_{F^-}=0.136\\) nm, ratio <strong>0.73</strong>. That is right on the border, so the radius ratio alone says \"octahedral or cubic\".",
+            "In practice F<sup>-</sup> is simple cubic and Ca<sup>2+</sup> fills only <strong>half</strong> of the cubic sites, as far apart as possible. The same structure can be seen as Ca<sup>2+</sup> in FCC with F<sup>-</sup> in all the tetrahedral holes.",
+            "Ca<sup>2+</sup> has 8 F<sup>-</sup> neighbours: \\(s=2/8=\\tfrac14\\). F<sup>-</sup> has 4 Ca<sup>2+</sup>: \\(4\\times\\tfrac14=1\\), which matches the F<sup>-</sup> charge."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Perovskite, CaTiO3"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 330\" role=\"img\" aria-label=\"The perovskite unit cell: calcium ions on the corners, oxide ions on the face centres and a titanium ion at the centre\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"10\" y=\"10\" width=\"760\" height=\"310\" rx=\"8\" class=\"dg-frame\"/><line x1=\"70\" y1=\"292\" x2=\"260\" y2=\"292\" class=\"dg-edge\"/><line x1=\"70\" y1=\"292\" x2=\"70\" y2=\"102\" class=\"dg-edge\"/><line x1=\"260\" y1=\"292\" x2=\"260\" y2=\"102\" class=\"dg-edge\"/><line x1=\"70\" y1=\"102\" x2=\"260\" y2=\"102\" class=\"dg-edge\"/><line x1=\"145\" y1=\"248\" x2=\"335\" y2=\"248\" class=\"dg-edge-h\"/><line x1=\"145\" y1=\"248\" x2=\"145\" y2=\"58\" class=\"dg-edge-h\"/><line x1=\"335\" y1=\"248\" x2=\"335\" y2=\"58\" class=\"dg-edge\"/><line x1=\"145\" y1=\"58\" x2=\"335\" y2=\"58\" class=\"dg-edge\"/><line x1=\"70\" y1=\"292\" x2=\"145\" y2=\"248\" class=\"dg-edge-h\"/><line x1=\"260\" y1=\"292\" x2=\"335\" y2=\"248\" class=\"dg-edge\"/><line x1=\"70\" y1=\"102\" x2=\"145\" y2=\"58\" class=\"dg-edge\"/><line x1=\"260\" y1=\"102\" x2=\"335\" y2=\"58\" class=\"dg-edge\"/><circle cx=\"145\" cy=\"248\" r=\"11\" class=\"dg-atomB\"/><circle cx=\"335\" cy=\"248\" r=\"11\" class=\"dg-atomB\"/><circle cx=\"240\" cy=\"153\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"145\" cy=\"58\" r=\"11\" class=\"dg-atomB\"/><circle cx=\"335\" cy=\"58\" r=\"11\" class=\"dg-atomB\"/><circle cx=\"202.5\" cy=\"270\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"107.5\" cy=\"175\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"297.5\" cy=\"175\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"202.5\" cy=\"175\" r=\"8\" class=\"dg-atomP\"/><circle cx=\"202.5\" cy=\"80\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"70\" cy=\"292\" r=\"11\" class=\"dg-atomB\"/><circle cx=\"260\" cy=\"292\" r=\"11\" class=\"dg-atomB\"/><circle cx=\"165\" cy=\"197\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"70\" cy=\"102\" r=\"11\" class=\"dg-atomB\"/><circle cx=\"260\" cy=\"102\" r=\"11\" class=\"dg-atomB\"/><text x=\"420\" y=\"56\" class=\"dg-tb\" text-anchor=\"start\">CaTiO3 (perovskite)</text><circle cx=\"432\" cy=\"82\" r=\"7\" class=\"dg-atomB\"/><text x=\"450\" y=\"86\" class=\"dg-t\" text-anchor=\"start\">Ca2+ : corners (12 O2- neighbours)</text><circle cx=\"432\" cy=\"108\" r=\"7\" class=\"dg-atomG\"/><text x=\"450\" y=\"112\" class=\"dg-t\" text-anchor=\"start\">O2- : face centres</text><circle cx=\"432\" cy=\"134\" r=\"7\" class=\"dg-atomP\"/><text x=\"450\" y=\"138\" class=\"dg-t\" text-anchor=\"start\">Ti4+ : centre (6 O2- neighbours)</text><text x=\"420\" y=\"170\" class=\"dg-t\" text-anchor=\"start\">Ca2+ count: 8 x 1/8 = 1</text><text x=\"420\" y=\"194\" class=\"dg-t\" text-anchor=\"start\">O2- count: 6 x 1/2 = 3</text><text x=\"420\" y=\"218\" class=\"dg-t\" text-anchor=\"start\">Ti4+ count: 1, so the formula is CaTiO3</text><text x=\"420\" y=\"242\" class=\"dg-tb-acc\" text-anchor=\"start\">Ti4+ fills 1/4 of the octahedral holes</text><text x=\"420\" y=\"304\" class=\"dg-cap\" text-anchor=\"start\">Ions drawn smaller than real size so every position is visible.</text></svg></div><div class=\"diagram-caption\">Calcium on the corners, oxygen on the face centres, titanium in the middle.</div>"
+        },
+        {
+          "type": "list",
+          "items": [
+            "\\(r_{Ca^{2+}}=0.099\\), \\(r_{Ti^{4+}}=0.068\\), \\(r_{O^{2-}}=0.140\\) nm. For Ti: \\(0.068/0.140=0.49\\), so octahedral.",
+            "Ca<sup>2+</sup> and O<sup>2-</sup> form an FCC-like array. Ti<sup>4+</sup> fills <strong>1/4</strong> of the octahedral holes.",
+            "Ti<sup>4+</sup>: 6 O<sup>2-</sup>, \\(s=4/6\\). Ca<sup>2+</sup>: 12 O<sup>2-</sup>, \\(s=2/12\\). Each O<sup>2-</sup> touches 2 Ti<sup>4+</sup> and 4 Ca<sup>2+</sup>: \\(2\\times\\tfrac46+4\\times\\tfrac{2}{12}=2\\)."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "All of them at a glance"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Structure</th><th>Ratio</th><th>Coordination</th><th>Big ions form</th><th>Small ions sit in</th></tr></thead><tbody><tr><td>NaCl</td><td>0.52</td><td>6 : 6</td><td>FCC (Cl<sup>-</sup>)</td><td>all octahedral holes</td></tr><tr><td>CsCl</td><td>0.93</td><td>8 : 8</td><td>simple cubic (Cl<sup>-</sup>)</td><td>the body-centre hole</td></tr><tr><td>Zinc blende ZnS</td><td>0.40</td><td>4 : 4</td><td>FCC (S<sup>2-</sup>)</td><td>half the tetrahedral holes</td></tr><tr><td>Wurtzite ZnS</td><td>0.40</td><td>4 : 4</td><td>HCP (S<sup>2-</sup>)</td><td>half the tetrahedral holes</td></tr><tr><td>Fluorite CaF<sub>2</sub></td><td>0.73</td><td>8 : 4</td><td>FCC (Ca<sup>2+</sup>)</td><td>all tetrahedral holes (F<sup>-</sup>)</td></tr><tr><td>Perovskite CaTiO<sub>3</sub></td><td>0.49 (Ti)</td><td>Ti 6, Ca 12, O 2 Ti + 4 Ca</td><td>FCC-like (Ca<sup>2+</sup> and O<sup>2-</sup>)</td><td>1/4 of the octahedral holes (Ti<sup>4+</sup>)</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "example",
+          "label": "Worked example from the slides: TiO",
+          "q": "What coordination number and geometry for Ti<sup>2+</sup> and O<sup>2-</sup> in TiO? (\\(r_+=0.745\\) Å, \\(r_-=1.40\\) Å)",
+          "steps": [
+            "<strong>Rule 1:</strong> \\(r_c/r_a=0.745/1.40=0.53\\). That sits between 0.414 and 0.732, so Ti<sup>2+</sup> is <strong>octahedral</strong> (6)",
+            "<strong>Rule 2:</strong> \\(s=2/6=\\tfrac13\\) per Ti<sup>2+</sup>. O<sup>2-</sup> needs a total of 2, so it needs \\(2\\div\\tfrac13=6\\) Ti<sup>2+</sup> neighbours",
+            "Coordination 6 for both ions and a 1:1 formula is the <strong>NaCl structure</strong>: O<sup>2-</sup> in a cubic close-packed array and Ti<sup>2+</sup> in <strong>all</strong> the octahedral holes"
+          ],
+          "answer": "<strong>Ti<sup>2+</sup> and O<sup>2-</sup> are both 6-coordinated and TiO has the rock salt structure</strong>, with a 1:1 ratio."
+        },
+        {
+          "type": "h2",
+          "id": "w5-slides",
+          "text": "Check Against Your Slides"
+        },
+        {
+          "type": "p",
+          "text": "Every number on this page was recalculated against the lecture slides. These are the places to watch:",
+          "class": ""
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Slide 16</strong> sends you to the \"Group IVB\" tin slide. It is the Group <strong>IVA</strong> slide. Looks like a typo.",
+            "<strong>Slide 1</strong> lists \"effective bond strength\". That is the same thing as the <strong>electrostatic bond strength</strong> (\\(s=m/n\\)) in Pauling's second rule.",
+            "<strong>Hume-Rothery size rule:</strong> the slide says 15%. Cu and Ag are about 13% apart and still do not mix completely, which is why the rules are \"necessary but not sufficient\".",
+            "<strong>Polymorphism:</strong> \"heat favours a looser structure\" explains γ-iron to δ-iron but not α-iron to γ-iron. The slide uses the energy-band argument for that one.",
+            "<strong>Radius ratio proofs:</strong> the slide equations are written without brackets in some places. The working here puts them back (for example \\(2(r_c+r_a)=\\sqrt3\\,a\\)) and reproduces the slide results: 0.732, 0.414, 0.225 and 0.155.",
+            "<strong>CaF<sub>2</sub>:</strong> the ratio 0.73 is almost exactly the cubic limit 0.732, which is why the slide says \"octahedral or cubic\" and then tells you what really happens.",
+            "<strong>TiO example:</strong> it points to a \"table on the previous page\" of radius ratio limits. The numbers in that table are the ones derived above."
+          ]
+        },
+        {
+          "type": "h2",
+          "id": "w5-practice",
+          "text": "Test Yourself"
+        },
+        {
+          "type": "p",
+          "text": "Try each question on paper first, then reveal the answer.",
+          "class": ""
+        },
+        {
+          "type": "example",
+          "label": "Q1",
+          "q": "Metal A is FCC with \\(a=0.400\\) nm. Metal B is FCC with \\(a=0.440\\) nm. They have the same valence and similar electronegativity. Could they form a complete solid solution?",
+          "steps": [
+            "Size gap: \\((0.440-0.400)/0.400=0.10\\), so 10%, under the 15% limit",
+            "Same structure, same valence, similar electronegativity: all four rules pass"
+          ],
+          "answer": "<strong>It is possible but not guaranteed.</strong> All four rules pass, but they are necessary and not sufficient."
+        },
+        {
+          "type": "example",
+          "label": "Q2",
+          "q": "Why can copper (\\(R=0.128\\) nm) not dissolve interstitially in iron?",
+          "steps": [
+            "Interstitials are limited to H, O, N, C and B (radii 0.046 to 0.097 nm)",
+            "A Cu atom is far bigger than any gap in iron, so the lattice strain energy would be very large"
+          ],
+          "answer": "<strong>Cu is too big for the holes.</strong> It dissolves substitutionally on lattice sites instead."
+        },
+        {
+          "type": "example",
+          "label": "Q3",
+          "q": "Use the 8 − N rule to predict the number of neighbours and the structure type for Te, Sb, Br<sub>2</sub> and Ge.",
+          "steps": [
+            "Te: Group VIA, \\(8-6=2\\)",
+            "Sb: Group VA, \\(8-5=3\\)",
+            "Br: Group VIIA, \\(8-7=1\\)",
+            "Ge: Group IVA, \\(8-4=4\\)"
+          ],
+          "answer": "<strong>Te:</strong> 2 neighbours, chains. <strong>Sb:</strong> 3, puckered sheets. <strong>Br<sub>2</sub>:</strong> 1, diatomic molecules. <strong>Ge:</strong> 4, diamond cubic."
+        },
+        {
+          "type": "example",
+          "label": "Q4",
+          "q": "Give the stable form of iron at 500 °C, 1200 °C and 1500 °C. At which temperature is it most closely packed?",
+          "steps": [
+            "Below 910 °C: α-iron, BCC",
+            "910 to 1400 °C: γ-iron, FCC",
+            "Above 1400 °C: δ-iron, BCC",
+            "FCC has a packing factor of 0.74 and BCC has 0.68"
+          ],
+          "answer": "<strong>500 °C: α (BCC). 1200 °C: γ (FCC). 1500 °C: δ (BCC).</strong> Most closely packed at <strong>1200 °C</strong>."
+        },
+        {
+          "type": "example",
+          "label": "Q5",
+          "q": "MgO: \\(r_{Mg^{2+}}=0.072\\) nm and \\(r_{O^{2-}}=0.140\\) nm. Predict the coordination of both ions and the structure type.",
+          "steps": [
+            "Rule 1: \\(0.072/0.140=0.514\\). That is between 0.414 and 0.732, so Mg<sup>2+</sup> is octahedral (6)",
+            "Rule 2: \\(s=2/6=\\tfrac13\\). O<sup>2-</sup> needs 2, so it needs \\(2\\div\\tfrac13=6\\) Mg<sup>2+</sup> neighbours",
+            "6:6 with a 1:1 ratio"
+          ],
+          "answer": "<strong>Both are 6-coordinated and MgO has the NaCl structure.</strong>"
+        },
+        {
+          "type": "example",
+          "label": "Q6",
+          "q": "Derive the lowest radius ratio for octahedral coordination.",
+          "steps": [
+            "Cation touches the anions along \\([100]\\): \\(2(r_c+r_a)=a\\)",
+            "Anions touch along \\([110]\\): \\(4r_a=\\sqrt2\\,a\\)",
+            "Divide and rearrange"
+          ],
+          "answer": "\\(r_c/r_a=\\sqrt2-1=\\) <strong>0.414</strong>"
+        },
+        {
+          "type": "example",
+          "label": "Q7",
+          "q": "In corundum, Al<sub>2</sub>O<sub>3</sub>, each Al<sup>3+</sup> has 6 O<sup>2-</sup> neighbours. How many Al<sup>3+</sup> surround each O<sup>2-</sup>? Check it against the formula.",
+          "steps": [
+            "\\(s=3/6=\\tfrac12\\) per Al<sup>3+</sup>",
+            "O<sup>2-</sup> needs 2, so \\(2\\div\\tfrac12=4\\) Al<sup>3+</sup> neighbours",
+            "Check: 2 Al × 6 bonds = 12 and 3 O × 4 bonds = 12"
+          ],
+          "answer": "<strong>4 Al<sup>3+</sup> around each O<sup>2-</sup>.</strong> The bond counts match, so the formula is consistent."
+        },
+        {
+          "type": "example",
+          "label": "Q8",
+          "q": "In zinc blende there are 4 S<sup>2-</sup> per FCC cell. What fraction of the tetrahedral holes does Zn<sup>2+</sup> fill?",
+          "steps": [
+            "FCC has 2 tetrahedral holes per atom, so \\(4\\times2=8\\) holes per cell",
+            "The formula ZnS needs 4 Zn<sup>2+</sup> for 4 S<sup>2-</sup>"
+          ],
+          "answer": "\\(4/8=\\) <strong>one half</strong>, chosen as far apart as possible."
+        },
+        {
+          "type": "example",
+          "label": "Q9",
+          "q": "Explain why CsCl is not body-centred cubic and give the coordination number.",
+          "steps": [
+            "BCC needs the same atom at the corner and the body centre",
+            "In CsCl the corner is Cl<sup>-</sup> and the centre is Cs<sup>+</sup>"
+          ],
+          "answer": "There is one lattice point per cell, so the lattice is <strong>primitive cubic</strong>. The coordination is <strong>8 : 8</strong>."
+        }
+      ]
     },
     {
       "soon": true,
@@ -3403,6 +4090,84 @@ window.SITE_CONTENT = {
           "note": "Method: hole-to-neighbour distance = R + r. FCC cell: 4 octahedral, 8 tetrahedral holes. BCC cell: 6 and 12."
         }
       ]
+    },
+    {
+      "heading": "W5: Solid Solutions, Covalent and Ionic Structures",
+      "blocks": [
+        {
+          "type": "formulablock",
+          "name": "Hume-Rothery size rule",
+          "eqs": [
+            "\\frac{|r_A-r_B|}{r_A}\\times100\\%<15\\%"
+          ],
+          "vars": [
+            {
+              "symbol": "r_A, r_B",
+              "desc": "atomic radii of the two metals"
+            }
+          ],
+          "note": "The first of four rules. The others: same crystal structure, similar electronegativity, same valence. Necessary but not sufficient."
+        },
+        {
+          "type": "formulablock",
+          "name": "8 − N rule",
+          "eqs": [
+            "\\text{nearest neighbours}=8-N"
+          ],
+          "vars": [
+            {
+              "symbol": "N",
+              "desc": "group number (outer electrons)"
+            }
+          ],
+          "note": "Group VII: 1, VI: 2, V: 3, IV: 4. Fails for Group III."
+        },
+        {
+          "type": "formulablock",
+          "name": "Radius ratio limits (Pauling 1)",
+          "eqs": [
+            "\\frac{r_c}{r_a}=\\sqrt3-1=0.732\\ (8),\\quad \\sqrt2-1=0.414\\ (6)",
+            "\\frac{r_c}{r_a}=\\tfrac{\\sqrt3}{\\sqrt2}-1=0.225\\ (4),\\quad \\tfrac{2}{\\sqrt3}-1=0.155\\ (3)"
+          ],
+          "vars": [
+            {
+              "symbol": "r_c / r_a",
+              "desc": "cation radius over anion radius"
+            }
+          ],
+          "note": "Each is the lowest ratio for that coordination number. Coordination 12 needs a ratio of 1. Below 0.155 the coordination is 2."
+        },
+        {
+          "type": "formulablock",
+          "name": "Cation-anion distance",
+          "eqs": [
+            "d=r_c+r_a"
+          ],
+          "note": "Used in every touching condition in the proofs."
+        },
+        {
+          "type": "formulablock",
+          "name": "Electrostatic bond strength (Pauling 2)",
+          "eqs": [
+            "s=\\frac{m}{n}\\qquad \\sum s=x"
+          ],
+          "vars": [
+            {
+              "symbol": "m",
+              "desc": "cation valence"
+            },
+            {
+              "symbol": "n",
+              "desc": "cation coordination number"
+            },
+            {
+              "symbol": "x",
+              "desc": "anion charge (magnitude)"
+            }
+          ],
+          "note": "Sum the s values from every cation touching one anion. It must equal the anion charge."
+        }
+      ]
     }
   ],
   "formulaSheetSubtitle": "Every equation covered so far. Variables defined. Grows as more weeks are added.",
@@ -3674,6 +4439,61 @@ window.SITE_CONTENT = {
           "tag": "W4 · T9",
           "claim": "\"The volume of an HCP unit cell is a³.\"",
           "truth": "<strong>FALSE.</strong> It is a hexagonal prism: \\(V_c=\\tfrac{3\\sqrt3}{2}a^2c\\), holding 6 atoms."
+        }
+      ]
+    },
+    {
+      "heading": "Week 5: Solid Solutions, Covalent and Ionic Structures",
+      "items": [
+        {
+          "tag": "W5 · T1",
+          "claim": "\"If two metals pass all four Hume-Rothery rules, they are guaranteed to be completely soluble.\"",
+          "truth": "<strong>FALSE.</strong> The rules are <strong>necessary but not sufficient</strong>. Cu and Ag are both FCC and only about 13% apart in size, yet they form only terminal solid solutions."
+        },
+        {
+          "tag": "W5 · T2",
+          "claim": "\"Any atom smaller than the host can dissolve interstitially.\"",
+          "truth": "<strong>FALSE.</strong> It has to be small enough for the <em>gap</em>, which in practice means H, O, N, C or B. Too small and it rattles. Too big and the strain energy makes it unstable."
+        },
+        {
+          "tag": "W5 · T3",
+          "claim": "\"The 8 − N rule works for every element.\"",
+          "truth": "<strong>FALSE.</strong> It applies to the covalently bonded elements on the right of the periodic table. For Group III, 8 − N would give 5 neighbours, which cannot tile space regularly, so the bonding becomes more metallic."
+        },
+        {
+          "tag": "W5 · T4",
+          "claim": "\"Higher temperature always gives a denser crystal structure.\"",
+          "truth": "<strong>FALSE.</strong> Heat tends to favour a <em>looser</em> structure, and pressure favours a denser one. Iron even goes BCC, then FCC, then BCC again as it heats."
+        },
+        {
+          "tag": "W5 · T5",
+          "claim": "\"The radius ratio is anion radius divided by cation radius.\"",
+          "truth": "<strong>FALSE.</strong> It is \\(r_c/r_a\\), <strong>cation over anion</strong>, and for the cases in this course it is below 1."
+        },
+        {
+          "tag": "W5 · T6",
+          "claim": "\"CsCl is body-centred cubic.\"",
+          "truth": "<strong>FALSE.</strong> The corner ion (Cl<sup>-</sup>) and the centre ion (Cs<sup>+</sup>) are different, so the lattice is <strong>primitive cubic</strong> with a two-ion motif."
+        },
+        {
+          "tag": "W5 · T7",
+          "claim": "\"Zinc blende and wurtzite have different coordination numbers.\"",
+          "truth": "<strong>FALSE.</strong> Both are 4:4 with the same radius ratio. The difference is the stacking of the S<sup>2-</sup> layers: ABC (FCC) in blende and ABAB (HCP) in wurtzite."
+        },
+        {
+          "tag": "W5 · T8",
+          "claim": "\"A bigger coordination number is always more stable, so every ionic crystal should be 12-coordinated.\"",
+          "truth": "<strong>FALSE.</strong> The cation must <strong>touch every neighbour</strong>. If it is too small the anions overlap each other, so the coordination number drops to what the radius ratio allows."
+        },
+        {
+          "tag": "W5 · T9",
+          "claim": "\"The bond strength of a cation depends on the charge of the anions around it.\"",
+          "truth": "<strong>FALSE.</strong> \\(s=m/n\\) uses the <strong>cation's</strong> own valence and coordination number. The anion charge is what the <em>sum</em> of the bond strengths must equal."
+        },
+        {
+          "tag": "W5 · T10",
+          "claim": "\"In the spinel MgAl<sub>2</sub>O<sub>4</sub> both cations sit in octahedral sites.\"",
+          "truth": "<strong>FALSE.</strong> Mg<sup>2+</sup> is <strong>tetrahedral</strong> (4) and Al<sup>3+</sup> is <strong>octahedral</strong> (6). They happen to have the same bond strength, 1/2, which is why each O<sup>2-</sup> with 3 Al and 1 Mg balances to 2."
         }
       ]
     }
