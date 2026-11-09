@@ -29,9 +29,11 @@ Study site for EG2036 (Order in Materials) at Swansea University.
   - interstitial vs substitutional solid solutions, Hume-Rothery rules, the 8 - N rule, polymorphism (iron)
   - ionic structures: radius ratio with geometric proofs, Pauling's two rules, NaCl, CsCl, zinc blende, wurtzite, CaF2, CaTiO3, TiO worked example
   - a symbols guide, 16 worked examples and practice questions
-- 39 inline SVG diagrams (generated in the site's dark theme)
+- Week 3 addition: a hexagonal workshop from Dr Prakash's planes and directions lecture (finding Miller-Bravais indices, drawing four-index directions on a guide hexagon, three-index and four-index conversion, worked examples)
+- Order Exam Practice tab: quiz details, a map of past-paper question types, key numbers, and original worked questions (calculation, explain-it, drawing, ionic). The questions are original, modelled on the past papers; the lecturers' model answers are not reproduced.
+- 41 inline SVG diagrams (generated in the site's dark theme)
 - 7 interactive simulations in `widgets/` (5 3D / plotted, 1 pole-figure tool with cubic and hexagonal modes, 1 radius-ratio explorer)
-- 206 glossary terms with flashcard mode, formula sheet (36 blocks), 60 MCQ trap cards
+- 211 glossary terms with flashcard mode, formula sheet (38 blocks), 65 MCQ trap cards
 - The disorder topics will be added as they are taught
 
 ## Structure

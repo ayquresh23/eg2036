@@ -8,7 +8,8 @@ window.SITE_CONFIG = {
     "w2",
     "w3",
     "w4",
-    "w5"
+    "w5",
+    "ex"
   ],
   "navOrder": [
     "home",
@@ -17,6 +18,7 @@ window.SITE_CONFIG = {
     "w3",
     "w4",
     "w5",
+    "ex",
     "formulas",
     "glossary",
     "traps"
@@ -26,14 +28,16 @@ window.SITE_CONFIG = {
     "w2": "#f4a261",
     "w3": "#8855f5",
     "w4": "#d4609a",
-    "w5": "#4a90e2"
+    "w5": "#4a90e2",
+    "ex": "#e9c46a"
   },
   "topicLabels": {
     "w1": "Crystal Structures",
     "w2": "Directions, Planes, Packing",
     "w3": "Crystallographic Texture",
     "w4": "Densities and Holes",
-    "w5": "Solutions, Covalent, Ionic"
+    "w5": "Solutions, Covalent, Ionic",
+    "ex": "Order Exam Practice"
   }
 };
 
@@ -41,7 +45,7 @@ window.SITE_CONTENT = {
   "home": {
     "tag": "Order in Materials · Swansea University",
     "title": "EG2036 Study Site",
-    "subtitle": "How atoms arrange themselves in solids and why it matters: bonding, lattices, unit cells, crystal systems, directions and planes, close packing and packing factors, linear, planar and theoretical density, interstitial holes, how crystal orientation (texture) builds up when metals are deformed, solid solutions and alloys, covalent structures and polymorphism, and ionic structures with Pauling's rules. Built out week by week as lectures run, with interactive simulations for the ideas that are easier to see than to read.",
+    "subtitle": "How atoms arrange themselves in solids and why it matters: bonding, lattices, unit cells, crystal systems, directions and planes, close packing and packing factors, linear, planar and theoretical density, interstitial holes, how crystal orientation (texture) builds up when metals are deformed, solid solutions and alloys, covalent structures and polymorphism, and ionic structures with Pauling's rules. Includes exam-style practice for the Order quiz. Built out week by week as lectures run, with interactive simulations for the ideas that are easier to see than to read.",
     "stats": [
       {
         "value": "5",
@@ -52,15 +56,15 @@ window.SITE_CONTENT = {
         "label": "Simulations"
       },
       {
-        "value": "206",
+        "value": "211",
         "label": "Terms"
       },
       {
-        "value": "36",
+        "value": "38",
         "label": "Formulas"
       },
       {
-        "value": "60",
+        "value": "65",
         "label": "Exam Traps"
       }
     ],
@@ -71,7 +75,7 @@ window.SITE_CONTENT = {
       },
       {
         "type": "raw",
-        "html": "<div class=\"concept-box note\"><div class=\"concept-box-title\">Assessment (from the Week 1 lecture)</div><ul><li>Unseen 2.5 h exam, January 2027: <strong>35%</strong>. Two A4 sheets of notes allowed, both sides of both.</li><li>Online Canvas test on Order: <strong>7.5%</strong>, opens at the end of the Order lectures.</li><li>Section A is compulsory (order and disorder). Section B: pick 2 of 3, one all order, one all disorder, one 50:50.</li><li>Past exam questions for Order are in the Canvas Modules section.</li></ul></div>"
+        "html": "<div class=\"concept-box note\"><div class=\"concept-box-title\">Assessment (from the Week 1 lecture)</div><ul><li>Unseen 2.5 h exam, January 2027: <strong>35%</strong>. Two A4 sheets of notes allowed, both sides of both.</li><li>Online Canvas test on Order: <strong>7.5%</strong>. 14 multiple-choice questions, 30 points, 2.5 h, one attempt, open notes, Respondus LockDown Browser and webcam. <strong>Due Mon 16 Nov 2026, 14:00.</strong> It covers Dr Willow's Weeks 1 to 5 (this site's W1, W2, W4 and W5). See the <strong>Order Exam Practice</strong> tab.</li><li>Section A is compulsory (order and disorder). Section B: pick 2 of 3, one all order, one all disorder, one 50:50.</li><li>Past exam questions for Order are in the Canvas Modules section.</li></ul></div>"
       },
       {
         "type": "raw",
@@ -79,7 +83,7 @@ window.SITE_CONTENT = {
       },
       {
         "type": "raw",
-        "html": "<div class=\"card-grid\"><div class=\"topic-card\" onclick=\"showSection('formulas')\" style=\"--bar-color:#0ea5c6\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">📐 Formula Sheet</div><div class=\"topic-desc\">Every equation so far, with variables defined.</div></div><div class=\"topic-card\" onclick=\"showSection('glossary')\" style=\"--bar-color:#2fa15c\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">📚 Glossary</div><div class=\"topic-desc\">206 terms from Weeks 1 to 5. Search, filter, and flashcard mode.</div></div><div class=\"topic-card\" onclick=\"showSection('traps')\" style=\"--bar-color:#e04545\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">⚠️ MCQ Traps</div><div class=\"topic-desc\">Plausible-but-wrong claims the exam uses.</div></div></div>"
+        "html": "<div class=\"card-grid\"><div class=\"topic-card\" onclick=\"showSection('formulas')\" style=\"--bar-color:#0ea5c6\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">📐 Formula Sheet</div><div class=\"topic-desc\">Every equation so far, with variables defined.</div></div><div class=\"topic-card\" onclick=\"showSection('glossary')\" style=\"--bar-color:#2fa15c\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">📚 Glossary</div><div class=\"topic-desc\">211 terms from Weeks 1 to 5. Search, filter, and flashcard mode.</div></div><div class=\"topic-card\" onclick=\"showSection('traps')\" style=\"--bar-color:#e04545\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">⚠️ MCQ Traps</div><div class=\"topic-desc\">Plausible-but-wrong claims the exam uses.</div></div></div>"
       }
     ]
   },
@@ -1185,6 +1189,10 @@ window.SITE_CONTENT = {
               "label": "Notation survival guide (brackets, bars, hexagonal indices)"
             },
             {
+              "href": "#w3-hex",
+              "label": "Hexagonal workshop: finding and drawing four-index planes and directions"
+            },
+            {
               "href": "#w3-zr",
               "label": "Case study: zirconium, reactors and hydrides"
             },
@@ -1348,7 +1356,7 @@ window.SITE_CONTENT = {
         },
         {
           "type": "raw",
-          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Written</th><th>Name</th><th>Meaning</th><th>Example and how to say it</th></tr></thead><tbody><tr><td>\\((hkl)\\)</td><td>Round brackets</td><td>One specific plane, pinned down exactly</td><td>\\((100)\\) is the cube face pointing along x. \\((111)\\) is the plane that slices off a corner of the cube.</td></tr><tr><td>\\(\\{hkl\\}\\)</td><td>Curly brackets</td><td>A whole <strong>group</strong> of planes that are the same kind, because turning the crystal puts one onto another</td><td>\\(\\{100\\}\\) in a cubic crystal means \\((100),(010),(001)\\): the three cube-face planes. Opposite faces are parallel, so they count as the same plane.</td></tr><tr><td>\\([uvw]\\)</td><td>Square brackets</td><td>One specific direction (one arrow)</td><td>\\([110]\\) goes 1 along x, 1 along y, 0 along z</td></tr><tr><td>\\(\\langle uvw\\rangle\\)</td><td>Angle brackets</td><td>A whole <strong>group</strong> of directions that are the same kind</td><td>\\(\\langle100\\rangle\\) in cubic means the 6 arrows along \\(+x,-x,+y,-y,+z,-z\\): the cube edges</td></tr></tbody></table></div>"
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Written</th><th>Name</th><th>Meaning</th><th>Example and how to say it</th></tr></thead><tbody><tr><td>\\((hkl)\\)</td><td>Round brackets</td><td>One specific plane, pinned down exactly</td><td>\\((100)\\) is the cube face pointing along x. \\((111)\\) is the plane that slices off a corner of the cube.</td></tr><tr><td>\\(\\{hkl\\}\\)</td><td>Curly brackets</td><td>A whole <strong>group</strong> of planes that are the same kind, because turning the crystal puts one onto another</td><td>\\(\\{100\\}\\) in a cubic crystal means \\((100),(010),(001)\\): the three cube-face planes. Opposite faces are parallel, so in texture work they count as the same plane. (Dr Willow's slides and the past papers count six faces for \\(\\{100\\}\\), three parallel pairs. Both counts are correct: say which one you are using.)</td></tr><tr><td>\\([uvw]\\)</td><td>Square brackets</td><td>One specific direction (one arrow)</td><td>\\([110]\\) goes 1 along x, 1 along y, 0 along z</td></tr><tr><td>\\(\\langle uvw\\rangle\\)</td><td>Angle brackets</td><td>A whole <strong>group</strong> of directions that are the same kind</td><td>\\(\\langle100\\rangle\\) in cubic means the 6 arrows along \\(+x,-x,+y,-y,+z,-z\\): the cube edges</td></tr></tbody></table></div>"
         },
         {
           "type": "conceptbox",
@@ -1414,6 +1422,238 @@ window.SITE_CONTENT = {
           "variant": "note",
           "title": "Why the slides say {0002} when they mean {0001}",
           "html": "<p>Pole figures of hcp metals are labelled \\(\\{0002\\}\\) but show the <strong>basal plane normals</strong>, exactly as \\(\\{0001\\}\\) would. The reason is experimental: in X-ray diffraction the hcp \\((0001)\\) reflection cancels out (the two atoms in each hcp cell scatter exactly out of phase), so the first one you can measure is the second-order \\((0002)\\). The planes are the same planes, so the normals, and therefore the pole figure, are identical. Read \\(\\{0002\\}\\) as \"where do the c-axes point\".</p>"
+        },
+        {
+          "type": "h2",
+          "id": "w3-hex",
+          "text": "Hexagonal Workshop: Finding and Drawing Four-Index Planes and Directions"
+        },
+        {
+          "type": "p",
+          "text": "This section adds the practical skills from Dr Prakash's lecture on planes and directions in hexagonal systems. The <strong>notation survival guide</strong> above explains <em>why</em> hcp uses four indices and names the plane types. Here you learn to <strong>work them out</strong>, <strong>draw them</strong> and <strong>convert</strong> between three-index and four-index forms. Practice questions are at the end of the section.",
+          "class": ""
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"analogy\"><span class=\"analogy-icon\">🧭</span><div class=\"analogy-text\"><strong>Three needles on a compass.</strong> A normal compass gives you two directions at right angles. A hexagonal crystal looks the same after a 60° turn, so the natural \"compass\" has <strong>three needles 120° apart</strong>, like the badge on a Mercedes. You only need two needles to point anywhere on a flat map, so the third is always redundant: <em>go along a1, then along a2, and you could have got there by going backwards along a3</em>. We keep it anyway because it makes equivalent planes and directions look equivalent.</div></div>"
+        },
+        {
+          "type": "h3",
+          "text": "Finding the four indices of a plane"
+        },
+        {
+          "type": "p",
+          "text": "It is the cubic recipe with one extra axis. Do the steps in this order and use the check at the end.",
+          "class": ""
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Intercepts.</strong> Write where the plane cuts \\(a_1\\), \\(a_2\\), \\(a_3\\) and \\(c\\), in units of the cell edge (use \\(\\infty\\) if it never cuts that axis, meaning it is parallel to it).",
+            "<strong>Reciprocals.</strong> Take \\(1/\\text{intercept}\\) for each. Parallel (\\(\\infty\\)) becomes 0.",
+            "<strong>Clear fractions</strong> by multiplying all four by the same number. Do not reduce further than needed.",
+            "<strong>Write \\((hkil)\\)</strong> in the order \\(a_1,a_2,a_3,c\\). Negative numbers get a bar (or a minus sign).",
+            "<strong>Check:</strong> does \\(h+k+i=0\\)? If not, an intercept or a sign is wrong."
+          ]
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 330\" role=\"img\" aria-label=\"Four hexagonal prisms, each with one plane shaded: the basal plane (0001), a first-order prism plane (10-10), a second-order prism plane (11-20) and a pyramidal plane (10-11)\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"10\" y=\"10\" width=\"760\" height=\"310\" rx=\"8\" class=\"dg-frame\"/><polygon points=\"168,218 140,238.4 84,238.4 56,218 84,197.6 140,197.6\" fill=\"none\" stroke=\"#3a3a46\" stroke-width=\"1.2\"/><polygon points=\"168,132 140,152.4 84,152.4 56,132 84,111.6 140,111.6\" fill=\"#0ea5c6\" fill-opacity=\".38\" stroke=\"#0ea5c6\" stroke-width=\"2\"/><line x1=\"168\" y1=\"218\" x2=\"168\" y2=\"132\" class=\"dg-bond\" style=\"stroke-width:1.2\"/><line x1=\"140\" y1=\"238.4\" x2=\"140\" y2=\"152.4\" class=\"dg-bond\" style=\"stroke-width:1.2\"/><line x1=\"84\" y1=\"238.4\" x2=\"84\" y2=\"152.4\" class=\"dg-bond\" style=\"stroke-width:1.2\"/><line x1=\"56\" y1=\"218\" x2=\"56\" y2=\"132\" class=\"dg-bond\" style=\"stroke-width:1.2\"/><line x1=\"84\" y1=\"197.6\" x2=\"84\" y2=\"111.6\" class=\"dg-bond\" style=\"stroke-width:1.2\"/><line x1=\"140\" y1=\"197.6\" x2=\"140\" y2=\"111.6\" class=\"dg-bond\" style=\"stroke-width:1.2\"/><polygon points=\"168,132 140,152.4 84,152.4 56,132 84,111.6 140,111.6\" fill=\"none\" stroke=\"#6a6a78\" stroke-width=\"1.6\"/><polygon points=\"168,218 140,238.4 84,238.4 56,218\" fill=\"none\" stroke=\"#6a6a78\" stroke-width=\"1.6\"/><line x1=\"112\" y1=\"218\" x2=\"112\" y2=\"114\" class=\"dg-axis\" stroke-dasharray=\"3 3\"/><text x=\"121\" y=\"118\" class=\"dg-t\" text-anchor=\"start\">c</text><text x=\"112\" y=\"44\" class=\"dg-tb\" text-anchor=\"middle\">Basal</text><text x=\"112\" y=\"64\" class=\"dg-tb-amb\" text-anchor=\"middle\">(0 0 0 1)</text><text x=\"112\" y=\"276\" class=\"dg-t\" text-anchor=\"middle\">top face, parallel to a1, a2, a3</text><polygon points=\"360,218 332,238.4 276,238.4 248,218 276,197.6 332,197.6\" fill=\"none\" stroke=\"#3a3a46\" stroke-width=\"1.2\"/><polygon points=\"360,218 332,238.4 332,152.4 360,132\" fill=\"#f4a261\" fill-opacity=\".38\" stroke=\"#f4a261\" stroke-width=\"2\"/><line x1=\"360\" y1=\"218\" x2=\"360\" y2=\"132\" class=\"dg-bond\" style=\"stroke-width:1.2\"/><line x1=\"332\" y1=\"238.4\" x2=\"332\" y2=\"152.4\" class=\"dg-bond\" style=\"stroke-width:1.2\"/><line x1=\"276\" y1=\"238.4\" x2=\"276\" y2=\"152.4\" class=\"dg-bond\" style=\"stroke-width:1.2\"/><line x1=\"248\" y1=\"218\" x2=\"248\" y2=\"132\" class=\"dg-bond\" style=\"stroke-width:1.2\"/><line x1=\"276\" y1=\"197.6\" x2=\"276\" y2=\"111.6\" class=\"dg-bond\" style=\"stroke-width:1.2\"/><line x1=\"332\" y1=\"197.6\" x2=\"332\" y2=\"111.6\" class=\"dg-bond\" style=\"stroke-width:1.2\"/><polygon points=\"360,132 332,152.4 276,152.4 248,132 276,111.6 332,111.6\" fill=\"none\" stroke=\"#6a6a78\" stroke-width=\"1.6\"/><polygon points=\"360,218 332,238.4 276,238.4 248,218\" fill=\"none\" stroke=\"#6a6a78\" stroke-width=\"1.6\"/><line x1=\"304\" y1=\"218\" x2=\"304\" y2=\"114\" class=\"dg-axis\" stroke-dasharray=\"3 3\"/><text x=\"313\" y=\"118\" class=\"dg-t\" text-anchor=\"start\">c</text><text x=\"304\" y=\"44\" class=\"dg-tb\" text-anchor=\"middle\">1st-order prism</text><text x=\"304\" y=\"64\" class=\"dg-tb-amb\" text-anchor=\"middle\">(1 0 -1 0)</text><text x=\"304\" y=\"276\" class=\"dg-t\" text-anchor=\"middle\">side face, parallel to c</text><polygon points=\"552,218 524,238.4 468,238.4 440,218 468,197.6 524,197.6\" fill=\"none\" stroke=\"#3a3a46\" stroke-width=\"1.2\"/><polygon points=\"552,218 468,238.4 468,152.4 552,132\" fill=\"#2fa15c\" fill-opacity=\".30\" stroke=\"#2fa15c\" stroke-width=\"2\"/><line x1=\"552\" y1=\"218\" x2=\"552\" y2=\"132\" class=\"dg-bond\" style=\"stroke-width:1.2\"/><line x1=\"524\" y1=\"238.4\" x2=\"524\" y2=\"152.4\" class=\"dg-bond\" style=\"stroke-width:1.2\"/><line x1=\"468\" y1=\"238.4\" x2=\"468\" y2=\"152.4\" class=\"dg-bond\" style=\"stroke-width:1.2\"/><line x1=\"440\" y1=\"218\" x2=\"440\" y2=\"132\" class=\"dg-bond\" style=\"stroke-width:1.2\"/><line x1=\"468\" y1=\"197.6\" x2=\"468\" y2=\"111.6\" class=\"dg-bond\" style=\"stroke-width:1.2\"/><line x1=\"524\" y1=\"197.6\" x2=\"524\" y2=\"111.6\" class=\"dg-bond\" style=\"stroke-width:1.2\"/><polygon points=\"552,132 524,152.4 468,152.4 440,132 468,111.6 524,111.6\" fill=\"none\" stroke=\"#6a6a78\" stroke-width=\"1.6\"/><polygon points=\"552,218 524,238.4 468,238.4 440,218\" fill=\"none\" stroke=\"#6a6a78\" stroke-width=\"1.6\"/><line x1=\"496\" y1=\"218\" x2=\"496\" y2=\"114\" class=\"dg-axis\" stroke-dasharray=\"3 3\"/><text x=\"505\" y=\"118\" class=\"dg-t\" text-anchor=\"start\">c</text><text x=\"496\" y=\"44\" class=\"dg-tb\" text-anchor=\"middle\">2nd-order prism</text><text x=\"496\" y=\"64\" class=\"dg-tb-amb\" text-anchor=\"middle\">(1 1 -2 0)</text><text x=\"496\" y=\"276\" class=\"dg-t\" text-anchor=\"middle\">cuts across, parallel to c</text><polygon points=\"744,218 716,238.4 660,238.4 632,218 660,197.6 716,197.6\" fill=\"none\" stroke=\"#3a3a46\" stroke-width=\"1.2\"/><polygon points=\"744,218 716,238.4 688,132\" fill=\"#8855f5\" fill-opacity=\".38\" stroke=\"#8855f5\" stroke-width=\"2\"/><line x1=\"744\" y1=\"218\" x2=\"744\" y2=\"132\" class=\"dg-bond\" style=\"stroke-width:1.2\"/><line x1=\"716\" y1=\"238.4\" x2=\"716\" y2=\"152.4\" class=\"dg-bond\" style=\"stroke-width:1.2\"/><line x1=\"660\" y1=\"238.4\" x2=\"660\" y2=\"152.4\" class=\"dg-bond\" style=\"stroke-width:1.2\"/><line x1=\"632\" y1=\"218\" x2=\"632\" y2=\"132\" class=\"dg-bond\" style=\"stroke-width:1.2\"/><line x1=\"660\" y1=\"197.6\" x2=\"660\" y2=\"111.6\" class=\"dg-bond\" style=\"stroke-width:1.2\"/><line x1=\"716\" y1=\"197.6\" x2=\"716\" y2=\"111.6\" class=\"dg-bond\" style=\"stroke-width:1.2\"/><polygon points=\"744,132 716,152.4 660,152.4 632,132 660,111.6 716,111.6\" fill=\"none\" stroke=\"#6a6a78\" stroke-width=\"1.6\"/><polygon points=\"744,218 716,238.4 660,238.4 632,218\" fill=\"none\" stroke=\"#6a6a78\" stroke-width=\"1.6\"/><line x1=\"688\" y1=\"218\" x2=\"688\" y2=\"114\" class=\"dg-axis\" stroke-dasharray=\"3 3\"/><text x=\"697\" y=\"118\" class=\"dg-t\" text-anchor=\"start\">c</text><text x=\"688\" y=\"44\" class=\"dg-tb\" text-anchor=\"middle\">Pyramidal</text><text x=\"688\" y=\"64\" class=\"dg-tb-amb\" text-anchor=\"middle\">(1 0 -1 1)</text><text x=\"688\" y=\"276\" class=\"dg-t\" text-anchor=\"middle\">tilted, cuts c</text><text x=\"390\" y=\"308\" class=\"dg-t\" text-anchor=\"middle\">Prism = upright planes (l = 0). Basal = flat plane (only l). Pyramidal = tilted plane (l is not 0 and h, k are not both 0).</text></svg></div><div class=\"diagram-caption\">The four plane types in one picture. Each prism is the hexagonal unit cell; the shaded area is the plane. Corners of the hexagon sit at the tips of the \\(a\\)-axes.</div>"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Plane</th><th>Intercepts (a1, a2, a3, c)</th><th>Reciprocals</th><th>Index</th><th>Type</th></tr></thead><tbody><tr><td>Top face</td><td>\\(\\infty,\\ \\infty,\\ \\infty,\\ 1\\)</td><td>0, 0, 0, 1</td><td>\\((0001)\\)</td><td>Basal</td></tr><tr><td>Side face</td><td>\\(1,\\ \\infty,\\ -1,\\ \\infty\\)</td><td>1, 0, -1, 0</td><td>\\((10\\bar10)\\)</td><td>1st-order prism</td></tr><tr><td>Cuts across</td><td>\\(1,\\ 1,\\ -\\tfrac12,\\ \\infty\\)</td><td>1, 1, -2, 0</td><td>\\((11\\bar20)\\)</td><td>2nd-order prism</td></tr><tr><td>Cuts across</td><td>\\(\\tfrac12,\\ -1,\\ -1,\\ \\infty\\)</td><td>2, -1, -1, 0</td><td>\\((2\\bar1\\bar10)\\)</td><td>2nd-order prism</td></tr><tr><td>Tilted</td><td>\\(1,\\ \\infty,\\ -1,\\ 1\\)</td><td>1, 0, -1, 1</td><td>\\((10\\bar11)\\)</td><td>Pyramidal</td></tr><tr><td>Tilted, steeper</td><td>\\(1,\\ 1,\\ -\\tfrac12,\\ 1\\)</td><td>1, 1, -2, 1</td><td>\\((11\\bar21)\\)</td><td>Pyramidal</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "conceptbox",
+          "variant": "",
+          "title": "Why do the first three indices behave like a set?",
+          "html": "<p>The first-order prism planes are \\((10\\bar10)\\), \\((01\\bar10)\\), \\((\\bar1100)\\), \\((\\bar1010)\\), \\((0\\bar110)\\) and \\((1\\bar100)\\). Look at the first three digits of each: they are all rearrangements of \\(1,0,-1\\) with the signs balancing out to zero. Because of that, you can see at a glance that they are all the same kind of plane: the family \\(\\{10\\bar10\\}\\). With three indices they would be \\((100)\\), \\((010)\\), \\((\\bar110)\\)... which look unrelated. <strong>That is the whole reason for the fourth index.</strong></p><p>Rule for families: you may <em>permute</em> the first three indices (and flip all signs together), but the fourth stays where it is.</p>"
+        },
+        {
+          "type": "conceptbox",
+          "variant": "note",
+          "title": "Two things to remember",
+          "html": "<p><strong>1.</strong> A plane with <em>no</em> intercept on \\(c\\) (so \\(l=0\\)) stands upright. That is a prism plane. If it cuts \\(c\\) at a finite value, it is pyramidal.</p><p><strong>2.</strong> \\((0001)\\) is perpendicular to \\([0001]\\), and \\((hki0)\\) is perpendicular to \\([hki0]\\). But in general \\((hkil)\\) is <strong>not</strong> perpendicular to the direction \\([hkil]\\). It only is when \\(c/a=\\sqrt{3/2}\\approx1.225\\). Real hcp metals have different \\(c/a\\) (ideal packed spheres: 1.633), so do not assume it.</p>"
+        },
+        {
+          "type": "h3",
+          "text": "Drawing a four-index direction"
+        },
+        {
+          "type": "p",
+          "text": "A direction \\([uvtw]\\) is a recipe for a walk. Take \\(u\\) steps along \\(a_1\\), \\(v\\) steps along \\(a_2\\), \\(t\\) steps along \\(a_3\\) (backwards if negative), then \\(w\\) steps up the \\(c\\)-axis. The direction is the straight arrow from where you started to where you finished. The extra third index again obeys \\(\\boxed{t=-(u+v)}\\).",
+          "class": ""
+        },
+        {
+          "type": "p",
+          "text": "The slides draw this inside a <strong>guide hexagon</strong> whose corners are 3 units from the centre. It gives you room for the longest walks you will meet.",
+          "class": ""
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 360\" role=\"img\" aria-label=\"Two hexagonal directions drawn by walking along the a-axes inside a guide hexagon: [11-20] and [10-10]\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"hd-r\" viewBox=\"0 0 10 10\" refX=\"8.5\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" class=\"dg-ah-red\"/></marker><marker id=\"hd-a\" viewBox=\"0 0 10 10\" refX=\"8.5\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" class=\"dg-ah-amb\"/></marker><marker id=\"hd-c\" viewBox=\"0 0 10 10\" refX=\"8.5\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" class=\"dg-ah-acc\"/></marker></defs><rect x=\"10\" y=\"10\" width=\"760\" height=\"340\" rx=\"8\" class=\"dg-frame\"/><text x=\"200\" y=\"40\" class=\"dg-tb\" text-anchor=\"middle\">Direction [1 1 -2 0]</text><text x=\"200\" y=\"60\" class=\"dg-tb-amb\" text-anchor=\"middle\">a1: +1, a2: +1, a3: -2</text><polygon points=\"308,205 254,111.5 146,111.5 92,205 146,298.5 254,298.5\" fill=\"rgba(14,165,198,.06)\" stroke=\"#3a3a46\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\"/><line x1=\"200\" y1=\"205\" x2=\"308\" y2=\"205\" class=\"dg-axis\"/><text x=\"322\" y=\"209\" class=\"dg-t\" text-anchor=\"middle\">a<tspan dy=\"3\" font-size=\"10\">1</tspan></text><line x1=\"200\" y1=\"205\" x2=\"146\" y2=\"111.5\" class=\"dg-axis\"/><text x=\"139\" y=\"103.3\" class=\"dg-t\" text-anchor=\"middle\">a<tspan dy=\"3\" font-size=\"10\">2</tspan></text><line x1=\"200\" y1=\"205\" x2=\"146\" y2=\"298.5\" class=\"dg-axis\"/><text x=\"139\" y=\"314.7\" class=\"dg-t\" text-anchor=\"middle\">a<tspan dy=\"3\" font-size=\"10\">3</tspan></text><line x1=\"200\" y1=\"205\" x2=\"236\" y2=\"205\" class=\"dg-vec-amb\" marker-end=\"url(#hd-a)\"/><text x=\"218\" y=\"221\" class=\"dg-tb-amb\" text-anchor=\"middle\">+1 a1</text><line x1=\"236\" y1=\"205\" x2=\"218\" y2=\"173.8\" class=\"dg-vec-amb\" marker-end=\"url(#hd-a)\"/><text x=\"249\" y=\"189.4\" class=\"dg-tb-amb\" text-anchor=\"middle\">+1 a2</text><line x1=\"218\" y1=\"173.8\" x2=\"254\" y2=\"111.5\" class=\"dg-vec-amb\" marker-end=\"url(#hd-a)\"/><text x=\"264\" y=\"148.6\" class=\"dg-tb-amb\" text-anchor=\"middle\">to -2 a3</text><line x1=\"200\" y1=\"205\" x2=\"254\" y2=\"111.5\" class=\"dg-vec-red\" marker-end=\"url(#hd-r)\" stroke-dasharray=\"6 4\"/><circle cx=\"200\" cy=\"205\" r=\"4\" class=\"dg-lp-o\"/><text x=\"192\" y=\"223\" class=\"dg-t\" text-anchor=\"end\">origin</text><text x=\"254\" y=\"99.5\" class=\"dg-tb-red\" text-anchor=\"middle\">ends at a corner</text><text x=\"580\" y=\"40\" class=\"dg-tb\" text-anchor=\"middle\">Direction [1 0 -1 0]</text><text x=\"580\" y=\"60\" class=\"dg-tb-amb\" text-anchor=\"middle\">a1: +1, a2: 0, a3: -1</text><polygon points=\"688,205 634,111.5 526,111.5 472,205 526,298.5 634,298.5\" fill=\"rgba(14,165,198,.06)\" stroke=\"#3a3a46\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\"/><line x1=\"580\" y1=\"205\" x2=\"688\" y2=\"205\" class=\"dg-axis\"/><text x=\"702\" y=\"209\" class=\"dg-t\" text-anchor=\"middle\">a<tspan dy=\"3\" font-size=\"10\">1</tspan></text><line x1=\"580\" y1=\"205\" x2=\"526\" y2=\"111.5\" class=\"dg-axis\"/><text x=\"519\" y=\"103.3\" class=\"dg-t\" text-anchor=\"middle\">a<tspan dy=\"3\" font-size=\"10\">2</tspan></text><line x1=\"580\" y1=\"205\" x2=\"526\" y2=\"298.5\" class=\"dg-axis\"/><text x=\"519\" y=\"314.7\" class=\"dg-t\" text-anchor=\"middle\">a<tspan dy=\"3\" font-size=\"10\">3</tspan></text><line x1=\"580\" y1=\"205\" x2=\"616\" y2=\"205\" class=\"dg-vec-amb\" marker-end=\"url(#hd-a)\"/><text x=\"598\" y=\"221\" class=\"dg-tb-amb\" text-anchor=\"middle\">+1 a1</text><line x1=\"616\" y1=\"205\" x2=\"634\" y2=\"173.8\" class=\"dg-vec-amb\" marker-end=\"url(#hd-a)\"/><text x=\"659\" y=\"189.4\" class=\"dg-tb-amb\" text-anchor=\"middle\">-1 a3</text><line x1=\"580\" y1=\"205\" x2=\"634\" y2=\"173.8\" class=\"dg-vec-red\" marker-end=\"url(#hd-r)\" stroke-dasharray=\"6 4\"/><circle cx=\"580\" cy=\"205\" r=\"4\" class=\"dg-lp-o\"/><text x=\"572\" y=\"223\" class=\"dg-t\" text-anchor=\"end\">origin</text><text x=\"634\" y=\"161.8\" class=\"dg-tb-red\" text-anchor=\"middle\">ends here</text><text x=\"390\" y=\"342\" class=\"dg-t\" text-anchor=\"middle\">Amber arrows: the path, one axis at a time. Red dashed arrow: the direction itself, from the origin to where the path ends.</text></svg></div><div class=\"diagram-caption\">Two walks drawn on a guide hexagon. \\([11\\bar20]\\) ends exactly on a corner of the guide hexagon, which shows it lies <em>along</em> an \\(a\\)-axis (here along \\(-a_3\\)). \\([10\\bar10]\\) ends between two axes, 30° from \\(a_1\\).</div>"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Direction</th><th>Walk</th><th>Where it points</th></tr></thead><tbody><tr><td>\\([2\\bar1\\bar10]\\)</td><td>\\(+2a_1\\), \\(-1a_2\\), \\(-1a_3\\)</td><td>Along \\(a_1\\) (an \\(a\\)-type direction)</td></tr><tr><td>\\([\\bar12\\bar10]\\)</td><td>\\(-1a_1\\), \\(+2a_2\\), \\(-1a_3\\)</td><td>Along \\(a_2\\)</td></tr><tr><td>\\([11\\bar20]\\)</td><td>\\(+1a_1\\), \\(+1a_2\\), \\(-2a_3\\)</td><td>Along \\(-a_3\\) (same family as the two above)</td></tr><tr><td>\\([10\\bar10]\\)</td><td>\\(+1a_1\\), \\(0a_2\\), \\(-1a_3\\)</td><td>In the basal plane, 30° from \\(a_1\\). Not in the \\(\\langle11\\bar20\\rangle\\) family</td></tr><tr><td>\\([0001]\\)</td><td>\\(+1c\\)</td><td>Straight up the \\(c\\)-axis</td></tr><tr><td>\\([11\\bar23]\\)</td><td>\\(+1a_1\\), \\(+1a_2\\), \\(-2a_3\\), \\(+3c\\)</td><td>Tilted out of the basal plane: a \\(\\langle c+a\\rangle\\) direction</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "conceptbox",
+          "variant": "",
+          "title": "Check it makes sense",
+          "html": "<p>All the \\(a\\)-type directions \\([2\\bar1\\bar10]\\), \\([\\bar12\\bar10]\\), \\([\\bar1\\bar120]\\) (and their negatives) form the family \\(\\langle11\\bar20\\rangle\\). These are the directions along which atoms touch in the basal plane of hcp, which is why slip happens along them. Notice they are all rearrangements of \\(\\{2,-1,-1\\}\\) or \\(\\{1,1,-2\\}\\).</p>"
+        },
+        {
+          "type": "h3",
+          "text": "Three-index to four-index (and back)"
+        },
+        {
+          "type": "p",
+          "text": "Some books and software describe hexagonal directions with <strong>three</strong> numbers, using only \\(a_1\\), \\(a_2\\) and \\(c\\): \\(\\mathbf r = U\\mathbf a_1+V\\mathbf a_2+W\\mathbf c\\), written \\([UVW]\\). Same arrows, different bookkeeping. The conversions from the lecture are below. They look scary but each is just \"the contribution of \\(a_3\\) has to be folded back into \\(a_1\\) and \\(a_2\\)\".",
+          "class": ""
+        },
+        {
+          "type": "formulablock",
+          "name": "Four-index to three-index",
+          "eqs": [
+            "U=u-t,\\quad V=v-t,\\quad W=w"
+          ],
+          "vars": [
+            {
+              "symbol": "u, v, t, w",
+              "desc": "four-index direction [uvtw]"
+            },
+            {
+              "symbol": "U, V, W",
+              "desc": "three-index direction [UVW]"
+            }
+          ]
+        },
+        {
+          "type": "formulablock",
+          "name": "Three-index to four-index",
+          "eqs": [
+            "u=\\tfrac13(2U-V),\\quad v=\\tfrac13(2V-U),\\quad t=-(u+v),\\quad w=W"
+          ],
+          "note": "Multiply through by 3 to clear the fractions, then divide by any common factor."
+        },
+        {
+          "type": "p",
+          "text": "<strong>Quick method to avoid fractions:</strong> compute \\(3u\\), \\(3v\\), \\(3t\\), \\(3w\\) (which are always whole numbers: \\(2U-V\\), \\(2V-U\\), \\(-(U+V)\\), \\(3W\\)), then divide by their common factor.",
+          "class": ""
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>3-index [UVW]</th><th>Working</th><th>4-index [uvtw]</th></tr></thead><tbody><tr><td>\\([100]\\)</td><td>\\(2U-V=2,\\ 2V-U=-1,\\ -(U+V)=-1,\\ 3W=0\\)</td><td>\\([2\\bar1\\bar10]\\)</td></tr><tr><td>\\([110]\\)</td><td>\\(1,\\ 1,\\ -2,\\ 0\\)</td><td>\\([11\\bar20]\\)</td></tr><tr><td>\\([001]\\)</td><td>\\(0,\\ 0,\\ 0,\\ 3\\)</td><td>\\([0001]\\) after dividing by 3</td></tr><tr><td>\\([111]\\)</td><td>\\(1,\\ 1,\\ -2,\\ 3\\)</td><td>\\([11\\bar23]\\)</td></tr><tr><td>\\([210]\\)</td><td>\\(3,\\ 0,\\ -3,\\ 0\\)</td><td>\\([10\\bar10]\\) after dividing by 3</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "conceptbox",
+          "variant": "",
+          "title": "Notice",
+          "html": "<p>In three-index form, \\([100]\\), \\([110]\\) and \\([010]\\) look like three unrelated directions, yet they are all along an \\(a\\)-axis. In four-index form they are \\([2\\bar1\\bar10]\\), \\([11\\bar20]\\) and \\([\\bar12\\bar10]\\), which are plainly rearrangements of one another. That is exactly why four indices were invented. Also, three-index \\([210]\\) looks complicated but is just \\([10\\bar10]\\): never judge a direction by how its numbers look across the two systems.</p>"
+        },
+        {
+          "type": "example",
+          "label": "Worked example 1: plane from intercepts",
+          "q": "A plane cuts \\(a_1\\) at 1 and \\(a_2\\) at \\(-1\\), and never meets \\(c\\) (so it is parallel to it). Find its four-index label.",
+          "steps": [
+            "Intercepts on \\(a_1,a_2,c\\): \\(1,\\ -1,\\ \\infty\\)",
+            "Reciprocals: \\(h=1,\\ k=-1,\\ l=0\\)",
+            "Use the rule: \\(i=-(h+k)=-(1-1)=0\\)",
+            "So the plane is \\((1\\bar100)\\). Its \\(a_3\\) intercept is \\(\\infty\\) (\\(1/0\\)): it is parallel to \\(a_3\\) as well as to \\(c\\)"
+          ],
+          "answer": "<strong>\\((1\\bar100)\\)</strong>, a first-order prism plane, same family as \\(\\{10\\bar10\\}\\)."
+        },
+        {
+          "type": "example",
+          "label": "Worked example 2: plane type from the index",
+          "q": "Name the type of each plane and find the missing index: (a) \\((0\\,0\\,\\_\\,1)\\), (b) \\((1\\,1\\,\\_\\,0)\\), (c) \\((1\\,0\\,\\_\\,2)\\).",
+          "steps": [
+            "Use \\(i=-(h+k)\\) every time",
+            "(a) \\(i=0\\); \\(h=k=0\\) and \\(l\\ne0\\): basal",
+            "(b) \\(i=-2\\); \\(l=0\\): upright, so prism (second-order)",
+            "(c) \\(i=-1\\); \\(l=2\\ne0\\) with \\(h\\) or \\(k\\) not zero: pyramidal"
+          ],
+          "answer": "(a) \\((0001)\\) basal. (b) \\((11\\bar20)\\) prism. (c) \\((10\\bar12)\\) pyramidal (the twin plane in Ti and Zr)."
+        },
+        {
+          "type": "example",
+          "label": "Worked example 3: direction from three-index to four-index",
+          "q": "Convert \\([121]\\) to four-index notation.",
+          "steps": [
+            "\\(U=1,V=2,W=1\\)",
+            "\\(3u=2U-V=0\\)",
+            "\\(3v=2V-U=3\\)",
+            "\\(3t=-(U+V)=-3\\)",
+            "\\(3w=3W=3\\)",
+            "Divide by 3: \\([0\\,1\\,\\bar1\\,1]\\)",
+            "Check \\(t=-(u+v)=-(0+1)=-1\\) ✓"
+          ],
+          "answer": "<strong>\\([01\\bar11]\\)</strong>"
+        },
+        {
+          "type": "example",
+          "label": "Worked example 4: direction from four-index to three-index",
+          "q": "Convert \\([\\bar12\\bar13]\\) back using \\(U=u-t,\\ V=v-t,\\ W=w\\).",
+          "steps": [
+            "\\(u=-1,\\ v=2,\\ t=-1,\\ w=3\\)",
+            "\\(U=u-t=-1-(-1)=0\\)",
+            "\\(V=v-t=2-(-1)=3\\)",
+            "\\(W=3\\)",
+            "\\([0\\,3\\,3]\\) divides by 3 to \\([011]\\)"
+          ],
+          "answer": "<strong>\\([011]\\)</strong>"
+        },
+        {
+          "type": "h3",
+          "text": "Hexagonal practice"
+        },
+        {
+          "type": "example",
+          "label": "Q1",
+          "q": "Which of these are valid four-index planes? \\((1120)\\), \\((10\\bar11)\\), \\((01\\bar12)\\), \\((2\\bar1\\bar11)\\)",
+          "steps": [
+            "Check \\(h+k+i=0\\) on each"
+          ],
+          "answer": "\\((1120)\\): \\(1+1+2=4\\), <strong>invalid</strong> (should be \\((11\\bar20)\\)). \\((10\\bar11)\\): 0 ✓. \\((01\\bar12)\\): 0 ✓. \\((2\\bar1\\bar11)\\): 0 ✓."
+        },
+        {
+          "type": "example",
+          "label": "Q2",
+          "q": "Give the intercepts on \\(a_1,a_2,a_3\\) of the plane \\((11\\bar20)\\).",
+          "steps": [
+            "Intercept = 1/index"
+          ],
+          "answer": "\\(a_1=1,\\ a_2=1,\\ a_3=-\\tfrac12\\), and parallel to \\(c\\) (\\(\\infty\\)). It cuts across the hexagon rather than being a side face."
+        },
+        {
+          "type": "example",
+          "label": "Q3",
+          "q": "Write \\([2\\bar1\\bar10]\\), \\([11\\bar20]\\) and \\([\\bar12\\bar10]\\) in three-index form. What do you notice?",
+          "steps": [
+            "\\(U=u-t,\\ V=v-t\\)"
+          ],
+          "answer": "\\([2\\bar1\\bar10]\\to[100]\\); \\([11\\bar20]\\to[110]\\); \\([\\bar12\\bar10]\\to[010]\\) (after \\(U=-1+1=0,\\ V=2+1=3\\), divide by 3). All three are the \\(a\\)-type family: in three-index form they look different (\\([100],[110],[010]\\)), in four-index form they are plainly rearrangements of one another."
+        },
+        {
+          "type": "example",
+          "label": "Q4",
+          "q": "Draw the direction \\([10\\bar10]\\) on a guide hexagon and say whether it lies in the basal plane.",
+          "steps": [
+            "Walk \\(+1a_1\\), then \\(-1a_3\\) (a step at 60° to \\(a_1\\))",
+            "Since \\(w=0\\), you never leave the flat plane"
+          ],
+          "answer": "Yes, it lies in the basal plane, ending at a point 30° from \\(a_1\\) (see the figure). It is <em>not</em> a close-packed \\(a\\)-direction."
+        },
+        {
+          "type": "example",
+          "label": "Q5",
+          "q": "Is the plane \\((10\\bar11)\\) perpendicular to the direction \\([10\\bar11]\\) in an ideal hcp metal (\\(c/a=1.633\\))?",
+          "steps": [
+            "Recall when \\((hkil)\\perp[hkil]\\)"
+          ],
+          "answer": "<strong>No.</strong> That only works if \\(c/a=\\sqrt{3/2}\\approx1.225\\) (or for the special cases \\((0001)\\) and \\((hki0)\\)). Ideal hcp has \\(c/a=1.633\\)."
         },
         {
           "type": "h2",
@@ -2377,9 +2617,9 @@ window.SITE_CONTENT = {
         "The <strong>ODF</strong> \\(f(g)\\) is the density of grains at orientation \\(g\\) in multiples of random (random is 1). bcc fibres: α \\(\\langle110\\rangle\\parallel\\)RD, γ \\(\\langle111\\rangle\\parallel\\)ND, η \\(\\langle001\\rangle\\parallel\\)RD, ε \\(\\langle110\\rangle\\parallel\\)TD.",
         "In rolled Zr and Ti, <strong>twinning</strong> drives early texture change and <strong>recrystallisation sets the final texture</strong>. Load along c is <strong>hard</strong>; load across c is <strong>soft</strong>. Schmid: \\(\\tau=\\sigma\\cos\\phi\\cos\\lambda\\le0.5\\sigma\\)."
       ],
-      "desc": "Texture and anisotropy, notation guide, zirconium hydrides, slip and twinning, rolling and uniaxial strain, pole figures, Euler angles, ODFs, fibres, XRD and EBSD, Zr and Ti case studies, hard and soft orientations, practice questions.",
+      "desc": "Texture and anisotropy, notation guide, hexagonal four-index workshop, zirconium hydrides, slip and twinning, rolling and uniaxial strain, pole figures, Euler angles, ODFs, fibres, XRD and EBSD, Zr and Ti case studies, hard and soft orientations, practice questions.",
       "difficulty": "Medium",
-      "readTime": "75 min",
+      "readTime": "85 min",
       "color": "#8855f5"
     },
     {
@@ -3718,6 +3958,370 @@ window.SITE_CONTENT = {
       ]
     },
     {
+      "id": "ex",
+      "numLabel": "Practice",
+      "title": "Order Exam Practice",
+      "subtitle": "The Order quiz in one box, what the past papers ask, the numbers to know cold, and original exam-style questions with full worked answers for Weeks 1 to 5. Written for the in-term quiz and the January exam. XRD is left out, as Dr Willow's note says.",
+      "essentialsTitle": "Order exam practice essentials",
+      "essentialsHeading": "Practice in one screen",
+      "essentials": [
+        "<strong>Quiz:</strong> 14 MCQs, 30 points, 2.5 h, one attempt, no going back. Open notes. Due Mon 16 Nov 14:00.",
+        "<strong>Calculation habit:</strong> formula, count, number, units. Each earns separate marks in the model answers.",
+        "<strong>APF:</strong> SC 0.52, BCC 0.68, FCC and HCP 0.74. <strong>2D:</strong> square 78.5%, hexagonal 90.7%.",
+        "<strong>Radius ratio limits:</strong> 1.0 (CN 12), 0.732 (8), 0.414 (6), 0.225 (4), 0.155 (3).",
+        "<strong>Pauling 2:</strong> \\(s=\\text{valence}/\\text{CN}\\); the bonds reaching an anion add up to its charge.",
+        "<strong>Identify the lattice:</strong> \\(n=\\rho a^3N_A/A\\): 1 is SC, 2 is BCC, 4 is FCC."
+      ],
+      "desc": "Quiz details, a map of past-paper question types, key numbers, and original worked questions: calculations, explain-it, drawing and counting, and ionic structures.",
+      "difficulty": "Medium",
+      "readTime": "50 min",
+      "color": "#e9c46a",
+      "sections": [
+        {
+          "type": "toc",
+          "title": "This section",
+          "items": [
+            {
+              "href": "#ex-quiz",
+              "label": "The Order quiz in one box"
+            },
+            {
+              "href": "#ex-map",
+              "label": "What the past papers ask"
+            },
+            {
+              "href": "#ex-numbers",
+              "label": "Numbers to know cold"
+            },
+            {
+              "href": "#ex-calc",
+              "label": "Calculation drills"
+            },
+            {
+              "href": "#ex-concept",
+              "label": "Explain-it questions"
+            },
+            {
+              "href": "#ex-draw",
+              "label": "Drawing and counting questions"
+            },
+            {
+              "href": "#ex-ionic",
+              "label": "Ionic structure questions"
+            }
+          ]
+        },
+        {
+          "type": "h2",
+          "id": "ex-quiz",
+          "text": "The Order Quiz in One Box"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"analogy\"><span class=\"analogy-icon\">🎯</span><div class=\"analogy-text\"><strong>You can use your notes, so the skill being tested is speed and accuracy, not memory.</strong> Think of an open-book driving theory test: the answers are findable, but the clock and the traps are real. The winners are the people who know <em>where</em> each method lives and have drilled the arithmetic.</div></div>"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Item</th><th>What the course page says</th></tr></thead><tbody><tr><td>Paper</td><td>In-term assessment, multiple choice, covers the Order part (Dr Willow)</td></tr><tr><td>Size</td><td>14 questions, 30 points in total, so some questions are worth more than one point</td></tr><tr><td>Time</td><td>2.5 hours from the moment you start, one attempt only</td></tr><tr><td>Due</td><td>Closes Mon 16 Nov 2026 at 14:00 (it opened on 30 Oct)</td></tr><tr><td>Rules</td><td>Respondus LockDown Browser and webcam. You cannot go back after submitting an answer. AI assistance is not allowed</td></tr><tr><td>Allowed</td><td>Lecture notes and slides (links to Weeks 1, 2, 3 and 4+5 appear above each question), pen and paper, scientific calculator, periodic table</td></tr><tr><td>Give</td><td>Avogadro constant \\(6.022\\times10^{23}\\ \\text{mol}^{-1}\\)</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "conceptbox",
+          "variant": "note",
+          "title": "How to use this site against the clock",
+          "html": "<p>Canvas \"Week 3\" is this site's <strong>W4</strong> (densities and holes) and Canvas \"Week 4+5\" is this site's <strong>W5</strong>. Dr Prakash's texture lecture is the site's W3 and is <em>not</em> part of the Order quiz.</p><p><strong>Habit that earns marks in every past paper:</strong> write the formula, then the count (atoms per cell, atoms along the line), then the number, then the <strong>units</strong>. The model answers hand out separate marks for each of these.</p>"
+        },
+        {
+          "type": "h2",
+          "id": "ex-map",
+          "text": "What the Past Papers Ask"
+        },
+        {
+          "type": "p",
+          "text": "I went through all eight past Order papers (the 2025 and earlier sets, with their January and August resit versions). The same question types come round every year. Dr Willow's note on Canvas says to <strong>ignore the XRD questions this year</strong>, so those are left out here. The table below is the pattern, in my words, with where to find each topic on this site.",
+          "class": ""
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Question type (marks)</th><th>What you must do</th><th>Where on this site</th></tr></thead><tbody><tr><td>Types of solid (3)</td><td>Single crystal, polycrystalline, amorphous: size of ordered regions</td><td>W1: Types of solids</td></tr><tr><td>Primitive vs non-primitive cell (3 to 4)</td><td>Draw 2D lattice points, count points per cell (primitive = 1)</td><td>W1: Unit cells in 2D; 2D Bravais lattices</td></tr><tr><td>Three cubic unit cells (3)</td><td>P, I, F: where the lattice points are and how many</td><td>W1: 3D Bravais lattices; W2</td></tr><tr><td>APF derivation (3 to 6)</td><td>Count atoms, find the touching line, express \\(R\\) via \\(a\\), cancel</td><td>W2: Atomic packing factor</td></tr><tr><td>Linear / planar density (2 to 5)</td><td>Atoms on the line or plane divided by its length or area</td><td>W4</td></tr><tr><td>Density and lattice type (2 to 5)</td><td>Use \\(\\rho=nA/(V N_A)\\); solve for \\(n\\) to identify SC, BCC or FCC</td><td>W4: Theoretical density</td></tr><tr><td>Draw directions and planes (3 to 4)</td><td>Label axes and origin; convert index to intercepts or steps</td><td>W2: Directions, Miller indices</td></tr><tr><td>Directions or planes \"of a form\" (2 to 5)</td><td>Name the notation, count the members</td><td>W2: Planes of a form</td></tr><tr><td>Close packing HCP vs CCP (4 to 8)</td><td>Stacking ABAB vs ABCABC, CN 12, APF, relation to FCC cell</td><td>W2: Close packing</td></tr><tr><td>Energy well (4 to 8)</td><td>Young's modulus, thermal expansion, melting, amorphous vs crystalline</td><td>W1: Energy well</td></tr><tr><td>Hume-Rothery (3 to 6)</td><td>Four rules, one substitutional and one interstitial example</td><td>W5: Solid solutions</td></tr><tr><td>8 - N rule (5)</td><td>State the rule; two examples such as iodine and sulphur</td><td>W5: 8 - N rule</td></tr><tr><td>Radius ratio table (4 to 6)</td><td>Work out CN and polyhedron from \\(r_c/r_a\\)</td><td>W5: Pauling's first rule</td></tr><tr><td>Geometric proof (5 to 6)</td><td>Prove a limit such as 0.414 or 0.732 with a sketch and Pythagoras</td><td>W5: Where the numbers come from</td></tr><tr><td>Pauling's second rule (5 to 8)</td><td>Perovskite or other structure: bond strengths sum to the anion charge</td><td>W5: Second rule; famous structures</td></tr><tr><td>Holes in CCP (4 to 7)</td><td>Count and place octahedral and tetrahedral holes with coordinates</td><td>W4: Holes</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "h2",
+          "id": "ex-numbers",
+          "text": "Numbers to Know Cold"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Thing</th><th>Value</th><th>Where it comes from</th></tr></thead><tbody><tr><td>APF: SC, BCC, FCC and HCP</td><td>0.52, 0.68, 0.74, 0.74</td><td>\\(\\pi/6,\\ \\pi\\sqrt3/8,\\ \\pi/(3\\sqrt2),\\ \\pi/(3\\sqrt2)\\)</td></tr><tr><td>2D packing: square, hexagonal</td><td>78.5%, 90.7%</td><td>\\(\\pi/4,\\ \\pi/(2\\sqrt3)\\)</td></tr><tr><td>Atoms per cell: SC, BCC, FCC</td><td>1, 2, 4</td><td>corners 1/8, centre 1, faces 1/2</td></tr><tr><td>Touching line</td><td>SC: edge. BCC: body diagonal. FCC: face diagonal</td><td>\\(a=2R,\\ a=4R/\\sqrt3,\\ a=4R/\\sqrt2\\)</td></tr><tr><td>FCC holes: octahedral, tetrahedral</td><td>\\(0.414R\\) and \\(0.225R\\), counts \\(N\\) and \\(2N\\)</td><td>W4</td></tr><tr><td>BCC holes: octahedral, tetrahedral</td><td>\\(0.155R\\) and \\(0.291R\\)</td><td>W4</td></tr><tr><td>Radius-ratio limits for CN 12, 8, 6, 4, 3</td><td>1.0, 0.732, 0.414, 0.225, 0.155</td><td>\\(1,\\ \\sqrt3-1,\\ \\sqrt2-1,\\ \\sqrt{3/2}-1,\\ 2/\\sqrt3-1\\)</td></tr><tr><td>Hume-Rothery size limit</td><td>15%</td><td>W5</td></tr><tr><td>Bond strength (Pauling 2)</td><td>\\(s=\\text{valence}/\\text{CN}\\), and \\(\\Sigma s\\) at an anion equals its charge</td><td>W5</td></tr><tr><td>Iron structures</td><td>bcc below 910 °C, fcc 910 to 1400 °C, bcc above 1400 °C</td><td>W5: polymorphism</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "h2",
+          "id": "ex-calc",
+          "text": "Calculation Drills"
+        },
+        {
+          "type": "p",
+          "text": "These are <strong>my own questions</strong>, written in the style of the past papers with different numbers, so that you cannot just memorise the old answers. Try each on paper first. Use \\(N_A=6.022\\times10^{23}\\ \\text{mol}^{-1}\\).",
+          "class": ""
+        },
+        {
+          "type": "example",
+          "label": "C1 Linear density",
+          "q": "Lead is FCC with \\(a=0.4951\\) nm. Calculate the linear density along \\([110]\\).",
+          "steps": [
+            "Formula: \\(\\mathrm{LD}=\\text{atoms on the line}/\\text{length of the line}\\)",
+            "\\([110]\\) is the face diagonal: length \\(=\\sqrt2\\,a=0.7002\\) nm",
+            "Atoms: ½ + 1 + ½ = 2"
+          ],
+          "answer": "\\(\\mathrm{LD}=2/0.7002=\\) <strong>2.86 atoms per nm</strong> (\\(\\text{nm}^{-1}\\))"
+        },
+        {
+          "type": "example",
+          "label": "C2 Planar density, BCC",
+          "q": "Potassium is BCC with atomic radius \\(R=0.227\\) nm. Calculate the planar density of the \\((100)\\) plane.",
+          "steps": [
+            "Atoms touch along the body diagonal: \\(4R=\\sqrt3\\,a\\), so \\(a=4(0.227)/\\sqrt3=0.5242\\) nm",
+            "The \\((100)\\) plane is a square face of area \\(a^2\\). It has 4 corners × ¼ = 1 atom (the body-centre atom is not on the face)",
+            "\\(a^2=0.2748\\ \\text{nm}^2\\)"
+          ],
+          "answer": "\\(\\mathrm{PD}=1/0.2748=\\) <strong>3.64 atoms per nm²</strong>"
+        },
+        {
+          "type": "example",
+          "label": "C3 Planar density, FCC",
+          "q": "Aluminium is FCC with \\(a=0.405\\) nm. Find the planar density of the \\((111)\\) plane.",
+          "steps": [
+            "The \\((111)\\) plane in the cell is an equilateral triangle with side = face diagonal \\(=\\sqrt2\\,a=0.5728\\) nm",
+            "Area \\(=\\frac{\\sqrt3}{4}(0.5728)^2=0.1420\\ \\text{nm}^2\\)",
+            "Atoms inside: 3 corners × 1/6 + 3 edge-centres × 1/2 = 0.5 + 1.5 = 2"
+          ],
+          "answer": "\\(\\mathrm{PD}=2/0.1420=\\) <strong>14.1 atoms per nm²</strong>. It is the densest plane in FCC."
+        },
+        {
+          "type": "example",
+          "label": "C4 Theoretical density",
+          "q": "Tungsten is BCC with \\(a=0.3165\\) nm and atomic weight 183.84. Calculate its density.",
+          "steps": [
+            "\\(\\rho=\\dfrac{nA}{V_cN_A}\\), with \\(n=2\\) for BCC",
+            "\\(V_c=a^3=(3.165\\times10^{-8}\\ \\text{cm})^3=3.170\\times10^{-23}\\ \\text{cm}^3\\)",
+            "Mass of cell \\(=2\\times183.84/6.022\\times10^{23}=6.106\\times10^{-22}\\) g"
+          ],
+          "answer": "\\(\\rho=6.106\\times10^{-22}/3.170\\times10^{-23}=\\) <strong>19.3 g cm⁻³</strong>"
+        },
+        {
+          "type": "example",
+          "label": "C5 Which lattice?",
+          "q": "A metal has \\(\\rho=10.22\\ \\text{g cm}^{-3}\\), atomic weight 95.95 and \\(a=3.147\\) Å. Is it SC, BCC or FCC? Say why the others are excluded.",
+          "steps": [
+            "Rearrange: \\(n=\\dfrac{\\rho\\,a^3N_A}{A}\\)",
+            "\\(a^3=(3.147\\times10^{-8})^3=3.117\\times10^{-23}\\ \\text{cm}^3\\)",
+            "\\(n=10.22\\times3.117\\times10^{-23}\\times6.022\\times10^{23}/95.95=1.999\\)"
+          ],
+          "answer": "\\(n=2\\), so <strong>BCC</strong>. SC would need \\(n=1\\) (density 5.11) and FCC \\(n=4\\) (density 20.4), neither close to 10.22."
+        },
+        {
+          "type": "example",
+          "label": "C6 Radius from density",
+          "q": "A hypothetical simple cubic metal has atomic weight 120.0 and \\(\\rho=7.0\\ \\text{g cm}^{-3}\\). What is the atomic radius?",
+          "steps": [
+            "\\(n=1\\) for SC, so \\(V_c=A/(\\rho N_A)=120.0/(7.0\\times6.022\\times10^{23})=2.847\\times10^{-23}\\ \\text{cm}^3\\)",
+            "\\(a=\\sqrt[3]{V_c}=3.053\\) Å",
+            "In SC the atoms touch along the edge: \\(a=2R\\)"
+          ],
+          "answer": "\\(R=\\) <strong>1.53 Å</strong>"
+        },
+        {
+          "type": "example",
+          "label": "C7 APF derivation (FCC and BCC)",
+          "q": "Derive the atomic packing factors of FCC and BCC.",
+          "steps": [
+            "<strong>FCC:</strong> 4 atoms; atoms touch along the face diagonal: \\(4R=\\sqrt2\\,a\\), so \\(a=2\\sqrt2\\,R\\)",
+            "\\(\\mathrm{APF}=\\dfrac{4\\cdot\\frac43\\pi R^3}{(2\\sqrt2R)^3}=\\dfrac{16\\pi/3}{16\\sqrt2}=\\dfrac{\\pi}{3\\sqrt2}\\)",
+            "<strong>BCC:</strong> 2 atoms; atoms touch along the body diagonal: \\(4R=\\sqrt3\\,a\\), so \\(a=4R/\\sqrt3\\)",
+            "\\(\\mathrm{APF}=\\dfrac{2\\cdot\\frac43\\pi R^3}{(4R/\\sqrt3)^3}=\\dfrac{8\\pi/3}{64/(3\\sqrt3)}=\\dfrac{\\pi\\sqrt3}{8}\\)"
+          ],
+          "answer": "<strong>FCC 0.740, BCC 0.680.</strong> The \\(R^3\\) cancels in both: that is your check that you set it up right."
+        },
+        {
+          "type": "example",
+          "label": "C8 2D packing efficiency",
+          "q": "Show that circles packed in a hexagonal arrangement fill 90.7% of the plane. What does a square arrangement give?",
+          "steps": [
+            "Hexagonal: the repeating unit is a rhombus of side \\(2R\\) with 1 circle's worth of area inside",
+            "Rhombus area \\(=(2R)^2\\sin60^\\circ=2\\sqrt3R^2\\)",
+            "Circle area \\(=\\pi R^2\\)",
+            "Square: cell is \\(2R\\times2R\\) with 1 circle: \\(\\pi R^2/4R^2\\)"
+          ],
+          "answer": "Hexagonal \\(=\\pi/(2\\sqrt3)=\\) <strong>0.907</strong>. Square \\(=\\pi/4=\\) <strong>0.785</strong>."
+        },
+        {
+          "type": "h2",
+          "id": "ex-concept",
+          "text": "Explain-It Questions"
+        },
+        {
+          "type": "example",
+          "label": "E1 Three kinds of solid",
+          "q": "Describe three solid types in terms of the size of the ordered regions.",
+          "steps": [
+            "Think \"how far does the pattern repeat before it stops?\""
+          ],
+          "answer": "<strong>Single crystal:</strong> one ordered domain through the whole piece. <strong>Polycrystalline:</strong> many small crystals (grains) with grain boundaries, ordered inside each grain. <strong>Amorphous:</strong> only short-range order, with no ordered domains. (Nanocrystalline material has grains below about 10 nm.)"
+        },
+        {
+          "type": "example",
+          "label": "E2 Dense and random packing",
+          "q": "Describe how the typical neighbour bond length and bond energy differ between a dense, orderly packed solid and a non-dense, randomly packed one.",
+          "steps": [
+            "Use the energy well: where is the minimum, and how deep?"
+          ],
+          "answer": "Typically, in the dense ordered solid, every atom sits close to the bottom of the well, so bond lengths are uniform and short, and the bonding energy is more negative (stronger). In the random solid some neighbours are further apart than the equilibrium spacing, so there is a spread of bond lengths, the average is longer and the bonding energy is less negative (weaker). This is also why amorphous solids melt over a range of temperature and crystals melt at a sharp one."
+        },
+        {
+          "type": "example",
+          "label": "E3 Hume-Rothery in practice",
+          "q": "Using the data below, say which pair would form a complete substitutional solid solution, and which pairs fail and why. Radii (nm): Cu 0.1278 (FCC, EN 1.9, +1,+2), Pt 0.139 (FCC, 2.3, +2,+4), Pd 0.137 (FCC, 2.2, +2,+4), Al 0.1431 (FCC, 1.5, +3), Co 0.1253 (HCP, 1.8, +2,+3), Cr 0.1249 (BCC, 1.6, +2,+3), Fe 0.1241 (BCC, 1.8, +2,+3).",
+          "steps": [
+            "Go through size, crystal structure, electronegativity and valence for each pair (size gap taken against the smaller atom)",
+            "Pt-Pd: gap 1.5%, both FCC, EN 2.3 vs 2.2, same valence: passes all four",
+            "Cr-Fe: gap 0.6%, both BCC, EN 1.6 vs 1.8, same valence: passes all four",
+            "Cu-Al: gap about 12% (under 15%), both FCC, but valence +1,+2 against +3 and EN 1.9 against 1.5: fails valence and electronegativity",
+            "Cu-Co: gap 2%, but FCC against HCP: fails crystal structure"
+          ],
+          "answer": "<strong>Pt-Pd</strong> (or Cr-Fe) is the best. Cu-Al fails on valence and electronegativity; Cu-Co fails on crystal structure. Remember the rules are necessary but not sufficient. For an interstitial example, <strong>carbon in iron</strong> (C is far smaller than Fe)."
+        },
+        {
+          "type": "example",
+          "label": "E4 The 8 - N rule",
+          "q": "State the 8 - N rule and give two examples of how it explains structure.",
+          "steps": [
+            "\\(N\\) is the group number (valence electrons). Neighbours \\(=8-N\\)."
+          ],
+          "answer": "Each atom has \\(8-N\\) nearest neighbours. <strong>Iodine (Group VII):</strong> \\(8-7=1\\) neighbour, so it forms diatomic molecules held together by van der Waals forces. <strong>Sulphur (Group VI):</strong> 2 neighbours, so rings (S₈) or chains. Also arsenic (Group V, 3 neighbours, puckered sheets) and carbon, silicon, germanium (Group IV, 4 neighbours, diamond cubic). It fails for Group III."
+        },
+        {
+          "type": "example",
+          "label": "E5 HCP and CCP",
+          "q": "Describe the relationship between hexagonal close packing and cubic close packing, and how CCP relates to the FCC unit cell.",
+          "steps": [
+            "Same layer, different stacking"
+          ],
+          "answer": "Both start with a hexagonally packed layer (each atom has 6 neighbours). The next layer sits in half the dips. <strong>HCP</strong> repeats ABAB: the third layer sits directly above the first. <strong>CCP</strong> repeats ABCABC: the third layer sits over the other set of dips. Both have CN 12 (6 in the layer, 3 above, 3 below) and APF 0.74. CCP <em>is</em> FCC: the close-packed layers lie along the \\(\\{111\\}\\) planes of the FCC cell, perpendicular to the body diagonal."
+        },
+        {
+          "type": "example",
+          "label": "E6 Graphite and primitive cells",
+          "q": "Graphite layers have a honeycomb of carbon atoms. Explain what makes a unit cell primitive, using the layer as an example.",
+          "steps": [
+            "A primitive cell has exactly one lattice point",
+            "The honeycomb is a hexagonal lattice with a <strong>two-atom motif</strong>"
+          ],
+          "answer": "The <strong>rhombus</strong> cell (two lattice vectors at 120°) has one lattice point and contains 2 carbon atoms: primitive. The larger <strong>rectangular</strong> cell has two lattice points and 4 carbon atoms: non-primitive. A primitive cell holds one lattice point, not one atom."
+        },
+        {
+          "type": "h2",
+          "id": "ex-draw",
+          "text": "Drawing and Counting Questions"
+        },
+        {
+          "type": "example",
+          "label": "D1 Direction from two points",
+          "q": "Write the lattice direction of the line from \\((1,0,1)\\) to \\((-1,2,2)\\) in a cubic crystal.",
+          "steps": [
+            "Head minus tail: \\((-1-1,\\ 2-0,\\ 2-1)=(-2,\\ 2,\\ 1)\\)",
+            "No common factor to remove"
+          ],
+          "answer": "<strong>\\([\\bar221]\\)</strong>"
+        },
+        {
+          "type": "example",
+          "label": "D2 Plane from its index",
+          "q": "Draw the plane \\((213)\\) in a cubic cell and state its intercepts.",
+          "steps": [
+            "Intercept \\(=1/\\text{index}\\) on each axis"
+          ],
+          "answer": "Intercepts \\(x=\\tfrac12\\), \\(y=1\\), \\(z=\\tfrac13\\). Mark the three points on the axes (label the origin), join them with a triangle."
+        },
+        {
+          "type": "example",
+          "label": "D3 Planes of a form",
+          "q": "How many planes are in the form \\(\\{110\\}\\) in a cubic crystal? List them.",
+          "steps": [
+            "Permute and flip signs, but count each parallel pair once"
+          ],
+          "answer": "<strong>6:</strong> \\((110)\\), \\((1\\bar10)\\), \\((101)\\), \\((10\\bar1)\\), \\((011)\\), \\((01\\bar1)\\). (For comparison, \\(\\{100\\}\\) has six faces: this is the course's counting, three pairs of parallel faces. In texture lectures the same set is often described as three plane normals.)"
+        },
+        {
+          "type": "example",
+          "label": "D4 Holes in CCP",
+          "q": "In one CCP (FCC) cell, how many packing atoms, octahedral holes and tetrahedral holes are there, and where are the holes?",
+          "steps": [
+            "4 packing atoms",
+            "Octahedral: one at the body centre \\((\\tfrac12,\\tfrac12,\\tfrac12)\\) plus 12 edge-centres (such as \\((0,0,\\tfrac12)\\)), each shared by 4 cells: \\(1+12/4=4\\)",
+            "Tetrahedral: 8 inside the cell at all combinations of \\(\\tfrac14,\\tfrac34\\), such as \\((\\tfrac14,\\tfrac14,\\tfrac14)\\)"
+          ],
+          "answer": "<strong>4 atoms, 4 octahedral, 8 tetrahedral</strong>, i.e. \\(N\\) and \\(2N\\)."
+        },
+        {
+          "type": "h2",
+          "id": "ex-ionic",
+          "text": "Ionic Structure Questions"
+        },
+        {
+          "type": "example",
+          "label": "I1 Radius ratio table",
+          "q": "With \\(r(\\text{O}^{2-})=1.40\\) Å, work out the coordination number and polyhedron for: K⁺ 1.38 Å, Ca²⁺ 1.00 Å, Mg²⁺ 0.72 Å, Zn²⁺ 0.55 Å, Al³⁺ 0.39 Å, B³⁺ 0.25 Å.",
+          "steps": [
+            "Divide each radius by 1.40",
+            "Compare with the limits: 0.155, 0.225, 0.414, 0.732, 1.0"
+          ],
+          "answer": "K⁺ 0.986 → <strong>8, cubic</strong>. Ca²⁺ 0.714 → <strong>6, octahedral</strong>. Mg²⁺ 0.514 → <strong>6, octahedral</strong>. Zn²⁺ 0.393 → <strong>4, tetrahedral</strong>. Al³⁺ 0.279 → <strong>4, tetrahedral</strong>. B³⁺ 0.179 → <strong>3, triangular</strong>."
+        },
+        {
+          "type": "example",
+          "label": "I2 Prove a limit",
+          "q": "Prove that the lower limit of radius ratio for cubic coordination is 0.732.",
+          "steps": [
+            "Draw a cube of edge \\(a\\) with the cation at the centre and anions on the corners",
+            "Cation and anions touch along the body diagonal. Corner centre to opposite corner centre is \\(a\\sqrt3\\), and it holds two anion radii and two cation radii: \\(2r_c+2r_a=a\\sqrt3\\)",
+            "At the lower limit the anions also just touch each other along an edge: \\(2r_a=a\\)",
+            "Divide the first by the second: \\(\\dfrac{r_c+r_a}{r_a}=\\sqrt3\\), so \\(\\dfrac{r_c}{r_a}+1=\\sqrt3\\)"
+          ],
+          "answer": "\\(r_c/r_a=\\sqrt3-1=\\) <strong>0.732</strong>. Always give the sketch, the two touching equations and the division, in that order."
+        },
+        {
+          "type": "example",
+          "label": "I3 Pauling's second rule: rutile",
+          "q": "In rutile (TiO₂), Ti⁴⁺ is surrounded by 6 O²⁻. How many Ti⁴⁺ must surround each O²⁻?",
+          "steps": [
+            "Bond strength of Ti: \\(s=4/6=2/3\\)",
+            "The bonds reaching O²⁻ must add up to its charge: \\(n\\times2/3=2\\)"
+          ],
+          "answer": "\\(n=3\\): each oxygen is bonded to <strong>3 titanium ions</strong>. This is what is observed in rutile."
+        },
+        {
+          "type": "example",
+          "label": "I4 Pauling's second rule: alumina",
+          "q": "In Al₂O₃, Al³⁺ has CN 6. What is the oxygen coordination?",
+          "steps": [
+            "\\(s=3/6=1/2\\)",
+            "\\(n\\times\\tfrac12=2\\)"
+          ],
+          "answer": "\\(n=4\\): each O²⁻ has <strong>4 Al³⁺ neighbours</strong>. Check the ratio: 6 oxygens around each Al and 4 Al around each O gives \\(\\text{Al}:\\text{O}=4:6=2:3\\) ✓."
+        },
+        {
+          "type": "example",
+          "label": "I5 Name the structure",
+          "q": "MgO: \\(r(\\text{Mg}^{2+})=0.72\\) Å, \\(r(\\text{O}^{2-})=1.40\\) Å. Predict the structure and check it with both rules.",
+          "steps": [
+            "Rule 1: \\(0.72/1.40=0.514\\), so octahedral, CN 6",
+            "Rule 2: \\(s=2/6=1/3\\); oxygen needs \\(n/3=2\\), so \\(n=6\\)",
+            "CN 6 for both ions and a 1:1 ratio"
+          ],
+          "answer": "The <strong>NaCl (rock salt)</strong> structure: O²⁻ in an FCC arrangement with Mg²⁺ in all the octahedral holes. This is the same logic as the TiO example in the slides."
+        }
+      ]
+    },
+    {
       "soon": true,
       "numLabel": "Disorder · to come",
       "title": "Disorder topics (added as they are taught)",
@@ -4024,6 +4628,48 @@ window.SITE_CONTENT = {
             }
           ],
           "note": "Contours in multiples of random."
+        },
+        {
+          "type": "formulablock",
+          "name": "Hexagonal four-index notation",
+          "eqs": [
+            "(hkil):\\ i=-(h+k)",
+            "[uvtw]:\\ t=-(u+v)"
+          ],
+          "vars": [
+            {
+              "symbol": "h, k, i",
+              "desc": "plane indices on a1, a2, a3 (i is redundant)"
+            },
+            {
+              "symbol": "l",
+              "desc": "plane index on the c-axis"
+            },
+            {
+              "symbol": "u, v, t, w",
+              "desc": "direction components on a1, a2, a3, c"
+            }
+          ],
+          "note": "Free error check: for planes h+k+i must be 0."
+        },
+        {
+          "type": "formulablock",
+          "name": "Four-index and three-index directions",
+          "eqs": [
+            "U=u-t,\\quad V=v-t,\\quad W=w",
+            "u=\\tfrac13(2U-V),\\quad v=\\tfrac13(2V-U),\\quad t=-(u+v),\\quad w=W"
+          ],
+          "vars": [
+            {
+              "symbol": "[UVW]",
+              "desc": "three-index direction (a1, a2, c)"
+            },
+            {
+              "symbol": "[uvtw]",
+              "desc": "four-index direction"
+            }
+          ],
+          "note": "Multiply by 3 to clear fractions, then divide by the common factor."
         }
       ]
     },
@@ -4389,6 +5035,31 @@ window.SITE_CONTENT = {
           "tag": "W3 · T18",
           "claim": "\"Copper is (90°, 45°, 45°) in Euler space.\"",
           "truth": "<strong>Careful.</strong> The lecture slide gives this, but the geometry of \\(\\{112\\}\\langle111\\rangle\\) requires \\(\\Phi=35.26^\\circ\\). Learn Copper as about (90°, 35°, 45°) and check what the exam paper uses."
+        },
+        {
+          "tag": "W3 · T19",
+          "claim": "\"The plane (1120) is a valid hexagonal plane.\"",
+          "truth": "<strong>FALSE.</strong> The first three indices must satisfy \\(h+k+i=0\\). \\(1+1+2=4\\). The correct plane is \\((11\\bar20)\\)."
+        },
+        {
+          "tag": "W3 · T20",
+          "claim": "\"Directions [100] and [110] in three-index hexagonal notation are different kinds of direction.\"",
+          "truth": "<strong>FALSE.</strong> Both lie along an a-axis. In four-index form they are \\([2\\bar1\\bar10]\\) and \\([11\\bar20]\\), plainly the same family."
+        },
+        {
+          "tag": "W3 · T21",
+          "claim": "\"In a hexagonal crystal, the plane (hkil) is always perpendicular to the direction [hkil].\"",
+          "truth": "<strong>FALSE.</strong> Only for \\((0001)\\), \\((hki0)\\), or when \\(c/a=\\sqrt{3/2}\\approx1.225\\). Ideal hcp has \\(c/a=1.633\\)."
+        },
+        {
+          "tag": "W3 · T22",
+          "claim": "\"The plane (10-10) is a pyramidal plane.\"",
+          "truth": "<strong>FALSE.</strong> It has no \\(c\\) component (\\(l=0\\)), so it is upright and parallel to \\(c\\): a prism plane. Pyramidal planes have \\(l\\ne0\\)."
+        },
+        {
+          "tag": "W3 · T23",
+          "claim": "\"[001] in three-index notation becomes [0003] in four-index notation.\"",
+          "truth": "<strong>MISLEADING.</strong> \\([0003]\\) is the same direction as \\([0001]\\). Always divide through by the common factor."
         }
       ]
     },

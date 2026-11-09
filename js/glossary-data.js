@@ -613,6 +613,26 @@ const glossaryData = {
       [
         "CPFEM",
         "Crystal plasticity finite element modelling: simulates deformation grain by grain using slip and twinning laws"
+      ],
+      [
+        "First-order prism plane",
+        "A prism plane of the type {10-10}: upright, parallel to c, forming a side face of the hexagonal cell"
+      ],
+      [
+        "Second-order prism plane",
+        "A prism plane of the type {11-20}: upright, parallel to c, cutting across the hexagonal cell"
+      ],
+      [
+        "Guide hexagon",
+        "A hexagon drawn with corners 3 unit lengths from the centre, used to draw four-index directions by walking along a1, a2, a3 and c"
+      ],
+      [
+        "a-type direction",
+        "A direction of the form <11-20> in a hexagonal crystal: along an a-axis, within the basal plane, along the closest-packed atom rows"
+      ],
+      [
+        "Four-index to three-index conversion",
+        "U = u - t, V = v - t, W = w; and back with u = (2U - V)/3, v = (2V - U)/3, t = -(u + v), w = W"
       ]
     ]
   },
