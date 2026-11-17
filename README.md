@@ -31,10 +31,14 @@ Study site for EG2036 (Order in Materials) at Swansea University.
   - a symbols guide, 16 worked examples and practice questions
 - Week 3 addition: a hexagonal workshop from Dr Prakash's planes and directions lecture (finding Miller-Bravais indices, drawing four-index directions on a guide hexagon, three-index and four-index conversion, worked examples)
 - Order Exam Practice tab: quiz details, a map of past-paper question types, key numbers, and original worked questions (calculation, explain-it, drawing, ionic). The questions are original, modelled on the past papers; the lecturers' model answers are not reproduced.
-- 41 inline SVG diagrams (generated in the site's dark theme)
-- 7 interactive simulations in `widgets/` (5 3D / plotted, 1 pole-figure tool with cubic and hexagonal modes, 1 radius-ratio explorer)
-- 211 glossary terms with flashcard mode, formula sheet (38 blocks), 65 MCQ trap cards
-- The disorder topics will be added as they are taught
+- Disorder 1: Why Defects Exist, and How We Use Them (Prof Holliman's Lectures 1 and 2, checked against the lecture recordings)
+  - NaCl and HCP alumina drawn in plan view and side view, octahedral and tetrahedral holes, quantised energy levels and photon energy
+  - defect types by dimension, why thermodynamics requires an equilibrium number of defects (ΔG = ΔH − TΔS), NaCl vacancy numbers
+  - sapphire (Fe-Ti charge transfer) and ruby (isolated Cr³⁺), selection rules, the three-level ruby laser, slide errata, 8 practice questions
+- 48 inline SVG diagrams (generated in the site's dark theme)
+- 8 interactive simulations in `widgets/` (5 3D / plotted, 1 pole-figure tool with cubic and hexagonal modes, 1 radius-ratio explorer, 1 defect-equilibrium (Gibbs energy) explorer)
+- 243 glossary terms with flashcard mode, formula sheet (42 blocks), 74 MCQ trap cards
+- Further disorder topics will be added as they are taught
 
 ## Structure
 
@@ -43,14 +47,14 @@ index.html            page shell (loads study-site-core from jsDelivr)
 css/diagrams.css      styling for SVG diagrams and embedded simulations
 js/content-data.js    all site content
 js/glossary-data.js   glossary terms
-widgets/              seven self-contained simulations (embedded as iframes)
+widgets/              eight self-contained simulations (embedded as iframes)
 ```
 
 The simulations resize themselves via `postMessage` (see the listener at the bottom of `index.html`) and pause rendering when off screen. Three.js, OrbitControls and Chart.js load from a CDN.
 
 ## Credits
 
-Five of the simulations are based on animations by **Dr Ashley Willow** (Swansea University, EG-2036 lecturer). They have been restyled to match this site, one broken colour string was fixed, and the physics is unchanged. The Week 3 pole-figure tool (`widgets/pole-figure.html`) and the Week 5 radius-ratio explorer (`widgets/radius-ratio.html`) are original to this site. The lecture content (Dr Willow's Weeks 1 to 5, 2026, shown here as Weeks 1, 2, 4 and 5, and the Week 3 Crystallographic Texture slides by Dr Leo Prakash) belongs to the lecturers, so check with them before making this repository public.
+Five of the simulations are based on animations by **Dr Ashley Willow** (Swansea University, EG-2036 lecturer). They have been restyled to match this site, one broken colour string was fixed, and the physics is unchanged. The Week 3 pole-figure tool (`widgets/pole-figure.html`) the Week 5 radius-ratio explorer (`widgets/radius-ratio.html`) and the Disorder 1 defect-equilibrium explorer (`widgets/defect-equilibrium.html`) are original to this site. The lecture content (Dr Willow's Weeks 1 to 5, 2026, shown here as Weeks 1, 2, 4 and 5, the Week 3 Crystallographic Texture slides by Dr Leo Prakash, and Prof Peter Holliman's Disorder lectures) belongs to the lecturers, so check with them before making this repository public.
 
 ## Part of the MatSciEng hub
 

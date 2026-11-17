@@ -9,7 +9,8 @@ window.SITE_CONFIG = {
     "w3",
     "w4",
     "w5",
-    "ex"
+    "ex",
+    "d1"
   ],
   "navOrder": [
     "home",
@@ -19,6 +20,7 @@ window.SITE_CONFIG = {
     "w4",
     "w5",
     "ex",
+    "d1",
     "formulas",
     "glossary",
     "traps"
@@ -29,7 +31,8 @@ window.SITE_CONFIG = {
     "w3": "#8855f5",
     "w4": "#d4609a",
     "w5": "#4a90e2",
-    "ex": "#e9c46a"
+    "ex": "#e9c46a",
+    "d1": "#2fa15c"
   },
   "topicLabels": {
     "w1": "Crystal Structures",
@@ -37,7 +40,8 @@ window.SITE_CONFIG = {
     "w3": "Crystallographic Texture",
     "w4": "Densities and Holes",
     "w5": "Solutions, Covalent, Ionic",
-    "ex": "Order Exam Practice"
+    "ex": "Order Exam Practice",
+    "d1": "Disorder 1: Defects"
   }
 };
 
@@ -45,26 +49,26 @@ window.SITE_CONTENT = {
   "home": {
     "tag": "Order in Materials · Swansea University",
     "title": "EG2036 Study Site",
-    "subtitle": "How atoms arrange themselves in solids and why it matters: bonding, lattices, unit cells, crystal systems, directions and planes, close packing and packing factors, linear, planar and theoretical density, interstitial holes, how crystal orientation (texture) builds up when metals are deformed, solid solutions and alloys, covalent structures and polymorphism, and ionic structures with Pauling's rules. Includes exam-style practice for the Order quiz. Built out week by week as lectures run, with interactive simulations for the ideas that are easier to see than to read.",
+    "subtitle": "How atoms arrange themselves in solids and why it matters: bonding, lattices, unit cells, crystal systems, directions and planes, close packing and packing factors, linear, planar and theoretical density, interstitial holes, how crystal orientation (texture) builds up when metals are deformed, solid solutions and alloys, covalent structures and polymorphism, and ionic structures with Pauling's rules. Disorder has started: why every crystal must contain defects, how sapphire and ruby get their colour, and how a ruby laser works. Includes exam-style practice for the Order quiz. Built out week by week as lectures run, with interactive simulations for the ideas that are easier to see than to read.",
     "stats": [
       {
-        "value": "5",
-        "label": "Weeks built"
+        "value": "7",
+        "label": "Topics built"
       },
       {
-        "value": "7",
+        "value": "8",
         "label": "Simulations"
       },
       {
-        "value": "211",
+        "value": "243",
         "label": "Terms"
       },
       {
-        "value": "38",
+        "value": "42",
         "label": "Formulas"
       },
       {
-        "value": "65",
+        "value": "74",
         "label": "Exam Traps"
       }
     ],
@@ -83,7 +87,7 @@ window.SITE_CONTENT = {
       },
       {
         "type": "raw",
-        "html": "<div class=\"card-grid\"><div class=\"topic-card\" onclick=\"showSection('formulas')\" style=\"--bar-color:#0ea5c6\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">📐 Formula Sheet</div><div class=\"topic-desc\">Every equation so far, with variables defined.</div></div><div class=\"topic-card\" onclick=\"showSection('glossary')\" style=\"--bar-color:#2fa15c\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">📚 Glossary</div><div class=\"topic-desc\">211 terms from Weeks 1 to 5. Search, filter, and flashcard mode.</div></div><div class=\"topic-card\" onclick=\"showSection('traps')\" style=\"--bar-color:#e04545\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">⚠️ MCQ Traps</div><div class=\"topic-desc\">Plausible-but-wrong claims the exam uses.</div></div></div>"
+        "html": "<div class=\"card-grid\"><div class=\"topic-card\" onclick=\"showSection('formulas')\" style=\"--bar-color:#0ea5c6\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">📐 Formula Sheet</div><div class=\"topic-desc\">Every equation so far, with variables defined.</div></div><div class=\"topic-card\" onclick=\"showSection('glossary')\" style=\"--bar-color:#2fa15c\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">📚 Glossary</div><div class=\"topic-desc\">243 terms from Order Weeks 1 to 5 and Disorder 1. Search, filter, and flashcard mode.</div></div><div class=\"topic-card\" onclick=\"showSection('traps')\" style=\"--bar-color:#e04545\"><div class=\"topic-num\">Reference</div><div class=\"topic-title\">⚠️ MCQ Traps</div><div class=\"topic-desc\">Plausible-but-wrong claims the exam uses.</div></div></div>"
       }
     ]
   },
@@ -3360,7 +3364,7 @@ window.SITE_CONTENT = {
           "type": "conceptbox",
           "variant": "",
           "title": "Symbols you will see this week",
-          "html": "<p>If a formula looks like alphabet soup, come back to this table.</p>[object Object]<p>Atoms touch along one particular line, and that line is how \\(R\\) is linked to \\(a\\). Along it you cross half an atom, a whole atom and half an atom, which is \\(R+2R+R=4R\\). In BCC that line is the body diagonal, so \\(4R=\\sqrt3\\,a\\). In FCC it is the face diagonal, so \\(4R=\\sqrt2\\,a\\).</p>"
+          "html": "<p>If a formula looks like alphabet soup, come back to this table.</p><div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Symbol</th><th>Meaning</th></tr></thead><tbody><tr><td>\\(a\\)</td><td>Lattice parameter: the edge length of the cubic unit cell</td></tr><tr><td>\\(c\\)</td><td>The height of a hexagonal (HCP) cell</td></tr><tr><td>\\(R\\)</td><td>Radius of a host atom, or of the large anion in an ionic crystal</td></tr><tr><td>\\(r\\)</td><td>Radius of a small atom sitting in a hole (an interstitial), or of the cation</td></tr><tr><td>\\(r_c,\\ r_a\\)</td><td>Cation and anion radius in ionic structures; the radius ratio is \\(r_c/r_a\\)</td></tr><tr><td>\\(\\sqrt2\\,a\\)</td><td>Length of a face diagonal of a cube (the FCC touching line)</td></tr><tr><td>\\(\\sqrt3\\,a\\)</td><td>Length of the body diagonal of a cube (the BCC touching line)</td></tr><tr><td>CN</td><td>Coordination number: how many nearest neighbours an atom or ion has</td></tr><tr><td>\\(n,\\ A,\\ V_c,\\ N_A\\)</td><td>Atoms per cell, atomic weight, cell volume and Avogadro's number (density formula)</td></tr></tbody></table></div><p>Atoms touch along one particular line, and that line is how \\(R\\) is linked to \\(a\\). Along it you cross half an atom, a whole atom and half an atom, which is \\(R+2R+R=4R\\). In BCC that line is the body diagonal, so \\(4R=\\sqrt3\\,a\\). In FCC it is the face diagonal, so \\(4R=\\sqrt2\\,a\\).</p>"
         },
         {
           "type": "conceptbox",
@@ -4322,10 +4326,630 @@ window.SITE_CONTENT = {
       ]
     },
     {
+      "id": "d1",
+      "numLabel": "Disorder 1",
+      "title": "Why Defects Exist, and How We Use Them",
+      "subtitle": "Prof Holliman's Lectures 1 and 2. Every real crystal contains defects because thermodynamics requires them. This topic covers the order you need first (NaCl and HCP drawn in plan view), the energy levels behind colour, the \\(\\Delta G = \\Delta H - T\\Delta S\\) argument for an equilibrium number of defects, and the first positive defects: blue sapphire, ruby and the ruby laser. Checked against the lecture recordings.",
+      "essentialsTitle": "Disorder 1 essentials",
+      "essentialsHeading": "Lectures 1 and 2 in one screen",
+      "essentials": [
+        "<strong>Three kinds of disorder:</strong> structural (atoms in the wrong place), electrical (charge movement, band theory), optical (electrons moving between quantised levels). Theme: <strong>understanding = control</strong>.",
+        "<strong>NaCl:</strong> Cl⁻ (175 pm) is the FCC host; Na⁺ (116 pm) fills every octahedral hole. Layers: Cl⁻ 5, 4, 5 and Na⁺ 4, 5, 4. Tetrahedral holes at z = 0.25 and 0.75 are empty.",
+        "<strong>Octahedral hole:</strong> 6 neighbours, 8 faces. <strong>Tetrahedral:</strong> 4 neighbours, 4 faces. Anions are usually the host because they are bigger.",
+        "<strong>Photon energy:</strong> \\(\\Delta E = h\\nu = hc/\\lambda\\); \\(E(\\text{eV}) \\approx 1240/\\lambda(\\text{nm})\\). Hydrogen: 656 nm (red, smallest jump), 410 nm (violet, biggest).",
+        "<strong>Defects by dimension:</strong> 0-D point (vacancy, substitutional, interstitial), 1-D line (dislocations), 2-D planar (grain boundaries, interfaces, surfaces).",
+        "<strong>\\(\\Delta G = \\Delta H - T\\Delta S\\):</strong> vacancies raise \\(\\Delta H\\) (lost bonds) and lower \\(-T\\Delta S\\) (disorder, steepest at the start). The sum has a minimum: the <strong>equilibrium number of defects</strong>. Hotter means more defects. Stronger lattice means fewer. NaCl (757 kJ/mol): about 10,000 vacancies per mole at room temperature.",
+        "<strong>Alumina:</strong> HCP O²⁻ with Al³⁺ in two-thirds of the octahedral holes. Very hard (9 Mohs), colourless because of its large band gap.",
+        "<strong>Sapphire:</strong> Fe²⁺ + Ti⁴⁺ on neighbouring sites → Fe³⁺ + Ti³⁺. Allowed charge transfer, absorbs yellow, looks blue at only 0.01%. <strong>Ruby:</strong> isolated Cr³⁺, d-d transition, forbidden (made weakly possible by vibrations), needs about 1% Cr.",
+        "<strong>Selection rule:</strong> \\(\\Delta l = \\pm 1\\). s→p and p→d allowed; s→s, p→p, d→d forbidden.",
+        "<strong>Ruby laser:</strong> pump E₁→E₃ (Xe lamp), fast drop to metastable E₂ (~10⁻⁸ s vs ~3 ms), population inversion, stimulated emission at 694 nm. Coherent: one wavelength, parallel, in phase. Needs about 0.05% Cr so the ions stay isolated."
+      ],
+      "desc": "Prof Holliman, Lectures 1 and 2: NaCl and HCP drawn in plan view, quantised energy levels, defect types, why thermodynamics requires defects, sapphire and ruby colour, and the ruby laser.",
+      "difficulty": "Medium",
+      "readTime": "45 min",
+      "color": "#2fa15c",
+      "sections": [
+        {
+          "type": "toc",
+          "title": "This topic",
+          "items": [
+            {
+              "href": "#d1-idea",
+              "label": "The one idea: every crystal has defects, so use them"
+            },
+            {
+              "href": "#d1-order",
+              "label": "Order first: drawing NaCl and its holes"
+            },
+            {
+              "href": "#d1-atoms",
+              "label": "Atoms, bonds and quantised energy levels"
+            },
+            {
+              "href": "#d1-types",
+              "label": "Types of defect"
+            },
+            {
+              "href": "#d1-thermo",
+              "label": "Why defects must exist: ΔG = ΔH − TΔS"
+            },
+            {
+              "href": "#d1-alumina",
+              "label": "Alumina: a hard host for useful defects"
+            },
+            {
+              "href": "#d1-gems",
+              "label": "Sapphire and ruby: colour from defects"
+            },
+            {
+              "href": "#d1-laser",
+              "label": "The ruby laser"
+            },
+            {
+              "href": "#d1-slides",
+              "label": "Check against your slides"
+            },
+            {
+              "href": "#d1-practice",
+              "label": "Test yourself"
+            }
+          ]
+        },
+        {
+          "type": "h2",
+          "id": "d1-idea",
+          "text": "The One Idea: Every Crystal Has Defects, So Use Them"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"analogy\"><span class=\"analogy-icon\">🦆</span><div class=\"analogy-text\"><strong>A row of yellow rubber ducks with one blue duck.</strong> The yellow ducks are <em>order</em>. The blue one is <em>disorder</em>. Holliman opens the course with pictures like this because the odd one out is where the interesting behaviour comes from. A tiny fraction of the \"wrong\" atoms can change a material's colour, conductivity or strength. Disorder is a tool in your toolbox, not just a flaw.</div></div>"
+        },
+        {
+          "type": "cardgrid",
+          "cards": [
+            {
+              "title": "Structural disorder",
+              "color": "#0ea5c6",
+              "text": "Atoms missing, extra or in the wrong place. Needs bonding, crystal structures and the Periodic Table. Covered in lectures and in a <strong>PC-lab problem-solving session on metals</strong>."
+            },
+            {
+              "title": "Electrical disorder",
+              "color": "#f4a261",
+              "text": "How defects change the way charge moves. This opens up advanced materials: solid-state batteries, solar cells. Needs <strong>band theory</strong> (Lecture 3)."
+            },
+            {
+              "title": "Optical defects",
+              "color": "#2fa15c",
+              "text": "Energy moving between <strong>quantised energy levels</strong>: colour, fluorescence, lasers. The aim is usually higher efficiency."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The theme running through every lecture is <strong>understanding = control</strong>. Without understanding you guess, try something, try something else, and hope. With it you go from where you are to where you want to be, ideally in one step.",
+          "class": ""
+        },
+        {
+          "type": "conceptbox",
+          "variant": "note",
+          "title": "How this part of the exam works (from Lecture 1)",
+          "html": "<ul><li><strong>Past papers are filed under EG-290</strong>, the module's old code. The disorder content is the same.</li><li>You may take <strong>two A4 sheets of notes</strong> (four sides) into the exam. Holliman's advice: write only what you <em>can't</em> remember. Building the sheet is revision in itself.</li><li>Expect <strong>\"draw a labelled diagram to explain...\"</strong> questions. His rule: if he can draw it on the projector, you can draw it in the exam. Practise until the structures come out without thinking, like a bobsledder rehearsing every bend of the run.</li><li>Projector notes are scanned onto Canvas after each lecture, along with the recordings, questions and a practice quiz.</li></ul>"
+        },
+        {
+          "type": "h2",
+          "id": "d1-order",
+          "text": "Order First: Drawing NaCl and Its Holes"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"analogy\"><span class=\"analogy-icon\">⚽</span><div class=\"analogy-text\"><strong>Fill a lecture room with footballs, then throw in tennis balls.</strong> The footballs pack the floor and leave gaps. The tennis balls drop into the gaps. The footballs are the large <strong>host anions</strong>. The tennis balls are the smaller <strong>cations</strong> in the <strong>octahedral holes</strong>. Golf balls would fit the even smaller <strong>tetrahedral holes</strong>. \"You have to understand order to understand disorder\": later lectures move ions in and out of these exact positions.</div></div>"
+        },
+        {
+          "type": "p",
+          "text": "NaCl is the first worked structure. <strong>Cl⁻ (175 pm)</strong> forms a face-centred cubic host lattice and <strong>Na⁺ (116 pm)</strong> fills <strong>all</strong> of its octahedral holes. The anion is usually the host because anions are usually larger. That holds for most of the course; a few examples near the end reverse it.",
+          "class": ""
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 330\" role=\"img\" aria-label=\"Plan view of the NaCl unit cell in three layers: z = 0 and 1, z = 0.5, and the tetrahedral holes at z = 0.25 and 0.75\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"10\" y=\"10\" width=\"760\" height=\"310\" rx=\"8\" class=\"dg-frame\"/><rect x=\"60\" y=\"80\" width=\"160\" height=\"160\" class=\"dg-edge\"/><text x=\"140\" y=\"58\" class=\"dg-tb\" text-anchor=\"middle\">z = 0 and z = 1</text><circle cx=\"60\" cy=\"80\" r=\"15\" class=\"dg-atomG\"/><circle cx=\"220\" cy=\"80\" r=\"15\" class=\"dg-atomG\"/><circle cx=\"60\" cy=\"240\" r=\"15\" class=\"dg-atomG\"/><circle cx=\"220\" cy=\"240\" r=\"15\" class=\"dg-atomG\"/><circle cx=\"140\" cy=\"160\" r=\"15\" class=\"dg-atomG\"/><circle cx=\"140\" cy=\"80\" r=\"9\" class=\"dg-atomB\"/><circle cx=\"60\" cy=\"160\" r=\"9\" class=\"dg-atomB\"/><circle cx=\"220\" cy=\"160\" r=\"9\" class=\"dg-atomB\"/><circle cx=\"140\" cy=\"240\" r=\"9\" class=\"dg-atomB\"/><rect x=\"310\" y=\"80\" width=\"160\" height=\"160\" class=\"dg-edge\"/><text x=\"390\" y=\"58\" class=\"dg-tb\" text-anchor=\"middle\">z = 0.5</text><circle cx=\"390\" cy=\"80\" r=\"15\" class=\"dg-atomG\"/><circle cx=\"310\" cy=\"160\" r=\"15\" class=\"dg-atomG\"/><circle cx=\"470\" cy=\"160\" r=\"15\" class=\"dg-atomG\"/><circle cx=\"390\" cy=\"240\" r=\"15\" class=\"dg-atomG\"/><circle cx=\"310\" cy=\"80\" r=\"9\" class=\"dg-atomB\"/><circle cx=\"470\" cy=\"80\" r=\"9\" class=\"dg-atomB\"/><circle cx=\"310\" cy=\"240\" r=\"9\" class=\"dg-atomB\"/><circle cx=\"470\" cy=\"240\" r=\"9\" class=\"dg-atomB\"/><circle cx=\"390\" cy=\"160\" r=\"9\" class=\"dg-atomB\"/><rect x=\"560\" y=\"80\" width=\"160\" height=\"160\" class=\"dg-edge\"/><text x=\"640\" y=\"58\" class=\"dg-tb\" text-anchor=\"middle\">z = 0.25 and 0.75</text><circle cx=\"560\" cy=\"80\" r=\"15\" class=\"dg-atomG dg-dim\"/><circle cx=\"720\" cy=\"80\" r=\"15\" class=\"dg-atomG dg-dim\"/><circle cx=\"560\" cy=\"240\" r=\"15\" class=\"dg-atomG dg-dim\"/><circle cx=\"720\" cy=\"240\" r=\"15\" class=\"dg-atomG dg-dim\"/><circle cx=\"640\" cy=\"160\" r=\"15\" class=\"dg-atomG dg-dim\"/><circle cx=\"600\" cy=\"120\" r=\"6\" class=\"dg-atomP\"/><circle cx=\"680\" cy=\"120\" r=\"6\" class=\"dg-atomP\"/><circle cx=\"600\" cy=\"200\" r=\"6\" class=\"dg-atomP\"/><circle cx=\"680\" cy=\"200\" r=\"6\" class=\"dg-atomP\"/><text x=\"140\" y=\"272\" class=\"dg-t\" text-anchor=\"middle\">Cl⁻: 5 in this layer, Na⁺: 4</text><text x=\"390\" y=\"272\" class=\"dg-t\" text-anchor=\"middle\">Cl⁻: 4 in this layer, Na⁺: 5</text><text x=\"640\" y=\"272\" class=\"dg-t\" text-anchor=\"middle\">8 tetrahedral holes, empty in NaCl</text><circle cx=\"110\" cy=\"302\" r=\"9\" class=\"dg-atomG\"/><text x=\"126\" y=\"307\" class=\"dg-t\" text-anchor=\"start\">Cl⁻ host lattice (footballs)</text><circle cx=\"345\" cy=\"302\" r=\"6\" class=\"dg-atomB\"/><text x=\"357\" y=\"307\" class=\"dg-t\" text-anchor=\"start\">Na⁺ in octahedral holes (tennis balls)</text><circle cx=\"600\" cy=\"302\" r=\"4.5\" class=\"dg-atomP\"/><text x=\"610\" y=\"307\" class=\"dg-t\" text-anchor=\"start\">tetrahedral (golf balls)</text></svg><div class=\"diagram-caption\">Plan view looks straight down the z axis. Read the layers as 5, 4, 5 for Cl⁻ and 4, 5, 4 for Na⁺ going up the cell.</div></div>"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Drawing the 3D cube:</strong> put Cl⁻ at 5 positions on the top face, 4 in the middle layer (the side face centres) and 5 on the bottom. Na⁺ goes 4, 5, 4: edge midpoints top and bottom, and the four vertical edges plus the body centre in the middle.",
+            "<strong>Plan view</strong> shows the same cell as layers at z = 0, 0.5 and 1. Holliman calls showing a 3D structure in 2D one of the most important skills in the course. Either drawing is accepted in the exam.",
+            "<strong>Hole counts in one FCC cell:</strong> 4 host atoms, 4 octahedral holes, 8 tetrahedral holes.",
+            "<strong>Shape follows structure:</strong> salt crystals are cubes because the unit cell is cubic. Stack the \"Lego\" cells and you get a cube. HCP materials grow as hexagons for the same reason."
+          ]
+        },
+        {
+          "type": "conceptbox",
+          "variant": "",
+          "title": "Why is an octahedral hole called octahedral?",
+          "html": "<p>It has <strong>6</strong> neighbours, so \"octa\" (8) looks wrong. The name counts <strong>faces</strong>, not neighbours. Join the 6 surrounding atoms and you get 4 triangular faces above the middle plane and 4 below: 4 + 4 = 8, an octahedron. A tetrahedral hole has 4 neighbours and 4 faces.</p>"
+        },
+        {
+          "type": "example",
+          "label": "Worked example: do Na⁺ ions belong in octahedral holes?",
+          "q": "Use the radii from the slides, Na⁺ = 116 pm and Cl⁻ = 175 pm, and the radius-ratio limits from Week 5.",
+          "steps": [
+            "Ratio \\(= r_c / r_a = 116/175 = 0.66\\)",
+            "Octahedral needs about 0.414 to 0.732; tetrahedral is 0.225 to 0.414",
+            "0.66 sits in the octahedral range"
+          ],
+          "answer": "<strong>Yes.</strong> 6:6 coordination, each Na⁺ surrounded by 6 Cl⁻ and vice versa."
+        },
+        {
+          "type": "h2",
+          "id": "d1-atoms",
+          "text": "Atoms, Bonds and Quantised Energy Levels"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"analogy\"><span class=\"analogy-icon\">🏟️</span><div class=\"analogy-text\"><strong>A pea on the centre spot of Wembley Stadium.</strong> If the nucleus were the pea, the electrons would be out at the edges of the stands. The pea holds about 99.9% of the mass; the rest is mostly empty space. Holding that together takes enormous forces, which is why splitting a nucleus releases so much energy (\\(E = mc^2\\), with \\(c^2 = 9 \\times 10^{16}\\ \\text{m}^2\\text{s}^{-2}\\)). For a materials engineer the important part is the <strong>outer electrons</strong>: they do the bonding, and they are what colour, conduction and lasers act on.</div></div>"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Bond</th><th>What the electrons do</th><th>Mechanical behaviour</th></tr></thead><tbody><tr><td>Ionic</td><td>Transferred, giving rows of + and − ions</td><td><strong>Brittle</strong> (ceramics, NaCl). Hit it, a row shifts, like charges line up and repel, and it splits</td></tr><tr><td>Metallic</td><td>A delocalised sea around positive ion cores</td><td><strong>Plastic</strong>: atoms slide past each other without breaking bonds, so metal can be bent into tubes and chairs</td></tr><tr><td>Covalent</td><td>Shared between neighbours</td><td><strong>Either</strong>: diamond is very hard, polymers are plastic. The difference is the forces between molecules</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "p",
+          "text": "Holliman trims the Periodic Table to a \"materials engineering\" version: drop the synthetic elements (half-lives of milliseconds) and the noble gases. He keeps the fissile actinides (Th, U, Pu) because many engineers end up in nuclear. Uranium is the heaviest element that occurs naturally; plutonium has to be made in a reactor.",
+          "class": ""
+        },
+        {
+          "type": "h3",
+          "text": "Quantised energy levels"
+        },
+        {
+          "type": "p",
+          "text": "Electrons can only sit on fixed energy levels. <strong>Every atom has every energy level</strong>; most are just empty. That empty \"space\" is what an electron can jump into, and creating it on purpose comes up again and again in the course.",
+          "class": ""
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 300\" role=\"img\" aria-label=\"Energy level diagrams: absorbing a photon lifts an electron from E1 to E3; dropping back emits a photon\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"10\" y=\"10\" width=\"760\" height=\"280\" rx=\"8\" class=\"dg-frame\"/><text x=\"200\" y=\"48\" class=\"dg-tb-acc\" text-anchor=\"middle\">Absorption (excitation)</text><line x1=\"80\" y1=\"250\" x2=\"320\" y2=\"250\" class=\"dg-edge\"/><text x=\"336\" y=\"255\" class=\"dg-vl-mut\" text-anchor=\"middle\">E₁</text><line x1=\"80\" y1=\"175\" x2=\"320\" y2=\"175\" class=\"dg-edge\"/><text x=\"336\" y=\"180\" class=\"dg-vl-mut\" text-anchor=\"middle\">E₂</text><line x1=\"80\" y1=\"95\" x2=\"320\" y2=\"95\" class=\"dg-edge\"/><text x=\"336\" y=\"100\" class=\"dg-vl-mut\" text-anchor=\"middle\">E₃</text><line x1=\"200\" y1=\"247\" x2=\"200\" y2=\"112\" stroke=\"#0ea5c6\" stroke-width=\"2.6\"/><polygon points=\"200,102 194.5,112 205.5,112\" fill=\"#0ea5c6\"/><circle cx=\"200\" cy=\"250\" r=\"7\" class=\"dg-atomB dg-dim\"/><circle cx=\"200\" cy=\"95\" r=\"7\" class=\"dg-atomB\"/><line x1=\"110\" y1=\"140\" x2=\"165.4\" y2=\"157.1\" stroke=\"#f4a261\" stroke-width=\"2\" stroke-dasharray=\"5 4\"/><polygon points=\"175,160 167.1,151.8 163.8,162.3\" fill=\"#f4a261\"/><text x=\"100\" y=\"132\" class=\"dg-tb-amb\" text-anchor=\"end\">photon in, hν</text><text x=\"200\" y=\"282\" class=\"dg-t\" text-anchor=\"middle\">only a photon whose energy equals the gap is absorbed</text><text x=\"580\" y=\"48\" class=\"dg-tb-red\" text-anchor=\"middle\">Emission (de-excitation)</text><line x1=\"460\" y1=\"250\" x2=\"700\" y2=\"250\" class=\"dg-edge\"/><text x=\"716\" y=\"255\" class=\"dg-vl-mut\" text-anchor=\"middle\">E₁</text><line x1=\"460\" y1=\"175\" x2=\"700\" y2=\"175\" class=\"dg-edge\"/><text x=\"716\" y=\"180\" class=\"dg-vl-mut\" text-anchor=\"middle\">E₂</text><line x1=\"460\" y1=\"95\" x2=\"700\" y2=\"95\" class=\"dg-edge\"/><text x=\"716\" y=\"100\" class=\"dg-vl-mut\" text-anchor=\"middle\">E₃</text><line x1=\"580\" y1=\"98\" x2=\"580\" y2=\"233\" stroke=\"#e63946\" stroke-width=\"2.6\"/><polygon points=\"580,243 585.5,233 574.5,233\" fill=\"#e63946\"/><circle cx=\"580\" cy=\"95\" r=\"7\" class=\"dg-atomB dg-dim\"/><circle cx=\"580\" cy=\"250\" r=\"7\" class=\"dg-atomB\"/><line x1=\"605\" y1=\"150\" x2=\"670.5\" y2=\"128.2\" stroke=\"#f4a261\" stroke-width=\"2\" stroke-dasharray=\"5 4\"/><polygon points=\"680,125 668.8,122.9 672.3,133.4\" fill=\"#f4a261\"/><text x=\"690\" y=\"120\" class=\"dg-tb-amb\" text-anchor=\"start\">photon out, hν</text><text x=\"580\" y=\"282\" class=\"dg-t\" text-anchor=\"middle\">the photon carries away exactly the gap energy</text><text x=\"40\" y=\"180\" class=\"dg-t\" text-anchor=\"middle\" transform=\"rotate(-90 40 180)\">energy ↑</text></svg><div class=\"diagram-caption\">Light in, light out: the gaps are fixed, so each element absorbs and emits its own set of wavelengths.</div></div>"
+        },
+        {
+          "type": "formulablock",
+          "name": "Photon energy",
+          "eqs": [
+            "\\Delta E = h\\nu = \\frac{hc}{\\lambda}",
+            "E\\,(\\text{eV}) \\approx \\frac{1240}{\\lambda\\,(\\text{nm})}"
+          ],
+          "vars": [
+            {
+              "symbol": "h",
+              "desc": "Planck constant, \\(6.63 \\times 10^{-34}\\) J s"
+            },
+            {
+              "symbol": "ν",
+              "desc": "frequency of the light"
+            },
+            {
+              "symbol": "c",
+              "desc": "speed of light, \\(3.00 \\times 10^{8}\\) m/s"
+            },
+            {
+              "symbol": "λ",
+              "desc": "wavelength"
+            }
+          ],
+          "note": "Bigger gap, higher energy, shorter wavelength (towards violet and UV)."
+        },
+        {
+          "type": "example",
+          "label": "Worked example: hydrogen's red and violet lines",
+          "q": "Holliman says to learn which way round the hydrogen lines go. Find the photon energies of the 656 nm and 410 nm lines.",
+          "steps": [
+            "656 nm: \\(E \\approx 1240/656 = 1.89\\) eV",
+            "410 nm: \\(E \\approx 1240/410 = 3.02\\) eV"
+          ],
+          "answer": "<strong>656 nm (red) is the smallest jump; 410 nm (violet) is the biggest.</strong> Absorption and emission lines sit at the same wavelengths because they are the same gaps."
+        },
+        {
+          "type": "p",
+          "text": "<strong>Supernova 1987A:</strong> 168,000 light-years away, so its light left 168,000 years ago. Hubble's STIS spectrograph splits the light of the rings around it by wavelength, and each element shows up as its own set of rings: sulphur in a double red pair, nitrogen and hydrogen in triple orange rings, oxygen in a single green ring. Because the levels are fixed, light alone tells you the composition.",
+          "class": ""
+        },
+        {
+          "type": "h2",
+          "id": "d1-types",
+          "text": "Types of Defect"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Dimension</th><th>Type</th><th>Examples</th></tr></thead><tbody><tr><td>0-D</td><td>Point defects</td><td>Vacancies, substituted (impurity or dopant) atoms, interstitials</td></tr><tr><td>1-D</td><td>Line defects</td><td>Dislocations (edge, screw), covered in Defects in Metals II</td></tr><tr><td>2-D</td><td>Planar defects</td><td>Grain boundaries, interfaces, surfaces</td></tr><tr><td>3-D</td><td>Volume defects</td><td>Named in the course structure (voids, precipitates)</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 300\" role=\"img\" aria-label=\"Four panels: a vacancy, a substituted atom, an interstitial atom, and a grain boundary between two crystals\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"10\" y=\"10\" width=\"760\" height=\"280\" rx=\"8\" class=\"dg-frame\"/><text x=\"105\" y=\"50\" class=\"dg-tb\" text-anchor=\"middle\">Vacancy</text><text x=\"105\" y=\"68\" class=\"dg-cap\" text-anchor=\"middle\">0-D defect</text><circle cx=\"45\" cy=\"100\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"45\" cy=\"130\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"45\" cy=\"160\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"45\" cy=\"190\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"45\" cy=\"220\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"75\" cy=\"100\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"75\" cy=\"130\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"75\" cy=\"160\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"75\" cy=\"190\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"75\" cy=\"220\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"105\" cy=\"100\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"105\" cy=\"130\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"105\" cy=\"160\" r=\"12\" fill=\"none\" stroke=\"#8c8c9c\" stroke-width=\"1.6\" stroke-dasharray=\"4 3\"/><circle cx=\"105\" cy=\"190\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"105\" cy=\"220\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"135\" cy=\"100\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"135\" cy=\"130\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"135\" cy=\"160\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"135\" cy=\"190\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"135\" cy=\"220\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"165\" cy=\"100\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"165\" cy=\"130\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"165\" cy=\"160\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"165\" cy=\"190\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"165\" cy=\"220\" r=\"12\" class=\"dg-atomA\"/><text x=\"290\" y=\"50\" class=\"dg-tb\" text-anchor=\"middle\">Substitutional</text><text x=\"290\" y=\"68\" class=\"dg-cap\" text-anchor=\"middle\">0-D defect</text><circle cx=\"230\" cy=\"100\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"230\" cy=\"130\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"230\" cy=\"160\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"230\" cy=\"190\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"230\" cy=\"220\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"260\" cy=\"100\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"260\" cy=\"130\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"260\" cy=\"160\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"260\" cy=\"190\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"260\" cy=\"220\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"290\" cy=\"100\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"290\" cy=\"130\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"290\" cy=\"160\" r=\"14\" class=\"dg-atomR\"/><circle cx=\"290\" cy=\"190\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"290\" cy=\"220\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"320\" cy=\"100\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"320\" cy=\"130\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"320\" cy=\"160\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"320\" cy=\"190\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"320\" cy=\"220\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"350\" cy=\"100\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"350\" cy=\"130\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"350\" cy=\"160\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"350\" cy=\"190\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"350\" cy=\"220\" r=\"12\" class=\"dg-atomA\"/><text x=\"475\" y=\"50\" class=\"dg-tb\" text-anchor=\"middle\">Interstitial</text><text x=\"475\" y=\"68\" class=\"dg-cap\" text-anchor=\"middle\">0-D defect</text><circle cx=\"415\" cy=\"100\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"415\" cy=\"130\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"415\" cy=\"160\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"415\" cy=\"190\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"415\" cy=\"220\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"445\" cy=\"100\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"445\" cy=\"130\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"445\" cy=\"160\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"445\" cy=\"190\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"445\" cy=\"220\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"475\" cy=\"100\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"475\" cy=\"130\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"475\" cy=\"160\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"475\" cy=\"190\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"475\" cy=\"220\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"505\" cy=\"100\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"505\" cy=\"130\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"505\" cy=\"160\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"505\" cy=\"190\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"505\" cy=\"220\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"535\" cy=\"100\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"535\" cy=\"130\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"535\" cy=\"160\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"535\" cy=\"190\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"535\" cy=\"220\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"490\" cy=\"145\" r=\"6\" class=\"dg-atomB\"/><text x=\"660\" y=\"50\" class=\"dg-tb\" text-anchor=\"middle\">Grain boundary</text><text x=\"660\" y=\"68\" class=\"dg-cap\" text-anchor=\"middle\">2-D defect</text><defs><clipPath id=\"d1gbL\"><rect x=\"585\" y=\"85\" width=\"74\" height=\"150\"/></clipPath><clipPath id=\"d1gbR\"><rect x=\"665\" y=\"85\" width=\"74\" height=\"150\"/></clipPath></defs><g clip-path=\"url(#d1gbL)\"><circle cx=\"540\" cy=\"40\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"540\" cy=\"70\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"540\" cy=\"100\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"540\" cy=\"130\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"540\" cy=\"160\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"540\" cy=\"190\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"540\" cy=\"220\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"540\" cy=\"250\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"540\" cy=\"280\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"540\" cy=\"310\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"570\" cy=\"40\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"570\" cy=\"70\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"570\" cy=\"100\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"570\" cy=\"130\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"570\" cy=\"160\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"570\" cy=\"190\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"570\" cy=\"220\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"570\" cy=\"250\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"570\" cy=\"280\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"570\" cy=\"310\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"600\" cy=\"40\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"600\" cy=\"70\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"600\" cy=\"100\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"600\" cy=\"130\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"600\" cy=\"160\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"600\" cy=\"190\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"600\" cy=\"220\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"600\" cy=\"250\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"600\" cy=\"280\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"600\" cy=\"310\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"630\" cy=\"40\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"630\" cy=\"70\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"630\" cy=\"100\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"630\" cy=\"130\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"630\" cy=\"160\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"630\" cy=\"190\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"630\" cy=\"220\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"630\" cy=\"250\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"630\" cy=\"280\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"630\" cy=\"310\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"660\" cy=\"40\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"660\" cy=\"70\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"660\" cy=\"100\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"660\" cy=\"130\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"660\" cy=\"160\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"660\" cy=\"190\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"660\" cy=\"220\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"660\" cy=\"250\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"660\" cy=\"280\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"660\" cy=\"310\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"690\" cy=\"40\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"690\" cy=\"70\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"690\" cy=\"100\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"690\" cy=\"130\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"690\" cy=\"160\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"690\" cy=\"190\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"690\" cy=\"220\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"690\" cy=\"250\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"690\" cy=\"280\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"690\" cy=\"310\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"720\" cy=\"40\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"720\" cy=\"70\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"720\" cy=\"100\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"720\" cy=\"130\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"720\" cy=\"160\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"720\" cy=\"190\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"720\" cy=\"220\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"720\" cy=\"250\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"720\" cy=\"280\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"720\" cy=\"310\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"750\" cy=\"40\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"750\" cy=\"70\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"750\" cy=\"100\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"750\" cy=\"130\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"750\" cy=\"160\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"750\" cy=\"190\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"750\" cy=\"220\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"750\" cy=\"250\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"750\" cy=\"280\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"750\" cy=\"310\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"780\" cy=\"40\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"780\" cy=\"70\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"780\" cy=\"100\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"780\" cy=\"130\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"780\" cy=\"160\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"780\" cy=\"190\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"780\" cy=\"220\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"780\" cy=\"250\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"780\" cy=\"280\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"780\" cy=\"310\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"810\" cy=\"40\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"810\" cy=\"70\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"810\" cy=\"100\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"810\" cy=\"130\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"810\" cy=\"160\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"810\" cy=\"190\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"810\" cy=\"220\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"810\" cy=\"250\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"810\" cy=\"280\" r=\"12\" class=\"dg-atomA\"/><circle cx=\"810\" cy=\"310\" r=\"12\" class=\"dg-atomA\"/></g><g clip-path=\"url(#d1gbR)\"><g transform=\"rotate(25 700 160)\"><circle cx=\"540\" cy=\"40\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"540\" cy=\"70\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"540\" cy=\"100\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"540\" cy=\"130\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"540\" cy=\"160\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"540\" cy=\"190\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"540\" cy=\"220\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"540\" cy=\"250\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"540\" cy=\"280\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"540\" cy=\"310\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"570\" cy=\"40\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"570\" cy=\"70\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"570\" cy=\"100\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"570\" cy=\"130\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"570\" cy=\"160\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"570\" cy=\"190\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"570\" cy=\"220\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"570\" cy=\"250\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"570\" cy=\"280\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"570\" cy=\"310\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"600\" cy=\"40\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"600\" cy=\"70\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"600\" cy=\"100\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"600\" cy=\"130\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"600\" cy=\"160\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"600\" cy=\"190\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"600\" cy=\"220\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"600\" cy=\"250\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"600\" cy=\"280\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"600\" cy=\"310\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"630\" cy=\"40\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"630\" cy=\"70\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"630\" cy=\"100\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"630\" cy=\"130\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"630\" cy=\"160\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"630\" cy=\"190\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"630\" cy=\"220\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"630\" cy=\"250\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"630\" cy=\"280\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"630\" cy=\"310\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"660\" cy=\"40\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"660\" cy=\"70\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"660\" cy=\"100\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"660\" cy=\"130\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"660\" cy=\"160\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"660\" cy=\"190\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"660\" cy=\"220\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"660\" cy=\"250\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"660\" cy=\"280\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"660\" cy=\"310\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"690\" cy=\"40\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"690\" cy=\"70\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"690\" cy=\"100\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"690\" cy=\"130\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"690\" cy=\"160\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"690\" cy=\"190\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"690\" cy=\"220\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"690\" cy=\"250\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"690\" cy=\"280\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"690\" cy=\"310\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"720\" cy=\"40\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"720\" cy=\"70\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"720\" cy=\"100\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"720\" cy=\"130\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"720\" cy=\"160\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"720\" cy=\"190\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"720\" cy=\"220\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"720\" cy=\"250\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"720\" cy=\"280\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"720\" cy=\"310\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"750\" cy=\"40\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"750\" cy=\"70\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"750\" cy=\"100\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"750\" cy=\"130\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"750\" cy=\"160\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"750\" cy=\"190\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"750\" cy=\"220\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"750\" cy=\"250\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"750\" cy=\"280\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"750\" cy=\"310\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"780\" cy=\"40\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"780\" cy=\"70\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"780\" cy=\"100\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"780\" cy=\"130\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"780\" cy=\"160\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"780\" cy=\"190\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"780\" cy=\"220\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"780\" cy=\"250\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"780\" cy=\"280\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"780\" cy=\"310\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"810\" cy=\"40\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"810\" cy=\"70\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"810\" cy=\"100\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"810\" cy=\"130\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"810\" cy=\"160\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"810\" cy=\"190\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"810\" cy=\"220\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"810\" cy=\"250\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"810\" cy=\"280\" r=\"12\" class=\"dg-atomG\"/><circle cx=\"810\" cy=\"310\" r=\"12\" class=\"dg-atomG\"/></g></g><line x1=\"662\" y1=\"80\" x2=\"662\" y2=\"240\" class=\"dg-grain\"/><text x=\"105\" y=\"268\" class=\"dg-t\" text-anchor=\"middle\">neighbours strained</text><text x=\"290\" y=\"268\" class=\"dg-t\" text-anchor=\"middle\">different ion on a site</text><text x=\"475\" y=\"268\" class=\"dg-t\" text-anchor=\"middle\">extra atom in a gap</text><text x=\"660\" y=\"268\" class=\"dg-t\" text-anchor=\"middle\">two orientations meet</text></svg><div class=\"diagram-caption\">Point defects (0-D) affect more than one site: the neighbours around them are strained too. Dislocations (1-D) come later in the course.</div></div>"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>A vacancy reaches beyond its own site.</strong> The neighbours relax into the gap, which strains the next row out, and so on.",
+            "<strong>A substituted atom is \"quantum isolated\":</strong> on its own among different atoms, it behaves completely differently from its surroundings. This idea comes back for ruby.",
+            "<strong>Grain boundaries</strong> are strained, disordered zones between two single crystals. \"Everything happens at grain boundaries.\"",
+            "<strong>Interfaces</strong> between two materials are never clean lines; atoms from each side mix. \"Everything in the universe happens at interfaces.\"",
+            "<strong>Heterojunctions</strong> stack layers of different materials that an electron must cross one after another. This is how solar cells are built (a p-n junction joins positive and negative layers).",
+            "Defects act alone or by interacting with each other, and the effect can be <strong>positive or negative</strong>."
+          ]
+        },
+        {
+          "type": "h2",
+          "id": "d1-thermo",
+          "text": "Why Defects Must Exist: ΔG = ΔH − TΔS"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"analogy\"><span class=\"analogy-icon\">🃏</span><div class=\"analogy-text\"><strong>Shuffle a deck of cards.</strong> There is exactly one perfectly ordered deck and an astronomical number of shuffled ones, so shuffling never gives the perfect order back. A crystal is the same: one perfect arrangement, and a vast number of arrangements with a few atoms missing. Each defect costs a little energy but buys a lot of disorder, and at any temperature above absolute zero that trade is worth making.</div></div>"
+        },
+        {
+          "type": "formulablock",
+          "name": "Gibbs free energy",
+          "eqs": [
+            "\\Delta G = \\Delta H - T\\Delta S"
+          ],
+          "vars": [
+            {
+              "symbol": "G",
+              "desc": "Gibbs free energy: the energy available to do work"
+            },
+            {
+              "symbol": "H",
+              "desc": "enthalpy: total heat (internal energy) of the system, here the crystal"
+            },
+            {
+              "symbol": "S",
+              "desc": "entropy: degree of disorder, the number of arrangements available. S(solid) < S(liquid) < S(gas)"
+            },
+            {
+              "symbol": "T",
+              "desc": "temperature in kelvin"
+            }
+          ],
+          "note": "\\(\\Delta G\\) must be negative for a process to be spontaneous (at constant temperature and pressure). Holliman calls it the <strong>thermodynamic switch</strong>: if something won't happen at room temperature, heat it until \\(T\\Delta S\\) makes \\(\\Delta G\\) negative."
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>How the crystal forms</th><th>What the atoms do</th><th>Control</th></tr></thead><tbody><tr><td>Fast cooling or fast precipitation</td><td>Lock in wherever they land</td><td><strong>Kinetic</strong></td></tr><tr><td>Slow cooling or slow precipitation</td><td>Have time to move to preferred sites</td><td><strong>Thermodynamic</strong></td></tr></tbody></table></div>"
+        },
+        {
+          "type": "h3",
+          "text": "Building the graph"
+        },
+        {
+          "type": "p",
+          "text": "Start with a perfect crystal, at its heat of formation \\(\\Delta H_f\\), and remove ions one at a time to make vacancies.",
+          "class": ""
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 400\" role=\"img\" aria-label=\"Graph of energy against number of defects: enthalpy rises, minus T delta S falls, and their sum delta G has a minimum at the equilibrium number of defects\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"10\" y=\"10\" width=\"760\" height=\"380\" rx=\"8\" class=\"dg-frame\"/><line x1=\"110\" y1=\"340\" x2=\"110\" y2=\"50\" class=\"dg-axis\"/><line x1=\"110\" y1=\"340\" x2=\"620\" y2=\"340\" class=\"dg-axis\"/><line x1=\"110\" y1=\"223.3\" x2=\"590\" y2=\"223.3\" class=\"dg-dot-v\"/><path d=\"M110,223.3 L114,222.2 L118,221 L122,219.8 L126,218.7 L130,217.5 L134,216.3 L138,215.2 L142,214 L146,212.8 L150,211.7 L154,210.5 L158,209.3 L162,208.2 L166,207 L170,205.8 L174,204.7 L178,203.5 L182,202.3 L186,201.2 L190,200 L194,198.8 L198,197.7 L202,196.5 L206,195.3 L210,194.2 L214,193 L218,191.8 L222,190.7 L226,189.5 L230,188.3 L234,187.2 L238,186 L242,184.8 L246,183.7 L250,182.5 L254,181.3 L258,180.2 L262,179 L266,177.8 L270,176.7 L274,175.5 L278,174.3 L282,173.2 L286,172 L290,170.8 L294,169.7 L298,168.5 L302,167.3 L306,166.2 L310,165 L314,163.8 L318,162.7 L322,161.5 L326,160.3 L330,159.2 L334,158 L338,156.8 L342,155.7 L346,154.5 L350,153.3 L354,152.2 L358,151 L362,149.8 L366,148.7 L370,147.5 L374,146.3 L378,145.2 L382,144 L386,142.8 L390,141.7 L394,140.5 L398,139.3 L402,138.2 L406,137 L410,135.8 L414,134.7 L418,133.5 L422,132.3 L426,131.2 L430,130 L434,128.8 L438,127.7 L442,126.5 L446,125.3 L450,124.2 L454,123 L458,121.8 L462,120.7 L466,119.5 L470,118.3 L474,117.2 L478,116 L482,114.8 L486,113.7 L490,112.5 L494,111.3 L498,110.2 L502,109 L506,107.8 L510,106.7 L514,105.5 L518,104.3 L522,103.2 L526,102 L530,100.8 L534,99.7 L538,98.5 L542,97.3 L546,96.2 L550,95 L554,93.8 L558,92.7 L562,91.5 L566,90.3 L570,89.2 L574,88 L578,86.8 L582,85.7 L586,84.5 L590,83.3\" stroke=\"#f4a261\" stroke-width=\"3\" fill=\"none\"/><path d=\"M110,223.3 L114,226.6 L118,229.2 L122,231.5 L126,233.6 L130,235.7 L134,237.6 L138,239.4 L142,241.2 L146,242.9 L150,244.6 L154,246.2 L158,247.7 L162,249.2 L166,250.7 L170,252.1 L174,253.5 L178,254.9 L182,256.3 L186,257.6 L190,258.8 L194,260.1 L198,261.3 L202,262.5 L206,263.7 L210,264.9 L214,266 L218,267.1 L222,268.2 L226,269.3 L230,270.4 L234,271.4 L238,272.4 L242,273.4 L246,274.4 L250,275.4 L254,276.4 L258,277.3 L262,278.2 L266,279.1 L270,280 L274,280.9 L278,281.8 L282,282.6 L286,283.5 L290,284.3 L294,285.1 L298,285.9 L302,286.7 L306,287.5 L310,288.3 L314,289 L318,289.8 L322,290.5 L326,291.2 L330,291.9 L334,292.6 L338,293.3 L342,294 L346,294.6 L350,295.3 L354,295.9 L358,296.6 L362,297.2 L366,297.8 L370,298.4 L374,299 L378,299.6 L382,300.2 L386,300.7 L390,301.3 L394,301.8 L398,302.4 L402,302.9 L406,303.4 L410,303.9 L414,304.4 L418,304.9 L422,305.4 L426,305.9 L430,306.3 L434,306.8 L438,307.3 L442,307.7 L446,308.1 L450,308.6 L454,309 L458,309.4 L462,309.8 L466,310.2 L470,310.6 L474,310.9 L478,311.3 L482,311.7 L486,312 L490,312.4 L494,312.7 L498,313 L502,313.4 L506,313.7 L510,314 L514,314.3 L518,314.6 L522,314.9 L526,315.1 L530,315.4 L534,315.7 L538,315.9 L542,316.2 L546,316.4 L550,316.6 L554,316.9 L558,317.1 L562,317.3 L566,317.5 L570,317.7 L574,317.9 L578,318.1 L582,318.2 L586,318.4 L590,318.6\" stroke=\"#2fa15c\" stroke-width=\"3\" fill=\"none\"/><path d=\"M110,223.3 L114,225.4 L118,226.8 L122,228 L126,229 L130,229.8 L134,230.6 L138,231.3 L142,231.9 L146,232.4 L150,232.9 L154,233.3 L158,233.7 L162,234.1 L166,234.4 L170,234.6 L174,234.9 L178,235.1 L182,235.3 L186,235.4 L190,235.5 L194,235.6 L198,235.7 L202,235.7 L206,235.7 L210,235.7 L214,235.7 L218,235.6 L222,235.6 L226,235.5 L230,235.4 L234,235.2 L238,235.1 L242,234.9 L246,234.8 L250,234.6 L254,234.4 L258,234.1 L262,233.9 L266,233.6 L270,233.4 L274,233.1 L278,232.8 L282,232.5 L286,232.1 L290,231.8 L294,231.5 L298,231.1 L302,230.7 L306,230.3 L310,229.9 L314,229.5 L318,229.1 L322,228.6 L326,228.2 L330,227.7 L334,227.3 L338,226.8 L342,226.3 L346,225.8 L350,225.3 L354,224.8 L358,224.2 L362,223.7 L366,223.1 L370,222.6 L374,222 L378,221.4 L382,220.8 L386,220.2 L390,219.6 L394,219 L398,218.4 L402,217.7 L406,217.1 L410,216.4 L414,215.8 L418,215.1 L422,214.4 L426,213.7 L430,213 L434,212.3 L438,211.6 L442,210.9 L446,210.1 L450,209.4 L454,208.6 L458,207.9 L462,207.1 L466,206.3 L470,205.6 L474,204.8 L478,204 L482,203.2 L486,202.4 L490,201.5 L494,200.7 L498,199.9 L502,199 L506,198.2 L510,197.3 L514,196.4 L518,195.6 L522,194.7 L526,193.8 L530,192.9 L534,192 L538,191.1 L542,190.2 L546,189.2 L550,188.3 L554,187.4 L558,186.4 L562,185.5 L566,184.5 L570,183.5 L574,182.6 L578,181.6 L582,180.6 L586,179.6 L590,178.6\" stroke=\"#0ea5c6\" stroke-width=\"3.4\" fill=\"none\"/><line x1=\"206.7\" y1=\"235.7\" x2=\"206.7\" y2=\"340\" class=\"dg-dot-v\"/><circle cx=\"206.7\" cy=\"235.7\" r=\"6\" class=\"dg-atomR\"/><text x=\"206.7\" y=\"360\" class=\"dg-tb-red\" text-anchor=\"middle\">equilibrium number of defects</text><text x=\"598\" y=\"87.3\" class=\"dg-tb-amb\" text-anchor=\"start\">ΔH</text><text x=\"598\" y=\"105.3\" class=\"dg-t\" text-anchor=\"start\">enthalpy rises</text><text x=\"598\" y=\"322.6\" class=\"dg-tb\" text-anchor=\"start\" style=\"fill:#2fa15c\">−TΔS</text><text x=\"598\" y=\"340.6\" class=\"dg-t\" text-anchor=\"start\">drops fast, then flattens</text><text x=\"598\" y=\"182.6\" class=\"dg-tb-acc\" text-anchor=\"start\">ΔG</text><text x=\"598\" y=\"200.6\" class=\"dg-t\" text-anchor=\"start\">sum of the two</text><text x=\"218.7\" y=\"259.7\" class=\"dg-t\" text-anchor=\"start\">lowest ΔG = most stable</text><circle cx=\"110\" cy=\"223.3\" r=\"5\" class=\"dg-atomB\"/><text x=\"120\" y=\"211.3\" class=\"dg-t\" text-anchor=\"start\">perfect crystal</text><text x=\"60\" y=\"200\" class=\"dg-t\" text-anchor=\"middle\" transform=\"rotate(-90 60 200)\">energy (higher = less stable) ↑</text><text x=\"350\" y=\"382\" class=\"dg-t\" text-anchor=\"middle\">number of defects →</text></svg><div class=\"diagram-caption\">Learn to sketch this. The perfect crystal (left edge) is never the lowest point, so some defects always form.</div></div>"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Enthalpy rises (roughly a straight line).</strong> Each vacancy removes electrostatic attractions, so the lattice enthalpy becomes less negative. Every defect costs about the same.",
+            "<strong>\\(-T\\Delta S\\) falls, steeply at first, then flattens.</strong> The first vacancies disturb a perfect lattice the most; later ones add less new disorder. It is multiplied by \\(T\\), so it is temperature dependent.",
+            "<strong>\\(\\Delta G\\) dips to a minimum, then rises.</strong> That lowest point is the most stable state, and the number of defects there is the <strong>equilibrium number of defects</strong>."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "<strong>Why does removing atoms add entropy?</strong> (A student asked this in the lecture.) Remove one atom from a cube of 100 and the vacancy could be on any of the 100 sites, so one arrangement becomes 100. Remove a second and the count grows again. Meanwhile each missing atom takes its bonds with it, which is the enthalpy cost.",
+          "class": ""
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Change</th><th>Effect on the graph</th><th>Result</th></tr></thead><tbody><tr><td>Higher temperature</td><td>\\(-T\\Delta S\\) deeper</td><td>Minimum moves right: <strong>more defects</strong></td></tr><tr><td>Strong lattice (large lattice energy)</td><td>Enthalpy line steeper: each defect costs more</td><td>Minimum comes sooner: <strong>fewer defects</strong></td></tr><tr><td>Weak lattice (small lattice energy)</td><td>Enthalpy line shallower</td><td>Minimum moves right: <strong>more defects</strong></td></tr></tbody></table></div>"
+        },
+        {
+          "type": "p",
+          "text": "Holliman's illustrative numbers: a strong lattice such as alumina (\\(\\Delta H_f\\) around \\(-4200\\) kJ/mol) might settle at about 5,000 defects per mole; a weak one (around \\(-600\\) kJ/mol) at about 20,000. He stresses these are examples to show the trend, not values to calculate.",
+          "class": ""
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"sim-embed\"><span class=\"sim-tag\">Interactive</span><iframe data-src=\"widgets/defect-equilibrium.html\" data-sim=\"defect-equilibrium.html\" title=\"Why defects must exist: Gibbs energy explorer\" style=\"height:640px\"></iframe><div class=\"sim-credit\">Original to this site. A toy model of the graph Prof Holliman draws in Lecture 2.</div></div><div class=\"sim-guide\"><div><h5>What you are looking at</h5><p>The three curves from the lecture: the enthalpy line, the &minus;T&Delta;S curve and their sum, &Delta;G. The red dot is the lowest point of &Delta;G, the equilibrium number of defects.</p></div><div class=\"sg-try\"><h5>Try this</h5><ul><li>Press <strong>Strong lattice</strong>: the enthalpy line steepens and the minimum slides towards zero.</li><li>Press <strong>Heat it up</strong>: the entropy curve deepens and the minimum moves right.</li><li>Try to make the minimum sit exactly at zero defects. You can't.</li></ul></div><div><h5>The point</h5><p>No setting puts the lowest point at a perfect crystal. Thermodynamics doesn't just allow defects, it requires them. That's why engineers can count on them being there and use them.</p></div></div>"
+        },
+        {
+          "type": "example",
+          "label": "Worked example: how many vacancies does salt have?",
+          "q": "NaCl has a lattice energy of 757 kJ/mol (Holliman says to remember it: more than 600, under 1,000). At room temperature one mole (58.5 g) contains about 10,000 vacancies. What fraction of sites is that?",
+          "steps": [
+            "Ions in one mole: \\(2 \\times 6.02 \\times 10^{23} = 1.20 \\times 10^{24}\\)",
+            "Fraction: \\(10^{4} / 1.20 \\times 10^{24} \\approx 8 \\times 10^{-21}\\)"
+          ],
+          "answer": "<strong>About 1 site in 10²⁰.</strong> Tiny, but never zero, and that is the point. Doping silicon works the same way: tiny amounts of impurity completely change how it conducts. For comparison, a mole of iron (56 g) has far more vacancies than a mole of NaCl."
+        },
+        {
+          "type": "conceptbox",
+          "variant": "note",
+          "title": "How this gets examined",
+          "html": "<p>Holliman wants you to <strong>explain the trend</strong>, not crunch numbers: sketch the three curves, mark the equilibrium number of defects, and say what happens when temperature or lattice energy changes, and why. The takeaway: every material has defects, and thermodynamics says it must. That makes them a dependable tool.</p>"
+        },
+        {
+          "type": "h2",
+          "id": "d1-alumina",
+          "text": "Alumina: A Hard Host for Useful Defects"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"analogy\"><span class=\"analogy-icon\">🚀</span><div class=\"analogy-text\"><strong>Ariane 5's two solid rocket boosters</strong> each weigh about 270 tonnes and burn for about 130 seconds. The fuel is ammonium perchlorate, aluminium powder (spherical, sized precisely) and a polybutadiene binder. Burning aluminium gives \\(4\\text{Al} + 3\\text{O}_2 \\rightarrow 2\\text{Al}_2\\text{O}_3\\), and the heat of formation of alumina is so large it can lift the rocket. The bonding that releases all that energy is the same bonding that makes alumina so hard and stable.</div></div>"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Property</th><th>Alumina, Al₂O₃</th></tr></thead><tbody><tr><td>Hardness</td><td>9.0 Mohs, second only to diamond on the slides</td></tr><tr><td>Melting point</td><td>2,044 °C</td></tr><tr><td>Density</td><td>4.02 g/cm³, high for light elements because the ions pack tightly</td></tr><tr><td>Refractive index</td><td>1.78</td></tr><tr><td>Band gap</td><td>Large, so pure alumina is colourless</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "h3",
+          "text": "Same material, clear or white"
+        },
+        {
+          "type": "p",
+          "text": "A single crystal of alumina is transparent; the powder is white. In a single crystal the order runs all the way through, so light passes almost straight through, like window glass. In a powder, light bends at every grain surface and scatters in all directions, like frosted bathroom glass. Paint uses this on purpose: a pigment with a high refractive index (titania, about 2.5 to 2.6) scatters light back at you and hides the wall behind.",
+          "class": ""
+        },
+        {
+          "type": "h3",
+          "text": "Drawing HCP alumina"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 380\" role=\"img\" aria-label=\"Hexagonal close packing for alumina: a plan view showing A layer, B layer and octahedral hole positions, and a side view showing the octahedral holes stacked in columns\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"10\" y=\"10\" width=\"760\" height=\"360\" rx=\"8\" class=\"dg-frame\"/><text x=\"200\" y=\"48\" class=\"dg-tb\" text-anchor=\"middle\">Plan view (looking down z)</text><polygon points=\"305,200 252.5,290.9 147.5,290.9 95,200 147.5,109.1 252.5,109.1\" class=\"dg-edge\"/><line x1=\"200\" y1=\"200\" x2=\"305\" y2=\"200\" class=\"dg-edge-h\"/><line x1=\"200\" y1=\"200\" x2=\"252.5\" y2=\"290.9\" class=\"dg-edge-h\"/><line x1=\"200\" y1=\"200\" x2=\"147.5\" y2=\"290.9\" class=\"dg-edge-h\"/><line x1=\"200\" y1=\"200\" x2=\"95\" y2=\"200\" class=\"dg-edge-h\"/><line x1=\"200\" y1=\"200\" x2=\"147.5\" y2=\"109.1\" class=\"dg-edge-h\"/><line x1=\"200\" y1=\"200\" x2=\"252.5\" y2=\"109.1\" class=\"dg-edge-h\"/><circle cx=\"305\" cy=\"200\" r=\"20\" class=\"dg-atomA\"/><circle cx=\"252.5\" cy=\"290.9\" r=\"20\" class=\"dg-atomA\"/><circle cx=\"147.5\" cy=\"290.9\" r=\"20\" class=\"dg-atomA\"/><circle cx=\"95\" cy=\"200\" r=\"20\" class=\"dg-atomA\"/><circle cx=\"147.5\" cy=\"109.1\" r=\"20\" class=\"dg-atomA\"/><circle cx=\"252.5\" cy=\"109.1\" r=\"20\" class=\"dg-atomA\"/><circle cx=\"200\" cy=\"200\" r=\"20\" class=\"dg-atomA\"/><circle cx=\"252.5\" cy=\"230.3\" r=\"17\" class=\"dg-atomG\"/><circle cx=\"147.5\" cy=\"230.3\" r=\"17\" class=\"dg-atomG\"/><circle cx=\"200\" cy=\"139.4\" r=\"17\" class=\"dg-atomG\"/><circle cx=\"200\" cy=\"260.6\" r=\"8\" class=\"dg-atomR\"/><circle cx=\"147.5\" cy=\"169.7\" r=\"8\" class=\"dg-atomR\"/><circle cx=\"252.5\" cy=\"169.7\" r=\"8\" class=\"dg-atomR\"/><circle cx=\"70\" cy=\"345\" r=\"9\" class=\"dg-atomA\"/><text x=\"84\" y=\"350\" class=\"dg-t\" text-anchor=\"start\">O²⁻, A layer (z = 0, 1)</text><circle cx=\"260\" cy=\"345\" r=\"8\" class=\"dg-atomG\"/><text x=\"272\" y=\"350\" class=\"dg-t\" text-anchor=\"start\">O²⁻, B layer (z = 0.5)</text><circle cx=\"440\" cy=\"345\" r=\"5\" class=\"dg-atomR\"/><text x=\"450\" y=\"350\" class=\"dg-t\" text-anchor=\"start\">octahedral holes, Al³⁺ sites (z = 0.25, 0.75)</text><text x=\"620\" y=\"48\" class=\"dg-tb\" text-anchor=\"middle\">Side view</text><text x=\"620\" y=\"68\" class=\"dg-t\" text-anchor=\"middle\">octahedral holes stack in columns</text><text x=\"478\" y=\"294\" class=\"dg-cap\" text-anchor=\"end\">z = 0</text><text x=\"478\" y=\"244\" class=\"dg-cap\" text-anchor=\"end\">z = 0.25</text><text x=\"478\" y=\"194\" class=\"dg-cap\" text-anchor=\"end\">z = 0.5</text><text x=\"478\" y=\"144\" class=\"dg-cap\" text-anchor=\"end\">z = 0.75</text><text x=\"478\" y=\"94\" class=\"dg-cap\" text-anchor=\"end\">z = 1</text><circle cx=\"510\" cy=\"290\" r=\"18\" class=\"dg-atomA\"/><circle cx=\"620\" cy=\"290\" r=\"18\" class=\"dg-atomA\"/><circle cx=\"730\" cy=\"290\" r=\"18\" class=\"dg-atomA\"/><circle cx=\"510\" cy=\"90\" r=\"18\" class=\"dg-atomA\"/><circle cx=\"620\" cy=\"90\" r=\"18\" class=\"dg-atomA\"/><circle cx=\"730\" cy=\"90\" r=\"18\" class=\"dg-atomA\"/><circle cx=\"547\" cy=\"190\" r=\"16\" class=\"dg-atomG\"/><circle cx=\"657\" cy=\"190\" r=\"16\" class=\"dg-atomG\"/><line x1=\"583\" y1=\"240\" x2=\"583\" y2=\"140\" class=\"dg-route\"/><circle cx=\"583\" cy=\"240\" r=\"7\" class=\"dg-atomR\"/><circle cx=\"583\" cy=\"140\" r=\"7\" class=\"dg-atomR\"/><line x1=\"693\" y1=\"240\" x2=\"693\" y2=\"140\" class=\"dg-route\"/><circle cx=\"693\" cy=\"240\" r=\"7\" class=\"dg-atomR\"/><circle cx=\"693\" cy=\"140\" r=\"7\" class=\"dg-atomR\"/></svg><div class=\"diagram-caption\">ABA stacking is HCP (ABC would be FCC). Al³⁺ fills two-thirds of the octahedral holes, which keeps Al₂O₃ charge neutral.</div></div>"
+        },
+        {
+          "type": "list",
+          "items": [
+            "O²⁻ (126 pm) forms the <strong>HCP host</strong> with ABA stacking: A layers at z = 0 and 1, B layer at z = 0.5.",
+            "Al³⁺ (68 pm) sits in <strong>octahedral holes</strong> at z = 0.25 and 0.75. Radius ratio \\(68/126 = 0.54\\): octahedral. Only <strong>two-thirds</strong> of the holes are filled, giving 2 Al³⁺ for every 3 O²⁻.",
+            "In side view the octahedral holes stack <strong>directly above each other</strong> in columns. That is why Fe and Ti can sit on neighbouring sites in sapphire.",
+            "Alumina grows as <strong>hexagonal plates</strong>: atoms join the edges faster than the charged top and bottom faces. Steering which faces grow is how crystal shape is controlled.",
+            "Holliman's picture of HCP: rack the 15 balls in snooker, then build the next layer in the dips."
+          ]
+        },
+        {
+          "type": "h2",
+          "id": "d1-gems",
+          "text": "Sapphire and Ruby: Colour From Defects"
+        },
+        {
+          "type": "p",
+          "text": "Swap a tiny fraction of Al³⁺ for other metal ions (extrinsic point defects) and colourless alumina becomes a gemstone. Ruby and sapphire keep alumina's hardness, density and refractive index: the host keeps its properties and the defects <strong>add</strong> new ones.",
+          "class": ""
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 360\" role=\"img\" aria-label=\"Left: an Fe2+ and Ti4+ pair on neighbouring sites in sapphire, with an electron hopping between them and yellow light absorbed. Right: isolated Cr3+ ions spread through alumina in ruby\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"d1spec\" x1=\"0\" x2=\"1\"><stop offset=\"0\" stop-color=\"#7b3fe4\"/><stop offset=\".2\" stop-color=\"#2f6ff0\"/><stop offset=\".4\" stop-color=\"#22b26a\"/><stop offset=\".55\" stop-color=\"#e6d22c\"/><stop offset=\".7\" stop-color=\"#f08a24\"/><stop offset=\"1\" stop-color=\"#d92b2b\"/></linearGradient></defs><rect x=\"10\" y=\"10\" width=\"760\" height=\"340\" rx=\"8\" class=\"dg-frame\"/><text x=\"200\" y=\"45\" class=\"dg-tb-blue\" text-anchor=\"middle\">Blue sapphire: an ion PAIR</text><circle cx=\"140\" cy=\"140\" r=\"52\" fill=\"none\" stroke=\"#3a3a46\" stroke-width=\"1.5\"/><circle cx=\"260\" cy=\"140\" r=\"52\" fill=\"none\" stroke=\"#3a3a46\" stroke-width=\"1.5\"/><circle cx=\"140\" cy=\"140\" r=\"22\" class=\"dg-atomB\"/><text x=\"140\" y=\"145\" class=\"dg-tb\" text-anchor=\"middle\">Fe²⁺</text><circle cx=\"260\" cy=\"140\" r=\"22\" class=\"dg-atomA\"/><text x=\"260\" y=\"145\" class=\"dg-tb\" text-anchor=\"middle\">Ti⁴⁺</text><path d=\"M160,112 Q200,84 240,112\" stroke=\"#f4a261\" stroke-width=\"2.4\" fill=\"none\"/><polygon points=\"240,112 229,108 234,100\" fill=\"#f4a261\"/><text x=\"200\" y=\"82\" class=\"dg-tb-amb\" text-anchor=\"middle\">e⁻ hops</text><line x1=\"140\" y1=\"205\" x2=\"260\" y2=\"205\" class=\"dg-axis\"/><text x=\"200\" y=\"222\" class=\"dg-t\" text-anchor=\"middle\">about 2.65 Å apart (neighbouring octahedra)</text><rect x=\"70\" y=\"250\" width=\"260\" height=\"22\" fill=\"url(#d1spec)\"/><rect x=\"200\" y=\"246\" width=\"46.8\" height=\"30\" fill=\"#101016\" opacity=\".85\" stroke=\"#f4a261\" stroke-width=\"1.5\"/><text x=\"200\" y=\"295\" class=\"dg-t\" text-anchor=\"middle\">yellow-orange absorbed (band near 580 nm)</text><text x=\"200\" y=\"315\" class=\"dg-tb-blue\" text-anchor=\"middle\">allowed transition, so 0.01% Fe and Ti is enough</text><text x=\"580\" y=\"45\" class=\"dg-tb-red\" text-anchor=\"middle\">Ruby: ISOLATED Cr³⁺ ions</text><circle cx=\"460\" cy=\"75\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"460\" cy=\"105\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"460\" cy=\"135\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"460\" cy=\"165\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"460\" cy=\"195\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"460\" cy=\"225\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"500\" cy=\"75\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"500\" cy=\"105\" r=\"9\" class=\"dg-atomR\"/><circle cx=\"500\" cy=\"135\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"500\" cy=\"165\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"500\" cy=\"195\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"500\" cy=\"225\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"540\" cy=\"75\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"540\" cy=\"105\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"540\" cy=\"135\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"540\" cy=\"165\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"540\" cy=\"195\" r=\"9\" class=\"dg-atomR\"/><circle cx=\"540\" cy=\"225\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"580\" cy=\"75\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"580\" cy=\"105\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"580\" cy=\"135\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"580\" cy=\"165\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"580\" cy=\"195\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"580\" cy=\"225\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"620\" cy=\"75\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"620\" cy=\"105\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"620\" cy=\"135\" r=\"9\" class=\"dg-atomR\"/><circle cx=\"620\" cy=\"165\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"620\" cy=\"195\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"620\" cy=\"225\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"660\" cy=\"75\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"660\" cy=\"105\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"660\" cy=\"135\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"660\" cy=\"165\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"660\" cy=\"195\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"660\" cy=\"225\" r=\"9\" class=\"dg-atomR\"/><circle cx=\"700\" cy=\"75\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"700\" cy=\"105\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"700\" cy=\"135\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"700\" cy=\"165\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"700\" cy=\"195\" r=\"6\" class=\"dg-atomA dg-dim\"/><circle cx=\"700\" cy=\"225\" r=\"6\" class=\"dg-atomA dg-dim\"/><rect x=\"450\" y=\"250\" width=\"260\" height=\"22\" fill=\"url(#d1spec)\"/><rect x=\"463\" y=\"246\" width=\"31.2\" height=\"30\" fill=\"#101016\" opacity=\".7\" stroke=\"#e63946\" stroke-width=\"1.5\"/><rect x=\"554\" y=\"246\" width=\"41.6\" height=\"30\" fill=\"#101016\" opacity=\".7\" stroke=\"#e63946\" stroke-width=\"1.5\"/><text x=\"580\" y=\"295\" class=\"dg-t\" text-anchor=\"middle\">violet and green absorbed, red passes</text><text x=\"580\" y=\"315\" class=\"dg-tb-red\" text-anchor=\"middle\">forbidden d-d transition, so about 1% Cr needed</text></svg><div class=\"diagram-caption\">Both colours are subtractive: you see what is left after the absorbed light is removed from white light.</div></div>"
+        },
+        {
+          "type": "h3",
+          "text": "Selection rules: why some colours are intense"
+        },
+        {
+          "type": "formulablock",
+          "name": "Orbital selection rule (optical transitions)",
+          "eqs": [
+            "\\Delta l = \\pm 1"
+          ],
+          "vars": [
+            {
+              "symbol": "l",
+              "desc": "orbital angular momentum quantum number: s = 0, p = 1, d = 2, f = 3"
+            }
+          ],
+          "note": "Allowed: s→p, p→s or d, d→p or f. Forbidden: s→s, p→p, d→d. Allowed means high probability, which means intense colour."
+        },
+        {
+          "type": "p",
+          "text": "Holliman's picture: fire 100 photons at the crystal. If nearly all of them cause a transition, a tiny amount of dopant gives an intense colour. If only one does, you need far more absorbing ions before you see anything.",
+          "class": ""
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th></th><th>Blue sapphire</th><th>Ruby</th></tr></thead><tbody><tr><td>Dopant</td><td>Fe²⁺ and Ti⁴⁺ on <strong>neighbouring</strong> octahedral sites (about 2.65 Å apart)</td><td>Cr³⁺ replacing Al³⁺, <strong>isolated</strong> from each other</td></tr><tr><td>Transition</td><td>Inter-valence charge transfer: Fe²⁺ + Ti⁴⁺ → Fe³⁺ + Ti³⁺</td><td>d-d transition on one Cr³⁺ ion</td></tr><tr><td>Selection rule</td><td>Allowed: the electron can land in any orbital on the Ti</td><td>Forbidden (d→d), made weakly possible by lattice vibrations</td></tr><tr><td>Light absorbed</td><td>Yellow-orange (band near 580 nm)</td><td>Violet and green</td></tr><tr><td>Colour seen</td><td>Blue</td><td>Red</td></tr><tr><td>Dopant needed</td><td>About 0.01%</td><td>About 1% for deep red</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>How a forbidden transition happens anyway:</strong> in a perfectly symmetrical octahedron of O²⁻ around Cr³⁺, the d-d transition is forbidden. But the lattice vibrates. When an O²⁻ moves, one Cr-O bond shortens, the symmetry breaks for an instant, and the transition becomes weakly possible. Light and vibration have to act together.",
+            "<strong>Pairs vs isolated ions:</strong> sapphire's colour needs Fe and Ti side by side, close enough to pass an electron. Ruby's needs Cr³⁺ ions <em>apart</em>, electronically separate from each other. Where they sit doesn't matter as long as they don't touch.",
+            "<strong>Natural gems</strong> are coloured the same way: coloured diamonds are carbon with a trace of something else. The defects decide the colour."
+          ]
+        },
+        {
+          "type": "conceptbox",
+          "variant": "note",
+          "title": "Correction to a claim in the lecture",
+          "html": "<p>Holliman says you can make ruby in a lab but not sapphire, because 0.01% Fe and Ti would rarely end up as neighbours. In fact <strong>synthetic blue sapphire has been made commercially since about 1910</strong> by Verneuil flame fusion, by adding iron and titanium oxides to the alumina. The useful idea in his argument still stands: sapphire's colour depends on ion <em>pairs</em>, ruby's on <em>isolated</em> ions.</p>"
+        },
+        {
+          "type": "example",
+          "label": "Worked example: explain the dopant levels",
+          "q": "Blue sapphire is intensely coloured with only 0.01% Fe and Ti, but ruby needs about 1% Cr. Explain why.",
+          "steps": [
+            "Sapphire's colour is a charge transfer between neighbouring Fe²⁺ and Ti⁴⁺. The electron can enter any orbital on Ti, so the transition obeys \\(\\Delta l = \\pm 1\\): allowed, high probability",
+            "Ruby's colour is a d-d transition on Cr³⁺, so \\(\\Delta l = 0\\): forbidden. It only happens weakly, helped by lattice vibrations",
+            "Each Cr³⁺ absorbs weakly, so many more ions are needed for the same depth of colour"
+          ],
+          "answer": "<strong>Allowed transition = intense colour from very little dopant. Forbidden transition = weak absorption, so about 100 times more dopant is needed.</strong>"
+        },
+        {
+          "type": "h2",
+          "id": "d1-laser",
+          "text": "The Ruby Laser"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"analogy\"><span class=\"analogy-icon\">🅿️</span><div class=\"analogy-text\"><strong>A car park.</strong> If cars arrive much faster than they leave, the car park fills up. Pumping a ruby works the same way: electrons arrive in the middle energy level (E₂) far faster than they leave it, so they pile up. That pile-up is a <strong>population inversion</strong>, and it's the stored energy a laser releases all at once.</div></div>"
+        },
+        {
+          "type": "p",
+          "text": "<strong>LASER = Light Amplification by Stimulated Emission of Radiation.</strong> You need a laser medium with long-lived, isolated excited states. Chromium spread thinly through alumina fits that description, and ruby was the medium in the first working laser (1960).",
+          "class": ""
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Quantum confinement:</strong> electron-hole pairs held in a small region with discrete energy levels. For ruby, each excited Cr³⁺ is cut off from everything else because alumina's own energy levels are far away (its band gap is large).",
+            "<strong>Exciton:</strong> an electron (−) bound to the hole (+) it left behind, able to move through a non-metal as one unit."
+          ]
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"diagram-wrap\"><svg class=\"dg\" viewBox=\"0 0 780 400\" role=\"img\" aria-label=\"Three-level ruby laser: pump light lifts electrons from E1 to E3, they drop quickly to the metastable E2 where they pile up, then stimulated emission releases 694 nm light; below, the ruby rod between two mirrors\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"10\" y=\"10\" width=\"760\" height=\"380\" rx=\"8\" class=\"dg-frame\"/><line x1=\"70\" y1=\"70\" x2=\"330\" y2=\"70\" class=\"dg-edge\"/><text x=\"340\" y=\"75\" class=\"dg-tb\" text-anchor=\"start\">E₃ pump state</text><text x=\"340\" y=\"92\" class=\"dg-cap\" text-anchor=\"start\">~10⁻⁸ s</text><line x1=\"70\" y1=\"135\" x2=\"330\" y2=\"135\" class=\"dg-edge\"/><text x=\"340\" y=\"140\" class=\"dg-tb\" text-anchor=\"start\">E₂ metastable</text><text x=\"340\" y=\"157\" class=\"dg-cap\" text-anchor=\"start\">~3 ms</text><line x1=\"70\" y1=\"230\" x2=\"330\" y2=\"230\" class=\"dg-edge\"/><text x=\"340\" y=\"235\" class=\"dg-tb\" text-anchor=\"start\">E₁ ground state</text><line x1=\"100\" y1=\"227\" x2=\"100\" y2=\"83\" stroke=\"#8855f5\" stroke-width=\"2.6\"/><polygon points=\"100,73 94.5,83 105.5,83\" fill=\"#8855f5\"/><text x=\"92\" y=\"160\" class=\"dg-t\" text-anchor=\"end\">1. pump</text><text x=\"92\" y=\"176\" class=\"dg-cap\" text-anchor=\"end\">(Xe lamp)</text><line x1=\"125\" y1=\"73\" x2=\"168.5\" y2=\"124.4\" stroke=\"#8c8c9c\" stroke-width=\"2\" stroke-dasharray=\"4 4\"/><polygon points=\"175,132 172.7,120.8 164.3,127.9\" fill=\"#8c8c9c\"/><text x=\"205\" y=\"96\" class=\"dg-t\" text-anchor=\"start\">2. fast drop, heat</text><circle cx=\"195\" cy=\"126\" r=\"6\" class=\"dg-atomB\"/><circle cx=\"215\" cy=\"126\" r=\"6\" class=\"dg-atomB\"/><circle cx=\"235\" cy=\"126\" r=\"6\" class=\"dg-atomB\"/><circle cx=\"255\" cy=\"126\" r=\"6\" class=\"dg-atomB\"/><circle cx=\"275\" cy=\"126\" r=\"6\" class=\"dg-atomB\"/><circle cx=\"295\" cy=\"126\" r=\"6\" class=\"dg-atomB\"/><text x=\"250\" y=\"159\" class=\"dg-tb-amb\" text-anchor=\"middle\">population inversion</text><line x1=\"290\" y1=\"168\" x2=\"290\" y2=\"217\" stroke=\"#e63946\" stroke-width=\"3.2\"/><polygon points=\"290,227 295.5,217 284.5,217\" fill=\"#e63946\"/><text x=\"282\" y=\"205\" class=\"dg-tb-red\" text-anchor=\"end\">3. 694 nm</text><rect x=\"190\" y=\"293\" width=\"330\" height=\"44\" rx=\"6\" fill=\"rgba(230,57,70,.22)\" stroke=\"#e63946\" stroke-width=\"1.5\"/><text x=\"355\" y=\"320\" class=\"dg-tb\" text-anchor=\"middle\">ruby rod: Cr³⁺ in Al₂O₃</text><rect x=\"168\" y=\"279\" width=\"10\" height=\"72\" fill=\"#c9c9d6\"/><rect x=\"532\" y=\"279\" width=\"10\" height=\"72\" fill=\"#c9c9d6\" opacity=\".6\"/><text x=\"173\" y=\"369\" class=\"dg-cap\" text-anchor=\"middle\">100% mirror</text><text x=\"537\" y=\"369\" class=\"dg-cap\" text-anchor=\"middle\">partial mirror</text><line x1=\"230\" y1=\"253\" x2=\"230\" y2=\"278\" stroke=\"#8855f5\" stroke-width=\"2\"/><polygon points=\"230,288 235.5,278 224.5,278\" fill=\"#8855f5\"/><line x1=\"290\" y1=\"253\" x2=\"290\" y2=\"278\" stroke=\"#8855f5\" stroke-width=\"2\"/><polygon points=\"290,288 295.5,278 284.5,278\" fill=\"#8855f5\"/><line x1=\"350\" y1=\"253\" x2=\"350\" y2=\"278\" stroke=\"#8855f5\" stroke-width=\"2\"/><polygon points=\"350,288 355.5,278 344.5,278\" fill=\"#8855f5\"/><line x1=\"410\" y1=\"253\" x2=\"410\" y2=\"278\" stroke=\"#8855f5\" stroke-width=\"2\"/><polygon points=\"410,288 415.5,278 404.5,278\" fill=\"#8855f5\"/><line x1=\"470\" y1=\"253\" x2=\"470\" y2=\"278\" stroke=\"#8855f5\" stroke-width=\"2\"/><polygon points=\"470,288 475.5,278 464.5,278\" fill=\"#8855f5\"/><text x=\"490\" y=\"275\" class=\"dg-t\" text-anchor=\"start\">pump light</text><line x1=\"548\" y1=\"315\" x2=\"680\" y2=\"315\" stroke=\"#e63946\" stroke-width=\"4\"/><polygon points=\"690,315 680,309.5 680,320.5\" fill=\"#e63946\"/><text x=\"640\" y=\"303\" class=\"dg-tb-red\" text-anchor=\"middle\">laser beam</text><path d=\"M215,307 H500 M500,323 H215\" stroke=\"#f4a261\" stroke-width=\"1.4\" stroke-dasharray=\"6 4\" fill=\"none\"/><text x=\"620\" y=\"70\" class=\"dg-tb-acc\" text-anchor=\"start\">Coherent light:</text><text x=\"620\" y=\"90\" class=\"dg-t\" text-anchor=\"start\">one wavelength</text><text x=\"620\" y=\"108\" class=\"dg-t\" text-anchor=\"start\">parallel</text><text x=\"620\" y=\"126\" class=\"dg-t\" text-anchor=\"start\">in phase</text></svg><div class=\"diagram-caption\">E₂ lives over 100,000 times longer than E₃, so electrons pile up there. Photons bouncing between the mirrors trigger the cascade of stimulated emission.</div></div>"
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Step</th><th>What happens</th><th>Timescale</th></tr></thead><tbody><tr><td>1. Pump</td><td>A high-intensity xenon lamp floods the rod with photons and lifts Cr³⁺ electrons from E₁ to the pump state E₃</td><td></td></tr><tr><td>2. Population inversion</td><td>E₃ empties quickly into the metastable E₂, losing energy as heat and vibration (a waterfall with a ledge, not laser light). E₂ lasts much longer, so electrons pile up there</td><td>E₃ about 10⁻⁸ s; E₂ about 10⁻³ s (published value for ruby: about 3 ms)</td></tr><tr><td>3. Stimulated emission</td><td>One electron drops from E₂ to E₁ by itself and emits a photon. That photon triggers other E₂ electrons to drop and emit identical photons, and the cascade grows</td><td>Emission at <strong>694 nm</strong>, \\(1240/694 \\approx 1.79\\) eV</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>The cavity:</strong> the ruby rod sits between a fully reflecting mirror and a partially reflecting one. Photons bounce back and forth, triggering more emission on each pass (light gain), and the beam leaves through the partial mirror.",
+            "<strong>Coherent light:</strong> one wavelength, parallel and in phase. That, not just brightness, is what separates a laser from sunlight or a bulb.",
+            "<strong>Why about 0.05% Cr:</strong> enough Cr³⁺ to absorb the pump, but spread out so each ion behaves on its own. That means no line broadening and no quenching by neighbours, so the excited state lives a long time.",
+            "<strong>Fluorescence vs phosphorescence:</strong> Holliman frames fluorescence as the excited state held long enough to be useful, and phosphorescence as held even longer. Standard definitions: fluorescence decays within nanoseconds, phosphorescence much more slowly."
+          ]
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Material</th><th>Main absorption</th><th>Colour</th><th>Why</th></tr></thead><tbody><tr><td>Cr₂O₃ (all Cr, same HCP structure)</td><td>Blue and red</td><td>Green</td><td>Cr ions touch and interact, broadening the bands; no sharp laser line</td></tr><tr><td>Ruby (dilute Cr³⁺ in Al₂O₃)</td><td>Broad bands in the violet (about 404 nm) and green (about 554 nm)</td><td>Red</td><td>These bands absorb the pump light</td></tr><tr><td>Ruby emission</td><td>A sharp line at 694 nm</td><td>Red laser light</td><td>Tiny beside the pump bands, and sharp only because the ions are isolated</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "p",
+          "text": "Holliman's rule of thumb: <strong>very sharp lines in a spectrum almost always mean quantum-isolated centres.</strong> When the ions start to interact, the lines broaden.",
+          "class": ""
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Nobel Prize</th><th>Winners</th><th>For</th></tr></thead><tbody><tr><td>Physics 1964</td><td>Charles Townes, Nikolay Basov, Alexander Prokhorov</td><td>Quantum electronics leading to the maser and laser</td></tr><tr><td>Physics 2018</td><td>Arthur Ashkin</td><td>Optical tweezers for biological systems</td></tr><tr><td>Physics 2018</td><td>Gérard Mourou, Donna Strickland</td><td>High-intensity, ultra-short laser pulses</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "conceptbox",
+          "variant": "note",
+          "title": "Exam scope for lasers",
+          "html": "<p>Holliman said you need to know <strong>how the ruby laser works and what lasers are used for</strong>, not the details of how pulses are generated.</p>"
+        },
+        {
+          "type": "h2",
+          "id": "d1-slides",
+          "text": "Check Against Your Slides"
+        },
+        {
+          "type": "p",
+          "text": "These were checked against the lecture recordings and outside sources. Use the corrected values.",
+          "class": ""
+        },
+        {
+          "type": "raw",
+          "html": "<div class=\"mini-wrap\"><table class=\"mini-table\"><thead><tr><th>Where</th><th>What it says</th><th>Use this</th></tr></thead><tbody><tr><td>L2 slide 16 (also said in the lecture)</td><td>One mole of NaCl contains 1.24 × 10²⁴ atoms</td><td>About <strong>1.20 × 10²⁴</strong> ions (2 × 6.02 × 10²³). Also, 10,000 is 10⁴, not 10⁵</td></tr><tr><td>L2 slide 41</td><td>Cr³⁺ excited-state lifetime 3 µs</td><td>About <strong>3 ms</strong>. Slide 43 and the recording both give 10⁻³ s</td></tr><tr><td>L2 slide 37</td><td>\"Narrow absorption band at 694 nm\"</td><td>694 nm is the <strong>emission (laser) line</strong>; the pump bands are violet and green. Holliman explains this in the recording</td></tr><tr><td>L2 lecture</td><td>Sapphire cannot be made in a lab</td><td>Synthetic blue sapphire has been made since about 1910</td></tr><tr><td>L2 lecture</td><td>Padparadscha is coloured by Cr and Ti</td><td>Cr³⁺ (pink) plus Fe³⁺ or colour centres (yellow-orange)</td></tr><tr><td>L2 lecture</td><td>Titania refractive index about 2.1</td><td>About 2.49 (anatase) and 2.61 (rutile)</td></tr><tr><td>L1 lecture</td><td>410 nm hydrogen line is \"UV\"</td><td>410 nm is <strong>violet</strong> (visible); UV starts below about 400 nm</td></tr><tr><td>L1 lecture</td><td>An atom has \"14 nearest neighbours\"</td><td>Close-packed (FCC, HCP) = <strong>12</strong>; BCC = 8</td></tr><tr><td>L1 lecture</td><td>Fusion of hydrogen and tritium</td><td>Usually <strong>deuterium</strong> and tritium</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "p",
+          "text": "Both slides 33 and 41 are right about chromium: laser ruby has about 0.05% Cr (pale pink, ions isolated); gem ruby has up to about 1% for a deep red. Strictly, \\(\\Delta G < 0\\) is the condition at constant temperature and pressure, which is what this module assumes.",
+          "class": ""
+        },
+        {
+          "type": "h2",
+          "id": "d1-practice",
+          "text": "Test Yourself"
+        },
+        {
+          "type": "example",
+          "label": "Q1. Draw NaCl in plan view",
+          "q": "Sketch the NaCl unit cell in plan view at z = 0, z = 0.5 and z = 1, and mark where the tetrahedral holes would be.",
+          "steps": [
+            "z = 0 and z = 1: Cl⁻ at the 4 corners and the face centre; Na⁺ at the 4 edge midpoints",
+            "z = 0.5: Cl⁻ at the 4 edge midpoints; Na⁺ at the 4 corners and the centre",
+            "Tetrahedral holes: at z = 0.25 and 0.75, at the four quarter positions (¼,¼), (¾,¼), (¼,¾), (¾,¾). Empty in NaCl"
+          ],
+          "answer": "Check: Cl⁻ counts 5, 4, 5 up the cell and Na⁺ counts 4, 5, 4."
+        },
+        {
+          "type": "example",
+          "label": "Q2. Explain the equilibrium number of defects",
+          "q": "Using a labelled sketch of energy against number of defects, explain why a crystal at room temperature always contains some vacancies.",
+          "steps": [
+            "Enthalpy line rises from \\(\\Delta H_f\\): each vacancy removes bonds, making the lattice enthalpy less negative",
+            "\\(-T\\Delta S\\) falls, steeply at first: the first vacancies add the most disorder",
+            "\\(\\Delta G = \\Delta H - T\\Delta S\\) therefore dips to a minimum before rising"
+          ],
+          "answer": "The minimum is the most stable state, and it is never at zero defects. So <strong>thermodynamics requires an equilibrium number of vacancies</strong> at any temperature above absolute zero."
+        },
+        {
+          "type": "example",
+          "label": "Q3. Predict the trend",
+          "q": "Material A has a lattice energy of about −4200 kJ/mol; material B about −600 kJ/mol. At the same temperature, which has more vacancies per mole, and what happens to both if they are heated?",
+          "steps": [
+            "A: each defect costs more, so the enthalpy line is steeper and the \\(\\Delta G\\) minimum comes at fewer defects",
+            "B: shallower enthalpy line, minimum at more defects",
+            "Heating deepens \\(-T\\Delta S\\) for both, shifting both minima to more defects"
+          ],
+          "answer": "<strong>B has more vacancies; heating increases the number in both.</strong>"
+        },
+        {
+          "type": "example",
+          "label": "Q4. Photon energy",
+          "q": "Calculate the energy in eV of a ruby laser photon (694 nm) and of a 410 nm photon. Which comes from the bigger energy gap?",
+          "steps": [
+            "694 nm: \\(1240/694 \\approx 1.79\\) eV",
+            "410 nm: \\(1240/410 \\approx 3.02\\) eV"
+          ],
+          "answer": "The <strong>410 nm</strong> photon comes from the bigger gap: shorter wavelength, higher energy."
+        },
+        {
+          "type": "example",
+          "label": "Q5. Pairs or isolated ions?",
+          "q": "Why must Fe and Ti sit on neighbouring sites to colour sapphire, while Cr in ruby works best when the ions are far apart?",
+          "steps": [
+            "Sapphire: the colour comes from an electron moving from Fe²⁺ to Ti⁴⁺. The ions must be close enough (about 2.65 Å) for their orbitals to reach each other",
+            "Ruby: the colour and laser action come from a single Cr³⁺ ion. Neighbouring Cr ions would interact, broaden the lines and quench the excited state"
+          ],
+          "answer": "Sapphire needs <strong>ion pairs</strong> for charge transfer; ruby needs <strong>quantum-isolated</strong> ions."
+        },
+        {
+          "type": "example",
+          "label": "Q6. Why is Cr₂O₃ green but ruby red?",
+          "q": "Both contain Cr³⁺ in an HCP oxide lattice. Explain the difference in colour and why only ruby lases.",
+          "steps": [
+            "Cr₂O₃ is all chromium, so the Cr ions are packed together and interact; it absorbs blue and red and looks green",
+            "In ruby, a little Cr³⁺ is spread through alumina, so each ion is isolated. It absorbs violet and green and looks red",
+            "Isolation gives the sharp 694 nm line and the long-lived metastable state needed for a population inversion"
+          ],
+          "answer": "Same ion, different surroundings. <strong>Isolation (quantum confinement) changes both the colour and the laser behaviour.</strong>"
+        },
+        {
+          "type": "example",
+          "label": "Q7. Three-level laser",
+          "q": "Draw and label the energy levels of a ruby laser and explain how a population inversion forms.",
+          "steps": [
+            "Three levels: E₁ ground state, E₂ metastable, E₃ pump state",
+            "Xe lamp pumps electrons E₁ → E₃",
+            "E₃ lasts about 10⁻⁸ s, so electrons drop quickly to E₂, giving off heat",
+            "E₂ lasts about 3 ms, so electrons pile up there faster than they leave"
+          ],
+          "answer": "More electrons in E₂ than E₁ is a <strong>population inversion</strong>. One spontaneous photon then triggers stimulated emission at 694 nm, amplified between the mirrors."
+        },
+        {
+          "type": "example",
+          "label": "Q8. Clear or white?",
+          "q": "Single-crystal alumina is transparent but alumina powder is white. Explain, and give an everyday use of the same effect.",
+          "steps": [
+            "Single crystal: ordered throughout, so light travels almost straight through",
+            "Powder: light bends at every grain surface (refractive index 1.78) and scatters in all directions"
+          ],
+          "answer": "Scattering makes the powder look white. <strong>Paint</strong> uses a high refractive index pigment (titania) to scatter light and hide the surface underneath, the same idea as frosted glass."
+        }
+      ]
+    },
+    {
       "soon": true,
       "numLabel": "Disorder · to come",
-      "title": "Disorder topics (added as they are taught)",
-      "desc": "Coming soon. Added once covered in lectures.",
+      "title": "More Disorder topics (Lecture 3 onwards)",
+      "desc": "Point defects, band theory, conduction and defects in metals. Added once covered in lectures.",
       "color": "#2fa15c",
       "sections": []
     }
@@ -4814,6 +5438,49 @@ window.SITE_CONTENT = {
           "note": "Sum the s values from every cation touching one anion. It must equal the anion charge."
         }
       ]
+    },
+    {
+      "heading": "D1: Disorder, Lectures 1 and 2",
+      "blocks": [
+        {
+          "type": "formulablock",
+          "name": "Gibbs free energy",
+          "eqs": [
+            "\\Delta G = \\Delta H - T\\Delta S"
+          ],
+          "note": "Spontaneous when \\(\\Delta G < 0\\) (constant T and P). For defects: \\(\\Delta H\\) rises with each vacancy, \\(-T\\Delta S\\) falls; the minimum of \\(\\Delta G\\) is the equilibrium number of defects."
+        },
+        {
+          "type": "formulablock",
+          "name": "Photon energy",
+          "eqs": [
+            "\\Delta E = h\\nu = \\frac{hc}{\\lambda}\\qquad E\\,(\\text{eV}) \\approx \\frac{1240}{\\lambda\\,(\\text{nm})}"
+          ],
+          "note": "Ruby laser 694 nm = 1.79 eV. Hydrogen 656 nm (red, small gap) and 410 nm (violet, big gap)."
+        },
+        {
+          "type": "formulablock",
+          "name": "Optical selection rule",
+          "eqs": [
+            "\\Delta l = \\pm 1"
+          ],
+          "note": "s = 0, p = 1, d = 2. d-d (ruby) is forbidden, so weak; Fe-Ti charge transfer (sapphire) is allowed, so intense."
+        },
+        {
+          "type": "formulablock",
+          "name": "Mass-energy",
+          "eqs": [
+            "E = mc^2"
+          ],
+          "vars": [
+            {
+              "symbol": "c",
+              "desc": "\\(3.00 \\times 10^{8}\\) m/s, so \\(c^2 = 9 \\times 10^{16}\\ \\text{m}^2\\text{s}^{-2}\\)"
+            }
+          ],
+          "note": "Why a tiny loss of mass in fission or fusion releases enormous energy."
+        }
+      ]
     }
   ],
   "formulaSheetSubtitle": "Every equation covered so far. Variables defined. Grows as more weeks are added.",
@@ -5165,6 +5832,56 @@ window.SITE_CONTENT = {
           "tag": "W5 · T10",
           "claim": "\"In the spinel MgAl<sub>2</sub>O<sub>4</sub> both cations sit in octahedral sites.\"",
           "truth": "<strong>FALSE.</strong> Mg<sup>2+</sup> is <strong>tetrahedral</strong> (4) and Al<sup>3+</sup> is <strong>octahedral</strong> (6). They happen to have the same bond strength, 1/2, which is why each O<sup>2-</sup> with 3 Al and 1 Mg balances to 2."
+        }
+      ]
+    },
+    {
+      "heading": "Disorder 1: Defects, Gems and Lasers",
+      "items": [
+        {
+          "tag": "D1 · T1",
+          "claim": "\"A perfectly made crystal can have zero defects at room temperature.\"",
+          "truth": "<strong>FALSE.</strong> The minimum of \\(\\Delta G = \\Delta H - T\\Delta S\\) always sits at some defects above 0 K. Defects are required, not just possible."
+        },
+        {
+          "tag": "D1 · T2",
+          "claim": "\"A stronger lattice has more defects because it can tolerate them.\"",
+          "truth": "<strong>FALSE.</strong> A larger lattice energy makes each defect cost more, steepening \\(\\Delta H\\), so the minimum comes at <strong>fewer</strong> defects."
+        },
+        {
+          "tag": "D1 · T3",
+          "claim": "\"An octahedral hole has 8 neighbours.\"",
+          "truth": "<strong>FALSE.</strong> It has <strong>6</strong> neighbours. \"Octahedral\" counts the 8 <strong>faces</strong> of the shape they make."
+        },
+        {
+          "tag": "D1 · T4",
+          "claim": "\"In NaCl the Na⁺ ions form the host lattice.\"",
+          "truth": "<strong>FALSE.</strong> The larger <strong>Cl⁻</strong> ions form the FCC host; Na⁺ fills all the octahedral holes."
+        },
+        {
+          "tag": "D1 · T5",
+          "claim": "\"Ruby needs more dopant than sapphire because chromium is a weaker colourant.\"",
+          "truth": "<strong>Misleading.</strong> Ruby's d-d transition is <strong>forbidden</strong> (\\(\\Delta l = 0\\)), so each ion absorbs weakly. Sapphire's Fe-Ti charge transfer is <strong>allowed</strong>."
+        },
+        {
+          "tag": "D1 · T6",
+          "claim": "\"Ruby looks red because Cr³⁺ emits red light.\"",
+          "truth": "<strong>Mostly FALSE.</strong> The body colour is <strong>subtractive</strong>: ruby absorbs violet and green and what passes looks red. Fluorescence at 694 nm adds a little extra glow."
+        },
+        {
+          "tag": "D1 · T7",
+          "claim": "\"The ruby laser line comes from electrons dropping from the pump state E₃.\"",
+          "truth": "<strong>FALSE.</strong> E₃ decays without light (heat) to the metastable <strong>E₂</strong>. The 694 nm laser line is the E₂ → E₁ transition."
+        },
+        {
+          "tag": "D1 · T8",
+          "claim": "\"More chromium always makes a better ruby laser.\"",
+          "truth": "<strong>FALSE.</strong> Laser ruby uses about <strong>0.05%</strong> Cr. Too much and the ions interact, broadening the lines and quenching the excited state. Cr₂O₃ (all Cr) doesn't lase at all."
+        },
+        {
+          "tag": "D1 · T9",
+          "claim": "\"Alumina powder is white because it contains impurities.\"",
+          "truth": "<strong>FALSE.</strong> It is the same pure material as a clear single crystal. The powder scatters light at every grain surface."
         }
       ]
     }

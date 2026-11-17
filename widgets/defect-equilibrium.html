@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why defects must exist: Gibbs energy explorer</title>
+<link rel="stylesheet" href="shared.css">
+<script src="shared.js"></script>
+<style>
+  .stage { min-height: 440px; }
+  .stage canvas { position:absolute; inset:0; width:100%; height:100%; display:block; }
+  .de-ctl { display:flex; flex-direction:column; gap:12px; }
+  .de-row label { display:flex; justify-content:space-between; font-size:12px; color:var(--text-2); margin-bottom:2px; }
+  .de-row label b { font-family:'IBM Plex Mono',ui-monospace,monospace; font-weight:600; color:var(--text); }
+  .de-row input[type=range] { width:100%; cursor:pointer; accent-color:var(--accent); }
+  .de-presets { display:flex; flex-wrap:wrap; gap:6px; }
+  .de-presets button.btn { padding:6px 10px; }
+  .de-out { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; }
+  .de-out > div { background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:8px 10px; }
+  .de-out .k { font-size:10.5px; color:var(--text-2); letter-spacing:.4px; text-transform:uppercase; }
+  .de-out .v { font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:17px; font-weight:600; margin-top:2px; }
+  .de-msg { font-size:13px; line-height:1.55; color:var(--text); background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:8px; padding:10px 12px; min-height:64px; }
+  .de-note { font-size:11px; color:var(--muted); line-height:1.5; }
+  .de-ghost { display:flex; gap:8px; align-items:center; font-size:12px; color:var(--text-2); }
+</style>
+</head>
+<body>
+<div class="sim sim-root">
+  <div class="stage" id="stage">
+    <canvas id="cv" aria-label="Graph of enthalpy, minus T delta S and Gibbs energy against the fraction of sites that are vacant"></canvas>
+    <div class="hud" style="--hud:#0ea5c6">
+      <div class="hud-label">Equilibrium defects</div>
+      <div class="hud-value" id="hudv">10%</div>
+      <div class="hud-sub">of lattice sites (toy crystal)</div>
+    </div>
+  </div>
+  <div class="plot">
+    <h2>Why defects must exist</h2>
+    <p>Each vacancy costs energy (the enthalpy line rises) but adds disorder (the &minus;T&Delta;S curve falls). The Gibbs energy is their sum. Its lowest point is the equilibrium number of defects.</p>
+    <div class="de-ctl">
+      <div class="de-presets" id="presets"></div>
+      <div class="de-row"><label for="eps">Energy cost per defect (lattice strength) <b id="epsv"></b></label><input type="range" id="eps" min="0.8" max="3.0" step="0.05"></div>
+      <div class="de-row"><label for="tt">Temperature <b id="ttv"></b></label><input type="range" id="tt" min="0.20" max="1.00" step="0.01"></div>
+      <label class="de-ghost"><input type="checkbox" id="ghost" checked> keep the starting curve as a faint reference</label>
+      <div class="de-out">
+        <div><div class="k">Defect fraction</div><div class="v" id="oF">10%</div></div>
+        <div><div class="k">ΔG at minimum</div><div class="v" id="oG">-0.03</div></div>
+      </div>
+      <div class="de-msg" id="msg"></div>
+      <div class="de-note">Toy model in arbitrary energy units: &Delta;H = (cost) &times; (defect fraction), and &minus;T&Delta;S uses the ideal mixing entropy. In a real crystal the cost is about 1 eV per defect and kT at room temperature is 0.026 eV, so the minimum sits at roughly 1 site in 10<sup>17</sup>. The curves have the same shape; they are just squashed against the left axis.</div>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  var cv = $('cv'), ctx = cv.getContext('2d'), stage = $('stage');
+  var epsEl = $('eps'), ttEl = $('tt'), ghostEl = $('ghost');
+  var XM = 0.40, YMIN = -0.75, YMAX = 1.25;
+  var PRESETS = [
+    { n: 'Start', e: 1.0, t: 0.42 },
+    { n: 'Strong lattice (alumina-like)', e: 2.6, t: 0.42 },
+    { n: 'Weak lattice', e: 0.9, t: 0.42 },
+    { n: 'Heat it up', e: 1.0, t: 0.90 },
+    { n: 'Cool it down', e: 1.0, t: 0.22 }
+  ];
+  var start = { e: 1.0, t: 0.42 };
+  function H(x, e) { return e * x; }
+  function mTS(x, t) { return x <= 0 ? 0 : (x >= 1 ? 0 : t * (x * Math.log(x) + (1 - x) * Math.log(1 - x))); }
+  function G(x, e, t) { return H(x, e) + mTS(x, t); }
+  function xstar(e, t) { return 1 / (1 + Math.exp(e / t)); }
+  function pct(x) { return x >= 0.01 ? (x * 100).toFixed(1) + '%' : (x >= 1e-4 ? (x * 100).toFixed(3) + '%' : (x * 100).toExponential(1) + '%'); }
+
+  var pb = $('presets');
+  PRESETS.forEach(function (p) {
+    var b = document.createElement('button'); b.className = 'btn'; b.textContent = p.n;
+    b.addEventListener('click', function () { epsEl.value = p.e; ttEl.value = p.t; draw(); });
+    pb.appendChild(b);
+  });
+  epsEl.value = start.e; ttEl.value = start.t;
+
+  function size() {
+    var r = stage.getBoundingClientRect(), d = window.devicePixelRatio || 1;
+    cv.width = Math.round(r.width * d); cv.height = Math.round(r.height * d);
+    ctx.setTransform(d, 0, 0, d, 0, 0);
+    return { w: r.width, h: r.height };
+  }
+  function curve(fn, X, Y, col, lw, alpha) {
+    ctx.save(); ctx.globalAlpha = alpha || 1; ctx.strokeStyle = col; ctx.lineWidth = lw; ctx.beginPath();
+    for (var i = 0; i <= 240; i++) { var x = i / 240 * XM, y = fn(x); var px = X(x), py = Y(Math.max(YMIN, Math.min(YMAX, y))); if (i) ctx.lineTo(px, py); else ctx.moveTo(px, py); }
+    ctx.stroke(); ctx.restore();
+  }
+  function draw() {
+    var e = +epsEl.value, t = +ttEl.value, s = size();
+    var L = 70, R = s.w - 18, T = 92, B = s.h - 42;
+    var X = function (x) { return L + x / XM * (R - L); }, Y = function (y) { return B - (y - YMIN) / (YMAX - YMIN) * (B - T); };
+    ctx.clearRect(0, 0, s.w, s.h);
+    ctx.font = '11px Inter, system-ui, sans-serif';
+    // axes
+    ctx.strokeStyle = '#3a3a46'; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(L, T - 10); ctx.lineTo(L, B); ctx.lineTo(R, B); ctx.stroke();
+    ctx.setLineDash([3, 4]); ctx.beginPath(); ctx.moveTo(L, Y(0)); ctx.lineTo(R, Y(0)); ctx.stroke(); ctx.setLineDash([]);
+    ctx.fillStyle = '#8c8c9c'; ctx.textAlign = 'center';
+    ctx.fillText('fraction of sites that are vacant →', (L + R) / 2, B + 28);
+    for (var k = 0; k <= 4; k++) { var xv = k * 0.1; ctx.fillText((xv * 100).toFixed(0) + '%', X(xv), B + 14); }
+    ctx.save(); ctx.translate(14, (T + B) / 2); ctx.rotate(-Math.PI / 2); ctx.fillText('energy (higher = less stable) →', 0, 0); ctx.restore();
+    ctx.textAlign = 'left'; ctx.fillText('perfect crystal', L + 8, Y(0) - 8);
+    if (ghostEl.checked && (e !== start.e || t !== start.t)) curve(function (x) { return G(x, start.e, start.t); }, X, Y, '#0ea5c6', 2, 0.25);
+    curve(function (x) { return H(x, e); }, X, Y, '#f4a261', 2.6);
+    curve(function (x) { return mTS(x, t); }, X, Y, '#2fa15c', 2.6);
+    curve(function (x) { return G(x, e, t); }, X, Y, '#0ea5c6', 3.4);
+    var xs = xstar(e, t), gx = X(Math.min(xs, XM)), gy = Y(G(xs, e, t));
+    ctx.strokeStyle = '#e63946'; ctx.setLineDash([3, 4]); ctx.beginPath(); ctx.moveTo(gx, gy); ctx.lineTo(gx, B); ctx.stroke(); ctx.setLineDash([]);
+    ctx.fillStyle = '#e63946'; ctx.beginPath(); ctx.arc(gx, gy, 6, 0, Math.PI * 2); ctx.fill();
+    // legend
+    var lg = [['ΔH (enthalpy)', '#f4a261'], ['−TΔS (entropy term)', '#2fa15c'], ['ΔG = ΔH − TΔS', '#0ea5c6']];
+    ctx.textAlign = 'left'; ctx.font = '12px Inter, system-ui, sans-serif';
+    lg.forEach(function (l, i) { ctx.fillStyle = l[1]; ctx.fillRect(R - 170, T - 6 + i * 17, 14, 3); ctx.fillStyle = '#e6e6ee'; ctx.fillText(l[0], R - 150, T - 1 + i * 17); });
+    $('epsv').textContent = e.toFixed(2); $('ttv').textContent = t.toFixed(2);
+    $('hudv').textContent = pct(xs); $('oF').textContent = pct(xs); $('oG').textContent = G(xs, e, t).toFixed(3);
+    var msg;
+    if (e / t > 5) msg = 'Strong bonding or low temperature: each defect is expensive compared with what disorder pays back, so the minimum is pushed close to zero. Few defects, but never none.';
+    else if (e / t < 1.6) msg = 'Weak bonding or high temperature: disorder is cheap and the entropy term wins for longer, so the minimum moves to a larger number of defects.';
+    else msg = 'Move the sliders. A higher cost per defect steepens the enthalpy line and pulls the minimum left. A higher temperature deepens the −TΔS curve and pushes the minimum right.';
+    $('msg').textContent = msg;
+  }
+  epsEl.addEventListener('input', draw); ttEl.addEventListener('input', draw); ghostEl.addEventListener('change', draw);
+  window.addEventListener('resize', draw);
+  if (window.ResizeObserver) new ResizeObserver(draw).observe(stage);
+  draw();
+})();
+</script>
+</body>
+</html>

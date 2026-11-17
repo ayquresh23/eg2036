@@ -869,6 +869,139 @@ const glossaryData = {
         "A cubic lattice with lattice points only at the corners, as in CsCl"
       ]
     ]
+  },
+  "d1": {
+    "name": "Disorder 1: Why Defects Exist, Gems and Lasers",
+    "terms": [
+      [
+        "Defect",
+        "Any departure from the perfect repeating arrangement of a crystal; every real material contains them"
+      ],
+      [
+        "Point defect (0-D)",
+        "A defect at a single lattice site: a vacancy, a substituted atom or an interstitial atom"
+      ],
+      [
+        "Line defect (1-D)",
+        "A defect running along a line through the crystal, such as an edge or screw dislocation"
+      ],
+      [
+        "Planar defect (2-D)",
+        "A defect spread over a surface: a grain boundary, interface or the crystal surface"
+      ],
+      [
+        "Vacancy",
+        "A lattice site with its atom or ion missing; it strains the surrounding atoms too"
+      ],
+      [
+        "Dopant",
+        "A different element added on purpose in small amounts to change a material's properties"
+      ],
+      [
+        "Extrinsic defect",
+        "A defect caused by a foreign atom (impurity or dopant) rather than by the host atoms themselves"
+      ],
+      [
+        "Grain boundary",
+        "The strained, disordered zone where two crystals with different orientations meet"
+      ],
+      [
+        "Heterojunction",
+        "An interface between layers of two different materials that charge must cross, as in a solar cell"
+      ],
+      [
+        "Quantum isolation",
+        "A defect ion so far from others of its kind that it behaves on its own, with sharp, discrete energy levels"
+      ],
+      [
+        "Gibbs free energy (G)",
+        "The energy of a system available to do work; \\(\\Delta G < 0\\) for a spontaneous process"
+      ],
+      [
+        "Enthalpy (H)",
+        "The total heat (internal energy) of a system; for a crystal, linked to its lattice energy"
+      ],
+      [
+        "Entropy (S)",
+        "The degree of disorder, set by the number of arrangements available to the atoms"
+      ],
+      [
+        "Equilibrium number of defects",
+        "The number of defects at the minimum of \\(\\Delta G\\), where the crystal is most stable; rises with temperature, falls with lattice energy"
+      ],
+      [
+        "Kinetic control",
+        "Fast cooling or precipitation where atoms lock in wherever they land"
+      ],
+      [
+        "Thermodynamic control",
+        "Slow cooling or precipitation where atoms have time to reach their lowest-energy positions"
+      ],
+      [
+        "Octahedral hole",
+        "A gap surrounded by 6 host atoms whose shape has 8 faces; Na⁺ in NaCl, Al³⁺ in alumina"
+      ],
+      [
+        "Tetrahedral hole",
+        "A smaller gap surrounded by 4 host atoms; in FCC at z = 0.25 and 0.75"
+      ],
+      [
+        "Plan view",
+        "A drawing of a 3D cell as layers seen from above, with each atom labelled by its height z"
+      ],
+      [
+        "Corundum",
+        "The crystal structure of alumina: HCP oxide ions with Al³⁺ in two-thirds of the octahedral holes"
+      ],
+      [
+        "Refractive index",
+        "How strongly a material bends light; high values plus many grain surfaces cause scattering and whiteness"
+      ],
+      [
+        "Selection rule",
+        "A rule deciding whether a transition is allowed; for optical transitions \\(\\Delta l = \\pm 1\\)"
+      ],
+      [
+        "Inter-valence charge transfer (IVCT)",
+        "An electron moving between neighbouring ions, e.g. Fe²⁺ + Ti⁴⁺ → Fe³⁺ + Ti³⁺ in blue sapphire"
+      ],
+      [
+        "d-d transition",
+        "An electron moving between d orbitals on the same ion; forbidden by \\(\\Delta l = \\pm 1\\), so weak (ruby)"
+      ],
+      [
+        "Vibronic coupling",
+        "Lattice vibrations breaking the symmetry around an ion so a forbidden transition happens weakly"
+      ],
+      [
+        "Quantum confinement",
+        "Electron-hole pairs confined in space with discrete energy levels, e.g. excitons on isolated Cr³⁺ in alumina"
+      ],
+      [
+        "Exciton",
+        "An electron bound to the hole it left behind, moving through a non-metal as one unit"
+      ],
+      [
+        "Laser",
+        "Light Amplification by Stimulated Emission of Radiation"
+      ],
+      [
+        "Population inversion",
+        "More electrons in an excited (metastable) state than in the ground state; needed for laser action"
+      ],
+      [
+        "Metastable state",
+        "An excited state that lasts unusually long (about 3 ms for ruby's E₂), letting electrons pile up"
+      ],
+      [
+        "Stimulated emission",
+        "A photon triggering an excited electron to drop and emit an identical photon in phase with it"
+      ],
+      [
+        "Coherent light",
+        "Light of one wavelength with all waves parallel and in phase, as produced by a laser"
+      ]
+    ]
   }
 };
 
